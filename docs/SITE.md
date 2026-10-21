@@ -3,7 +3,7 @@
 Astro 5 (static), Tailwind v4, TypeScript, self hosted fonts (Roboto Slab, PT Sans). Node 22. No database and no server code: the enquiry form is a Netlify Form.
 
 ## Commands
-- `npm run dev` local site; `npm run build` builds to `dist/`; `npm run check` runs the site checker over `dist/`; `npm run shots` screenshots key pages (375 and 1280 px) into `verify/shots/` (git ignored); `npm run brand` regenerates the logo, favicons and default Open Graph image from the fonts (`scripts/gen-brand.mjs`).
+- `npm run dev` local site; `npm run build` builds to `dist/`; `npm run check` runs the site checker over `dist/`; `npm run shots` screenshots key pages (375 and 1280 px) into `verify/shots/` (git ignored); `npm run brand` regenerates the favicon set, the PNG logo copy and the default Open Graph image from the supplied Raya London artwork in `public/raya/` (`scripts/gen-brand.mjs`); `npm run check:ui` runs the browser checks (`scripts/ui-checks.mjs`).
 - Article scripts (`check:articles`, `article:next`, `article:publish`) belong to the content engine, not to the site.
 
 ## Structure
@@ -11,7 +11,7 @@ Astro 5 (static), Tailwind v4, TypeScript, self hosted fonts (Roboto Slab, PT Sa
 - `src/lib/site.ts` holds contact details and URLs (from `content/FACTS.md`); `src/lib/routes.ts` is the page table.
 - `src/views/*.astro` are the pages; `src/pages/[...path].astro` builds every locale of every route from the table; `src/pages/blog/*` and `rss.xml.ts` are the blog.
 - `src/components/` shared parts; `src/layouts/Base.astro` does head, SEO tags, hreflang, JSON-LD, header, footer, sticky mobile bar and cookie banner.
-- `public/js/` has the only client scripts: `nav.js` (menu), `form.js` (form prefill), `placement.js` (quiz), `consent.js` (cookie banner and Google Analytics). No inline scripts, so the Content Security Policy in `netlify.toml` stays strict.
+- `public/js/` has the only client scripts: `nav.js` (menu and the phone header that hides on scroll), `ui.js` (back to top, smooth FAQ, quote dots), `form.js` (form prefill and validation), `attribution.js` (where an enquiry came from), `placement.js` (quiz), `estimator.js` (pricing page), `consent.js` (cookie banner and Google Analytics), plus the blog scripts. No inline scripts, so the Content Security Policy in `netlify.toml` stays strict.
 - Styles: `src/styles/global.css` (Tailwind theme tokens plus a few component classes). Amber is only used as a background or button with dark text.
 
 ## Languages (how a translator edits the JSON)
@@ -43,7 +43,7 @@ Content collection `blog` (`src/content.config.ts`, schema fixed): files in `src
 
 ## Left out or to decide
 - Bulgarian, Romanian and Polish copy is still English (translate the three JSON files).
-- No photos, no logo files from the school (the site uses its own SVG wordmark; replace `public/brand/logo.svg` and rerun `npm run brand` if real files arrive).
+- No photos. The school's real logo pack is in `public/raya/` (header, footer, favicon, Open Graph image, structured data); see `docs/DESIGN.md`, Logo. The old self drawn wordmark `public/brand/logo.svg` is unused.
 - Privacy and Terms are plain English drafts built from FACTS.md. The owner should read them (retention wording, cookie wording).
 - No aggregate rating markup (the live Google figure is still to confirm in FACTS.md).
 - No pagination on the blog index (fine for a few dozen posts; add it before about 60).

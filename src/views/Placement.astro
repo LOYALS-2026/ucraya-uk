@@ -26,8 +26,10 @@ const total = questions.length;
       <p class="mb-5">{p.instruction}</p>
       <p id="quiz-error" class="quiz-error" role="alert" hidden data-template={p.missing}></p>
       <form id="quiz" class="quiz" novalidate>
-        <progress class="quiz-progress" id="quiz-progress" max={total} value="0" aria-labelledby="quiz-progress-label"></progress>
-        <p class="quiz-progress-label" id="quiz-progress-label" data-template={p.progress}>{format(p.progress, { n: 0, total })}</p>
+        <div class="quiz-strip">
+          <progress class="quiz-progress" id="quiz-progress" max={total} value="0" aria-labelledby="quiz-progress-label"></progress>
+          <p class="quiz-progress-label" id="quiz-progress-label" data-template={p.progress}>{format(p.progress, { n: 0, total })}</p>
+        </div>
         {questions.map((q, i) => (
           <fieldset data-correct={String(q.correct)}>
             <legend><span class="qnum">{format(p.questionLabel, { n: i + 1, total })}</span> <span class="qtext" lang="en">{q.q}</span></legend>

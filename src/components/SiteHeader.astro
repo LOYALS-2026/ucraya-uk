@@ -31,7 +31,7 @@ const isCurrent = (it: (typeof items)[number]) =>
   <div class="wrap">
     <div class="header-bar">
       <a class="logo-link" href={localePath(locale, '/')} aria-label={m.header.homeLabel}>
-        <img src="/brand/logo.svg" width="132" height="36" alt="Ucraya" />
+        <img src="/raya/raya-compact-light.svg" width="536" height="220" alt="" />
       </a>
       <div class="nav-panel" id="nav-panel">
         <nav aria-label={m.header.mainNav}>
@@ -71,7 +71,7 @@ const isCurrent = (it: (typeof items)[number]) =>
       <EnquireLink locale={locale} class="btn btn-primary nav-cta-bar" inline={inline} {...enquire}>{m.buttons.enquireShort}</EnquireLink>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-panel" data-menu-btn
         data-open-label={m.header.menu} data-close-label={m.header.closeMenu}>
-        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path class="ic-burger" d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/><path class="ic-x" d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
         <span data-menu-label>{m.header.menu}</span>
       </button>
     </div>

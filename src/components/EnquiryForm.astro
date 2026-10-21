@@ -15,8 +15,10 @@ interface Props {
   title?: string;
   headingLevel?: 'h2' | 'h3';
   intro?: boolean;
+  /** Replaces the standard intro line inside the card (course pages use their own). */
+  introText?: string;
 }
-const { locale, variant = 'inline', goal, format: fmt, purpose = 'enquiry', title, headingLevel = 'h2', intro = true } = Astro.props;
+const { locale, variant = 'inline', goal, format: fmt, purpose = 'enquiry', title, headingLevel = 'h2', intro = true, introText } = Astro.props;
 const modal = variant === 'modal';
 const p = modal ? 'm' : 'f';
 const m = useMessages(locale);
@@ -33,7 +35,7 @@ const e = f.errors;
 ---
 <div class={modal ? 'contents' : 'form-card'} id={modal ? undefined : 'enquiry'}>
 {!modal && <Heading>{title ?? f.title}</Heading>}
-{!modal && intro && <p class="mt-2 mb-5">{f.intro}</p>}
+{!modal && (introText || intro) && <p class="form-intro">{introText ?? f.intro}</p>}
 <form
   name="enquiry"
   id={modal ? 'enquiry-form-modal' : 'enquiry-form'}
@@ -62,6 +64,8 @@ const e = f.errors;
   <input type="hidden" name="site_language" value={locale} />
   <input type="hidden" name="source_channel" value="" />
   <input type="hidden" name="source_referrer" value="" />
+  <input type="hidden" name="last_channel" value="" />
+  <input type="hidden" name="last_referrer" value="" />
   <input type="hidden" name="landing_page" value="" />
   <input type="hidden" name="utm_source" value="" />
   <input type="hidden" name="utm_medium" value="" />
@@ -113,9 +117,19 @@ const e = f.errors;
       </div>
     </fieldset>
 
+    <div class="field" data-group="deadline">
+      <label for={`${p}-when`}>{f.deadlineLegend} <span class="opt">{f.optional}</span></label>
+      <select class="input" id={`${p}-when`} name="deadline_pick">
+        <option value="">{f.goalPlaceholder}</option>
+        {f.deadlineChips.map((g, i) => (
+          <option value={en.deadlineChips[i].label}>{g.label}</option>
+        ))}
+      </select>
+    </div>
+
     <div class="field">
       <label for={`${p}-message`}>{f.messageShort} <span class="opt">{f.optional}</span></label>
-      <textarea class="input" id={`${p}-message`} name="message" rows={modal ? 2 : 4} autocomplete="off" enterkeyhint="enter"></textarea>
+      <textarea class="input" id={`${p}-message`} name="message" rows={modal ? 1 : 4} autocomplete="off" enterkeyhint="enter"></textarea>
     </div>
 
     <p class="hp" aria-hidden="true">

@@ -49,15 +49,28 @@ const toUrl = (f) => {
 };
 
 // ---- required files
-for (const f of ['llms.txt', 'robots.txt', 'sitemap-index.xml', 'rss.xml']) {
+for (const f of ['llms.txt', 'llms-full.txt', 'robots.txt', 'sitemap-index.xml', 'rss.xml']) {
   if (!existsSync(path.join(dist, f))) fail('dist', `missing ${f}`);
 }
 if (existsSync(path.join(dist, 'robots.txt'))) {
   const robots = readFileSync(path.join(dist, 'robots.txt'), 'utf8');
-  for (const bot of ['GPTBot', 'ClaudeBot', 'PerplexityBot', 'Google-Extended']) {
+  for (const bot of ['GPTBot', 'ClaudeBot', 'Claude-Web', 'anthropic-ai', 'PerplexityBot', 'Google-Extended', 'CCBot', 'Bytespider']) {
     if (!new RegExp(`User-agent:\\s*${bot}`, 'i').test(robots)) fail('robots.txt', `no rule for ${bot}`);
   }
   if (!/Sitemap:\s*https:\/\/ucraya\.uk\/sitemap-index\.xml/.test(robots)) fail('robots.txt', 'no Sitemap line');
+}
+
+// llms.txt stays short; the whole catalogue is in llms-full.txt, which names every published guide.
+if (existsSync(path.join(dist, 'llms.txt'))) {
+  const words = readFileSync(path.join(dist, 'llms.txt'), 'utf8').split(/\s+/).filter(Boolean).length;
+  if (words > 350) fail('llms.txt', `${words} words (limit 350)`);
+}
+if (existsSync(path.join(dist, 'llms-full.txt'))) {
+  const full = readFileSync(path.join(dist, 'llms-full.txt'), 'utf8');
+  for (const f of files.filter((x) => /\/blog\/[a-z0-9-]+\/index\.html$/.test(x.split(path.sep).join('/')) && !/\/(questions|pillar|page)\//.test(x.split(path.sep).join('/')))) {
+    const slug = f.split(path.sep).slice(-2)[0];
+    if (!full.includes(`https://ucraya.uk/blog/${slug}/`)) fail('llms-full.txt', `does not list the guide ${slug}`);
+  }
 }
 
 // ---- locale parity
@@ -145,6 +158,22 @@ for (const file of htmlFiles) {
       fail(url, 'JSON-LD does not parse');
     }
   }
+
+  // Structured data: every money page names what may be read aloud; every article carries a BlogPosting with the quick answer.
+  const parsed = ld.map((b) => { try { return JSON.parse(b[1]); } catch { return {}; } });
+  const speak = parsed.filter((d) => d.speakable);
+  const articleUrl = /^\/blog\/[a-z0-9-]+\/$/.test(url) && !/^\/blog\/(questions|page)\//.test(url);
+  if (isMoney && !isThanks && !articleUrl && url !== '/404.html' && /^\/(bg\/|ro\/|pl\/)?/.test(url) && !/^\/blog\//.test(url) && speak.length === 0) fail(url, 'money page without speakable JSON-LD');
+  if (articleUrl) {
+    const post = parsed.find((d) => d['@type'] === 'BlogPosting');
+    if (!post) fail(url, 'article without BlogPosting JSON-LD');
+    else {
+      if (!post.speakable) fail(url, 'BlogPosting without speakable');
+      if (!post.dateModified || post.inLanguage !== 'en-GB' || !post.publisher || !post.author) fail(url, 'BlogPosting lacks dateModified, inLanguage, author or publisher');
+      if (/class="bl-quick-text"/.test(html) === false) fail(url, 'article without the Quick answer block');
+    }
+  }
+  if (/\/brand\/logo\.svg/.test(html)) fail(url, 'still references the old self drawn wordmark');
 
   // CSP friendliness: no inline scripts other than JSON-LD, no inline handlers
   for (const m of html.matchAll(/<script\b([^>]*)>/gi)) {

@@ -8,8 +8,8 @@ import BlogCard from '../../components/blog/BlogCard.astro';
 import PagefindMeta from '../../components/blog/PagefindMeta.astro';
 import '../../components/blog/blog.css';
 import {
-  getPosts, postPath, pillarPath, formatDate, isoDay, readMinutes, answerOf, pillarSlugOf, relatedTo, prevNext,
-  enquirePath, injectBeforeThirdH2, PLACEMENT_CARD_HTML,
+  getPosts, postPath, pillarPath, formatDate, isoDay, readMinutes, answerOf, pillarSlugOf, relatedTo, prevNext, plainText,
+  enquirePath, injectBeforeThirdH2, splitQuickAnswer, PLACEMENT_CARD_HTML,
 } from '../../lib/blog';
 import { pillarsWith, goalFromMoneyPage } from '../../lib/blog-map';
 import { SITE } from '../../lib/site';
@@ -23,8 +23,11 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const d = post.data;
 const { Content, headings } = await render(post);
-const html = injectBeforeThirdH2(post.rendered?.html ?? '', PLACEMENT_CARD_HTML);
-const hasHtml = !!post.rendered?.html;
+const rendered = post.rendered?.html ?? '';
+const hasHtml = !!rendered;
+// The direct answer moves up under the title; the placement card goes before the third section of what is left.
+const { quick, rest } = splitQuickAnswer(rendered);
+const html = injectBeforeThirdH2(rest, PLACEMENT_CARD_HTML);
 const all = await getPosts();
 const related = relatedTo(post, all, 3);
 const { prev, next } = prevNext(post, all);
@@ -48,7 +51,7 @@ const toc = headings.filter((h) => h.depth === 2);
 if (d.faq.length) toc.push({ depth: 2, slug: 'questions', text: 'Questions answered in this guide' });
 const ld: object[] = [
   {
-    ...blogPosting({ title: d.title, description: d.description, url, published: d.pubDate, updated: d.updatedDate, author: d.author }),
+    ...blogPosting({ title: d.title, description: d.description, url, published: d.pubDate, updated: d.updatedDate, pillar: d.pillar, pillarUrl: absolute(pillarPath(slug)), wordCount: plainText(post.body).split(' ').filter(Boolean).length }),
     articleSection: d.pillar,
     keywords: [d.primaryKeyword, ...d.secondaryKeywords].join(', '),
     timeRequired: `PT${mins}M`,
@@ -57,7 +60,7 @@ const ld: object[] = [
 if (d.faq.length) ld.push(faqPage(d.faq));
 const whatsappShare = `https://wa.me/?text=${encodeURIComponent(`${d.title} ${url}`)}`;
 ---
-<Base locale="en" path={path} title={d.title} description={d.description} crumbs={crumbs} jsonLd={ld} ogType="article" scripts={['/js/blog.js', '/js/search.js']}>
+<Base locale="en" path={path} title={d.title} description={d.description} crumbs={crumbs} jsonLd={ld} ogType="article" scripts={['/js/blog.js', '/js/search.js']} enquire={{ goal, level, purpose: 'enquiry' }}>
   <div data-pagefind-ignore><Breadcrumbs locale="en" crumbs={crumbs} /></div>
   <article class="bl-article">
     <PagefindMeta post={post} />
@@ -66,13 +69,19 @@ const whatsappShare = `https://wa.me/?text=${encodeURIComponent(`${d.title} ${ur
         <p><a class="pill bl-pill" href={pillarPath(slug)}>{d.pillar}</a></p>
         <h1 data-pagefind-meta="title">{d.title}</h1>
         <p class="bl-byline">
-          {d.author} &middot; Published <time datetime={isoDay(d.pubDate)}>{formatDate(d.pubDate)}</time>
-          {d.updatedDate && <> &middot; Updated <time datetime={isoDay(d.updatedDate)}>{formatDate(d.updatedDate)}</time></>}
-          &middot; {mins} min read
+          <span class="nw">{d.author}</span> &middot; <span class="nw">Published <time datetime={isoDay(d.pubDate)}>{formatDate(d.pubDate)}</time></span>
+          {d.updatedDate && <> &middot; <span class="nw">Updated <time datetime={isoDay(d.updatedDate)}>{formatDate(d.updatedDate)}</time></span></>}
+          &middot; <span class="nw">{mins} min read</span>
         </p>
         {checked
           ? <p class="bl-byline">Checked against the official pages linked in the article (latest check {formatDate(checked)}).</p>
           : hasSources && <p class="bl-byline">Links to the official pages are in the article.</p>}
+        {quick && (
+          <div class="bl-quick glass-strong card-accent accent-green">
+            <span class="bl-quick-label">Quick answer</span>
+            <div class="bl-quick-text" set:html={quick}></div>
+          </div>
+        )}
       </div>
 
       <aside class="bl-side" aria-label="In this guide" data-pagefind-ignore>

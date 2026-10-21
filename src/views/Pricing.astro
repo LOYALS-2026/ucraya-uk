@@ -5,7 +5,8 @@ import PageHero from '../components/PageHero.astro';
 import ProductCards from '../components/ProductCards.astro';
 import FaqList from '../components/FaqList.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { useMessages, type Locale } from '../i18n';
+import EnquireLink from '../components/EnquireLink.astro';
+import { useMessages, format, type Locale } from '../i18n';
 import { pathFor } from '../lib/routes';
 import { pageMeta } from '../lib/page';
 import { faqPage } from '../lib/jsonld';
@@ -15,15 +16,34 @@ const m = useMessages(locale);
 const p = m.pricing;
 const meta = pageMeta('pricing', locale);
 const crumbs = [{ name: m.nav.pricing, path: pathFor('pricing', locale) }];
-const rows = [m.products.oneToOne, m.products.oneToOneEnglish, m.products.group, m.products.exam];
+const rows = [
+  { ...m.products.oneToOne, fmt: 'one-to-one' },
+  { ...m.products.oneToOneEnglish, fmt: 'one-to-one' },
+  { ...m.products.group, fmt: 'group' },
+  { ...m.products.exam, fmt: 'not-sure' },
+];
+// Estimator: the prices come from the two one-to-one products, so they stay in one place. 4.33 weeks a month.
+const e = p.estimator;
+const WEEKS = 4.33;
+const digits = (v: string) => Number(v.replace(/[^0-9.]/g, ''));
+const types = [
+  { price: digits(m.products.oneToOne.price), label: e.oneToOne },
+  { price: digits(m.products.oneToOneEnglish.price), label: e.english },
+];
+const guide = (price: number, n: number) => Math.round(price * n * WEEKS);
 ---
-<Base locale={locale} routeId="pricing" title={meta.title} description={meta.description} crumbs={crumbs} jsonLd={[faqPage(p.faq.items)]}>
+<Base locale={locale} routeId="pricing" title={meta.title} description={meta.description} crumbs={crumbs} jsonLd={[faqPage(p.faq.items)]} scripts={['/js/estimator.js']}>
   <Breadcrumbs locale={locale} crumbs={crumbs} />
-  <PageHero h1={p.h1} lead={p.lead} />
+  <PageHero h1={p.h1} lead={p.lead}>
+    <div class="btn-row mt-6">
+      <EnquireLink locale={locale} class="btn btn-primary">{m.buttons.enquire}</EnquireLink>
+      <a class="btn btn-secondary" href="#estimator">{e.title}</a>
+    </div>
+  </PageHero>
 
   <section class="section">
     <div class="wrap">
-      <div class="only-mobile"><ProductCards locale={locale} /></div>
+      <div class="only-mobile"><ProductCards locale={locale} headingLevel="h2" /></div>
       <table class="price-table only-desktop">
         <caption class="sr-only-x">{p.tableCaption}</caption>
         <thead>
@@ -34,7 +54,7 @@ const rows = [m.products.oneToOne, m.products.oneToOneEnglish, m.products.group,
             <tr>
               <th scope="row">{r.name}</th>
               <td>{r.text}</td>
-              <td><span class="price">{r.price}</span><br /><span class="muted">{r.unit}</span></td>
+              <td><span class="price">{r.price}</span><br /><span class="muted">{r.unit}</span><br /><EnquireLink locale={locale} class="btn btn-secondary mt-3" format={r.fmt}>{m.buttons.askAbout}</EnquireLink></td>
             </tr>
           ))}
         </tbody>
@@ -43,9 +63,41 @@ const rows = [m.products.oneToOne, m.products.oneToOneEnglish, m.products.group,
     </div>
   </section>
 
+  <section class="section section-warm" id="estimator" aria-labelledby="est-h">
+    <div class="wrap">
+      <div class="form-card estimator price-card glow-amber" data-estimator data-weeks={String(WEEKS)} data-result={e.result} data-detail={e.detail}>
+        <h2 id="est-h">{e.title}</h2>
+        <p>{e.intro}</p>
+        <div class="est-row">
+          <fieldset class="field">
+            <legend>{e.type}</legend>
+            <div class="chip-row">
+              {types.map((t, i) => (
+                <label class="chip"><input type="radio" name="est-type" value={String(i)} data-price={String(t.price)} checked={i === 0} /><span>{t.label}</span></label>
+              ))}
+            </div>
+          </fieldset>
+          <fieldset class="field">
+            <legend>{e.perWeek}</legend>
+            <div class="chip-row">
+              {[1, 2, 3, 4, 5].map((n) => (
+                <label class="chip"><input type="radio" name="est-n" value={String(n)} checked={n === 1} /><span>{n}</span></label>
+              ))}
+            </div>
+          </fieldset>
+        </div>
+        <div class="est-out" aria-live="polite">
+          <p class="price est-total" data-est-total>{format(e.result, { amount: guide(types[0].price, 1) })}</p>
+          <p data-est-detail>{format(e.detail, { n: 1, price: types[0].price })}</p>
+          <p class="muted">{e.note}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section section-warm">
     <div class="wrap">
-      <div class="grid gap-8 md:grid-cols-2">
+      <div class="grid gap-8 md:grid-cols-2 items-start">
         <div class="prose-lite">
           <h2 class="no-top">{p.payment.title}</h2>
           <ol>{p.payment.items.map((i) => <li>{i}</li>)}</ol>
@@ -66,7 +118,7 @@ const rows = [m.products.oneToOne, m.products.oneToOneEnglish, m.products.group,
 
   <section class="section">
     <div class="wrap">
-      <div class="grid gap-8 md:grid-cols-2">
+      <div class="grid gap-8 md:grid-cols-2 items-start">
         <div class="prose-lite">
           <h2 class="no-top">{p.cancel.title}</h2>
           <ul>{p.cancel.items.map((i) => <li>{i}</li>)}</ul>

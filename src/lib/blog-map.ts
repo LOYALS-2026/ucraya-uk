@@ -196,3 +196,10 @@ export function pillarsWith(items: { pillar: string; moneyPage: string }[]): Pil
   }
   return out;
 }
+
+/** The guide hubs that belong to a course page: pillars whose money page is the course, or whose goal is the course's goal. */
+export function pillarsForCourse(slug: string): PillarInfo[] {
+  const href = `/courses/${slug}/`;
+  const goal = GOAL_BY_COURSE[slug];
+  return allPillars().filter((pl) => pl.moneyPage === href || (!!goal && pl.goal === goal));
+}

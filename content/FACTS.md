@@ -88,7 +88,7 @@ Director Georgi Georgiev is not a tutor. German teachers are not listed on this 
 
 - Colours (from the school's stylesheets): amber **#ffb606** (primary), green **#4caf50** (secondary), hover amber #e6a303, accent orange #f24c0a (sparingly), headings #333333, body text #666666 (use #444444 on the new site for contrast), footer #111111. Amber is for backgrounds, buttons and highlights with dark text on it; never amber text on white (fails contrast).
 - Fonts: Roboto Slab (headings), PT Sans (body). Neucha was the old hero font; not used on the new site.
-- Logo: the school's logo has four coloured circles (sight, hearing, writing, speech) beside the name. The real files are not in this repo (the owner will supply them); until then the site uses its own SVG wordmark "Ucraya" with four small circles in amber, green, orange and navy.
+- Logo: the owner supplied the Raya London logo pack (four glass circles: eye, ear, pencil, lips, in cyan #00ADDC, lime #9DCC36, yellow #EBC300 and red #E40035, with the words RAYA LONDON and TRAINING CENTRE). The SVGs are in `public/raya/` and are used as supplied, never redrawn or recoloured. The page colours above stay amber and green; only the background glow borrows the logo colours.
 - Tone: friendly, plain, calm; British English; no hype, no exclamation marks in body copy, no em dashes anywhere (use a comma, a colon or a new sentence).
 
 ## 9. Languages

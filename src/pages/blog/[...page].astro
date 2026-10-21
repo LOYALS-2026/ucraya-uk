@@ -31,6 +31,7 @@ const first = current === 1;
 
 // "Start here": the pillar guides. Written ones link, the others say when they are planned.
 const guideRows = pillarGuideRows();
+// Only guides that exist are shown here; planned ones are listed on the questions page.
 const startHere = pillars.map((pl) => {
   const written = all.find((p) => pillarSlugOf(p) === pl.slug && p.data.cluster === 'pillar guide');
   const row = guideRows.find((r) => r.pillar === pl.name);
@@ -114,21 +115,13 @@ const examples = ['OET or IELTS', 'B1 for citizenship', 'interview English', 'ch
           <h2 id="start-here" class="bl-h2">Start here</h2>
           <p class="bl-sub">One main guide for each goal. Read the one closest to yours first.</p>
           <div class="bl-grid">
-            {startHere.map(({ pl, written, row }) =>
-              written ? (
-                <article class="bl-card card glass">
-                  <p><span class="pill bl-pill">{pl.short}</span></p>
-                  <h3 class="bl-card-title"><a class="bl-card-link" href={postPath(written.id)}>{written.data.title}</a></h3>
-                  <p class="bl-card-text">{written.data.description}</p>
-                </article>
-              ) : (
-                <article class="bl-card card glass is-soon">
-                  <p><span class="pill bl-pill">{pl.short}</span></p>
-                  <h3 class="bl-card-title">{row ? row.title : pl.name}</h3>
-                  <p class="bl-card-text">{row ? `Coming on ${longDate(row.publishDate)}.` : 'Coming soon.'}</p>
-                </article>
-              ),
-            )}
+            {startHere.filter((x) => x.written).map(({ pl, written }) => (
+              <article class="bl-card card glass">
+                <p><span class="pill bl-pill">{pl.short}</span></p>
+                <h3 class="bl-card-title"><a class="bl-card-link" href={postPath(written!.id)}>{written!.data.title}</a></h3>
+                <p class="bl-card-text">{written!.data.description}</p>
+              </article>
+            ))}
           </div>
         </section>
       )}

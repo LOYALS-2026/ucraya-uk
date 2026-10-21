@@ -128,3 +128,17 @@ export function prevNext(post: Post, all: Post[]): { prev?: Post; next?: Post } 
 
 /** Page URL for page n of a paginated list. */
 export const pageUrl = (base: string, n: number) => (n <= 1 ? base : `${base}page/${n}/`);
+
+/**
+ * Lifts the direct answer (the first paragraph, when it comes before the first H2) out of the rendered body so the page can show it
+ * under the title as the "Quick answer". Returns the paragraph markup and the body without it; both are unchanged if the guide
+ * does not open with a paragraph.
+ */
+export function splitQuickAnswer(html: string): { quick: string; rest: string } {
+  const m = /^\s*(<p[\s>][\s\S]*?<\/p>)/.exec(html);
+  if (!m) return { quick: '', rest: html };
+  return { quick: m[1], rest: html.slice(m[0].length) };
+}
+
+/** Plain text of a rendered HTML fragment. */
+export const htmlToText = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();

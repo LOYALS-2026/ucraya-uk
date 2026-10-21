@@ -24,7 +24,7 @@
     "closeMenu": "Zamknij menu",
     "language": "Język",
     "mainNav": "Nawigacja główna",
-    "homeLabel": "Strona główna Ucraya"
+    "homeLabel": "Raya London Training Centre, strona główna"
   },
   "buttons": {
     "enquire": "Zapytaj o lekcje",
@@ -56,7 +56,9 @@
     "ratedGoogle": "Oceniana na 5 gwiazdek w Google",
     "facebookFollowers": "Obserwowana przez tysiące osób na Facebooku",
     "sinceProof": "Londyńska szkoła angielskiego od 2015 roku",
-    "tutorsProof": "Wykwalifikowani lektorzy mieszkający w Wielkiej Brytanii lub uczący w naszej londyńskiej szkole"
+    "tutorsProof": "Wykwalifikowani lektorzy mieszkający w Wielkiej Brytanii lub uczący w naszej londyńskiej szkole",
+    "backToTop": "Do góry",
+    "quoteOf": "Opinia {n} z {total}"
   },
   "footer": {
     "about": "Lekcje angielskiego online z prawdziwymi lektorami, prowadzone przez londyńską szkołę angielskiego od 2015 roku.",
@@ -72,7 +74,11 @@
     "social": "Znajdziesz nas w sieci",
     "facebook": "Facebook",
     "instagram": "Instagram",
-    "viber": "Viber"
+    "viber": "Viber",
+    "service": "Ucraya to usługa lekcji online szkoły Training Centre Raya London",
+    "allGuides": "Wszystkie poradniki",
+    "questions": "Pytania, na które odpowiadamy",
+    "colGuides": "Poradniki"
   },
   "sticky": {
     "label": "Szybki kontakt"
@@ -243,7 +249,7 @@
         "label": "Jeszcze nie wiem"
       }
     ],
-    "phoneShort": "Telefon lub WhatsApp",
+    "phoneShort": "Telefon",
     "messageShort": "Wiadomość",
     "sending": "Wysyłanie",
     "preferWhatsapp": "Wolisz WhatsApp?",
@@ -255,7 +261,26 @@
       "goal": "Wybierz swój cel.",
       "consent": "Zaznacz pole, abyśmy mogli Ci odpowiedzieć."
     },
-    "requiredNote": "Pola oznaczone * są wymagane."
+    "requiredNote": "Pola oznaczone * są wymagane.",
+    "deadlineLegend": "Kiedy masz test lub termin?",
+    "deadlineChips": [
+      {
+        "slug": "month",
+        "label": "W ciągu miesiąca"
+      },
+      {
+        "slug": "quarter",
+        "label": "1 do 3 miesięcy"
+      },
+      {
+        "slug": "later",
+        "label": "Później"
+      },
+      {
+        "slug": "none",
+        "label": "Bez daty"
+      }
+    ]
   },
   "meta": {
     "home": {
@@ -329,7 +354,7 @@
   },
   "home": {
     "h1": "Lekcje angielskiego online z prawdziwymi lektorami",
-    "lead": "Lekcje indywidualne lub mała grupa na żywo, z lektorem, który buduje lekcję wokół Twojego celu. Uczy londyńska szkoła angielskiego od 2015 roku.",
+    "lead": "Lekcje indywidualne lub mała grupa na żywo, z lektorem, który buduje lekcję wokół Twojego celu.",
     "heroNote": "Bez płatności online: biuro potwierdza Twoje miejsce, a potem płacisz przelewem.",
     "audience": {
       "title": "Dla kogo są nasze lekcje",
@@ -371,7 +396,13 @@
           "text": "Wybierz lekcje indywidualne lub kurs poziomowy, by mówić wyraźniej w codziennym życiu."
         }
       ],
-      "link": "Czytaj więcej"
+      "link": "Czytaj więcej",
+      "linkFmt": "Zobacz: {name}",
+      "placement": {
+        "title": "Nie wiesz, od czego zacząć?",
+        "text": "Zrób test poziomujący z 12 pytaniami, aby poznać orientacyjny poziom, a potem zapytaj o pasujące lekcje.",
+        "link": "Zrób test poziomujący"
+      }
     },
     "steps": {
       "title": "Jak to działa",
@@ -409,6 +440,12 @@
     "final": {
       "title": "Gotowy, żeby zacząć?",
       "text": "Napisz, jaki masz cel. Odpiszemy, proponując lektora i pierwszą lekcję."
+    },
+    "guides": {
+      "title": "Proste poradniki przed decyzją",
+      "lead": "Krótkie, praktyczne poradniki o testach, rozmowach kwalifikacyjnych i wyborze lektora. Są napisane po angielsku.",
+      "all": "Czytaj wszystkie poradniki",
+      "questions": "Pytania, na które odpowiadamy"
     }
   },
   "products": {
@@ -986,7 +1023,9 @@
         ]
       }
     },
-    "guidesTitle": "Poradniki do tego celu"
+    "guidesTitle": "Poradniki do tego celu",
+    "guidesAll": "Zobacz wszystkie poradniki do tego celu",
+    "guidesBlog": "Przeglądaj wszystkie poradniki"
   },
   "pricing": {
     "h1": "Cennik lekcji angielskiego online",
@@ -1048,6 +1087,17 @@
           "a": "Nie. Opłaty egzaminacyjne są osobne i płaci się je organizatorowi egzaminu."
         }
       ]
+    },
+    "estimator": {
+      "title": "Ile to będzie kosztować?",
+      "intro": "Wybierz rodzaj lekcji i liczbę lekcji w tygodniu.",
+      "type": "Rodzaj lekcji",
+      "oneToOne": "Indywidualna, £15 za lekcję",
+      "english": "Angielski przez angielski, £20 za lekcję",
+      "perWeek": "Lekcje w tygodniu",
+      "result": "Około £{amount} miesięcznie",
+      "detail": "Lekcje w tygodniu: {n}, po £{price} każda; około 4,33 tygodnia w miesiącu.",
+      "note": "Tylko orientacyjnie; płacisz za lekcję przelewem bankowym."
     }
   },
   "how": {
@@ -1108,8 +1158,8 @@
     "questionLabel": "Pytanie {n} z {total}",
     "submit": "Zobacz mój poziom",
     "missing": "Odpowiedz na każde pytanie. Brakuje odpowiedzi na: {list}.",
-    "resultTitle": "Twój szacowany poziom",
-    "resultLevel": "Twój szacowany poziom to {level}",
+    "resultTitle": "Twój wynik",
+    "resultLevel": "Poziom {level}",
     "score": "Poprawne odpowiedzi: {score} z {total}.",
     "again": "Zrób test jeszcze raz",
     "enquire": "Zapytaj o lekcje na tym poziomie",

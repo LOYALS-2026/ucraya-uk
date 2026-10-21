@@ -15,7 +15,12 @@
     if (bar) bar.value = done;
     if (barLabel) barLabel.textContent = fill(barLabel.getAttribute('data-template') || '', { n: String(done), total: String(total) });
   }
-  form.addEventListener('change', progress);
+  form.addEventListener('change', function (e) {
+    // A small pop on the chosen answer (skipped for people who ask for less motion).
+    var label = e.target && e.target.closest ? e.target.closest('.opt') : null;
+    if (label && motion === 'smooth') { label.classList.remove('is-picked'); void label.offsetWidth; label.classList.add('is-picked'); }
+    progress();
+  });
 
   function levelFor(score) {
     if (score <= 3) return 'A1';

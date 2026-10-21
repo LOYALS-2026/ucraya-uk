@@ -1,25 +1,31 @@
 ---
 import { useMessages, format, type Locale } from '../i18n';
-import { pathFor } from '../lib/routes';
+import { pathFor, localePath } from '../lib/routes';
 import { COURSE_SLUGS } from '../lib/routes';
 import { SITE } from '../lib/site';
+import { getPosts, pillarSlugOf, pillarPath } from '../lib/blog';
+import { pillarsWith } from '../lib/blog-map';
+import EnquireLink from './EnquireLink.astro';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const m = useMessages(locale);
 const year = new Date().getFullYear();
+// The guide hubs that have at least one published guide (English names: the guides are in English).
+const posts = await getPosts();
+const hubs = pillarsWith(posts.map((p) => p.data)).filter((pl) => posts.some((p) => pillarSlugOf(p) === pl.slug));
 ---
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-strip">
       <p>{m.footer.colContact}</p>
-      <a class="btn btn-secondary" href={`mailto:${SITE.email}`}>{SITE.email}</a>
-      <a class="btn btn-secondary" href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a>
-      <a class="btn btn-whatsapp" href={SITE.whatsapp} rel="noopener">WhatsApp</a>
+      <EnquireLink locale={locale} class="btn btn-primary">{m.buttons.enquireShort}</EnquireLink>
+      <a class="btn btn-whatsapp" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsappShort}</a>
     </div>
     <div class="footer-grid">
       <div>
-        <img src="/brand/logo.svg" width="176" height="48" alt="Ucraya" class="bg-white rounded-lg p-2 h-12 w-auto" />
-        <p class="mt-4 max-w-xs">{m.footer.about}</p>
+        <a class="footer-logo" href={localePath(locale, '/')} aria-label={m.header.homeLabel}><img src="/raya/raya-glass-light.svg" width="536" height="256" alt="" /></a>
+        <p class="mt-4 max-w-xs font-bold text-white">{m.footer.service}</p>
+        <p class="mt-3 max-w-xs">{m.footer.about}</p>
         <p class="mt-3 max-w-xs">{m.common.classroomNote} <a href={SITE.schoolSite}>{m.common.classroomLink}</a></p>
       </div>
       <div>
@@ -40,9 +46,16 @@ const year = new Date().getFullYear();
           <li><a href={pathFor('tutors', locale)}>{m.nav.tutors}</a></li>
           <li><a href={pathFor('reviews', locale)}>{m.nav.reviews}</a></li>
           <li><a href={pathFor('faq', locale)}>{m.nav.faq}</a></li>
-          <li><a href="/blog/">{m.nav.blog}</a></li>
           <li><a href={pathFor('about', locale)}>{m.nav.about}</a></li>
           <li><a href={pathFor('contact', locale)}>{m.nav.contact}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>{m.footer.colGuides}</h2>
+        <ul>
+          <li><a href="/blog/">{m.footer.allGuides}</a></li>
+          <li><a href="/blog/questions/">{m.footer.questions}</a></li>
+          {hubs.map((pl) => <li><a href={pillarPath(pl.slug)} lang="en">{pl.short}</a></li>)}
         </ul>
       </div>
       <div>

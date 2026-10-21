@@ -9,7 +9,8 @@ import { useMessages, messagesEn, type Locale } from '../i18n';
 import { pathFor, absolute, COURSE_SLUGS, type CourseSlug } from '../lib/routes';
 import { pageMeta } from '../lib/page';
 import { SITE, whatsappWith } from '../lib/site';
-import { getPosts, postPath, moneyHref } from '../lib/blog';
+import { getPosts, postPath, pillarPath, pillarSlugOf } from '../lib/blog';
+import { pillarsForCourse } from '../lib/blog-map';
 import { course as courseLd, faqPage } from '../lib/jsonld';
 
 interface Props { locale: Locale; slug: CourseSlug }
@@ -38,7 +39,10 @@ const ld = [
 // The free class is a live GROUP class, so the free class button appears only where a group course is on offer.
 const offersGroup = slug === 'general-english' || slug === 'group-courses';
 const waHref = whatsappWith(`Hello, I am asking about ${messagesEn.courses.items[slug].name} lessons`);
-const guides = (await getPosts()).filter((p) => moneyHref(p.data.moneyPage) === pathFor(routeId, 'en')).slice(0, 3);
+// Guides strip: the hub of this goal and its three newest guides (the newest three overall when the course has no hub).
+const posts = await getPosts();
+const hubs = pillarsForCourse(slug).filter((pl) => posts.some((p) => pillarSlugOf(p) === pl.slug));
+const guides = (hubs.length ? posts.filter((p) => hubs.some((pl) => pl.slug === pillarSlugOf(p))) : posts).slice(0, 3);
 const others = COURSE_SLUGS.filter((s) => s !== slug).slice(0, 4);
 ---
 <Base locale={locale} routeId={routeId} whatsappText={`Hello, I am asking about ${messagesEn.courses.items[slug].name} lessons`} title={meta.title} description={meta.description} jsonLd={ld} crumbs={crumbs} enquire={{ goal: c.goal, format: c.format }}>
@@ -47,9 +51,11 @@ const others = COURSE_SLUGS.filter((s) => s !== slug).slice(0, 4);
     {'notice' in c && c.notice && <p class="notice mt-5">{c.notice}</p>}
     <div class="btn-row mt-6">
       <EnquireLink locale={locale} class="btn btn-primary" goal={c.goal} format={c.format}>{m.buttons.enquire}</EnquireLink>
-      {offersGroup && <a class="btn btn-secondary" href={pathFor('trial', locale)}>{m.buttons.trial}</a>}
-      <a class="btn btn-whatsapp" href={waHref} rel="noopener">{offersGroup ? m.buttons.whatsapp : m.buttons.whatsappMessage}</a>
+      {offersGroup
+        ? <a class="btn btn-secondary" href={pathFor('trial', locale)}>{m.buttons.trial}</a>
+        : <a class="btn btn-secondary" href={pathFor('placement', locale)}>{m.buttons.placement}</a>}
     </div>
+    <p><a class="wa-link hero-wa" href={waHref} rel="noopener">{offersGroup ? m.buttons.whatsapp : m.buttons.whatsappMessage}</a></p>
   </PageHero>
 
   <section class="section">
@@ -92,10 +98,15 @@ const others = COURSE_SLUGS.filter((s) => s !== slug).slice(0, 4);
           <p><a href={pathFor('tutors', locale)}>{m.buttons.tutors}</a></p>
 
           {guides.length > 0 && (
-            <>
+            <div class="guides-strip">
               <h2>{m.courses.guidesTitle}</h2>
               <ul>{guides.map((g) => <li><a href={postPath(g.id)} lang="en">{g.data.title}</a></li>)}</ul>
-            </>
+              <p>
+                {hubs.length > 0
+                  ? hubs.map((pl, i) => <>{i > 0 && ' '}<a href={pillarPath(pl.slug)}>{m.courses.guidesAll}<span lang="en">: {pl.short}</span></a></>)
+                  : <a href="/blog/">{m.courses.guidesBlog}</a>}
+              </p>
+            </div>
           )}
         </div>
 
@@ -126,8 +137,7 @@ const others = COURSE_SLUGS.filter((s) => s !== slug).slice(0, 4);
 
   <section class="section">
     <div class="wrap narrow">
-      <p class="mb-5 lead">{m.courses.ctaText}</p>
-      <EnquiryForm locale={locale} goal={c.goal} format={c.format} title={h.enquire} intro={false} />
+      <EnquiryForm locale={locale} goal={c.goal} format={c.format} title={h.enquire} introText={m.courses.ctaText} />
     </div>
   </section>
 

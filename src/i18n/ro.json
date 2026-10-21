@@ -24,7 +24,7 @@
     "closeMenu": "Închide meniul",
     "language": "Limba",
     "mainNav": "Navigare principală",
-    "homeLabel": "Pagina principală Ucraya"
+    "homeLabel": "Raya London Training Centre, pagina principală"
   },
   "buttons": {
     "enquire": "Cere informații despre lecții",
@@ -56,7 +56,9 @@
     "ratedGoogle": "Evaluați cu 5 stele pe Google",
     "facebookFollowers": "Urmăriți de mii de oameni pe Facebook",
     "sinceProof": "O școală de engleză din Londra, din 2015",
-    "tutorsProof": "Profesori calificați, din Marea Britanie sau care predau pentru școala noastră din Londra"
+    "tutorsProof": "Profesori calificați, din Marea Britanie sau care predau pentru școala noastră din Londra",
+    "backToTop": "Sus",
+    "quoteOf": "Recenzia {n} din {total}"
   },
   "footer": {
     "about": "Lecții de engleză online cu profesori adevărați, de la o școală de engleză din Londra, din 2015.",
@@ -72,7 +74,11 @@
     "social": "Găsește-ne online",
     "facebook": "Facebook",
     "instagram": "Instagram",
-    "viber": "Viber"
+    "viber": "Viber",
+    "service": "Ucraya este serviciul de lecții online al Training Centre Raya London",
+    "allGuides": "Toate ghidurile",
+    "questions": "Întrebările la care răspundem",
+    "colGuides": "Ghiduri"
   },
   "sticky": {
     "label": "Contact rapid"
@@ -243,7 +249,7 @@
         "label": "Nu sunt sigur"
       }
     ],
-    "phoneShort": "Telefon sau WhatsApp",
+    "phoneShort": "Telefon",
     "messageShort": "Mesaj",
     "sending": "Se trimite",
     "preferWhatsapp": "Preferi WhatsApp?",
@@ -255,7 +261,26 @@
       "goal": "Alege obiectivul tău.",
       "consent": "Bifează căsuța ca să îți putem răspunde."
     },
-    "requiredNote": "Câmpurile marcate cu * sunt necesare."
+    "requiredNote": "Câmpurile marcate cu * sunt necesare.",
+    "deadlineLegend": "Când este testul sau termenul tău?",
+    "deadlineChips": [
+      {
+        "slug": "month",
+        "label": "În cel mult o lună"
+      },
+      {
+        "slug": "quarter",
+        "label": "1 până la 3 luni"
+      },
+      {
+        "slug": "later",
+        "label": "Mai târziu"
+      },
+      {
+        "slug": "none",
+        "label": "Fără dată"
+      }
+    ]
   },
   "meta": {
     "home": {
@@ -329,7 +354,7 @@
   },
   "home": {
     "h1": "Lecții de engleză online cu profesori adevărați",
-    "lead": "Lecții individuale sau într-un grup mic live, cu un profesor care construiește lecția în jurul obiectivului tău. Predate de o școală de engleză din Londra, din 2015.",
+    "lead": "Lecții individuale sau într-un grup mic live, cu un profesor care construiește lecția în jurul obiectivului tău.",
     "heroNote": "Nu plătești online: biroul îți confirmă locul, apoi plătești prin transfer bancar.",
     "audience": {
       "title": "Pentru cine sunt lecțiile noastre",
@@ -371,7 +396,13 @@
           "text": "Alege lecții private sau un curs pe niveluri pentru o engleză mai clară în viața de zi cu zi."
         }
       ],
-      "link": "Citește mai mult"
+      "link": "Citește mai mult",
+      "linkFmt": "Vezi: {name}",
+      "placement": {
+        "title": "Nu ești sigur de unde să începi?",
+        "text": "Fă testul de nivel cu 12 întrebări pentru un nivel aproximativ, apoi întreabă despre lecțiile potrivite.",
+        "link": "Fă testul de nivel"
+      }
     },
     "steps": {
       "title": "Cum funcționează",
@@ -409,6 +440,12 @@
     "final": {
       "title": "Gata să începi?",
       "text": "Spune-ne obiectivul tău. Îți răspundem cu un profesor și o primă lecție propuse."
+    },
+    "guides": {
+      "title": "Ghiduri simple înainte să decizi",
+      "lead": "Ghiduri scurte și practice despre teste, interviuri și alegerea unui profesor. Sunt scrise în engleză.",
+      "all": "Citește toate ghidurile",
+      "questions": "Întrebările la care răspundem"
     }
   },
   "products": {
@@ -986,7 +1023,9 @@
         ]
       }
     },
-    "guidesTitle": "Ghiduri pentru acest obiectiv"
+    "guidesTitle": "Ghiduri pentru acest obiectiv",
+    "guidesAll": "Vezi toate ghidurile pentru acest obiectiv",
+    "guidesBlog": "Răsfoiește toate ghidurile"
   },
   "pricing": {
     "h1": "Prețuri pentru lecțiile de engleză online",
@@ -1048,6 +1087,17 @@
           "a": "Nu. Taxele de înscriere la examen sunt separate și se plătesc organizatorului examenului."
         }
       ]
+    },
+    "estimator": {
+      "title": "Cât mă va costa?",
+      "intro": "Alege tipul de lecție și câte lecții vrei în fiecare săptămână.",
+      "type": "Tipul lecției",
+      "oneToOne": "Individual, £15 pe lecție",
+      "english": "Engleză prin engleză, £20 pe lecție",
+      "perWeek": "Lecții pe săptămână",
+      "result": "Aproximativ £{amount} pe lună",
+      "detail": "Lecții pe săptămână: {n}, la £{price} fiecare; aproximativ 4,33 săptămâni pe lună.",
+      "note": "Doar un ghid; plătești pe lecție prin transfer bancar."
     }
   },
   "how": {
@@ -1108,8 +1158,8 @@
     "questionLabel": "Întrebarea {n} din {total}",
     "submit": "Vezi nivelul meu",
     "missing": "Te rugăm să răspunzi la toate întrebările. Nu ai răspuns la: {list}.",
-    "resultTitle": "Nivelul tău estimat",
-    "resultLevel": "Nivelul tău estimat este {level}",
+    "resultTitle": "Rezultatul tău",
+    "resultLevel": "Nivel {level}",
     "score": "Ai răspuns corect la {score} din {total} întrebări.",
     "again": "Fă testul din nou",
     "enquire": "Cere informații cu acest nivel",

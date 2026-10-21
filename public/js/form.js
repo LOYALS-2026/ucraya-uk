@@ -56,14 +56,15 @@
       if (!good) ok = false;
       if (f._touched && f._touched[k]) showError(f, k, !good);
     });
-    var btn = q('[data-submit]', f);
-    if (btn && !f._sending) btn.disabled = !ok;
     return ok;
   }
   function touch(f, key) { f._touched = f._touched || {}; f._touched[key] = true; }
 
   qa('form[name="enquiry"]').forEach(function (f) {
     f._touched = {};
+    // A hidden input's value IS its default in the DOM, so remember what the page started with.
+    var lvl = q('input[name="level"]', f);
+    f._levelDefault = lvl ? lvl.value : '';
     ['email', 'name', 'phone'].forEach(function (k) {
       var el = q('input[name="' + k + '"]', f);
       if (el) el.addEventListener('blur', function () { touch(f, k); refresh(f); });
@@ -75,7 +76,13 @@
       if (!e.relatedTarget || !goalSet.contains(e.relatedTarget)) { touch(f, 'goal'); refresh(f); }
     });
     f.addEventListener('input', function () { refresh(f); });
-    f.addEventListener('change', function () { refresh(f); });
+    f.addEventListener('change', function (e) {
+      var t = e.target;
+      if (t && t.name === 'deadline_pick') { var hid = q('input[name="deadline"]', f); if (hid) hid.value = t.value; }
+      // A choice the visitor made themselves is kept when the pop-in is opened again from a button that names no goal.
+      if (t && e.isTrusted) { if (t.name === 'goal') f._userGoal = true; if (t.name === 'format') f._userFormat = true; }
+      refresh(f);
+    });
     f.addEventListener('focusin', function () { refresh(f); });
     f.addEventListener('submit', function (e) {
       if (f._sending) { e.preventDefault(); return; }
@@ -119,12 +126,20 @@
       refresh(f);
     });
   });
-  // Browsers (iOS Safari especially) can autofill without firing events: re-check now and then while a form is in use.
-  setInterval(function () {
-    if (document.hidden) return;
-    var f = dialog && dialog.open ? modalForm : (document.activeElement && document.activeElement.form);
-    if (f && f.getAttribute && f.getAttribute('name') === 'enquiry') refresh(f);
-  }, 700);
+  // Browsers (iOS Safari especially) can autofill without firing events: re-check now and then, but only while a form is in use.
+  var poll = 0;
+  function activeForm() {
+    return dialog && dialog.open ? modalForm : (document.activeElement && document.activeElement.form);
+  }
+  function startPoll() {
+    if (poll) return;
+    poll = setInterval(function () {
+      var f = activeForm();
+      if (document.hidden || !f || !f.getAttribute || f.getAttribute('name') !== 'enquiry') { clearInterval(poll); poll = 0; return; }
+      refresh(f);
+    }, 700);
+  }
+  document.addEventListener('focusin', function (e) { if (e.target && e.target.form && e.target.form.getAttribute('name') === 'enquiry') startPoll(); });
 
   // ---- prefill ------------------------------------------------------------
   function setChip(f, name, slug) {
@@ -138,7 +153,18 @@
   function setHidden(f, name, value) { var el = q('input[name="' + name + '"]', f); if (el) el.value = value; }
   function levels(f) { try { return JSON.parse(f.getAttribute('data-levels') || '{}'); } catch (e) { return {}; } }
 
-  function apply(f, o) {
+  function setPlain(f, name, value) {
+    var inputs = qa('input[name="' + name + '"]', f);
+    inputs.forEach(function (i) { i.checked = i.getAttribute('data-slug') === value; });
+  }
+  function apply(f, o, fresh) {
+    // The pop-in is one form opened from many buttons. Start from a clean slate each time, except for what the visitor chose themselves.
+    if (fresh) {
+      if (!f._userGoal && !o.goal) { qa('input[name="goal"]', f).forEach(function (i) { i.checked = false; }); setHidden(f, 'detail', ''); }
+      if (!f._userFormat && !o.format) setPlain(f, 'format', 'not-sure');
+      var lv = q('input[name="level"]', f);
+      if (lv) lv.value = f._levelDefault;
+    }
     var purpose = (o.purpose || '').toLowerCase();
     if (purpose !== 'trial' && purpose !== 'placement') purpose = 'enquiry';
     setHidden(f, 'purpose', purpose);
@@ -175,7 +201,7 @@
 
   function open(from, o) {
     opener = from || null;
-    apply(modalForm, o || {});
+    apply(modalForm, o || {}, true);
     document.documentElement.classList.add('modal-open');
     if (!dialog.open) dialog.showModal();
     window.requestAnimationFrame(function () { dialog.classList.add('is-open'); });

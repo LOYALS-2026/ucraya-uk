@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 536 144" fill="none" role="img" aria-label="Raya London Training Centre" style="color:#F5F7FA;--raya-cutout:#111823"><title>Raya London Training Centre</title><defs>
+<linearGradient id="raya-glass-dark-rim" x1=".15" y1="0" x2=".82" y2="1"><stop stop-color="#fff" stop-opacity=".96"/><stop offset=".31" stop-color="#fff" stop-opacity=".24"/><stop offset=".6" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#fff" stop-opacity=".65"/></linearGradient>
+<linearGradient id="raya-glass-dark-shine" x1="0" y1="0" x2=".25" y2="1"><stop stop-color="#fff" stop-opacity=".48"/><stop offset=".75" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<radialGradient id="raya-glass-dark-colour-0" cx=".32" cy=".18" r=".91"><stop stop-color="#95EFFF" stop-opacity=".94"/><stop offset=".38" stop-color="#00ADDC" stop-opacity=".88"/><stop offset=".76" stop-color="#00ADDC" stop-opacity=".91"/><stop offset="1" stop-color="#006C9C"/></radialGradient><radialGradient id="raya-glass-dark-caustic-0" cx=".64" cy=".96" r=".69"><stop stop-color="#95EFFF" stop-opacity=".7"/><stop offset=".34" stop-color="#00ADDC" stop-opacity=".15"/><stop offset=".75" stop-color="#00ADDC" stop-opacity="0"/></radialGradient><radialGradient id="raya-glass-dark-colour-1" cx=".32" cy=".18" r=".91"><stop stop-color="#E4FF9C" stop-opacity=".94"/><stop offset=".38" stop-color="#9DCC36" stop-opacity=".88"/><stop offset=".76" stop-color="#9DCC36" stop-opacity=".91"/><stop offset="1" stop-color="#467C1E"/></radialGradient><radialGradient id="raya-glass-dark-caustic-1" cx=".64" cy=".96" r=".69"><stop stop-color="#E4FF9C" stop-opacity=".7"/><stop offset=".34" stop-color="#9DCC36" stop-opacity=".15"/><stop offset=".75" stop-color="#9DCC36" stop-opacity="0"/></radialGradient><radialGradient id="raya-glass-dark-colour-2" cx=".32" cy=".18" r=".91"><stop stop-color="#FFF59A" stop-opacity=".94"/><stop offset=".38" stop-color="#EBC300" stop-opacity=".88"/><stop offset=".76" stop-color="#EBC300" stop-opacity=".91"/><stop offset="1" stop-color="#A17400"/></radialGradient><radialGradient id="raya-glass-dark-caustic-2" cx=".64" cy=".96" r=".69"><stop stop-color="#FFF59A" stop-opacity=".7"/><stop offset=".34" stop-color="#EBC300" stop-opacity=".15"/><stop offset=".75" stop-color="#EBC300" stop-opacity="0"/></radialGradient><radialGradient id="raya-glass-dark-colour-3" cx=".32" cy=".18" r=".91"><stop stop-color="#FF8CA7" stop-opacity=".94"/><stop offset=".38" stop-color="#E40035" stop-opacity=".88"/><stop offset=".76" stop-color="#E40035" stop-opacity=".91"/><stop offset="1" stop-color="#8D0024"/></radialGradient><radialGradient id="raya-glass-dark-caustic-3" cx=".64" cy=".96" r=".69"><stop stop-color="#FF8CA7" stop-opacity=".7"/><stop offset=".34" stop-color="#E40035" stop-opacity=".15"/><stop offset=".75" stop-color="#E40035" stop-opacity="0"/></radialGradient>
+</defs><g transform="translate(76 72)">
+<ellipse cy="8" rx="54" ry="53" fill="#020814" opacity=".16"/>
+<circle r="55" fill="url(#raya-glass-dark-colour-0)"/>
+<circle r="54" fill="url(#raya-glass-dark-caustic-0)"/>
+<circle r="54.5" fill="none" stroke="url(#raya-glass-dark-rim)" stroke-width="1.8"/>
+<circle r="49.8" fill="none" stroke="#fff" stroke-opacity=".17" stroke-width=".8"/>
+<path d="M-43-28A51 51 0 0 1 42-29C20-34-4-14-43-28Z" fill="url(#raya-glass-dark-shine)"/>
+<path d="M-31-40A50 50 0 0 1 22-45" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M-19 47A50 50 0 0 0 36 34" fill="none" stroke="#fff" stroke-opacity=".51" stroke-width="1.1" stroke-linecap="round"/>
+<g color="#ffffff"><g fill="none" stroke="currentColor" stroke-width="4.7" stroke-linecap="round" stroke-linejoin="round"><path d="M-31 1Q0-34 31 1M-23 20H23"/><path d="M-8-14A12 12 0 1 0 13-10" fill="currentColor" stroke="none"/><circle cx="7" cy="-11" r="3" fill="currentColor"/></g></g></g><g transform="translate(204 72)">
+<ellipse cy="8" rx="54" ry="53" fill="#020814" opacity=".16"/>
+<circle r="55" fill="url(#raya-glass-dark-colour-1)"/>
+<circle r="54" fill="url(#raya-glass-dark-caustic-1)"/>
+<circle r="54.5" fill="none" stroke="url(#raya-glass-dark-rim)" stroke-width="1.8"/>
+<circle r="49.8" fill="none" stroke="#fff" stroke-opacity=".17" stroke-width=".8"/>
+<path d="M-43-28A51 51 0 0 1 42-29C20-34-4-14-43-28Z" fill="url(#raya-glass-dark-shine)"/>
+<path d="M-31-40A50 50 0 0 1 22-45" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M-19 47A50 50 0 0 0 36 34" fill="none" stroke="#fff" stroke-opacity=".51" stroke-width="1.1" stroke-linecap="round"/>
+<g color="#ffffff"><g fill="none" stroke="currentColor" stroke-width="4.7" stroke-linecap="round" stroke-linejoin="round"><path d="M-17-23C-9-33 11-33 21-19C33-1 21 14 10 22C3 27 5 36-5 36M-15-9C-5-20 10-13 9-2C8 5 1 9-3 12M-18 17L-25 35" transform="translate(0 -3)"/></g></g></g><g transform="translate(332 72)">
+<ellipse cy="8" rx="54" ry="53" fill="#020814" opacity=".16"/>
+<circle r="55" fill="url(#raya-glass-dark-colour-2)"/>
+<circle r="54" fill="url(#raya-glass-dark-caustic-2)"/>
+<circle r="54.5" fill="none" stroke="url(#raya-glass-dark-rim)" stroke-width="1.8"/>
+<circle r="49.8" fill="none" stroke="#fff" stroke-opacity=".17" stroke-width=".8"/>
+<path d="M-43-28A51 51 0 0 1 42-29C20-34-4-14-43-28Z" fill="url(#raya-glass-dark-shine)"/>
+<path d="M-31-40A50 50 0 0 1 22-45" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M-19 47A50 50 0 0 0 36 34" fill="none" stroke="#fff" stroke-opacity=".51" stroke-width="1.1" stroke-linecap="round"/>
+<g color="#ffffff"><g fill="none" stroke="currentColor" stroke-width="4.7" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(41)"><path d="M-10-27V17L0 32L10 17V-27ZM-10-18H10M-10 15L0 19L10 15M0-17V18"/><path d="M-4 26L0 32L4 26"/></g></g></g></g><g transform="translate(460 72)">
+<ellipse cy="8" rx="54" ry="53" fill="#020814" opacity=".16"/>
+<circle r="55" fill="url(#raya-glass-dark-colour-3)"/>
+<circle r="54" fill="url(#raya-glass-dark-caustic-3)"/>
+<circle r="54.5" fill="none" stroke="url(#raya-glass-dark-rim)" stroke-width="1.8"/>
+<circle r="49.8" fill="none" stroke="#fff" stroke-opacity=".17" stroke-width=".8"/>
+<path d="M-43-28A51 51 0 0 1 42-29C20-34-4-14-43-28Z" fill="url(#raya-glass-dark-shine)"/>
+<path d="M-31-40A50 50 0 0 1 22-45" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M-19 47A50 50 0 0 0 36 34" fill="none" stroke="#fff" stroke-opacity=".51" stroke-width="1.1" stroke-linecap="round"/>
+<g color="#ffffff"><g fill="none" stroke="currentColor" stroke-width="4.7" stroke-linecap="round" stroke-linejoin="round"><path d="M-32 0C-21-10-12-20 0-10C12-20 23-10 32 0C16 24-14 25-32 0ZM-32 0C-12 4 12 4 32 0"/></g></g></g></svg>

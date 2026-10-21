@@ -24,7 +24,7 @@
     "closeMenu": "Close menu",
     "language": "Language",
     "mainNav": "Main navigation",
-    "homeLabel": "Ucraya home"
+    "homeLabel": "Raya London Training Centre, home"
   },
   "buttons": {
     "enquire": "Enquire about lessons",
@@ -56,7 +56,9 @@
     "ratedGoogle": "Rated 5 stars on Google",
     "facebookFollowers": "Followed by thousands on Facebook",
     "sinceProof": "A London English school since 2015",
-    "tutorsProof": "Qualified tutors, based in the UK or teaching for our London school"
+    "tutorsProof": "Qualified tutors, based in the UK or teaching for our London school",
+    "backToTop": "Back to top",
+    "quoteOf": "Quote {n} of {total}"
   },
   "footer": {
     "about": "Online English lessons with real tutors, from a London English school since 2015.",
@@ -72,7 +74,11 @@
     "social": "Find us online",
     "facebook": "Facebook",
     "instagram": "Instagram",
-    "viber": "Viber"
+    "viber": "Viber",
+    "service": "Ucraya is the online lessons service of Training Centre Raya London",
+    "allGuides": "All guides",
+    "questions": "Questions we answer",
+    "colGuides": "Guides"
   },
   "sticky": {
     "label": "Quick contact"
@@ -250,7 +256,7 @@
         "label": "Not sure"
       }
     ],
-    "phoneShort": "Phone or WhatsApp",
+    "phoneShort": "Phone",
     "messageShort": "Message",
     "sending": "Sending",
     "preferWhatsapp": "Prefer WhatsApp?",
@@ -262,7 +268,26 @@
       "goal": "Please choose your goal.",
       "consent": "Please tick the box so we can reply to you."
     },
-    "requiredNote": "Fields marked * are needed."
+    "requiredNote": "Fields marked * are needed.",
+    "deadlineLegend": "When is your test or deadline?",
+    "deadlineChips": [
+      {
+        "slug": "month",
+        "label": "Within a month"
+      },
+      {
+        "slug": "quarter",
+        "label": "1 to 3 months"
+      },
+      {
+        "slug": "later",
+        "label": "Later"
+      },
+      {
+        "slug": "none",
+        "label": "No date"
+      }
+    ]
   },
   "meta": {
     "home": {
@@ -336,7 +361,7 @@
   },
   "home": {
     "h1": "Online English lessons with real tutors",
-    "lead": "One-to-one lessons or a small live group, with a tutor who builds the lesson around your goal. Taught by a London English school since 2015.",
+    "lead": "One-to-one lessons or a small live group, with a tutor who builds the lesson around your goal.",
     "heroNote": "No payment online: the office confirms your place, then you pay by bank transfer.",
     "audience": {
       "title": "Who our lessons are for",
@@ -380,7 +405,13 @@
           "text": "Choose private lessons or a level course for clearer English in daily life."
         }
       ],
-      "link": "Read more"
+      "link": "Read more",
+      "linkFmt": "See {name}",
+      "placement": {
+        "title": "Not sure where to start?",
+        "text": "Take the 12 question placement test for a rough level, then ask about the lessons that fit.",
+        "link": "Take the placement test"
+      }
     },
     "steps": {
       "title": "How it works",
@@ -418,6 +449,12 @@
     "final": {
       "title": "Ready to start?",
       "text": "Tell us your goal. We will reply with a tutor and a first lesson to suggest."
+    },
+    "guides": {
+      "title": "Plain guides before you decide",
+      "lead": "Short, practical guides to tests, interviews and choosing a tutor. They are written in English.",
+      "all": "Read all guides",
+      "questions": "Questions we answer"
     }
   },
   "products": {
@@ -995,7 +1032,9 @@
         ]
       }
     },
-    "guidesTitle": "Guides for this goal"
+    "guidesTitle": "Guides for this goal",
+    "guidesAll": "See all guides on this goal",
+    "guidesBlog": "Browse all guides"
   },
   "pricing": {
     "h1": "Prices for online English lessons",
@@ -1057,6 +1096,17 @@
           "a": "No. Exam entry fees are separate and are paid to the exam body."
         }
       ]
+    },
+    "estimator": {
+      "title": "What will it cost me?",
+      "intro": "Pick a lesson type and how many lessons you want each week.",
+      "type": "Lesson type",
+      "oneToOne": "One-to-one, £15 a lesson",
+      "english": "English through English, £20 a lesson",
+      "perWeek": "Lessons a week",
+      "result": "About £{amount} a month",
+      "detail": "Lessons a week: {n}, at £{price} each; about 4.33 weeks a month.",
+      "note": "A guide only; you pay per lesson by bank transfer."
     }
   },
   "how": {
@@ -1117,8 +1167,8 @@
     "questionLabel": "Question {n} of {total}",
     "submit": "See my level",
     "missing": "Please answer every question. You have not answered: {list}.",
-    "resultTitle": "Your estimated level",
-    "resultLevel": "Your estimated level is {level}",
+    "resultTitle": "Your result",
+    "resultLevel": "Level {level}",
     "score": "You answered {score} of {total} correctly.",
     "again": "Take the test again",
     "enquire": "Enquire with this level",

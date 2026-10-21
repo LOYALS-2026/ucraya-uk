@@ -1,21 +1,11 @@
 ---
-import '@fontsource/roboto-slab/latin-600.css';
-import '@fontsource/roboto-slab/latin-700.css';
-import '@fontsource/roboto-slab/latin-ext-700.css';
-import '@fontsource/roboto-slab/cyrillic-700.css';
-import '@fontsource/pt-sans/latin-400.css';
-import '@fontsource/pt-sans/latin-700.css';
-import '@fontsource/pt-sans/latin-ext-400.css';
-import '@fontsource/pt-sans/latin-ext-700.css';
-import '@fontsource/pt-sans/cyrillic-400.css';
-import '@fontsource/pt-sans/cyrillic-700.css';
 import '../styles/global.css';
 
 import { htmlLang, useMessages, locales, type Locale } from '../i18n';
 import { SITE, OG_LOCALES } from '../lib/site';
 import { route, localePath, absolute } from '../lib/routes';
 import { seoTitle, seoDescription, jsonForScript } from '../lib/seo';
-import { breadcrumbList } from '../lib/jsonld';
+import { breadcrumbList, webPage } from '../lib/jsonld';
 import ptSans400 from '@fontsource/pt-sans/files/pt-sans-latin-400-normal.woff2?url';
 import robotoSlab700 from '@fontsource/roboto-slab/files/roboto-slab-latin-700-normal.woff2?url';
 import SiteHeader from '../components/SiteHeader.astro';
@@ -78,7 +68,11 @@ const ogImage = absolute('/og/default.png');
 const crumbList = crumbs.length
   ? [{ name: m.common.home, url: absolute(localePath(locale, '/')) }, ...crumbs.map((c) => ({ name: c.name, url: absolute(c.path) }))]
   : [];
-const allJsonLd = [...jsonLd, ...(crumbList.length ? [breadcrumbList(crumbList)] : [])];
+// Every money page carries a WebPage (or About/Contact page) with speakable on the h1 and the first paragraph.
+const PAGE_TYPES = ['WebPage', 'AboutPage', 'ContactPage'];
+const hasPage = jsonLd.some((d: any) => PAGE_TYPES.includes(d['@type']));
+const pageLd = routeId && !noindex && !hasPage ? [webPage({ url: canonical, name: fullTitle, description: desc, locale: htmlLang[locale] })] : [];
+const allJsonLd = [...jsonLd, ...pageLd, ...(crumbList.length ? [breadcrumbList(crumbList)] : [])];
 ---
 <!doctype html>
 <html lang={htmlLang[locale]}>
@@ -95,6 +89,7 @@ const allJsonLd = [...jsonLd, ...(crumbList.length ? [breadcrumbList(crumbList)]
     <link rel="preload" href={ptSans400} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={robotoSlab700} as="font" type="font/woff2" crossorigin />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/brand/icon-512.png" type="image/png" sizes="512x512" />
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
     <meta property="og:site_name" content={SITE.name} />
     <meta property="og:type" content={ogType} />
@@ -114,7 +109,7 @@ const allJsonLd = [...jsonLd, ...(crumbList.length ? [breadcrumbList(crumbList)]
     {allJsonLd.map((d) => <script type="application/ld+json" set:html={jsonForScript(d)} />)}
   </head>
   <body>
-    <div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="mesh" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     <a class="skip-link" href="#main">{m.site.skip}</a>
     <SiteHeader locale={locale} switchLinks={switchLinks} currentRoute={routeId} currentPath={canonicalPath} inline={inline} enquire={enquire} />
     <main id="main">
@@ -122,10 +117,14 @@ const allJsonLd = [...jsonLd, ...(crumbList.length ? [breadcrumbList(crumbList)]
     </main>
     <SiteFooter locale={locale} />
     <StickyBar locale={locale} inline={inline} enquire={enquire} whatsappText={whatsappText} />
+    <button class="to-top" type="button" data-to-top aria-label={m.common.backToTop}>
+      <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 12l6-6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+    </button>
     <EnquiryModal locale={locale} />
     {SITE.gaId && <CookieBanner locale={locale} />}
     <script src="/js/nav.js" defer></script>
     <script src="/js/lang.js" defer></script>
+    <script src="/js/ui.js" defer></script>
     <script src="/js/attribution.js" defer></script>
     <script src="/js/form.js" defer></script>
     {scripts.map((s) => <script src={s} defer></script>)}

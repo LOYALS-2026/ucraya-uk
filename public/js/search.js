@@ -43,6 +43,9 @@
         tn: norm(p.t),
       };
     });
+    var pages = (j.pages || []).map(function (g) {
+      return { t: g.t, u: g.u, tw: words(g.t), kw: words((g.k || []).join(' ')), tn: norm(g.t) };
+    });
     var phrases = [], seen = {};
     posts.forEach(function (p) {
       p.k.concat([p.q]).forEach(function (txt) {
@@ -52,39 +55,53 @@
         phrases.push({ text: txt, w: n.split(' '), n: n, isQ: txt === p.q });
       });
     });
-    return { pillars: j.pillars, posts: posts, phrases: phrases };
+    return { pillars: j.pillars, posts: posts, pages: pages, phrases: phrases };
   }
 
   // ---- matching --------------------------------------------------------------------------------
-  function scorePost(p, tok, nq) {
-    var sum = 0;
+  // Score one guide (or lesson page) against the typed words. Strict: every word must start a word in the title, keywords,
+  // question or goal. Loose: at least one must, and guides that match every word still rank first.
+  function scorePost(p, tok, nq, loose) {
+    var sum = 0, hit = 0;
     for (var i = 0; i < tok.length; i++) {
-      var t = tok[i];
-      if (hasPrefix(p.tw, t)) sum += 6;
-      else if (hasPrefix(p.kw, t)) sum += 4;
-      else if (hasPrefix(p.qw, t)) sum += 2;
-      else if (hasPrefix(p.pw, t)) sum += 1;
-      else return -1;
+      var t = tok[i], s = 0;
+      if (hasPrefix(p.tw, t)) s = 6;
+      else if (hasPrefix(p.kw, t)) s = 4;
+      else if (p.qw && hasPrefix(p.qw, t)) s = 2;
+      else if (p.pw && hasPrefix(p.pw, t)) s = 1;
+      if (s) { sum += s; hit++; } else if (!loose) return -1;
     }
+    if (!hit) return -1;
     if (p.tn.indexOf(nq) > -1) sum += 5;
-    return sum;
+    return sum + (hit === tok.length ? 100 : 0);
   }
-  function searchPosts(d, q, filters) {
+  function searchPosts(d, q, filters, loose) {
     var tok = tokensOf(q), nq = tok.join(' ');
     if (!tok.length) return [];
     var out = [];
     d.posts.forEach(function (p) {
       if (filters && filters.pillar && d.pillars[p.p] && slugify(d.pillars[p.p].n) !== filters.pillar) return;
       if (filters && filters.stage && p.f !== filters.stage) return;
-      var s = scorePost(p, tok, nq);
+      var s = scorePost(p, tok, nq, loose);
       if (s >= 0) out.push({ p: p, s: s });
     });
     out.sort(function (a, b) { return b.s - a.s || (a.p.d < b.p.d ? 1 : -1); });
     return out;
   }
+  function searchPages(d, q) {
+    var tok = tokensOf(q), nq = tok.join(' ');
+    var out = [];
+    (d.pages || []).forEach(function (g) {
+      var s = scorePost(g, tok, nq, true);
+      if (s >= 0) out.push({ g: g, s: s });
+    });
+    out.sort(function (a, b) { return b.s - a.s; });
+    return out;
+  }
   function suggest(d, q) {
     var tok = tokensOf(q), nq = tok.join(' ');
-    var posts = searchPosts(d, q).slice(0, 5).map(function (x) { return x.p; });
+    var posts = searchPosts(d, q, null, true).slice(0, 5).map(function (x) { return x.p; });
+    var lessons = searchPages(d, q).slice(0, 3).map(function (x) { return x.g; });
     var ph = [];
     d.phrases.forEach(function (x) {
       var ok = true;
@@ -96,7 +113,7 @@
       var w = words(pl.n);
       return tok.every(function (t) { return hasPrefix(w, t); });
     }).slice(0, 2);
-    return { posts: posts, phrases: ph.slice(0, 4).map(function (o) { return o.x; }), pillars: pillars };
+    return { posts: posts, lessons: lessons, phrases: ph.slice(0, 4).map(function (o) { return o.x; }), pillars: pillars };
   }
   function markInto(node, text, tok) {
     if (!tok.length) { node.appendChild(document.createTextNode(text)); return; }
@@ -183,9 +200,10 @@
       }
       var tryLite = function () {
         if (!d) { renderError(); return; }
-        var found = searchPosts(d, state.q, { pillar: state.pillar, stage: state.stage });
+        var loose = !searchPosts(d, state.q).length;
+        var found = searchPosts(d, state.q, { pillar: state.pillar, stage: state.stage }, loose);
         var totals = { pillar: {}, stage: {} };
-        searchPosts(d, state.q).forEach(function (x) {
+        searchPosts(d, state.q, null, loose).forEach(function (x) {
           var pn = d.pillars[x.p.p] ? d.pillars[x.p.p].n : '';
           if (pn) totals.pillar[pn] = (totals.pillar[pn] || 0) + 1;
           totals.stage[STAGES[x.p.f]] = (totals.stage[STAGES[x.p.f]] || 0) + 1;
@@ -198,7 +216,7 @@
         if (ticket !== runTicket) return;
         if (!r.results.length && !state.pillar && !state.stage && d) {
           // Pagefind wants every word; the suggestion data is more forgiving.
-          var lite = searchPosts(d, state.q);
+          var lite = searchPosts(d, state.q, null, true);
           if (lite.length) { tryLite(); return; }
         }
         current = { kind: 'pf', items: r.results };
@@ -251,6 +269,7 @@
       var g1 = el('div', 'bl-filter-group'); g1.appendChild(el('span', '', 'Goal'));
       pn.sort().forEach(function (n) {
         var slug = slugify(n);
+        if (!totals.pillar[n] && state.pillar !== slug) return;
         g1.appendChild(chip(n, totals.pillar[n], state.pillar === slug, function () {
           runSearch({ q: state.q, pillar: state.pillar === slug ? '' : slug, stage: state.stage }, true);
         }));
@@ -357,23 +376,32 @@
       input.removeAttribute('aria-activedescendant');
     }
     function open() { list.hidden = false; input.setAttribute('aria-expanded', 'true'); }
-    function heading(t) { var li = el('li', 'bl-suggest-h', t); li.setAttribute('role', 'presentation'); list.appendChild(li); }
+    var group = null;
+    function heading(t) {
+      group = el('div');
+      group.setAttribute('role', 'group');
+      var hid = 'bl-h' + fi + '-' + (idn++);
+      group.setAttribute('aria-labelledby', hid);
+      var h = el('div', 'bl-suggest-h', t);
+      h.id = hid;
+      group.appendChild(h);
+      list.appendChild(group);
+    }
     function option(build) {
-      var li = el('li', 'bl-opt');
-      li.id = 'bl-o' + fi + '-' + (idn++);
-      li.setAttribute('role', 'option');
-      li.setAttribute('aria-selected', 'false');
-      var a = el('a'); a.tabIndex = -1;
+      var a = el('a', 'bl-opt');
+      a.id = 'bl-o' + fi + '-' + (idn++);
+      a.setAttribute('role', 'option');
+      a.setAttribute('aria-selected', 'false');
+      a.tabIndex = -1;
       build(a);
-      li.appendChild(a);
-      li.addEventListener('mousemove', function () { var i = options.findIndex(function (o) { return o.li === li; }); if (i !== active) setActive(i); });
-      list.appendChild(li);
-      options.push({ li: li, a: a });
+      a.addEventListener('mousemove', function () { var i = options.findIndex(function (o) { return o.li === a; }); if (i !== active) setActive(i); });
+      (group || list).appendChild(a);
+      options.push({ li: a, a: a });
     }
     function show(q) {
       loadData().then(function (d) {
         if (input.value !== q) return;
-        list.textContent = ''; options = []; active = -1; input.removeAttribute('aria-activedescendant');
+        list.textContent = ''; options = []; active = -1; group = null; input.removeAttribute('aria-activedescendant');
         if (!d) { close(); return; }
         var tok = tokensOf(q);
         var res = suggest(d, q);
@@ -384,6 +412,16 @@
               a.href = '/blog/' + p.s + '/';
               var t = el('span', 'bl-opt-title'); markInto(t, p.t, tok); a.appendChild(t);
               if (d.pillars[p.p]) a.appendChild(el('span', 'pill bl-pill', d.pillars[p.p].n));
+            });
+          });
+        }
+        if (res.lessons.length) {
+          heading('Lessons and prices');
+          res.lessons.forEach(function (g) {
+            option(function (a) {
+              a.href = g.u;
+              var t = el('span', 'bl-opt-title'); markInto(t, g.t, tok); a.appendChild(t);
+              a.appendChild(el('span', 'bl-opt-kind', 'page'));
             });
           });
         }
@@ -409,7 +447,7 @@
           });
         }
         if (!options.length) {
-          var none = el('li', 'bl-suggest-none', 'No matching guides yet. Press Enter to search anyway.');
+          var none = el('div', 'bl-suggest-none', 'No close match. Press Enter to search all guides and lessons.');
           none.setAttribute('role', 'presentation');
           list.appendChild(none);
         }
@@ -418,6 +456,7 @@
     }
 
     boxes.push({ close: close });
+    form._blClose = close;
 
     input.addEventListener('focus', function () { loadData(); if (onHub) getPagefind(); });
     input.addEventListener('input', function () {
@@ -456,8 +495,10 @@
     });
   });
 
+  // A press outside a box closes THAT box's list only. (Articles carry two boxes, one hidden by CSS: closing every list on any
+  // press outside "its" form emptied the visible list before the click on a suggestion could land.)
   document.addEventListener('pointerdown', function (e) {
-    forms.forEach(function (f) { if (!f.contains(e.target)) closeAll(); });
+    forms.forEach(function (f) { if (f._blClose && !f.contains(e.target)) f._blClose(); });
   });
 
   // phrase links, example pills and "clear search" work in place on the hub

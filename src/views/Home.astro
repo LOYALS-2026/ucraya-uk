@@ -6,11 +6,13 @@ import FaqList from '../components/FaqList.astro';
 import CtaBand from '../components/CtaBand.astro';
 import EnquireLink from '../components/EnquireLink.astro';
 import Avatar from '../components/Avatar.astro';
-import { useMessages, type Locale } from '../i18n';
+import PostCard from '../components/PostCard.astro';
+import { useMessages, format, type Locale } from '../i18n';
 import { pathFor } from '../lib/routes';
 import { pageMeta } from '../lib/page';
 import { SITE } from '../lib/site';
 import { organization, website } from '../lib/jsonld';
+import { getPosts } from '../lib/blog';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -18,6 +20,7 @@ const m = useMessages(locale);
 const meta = pageMeta('home', locale);
 const faqTeaser = m.faqPage.items.slice(0, 4);
 const accents = ['accent-amber', 'accent-green', 'accent-orange', 'accent-navy', 'accent-amber', 'accent-green', 'accent-orange'];
+const latest = (await getPosts()).slice(0, 3);
 ---
 <Base locale={locale} routeId="home" title={meta.title} description={meta.description} jsonLd={[organization(), website()]}>
   <section class="hero">
@@ -31,11 +34,11 @@ const accents = ['accent-amber', 'accent-green', 'accent-orange', 'accent-navy',
           <div class="btn-row mt-6">
             <EnquireLink locale={locale} class="btn btn-primary">{m.buttons.enquire}</EnquireLink>
             <a class="btn btn-secondary" href={pathFor('trial', locale)}>{m.buttons.trial}</a>
-            <a class="btn btn-whatsapp" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a>
           </div>
+          <p><a class="wa-link hero-wa" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a></p>
           <p class="muted mt-4">{m.home.heroNote}</p>
         </div>
-        <div class="hidden md:block"><HeroArt /></div>
+        <div class="hidden md:block art-wrap"><HeroArt /></div>
       </div>
       </div>
     </div>
@@ -56,14 +59,19 @@ const accents = ['accent-amber', 'accent-green', 'accent-orange', 'accent-navy',
     <div class="wrap">
       <h2>{m.home.audience.title}</h2>
       <p class="lead mt-2 mb-8">{m.home.audience.intro}</p>
-      <div class="grid-cards cols-3">
+      <div class="grid-cards cols-4">
         {m.home.audience.items.map((a, i) => (
           <a class={`card card-link card-accent ${accents[i]}`} href={pathFor(`course-${a.slug}`, locale) + ('anchor' in a && a.anchor ? `#${a.anchor}` : '')}>
             <h3>{a.title}</h3>
             <p>{a.text}</p>
-            <p class="mt-3"><span class="more">{m.home.audience.link}</span></p>
+            <p class="mt-3"><span class="more">{format(m.home.audience.linkFmt, { name: m.courses.items[a.slug].name })}</span></p>
           </a>
         ))}
+        <a class="card card-link card-accent accent-navy price-card" href={pathFor('placement', locale)}>
+          <h3>{m.home.audience.placement.title}</h3>
+          <p>{m.home.audience.placement.text}</p>
+          <p class="mt-3"><span class="more">{m.home.audience.placement.link}</span></p>
+        </a>
       </div>
     </div>
   </section>
@@ -94,14 +102,20 @@ const accents = ['accent-amber', 'accent-green', 'accent-orange', 'accent-navy',
     <div class="wrap">
       <h2>{m.home.proof.title}</h2>
       <p class="lead mt-2 mb-8">{m.home.proof.lead}</p>
-      <div class="grid-cards cols-3">
+      <div class="quote-strip" data-strip="home-reviews">
+        <a class="card card-link card-accent accent-amber rating-card" href={SITE.googleReviews} rel="noopener">
+          <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="font-bold text-ink">{m.common.ratedGoogle}</p>
+          <p><span class="more">{m.buttons.reviewOnGoogle}</span></p>
+        </a>
         {m.reviews.items.slice(0, 3).map((r) => (
-          <figure class="card quote">
+          <figure class="card quote quote-card">
             <blockquote>&ldquo;{r.quote}&rdquo;</blockquote>
             <figcaption>{r.name}{r.context && <span class="ctx">{r.context}</span>}</figcaption>
           </figure>
         ))}
       </div>
+      <ul class="dots" data-dots="home-reviews" data-label={m.common.quoteOf}></ul>
       <div class="btn-row mt-8">
         <a class="btn btn-secondary" href={pathFor('reviews', locale)}>{m.buttons.allReviews}</a>
         <a class="btn btn-secondary" href={SITE.googleReviews} rel="noopener">{m.buttons.reviewOnGoogle}</a>
@@ -111,18 +125,33 @@ const accents = ['accent-amber', 'accent-green', 'accent-orange', 'accent-navy',
 
   <section class="section">
     <div class="wrap">
-      <div class="grid md:grid-cols-[1fr_auto] gap-8 items-center">
-        <div>
-          <h2>{m.home.tutors.title}</h2>
-          <p class="mt-3 max-w-2xl">{m.home.tutors.text}</p>
-          <p class="mt-5"><a class="btn btn-secondary" href={pathFor('tutors', locale)}>{m.buttons.tutors}</a></p>
-        </div>
-        <div class="flex gap-3" aria-hidden="true">
-          {m.tutors.items.slice(0, 4).map((t, i) => <Avatar name={t.name} index={i} />)}
-        </div>
-      </div>
+      <h2>{m.home.tutors.title}</h2>
+      <p class="mt-3 mb-6 max-w-2xl">{m.home.tutors.text}</p>
+      <ul class="tutor-row">
+        {m.tutors.items.slice(0, 4).map((t, i) => (
+          <li class="card glass tutor-mini">
+            <Avatar name={t.name} index={i} />
+            <div><h3>{t.name}</h3><p>{t.text}</p></div>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-6"><a class="btn btn-secondary" href={pathFor('tutors', locale)}>{m.buttons.tutors}</a></p>
     </div>
   </section>
+
+  {latest.length > 0 && (
+    <section class="section">
+      <div class="wrap">
+        <h2>{m.home.guides.title}</h2>
+        <p class="lead mt-2 mb-8">{m.home.guides.lead}</p>
+        <div class="grid-cards cols-3">{latest.map((p) => <PostCard post={p} />)}</div>
+        <div class="btn-row mt-8">
+          <a class="btn btn-secondary" href="/blog/">{m.home.guides.all}</a>
+          <a class="btn btn-secondary" href="/blog/questions/">{m.home.guides.questions}</a>
+        </div>
+      </div>
+    </section>
+  )}
 
   <section class="section section-warm">
     <div class="wrap narrow">
