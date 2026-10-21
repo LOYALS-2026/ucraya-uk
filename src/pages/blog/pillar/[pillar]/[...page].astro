@@ -1,0 +1,111 @@
+---
+import type { GetStaticPaths, Page } from 'astro';
+import Base from '../../../../layouts/Base.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import CtaBand from '../../../../components/CtaBand.astro';
+import SearchBox from '../../../../components/blog/SearchBox.astro';
+import BlogCard from '../../../../components/blog/BlogCard.astro';
+import Pagination from '../../../../components/blog/Pagination.astro';
+import '../../../../components/blog/blog.css';
+import { getPosts, pillarSlugOf, pillarPath, postPath, byDay, enquirePath, pageUrl, PAGE_SIZE, type Post } from '../../../../lib/blog';
+import { pillarsWith, type PillarInfo } from '../../../../lib/blog-map';
+import { messagesEn } from '../../../../i18n';
+import { absolute } from '../../../../lib/routes';
+import { SITE } from '../../../../lib/site';
+import { ORG_ID } from '../../../../lib/jsonld';
+
+// Pillar pages exist only for pillars that have at least one published guide.
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = await getPosts();
+  const out = [];
+  for (const pl of pillarsWith(posts.map((p) => p.data))) {
+    // Pinned guide first, then the rest in reading order (day).
+    const mine = posts.filter((p) => pillarSlugOf(p) === pl.slug).sort(byDay);
+    if (mine.length === 0) continue;
+    const pinned = mine.find((p) => p.data.cluster === 'pillar guide');
+    const rest = mine.filter((p) => p !== pinned);
+    for (const pg of paginate(rest, { pageSize: PAGE_SIZE, params: { pillar: pl.slug }, props: { pillar: pl, pinned: pinned ?? null, total: mine.length } })) {
+      out.push({ params: { pillar: pl.slug, page: pg.props.page.currentPage === 1 ? undefined : `page/${pg.props.page.currentPage}` }, props: pg.props });
+    }
+  }
+  return out;
+}) satisfies GetStaticPaths;
+
+const { page, pillar, pinned, total } = Astro.props as { page: Page<Post>; pillar: PillarInfo; pinned: Post | null; total: number };
+const current = page.currentPage;
+const base = pillarPath(pillar.slug);
+const path = pageUrl(base, current);
+const first = current === 1;
+const title = first ? pillar.name : `${pillar.name}, page ${current}`;
+const description = `Plain guides on this goal: ${pillar.short.charAt(0).toLowerCase() + pillar.short.slice(1)}. ${total} ${total === 1 ? 'guide' : 'guides'} so far, with links to the lessons that help.`;
+const crumbs = [
+  { name: 'Guides', path: '/blog/' },
+  { name: pillar.name, path: base },
+  ...(first ? [] : [{ name: `Page ${current}`, path }]),
+];
+const courseSlug = /\/courses\/([a-z0-9-]+)\/$/.exec(pillar.moneyPage)?.[1];
+const course = courseSlug ? (messagesEn.courses.items as Record<string, any>)[courseSlug] : undefined;
+const listed = [...(first && pinned ? [pinned] : []), ...page.data];
+const ld: object[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: pillar.name,
+    url: absolute(path),
+    description,
+    inLanguage: 'en-GB',
+    isPartOf: { '@type': 'Blog', name: 'Ucraya guides', url: absolute('/blog/') },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: listed.map((p, i) => ({ '@type': 'ListItem', position: (first ? 0 : (current - 1) * PAGE_SIZE + (pinned ? 1 : 0)) + i + 1, url: absolute(postPath(p.id)), name: p.data.title })),
+    },
+    ...(course
+      ? {
+          about: {
+            '@type': 'Course',
+            name: course.name,
+            description: course.summary,
+            url: absolute(pillar.moneyPage),
+            provider: { '@type': ['EducationalOrganization', 'Organization'], '@id': ORG_ID, name: SITE.name, url: SITE.url + '/' },
+          },
+        }
+      : {}),
+  },
+];
+const enquire = enquirePath(pillar.moneyPage, pillar.goal);
+---
+<Base locale="en" path={path} title={title} description={description} crumbs={crumbs} jsonLd={ld} scripts={['/js/search.js']}>
+  <div data-pagefind-ignore>
+    <Breadcrumbs locale="en" crumbs={crumbs} />
+
+    <section class="bl-hero" aria-labelledby="bl-h1">
+      <div class="bl-wrap">
+        <div class="bl-search-panel glass-strong">
+          <p class="eyebrow">Guides by goal</p>
+          <h1 id="bl-h1">{title}</h1>
+          <p class="bl-lead">{pillar.intro}</p>
+          <p class="btn-row bl-actions">
+            <a class="btn btn-primary" href={enquire} data-enquire data-goal={pillar.goal} data-purpose="enquiry" data-level={pillar.level}>{pillar.cta}</a>
+            <a class="btn btn-secondary" href={pillar.moneyPage}>{course ? 'See the course' : 'See prices'}</a>
+          </p>
+          <div class="bl-pillar-search"><SearchBox id="bl-q" compact label="Search all guides" placeholder="Search guides" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bl-section bl-wrap" aria-labelledby="pillar-guides">
+      <h2 id="pillar-guides" class="bl-h2">{first ? 'Guides on this goal' : `Guides, page ${current} of ${page.lastPage}`}</h2>
+      {first && pinned && (
+        <article class="bl-card card glass bl-pinned">
+          <p><span class="pill bl-pill">Start here</span></p>
+          <h3 class="bl-card-title"><a class="bl-card-link" href={postPath(pinned.id)}>{pinned.data.title}</a></h3>
+          <p class="bl-card-text">{pinned.data.description}</p>
+        </article>
+      )}
+      {page.data.length > 0 && <div class="bl-grid">{page.data.map((p) => <BlogCard post={p} showPillar={false} />)}</div>}
+      <Pagination base={base} current={current} total={page.lastPage} />
+      <p class="bl-sub">Follow only this goal: <a href={`${base}rss.xml`}>RSS feed for {pillar.name}</a>. <a href="/blog/">All guides</a></p>
+    </section>
+  </div>
+  <CtaBand locale="en" goal={pillar.goal} />
+</Base>

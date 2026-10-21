@@ -4,9 +4,11 @@ const { eyebrow, h1, lead } = Astro.props;
 ---
 <section class="page-hero">
   <div class="wrap">
-    {eyebrow && <span class="eyebrow">{eyebrow}</span>}
-    <h1>{h1}</h1>
-    {lead && <p class="lead">{lead}</p>}
-    <slot />
+    <div class="glass hero-panel">
+      {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+      <h1>{h1}</h1>
+      {lead && <p class="lead">{lead}</p>}
+      <slot />
+    </div>
   </div>
 </section>

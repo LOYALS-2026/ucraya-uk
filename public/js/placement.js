@@ -8,6 +8,15 @@
   var fieldsets = form.querySelectorAll('fieldset[data-correct]');
   var total = fieldsets.length;
 
+  var bar = document.getElementById('quiz-progress');
+  var barLabel = document.getElementById('quiz-progress-label');
+  function progress() {
+    var done = form.querySelectorAll('fieldset[data-correct] input:checked').length;
+    if (bar) bar.value = done;
+    if (barLabel) barLabel.textContent = fill(barLabel.getAttribute('data-template') || '', { n: String(done), total: String(total) });
+  }
+  form.addEventListener('change', progress);
+
   function levelFor(score) {
     if (score <= 3) return 'A1';
     if (score <= 6) return 'A2';
@@ -44,6 +53,8 @@
     for (var j = 0; j < advice.length; j++) advice[j].hidden = advice[j].getAttribute('data-advice') !== level;
     var link = document.getElementById('quiz-enquire');
     link.setAttribute('href', link.getAttribute('data-base') + '?level=' + level + '&purpose=placement#enquiry');
+    link.setAttribute('data-level', level.toLowerCase());
+    try { window.localStorage.setItem('ucraya-placement-level', level); } catch (e) { /* storage blocked */ }
     form.hidden = true;
     result.hidden = false;
     result.setAttribute('tabindex', '-1');
@@ -54,6 +65,7 @@
   var again = document.getElementById('quiz-again');
   if (again) again.addEventListener('click', function () {
     form.reset();
+    progress();
     result.hidden = true;
     form.hidden = false;
     form.scrollIntoView({ behavior: motion, block: 'start' });

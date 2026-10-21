@@ -1,0 +1,9 @@
+# Pagefind: the search index for the guides, the course pages and the pricing page (English only).
+# `--site` on the command line (package.json) says which folder to index.
+root_selector: main
+glob: "{blog/*/index.html,courses/*/index.html,pricing/index.html}"
+exclude_selectors:
+  - "form"
+  - "nav"
+  - "[data-pagefind-ignore]"
+force_language: en

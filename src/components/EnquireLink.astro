@@ -1,0 +1,23 @@
+---
+// Every Enquire button on the site. With JavaScript it opens the pop-in form (public/js/form.js reads the data-* attributes);
+// without JavaScript the href goes to the contact page with the same choices in the query string.
+import type { Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
+interface Props {
+  locale: Locale;
+  class?: string;
+  goal?: string;
+  format?: string;
+  level?: string;
+  purpose?: string;
+  /** Page has its own inline form: scroll to it, do not open the pop-in. */
+  inline?: boolean;
+  href?: string;
+  id?: string;
+}
+const { locale, class: cls, goal, format, level, purpose, inline = false, href, id, ...rest } = Astro.props;
+// The no-JavaScript fallback link carries ONE choice (an ampersand in a static href trips the site checker); the data-* attributes carry them all.
+const one = goal ? `goal=${goal}` : level ? `level=${level}` : format ? `format=${format}` : purpose ? `purpose=${purpose}` : '';
+const target = href ?? (inline ? '#enquiry' : pathFor('contact', locale) + (one ? `?${one}` : '') + '#enquiry');
+---
+<a class={cls} href={target} id={id} data-enquire={inline ? undefined : ''} data-goal={goal} data-format={format} data-level={level} data-purpose={purpose} {...rest}><slot /></a>

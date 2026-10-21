@@ -197,7 +197,72 @@
     "noscript": "Please send your enquiry to office@ucraya.co.uk if the form does not work.",
     "reply": "We reply by email. You can also message us on WhatsApp.",
     "honeypot": "Leave this field empty",
-    "deadline": "Your test, interview or deadline date (optional)"
+    "deadline": "Your test, interview or deadline date (optional)",
+    "close": "Close",
+    "chipGoals": [
+      {
+        "slug": "oet",
+        "label": "Nursing test",
+        "send": "Nursing English test OET or IELTS"
+      },
+      {
+        "slug": "selt-b1",
+        "label": "B1 test",
+        "send": "B1 test for settlement or citizenship"
+      },
+      {
+        "slug": "ielts",
+        "label": "IELTS",
+        "send": "IELTS for university or work"
+      },
+      {
+        "slug": "interview",
+        "label": "Work",
+        "send": "Job interview or work English"
+      },
+      {
+        "slug": "kids",
+        "label": "My child",
+        "send": "English for my child"
+      },
+      {
+        "slug": "everyday",
+        "label": "Everyday English",
+        "send": "Everyday English"
+      },
+      {
+        "slug": "other",
+        "label": "Other",
+        "send": "Something else"
+      }
+    ],
+    "chipFormats": [
+      {
+        "slug": "one-to-one",
+        "label": "One-to-one"
+      },
+      {
+        "slug": "group",
+        "label": "Small group"
+      },
+      {
+        "slug": "not-sure",
+        "label": "Not sure"
+      }
+    ],
+    "phoneShort": "Phone or WhatsApp",
+    "messageShort": "Message",
+    "sending": "Sending",
+    "preferWhatsapp": "Prefer WhatsApp?",
+    "consentTick": "I agree that Ucraya may use these details only to reply to me. Read the {privacyLink}.",
+    "errors": {
+      "email": "Please enter a valid email address, for example name@example.com.",
+      "name": "Please tell us your name.",
+      "phone": "Please check the phone number. Use digits, and a + before the country code.",
+      "goal": "Please choose your goal.",
+      "consent": "Please tick the box so we can reply to you."
+    },
+    "requiredNote": "Fields marked * are needed."
   },
   "meta": {
     "home": {
@@ -1197,7 +1262,8 @@
         ],
         "correct": 1
       }
-    ]
+    ],
+    "progress": "{n} of {total} answered"
   },
   "tutors": {
     "h1": "Our English tutors",
@@ -1497,6 +1563,7 @@
         "title": "What we collect",
         "body": [
           "When you send an enquiry we collect what you type in the form: your name, email address, and, if you add them, your phone or WhatsApp number, first language, goal, preferred format, level, preferred days and times and your message.",
+          "An enquiry also records the page you came from, the page you were on, your device type and your browser language, so that the school can answer you better. This is first party, it is kept in your browser for up to 30 days before you send the form, and it is not used for advertising.",
           "The placement test runs in your browser. Your answers are not sent to us. If you press the button to enquire, only the level it estimated is placed in the form.",
           "We do not collect card details. Payment is by bank transfer."
         ]

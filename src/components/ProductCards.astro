@@ -1,25 +1,25 @@
 ---
 import { useMessages, type Locale } from '../i18n';
-import { pathFor } from '../lib/routes';
+import EnquireLink from './EnquireLink.astro';
 interface Props { locale: Locale; compact?: boolean }
 const { locale } = Astro.props;
 const m = useMessages(locale);
 const p = m.products;
-const ask = (fmt: string) => pathFor('contact', locale) + `?format=${fmt}#enquiry`;
+// The first card is the headline product: it gets the green glow. No claim is made in words.
 const cards = [
-  { ...p.oneToOne, accent: 'accent-amber', fmt: 'one-to-one' },
-  { ...p.oneToOneEnglish, accent: 'accent-green', fmt: 'one-to-one' },
-  { ...p.group, accent: 'accent-orange', fmt: 'group' },
-  { ...p.exam, accent: 'accent-navy', fmt: 'not-sure' },
+  { ...p.oneToOne, accent: 'accent-green', fmt: 'one-to-one', glow: 'glow-green' },
+  { ...p.oneToOneEnglish, accent: 'accent-amber', fmt: 'one-to-one', glow: 'glow-amber' },
+  { ...p.group, accent: 'accent-orange', fmt: 'group', glow: '' },
+  { ...p.exam, accent: 'accent-navy', fmt: 'not-sure', glow: '' },
 ];
 ---
 <div class="grid-cards cols-4">
   {cards.map((c) => (
-    <div class={`card card-accent ${c.accent}`}>
+    <div class={`card card-accent ${c.accent} ${c.glow}`}>
       <h3>{c.name}</h3>
       <p class="price mt-3">{c.price}<small>{c.unit}</small></p>
       <p class="mt-3">{c.text}</p>
-      <p class="mt-3"><a href={ask(c.fmt)}>{m.buttons.askAbout}</a></p>
+      <p class="mt-3"><EnquireLink locale={locale} format={c.fmt}>{m.buttons.askAbout}</EnquireLink></p>
     </div>
   ))}
 </div>

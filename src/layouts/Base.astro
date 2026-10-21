@@ -13,7 +13,7 @@ import '../styles/global.css';
 
 import { htmlLang, useMessages, locales, type Locale } from '../i18n';
 import { SITE, OG_LOCALES } from '../lib/site';
-import { route, localePath, absolute, pathFor } from '../lib/routes';
+import { route, localePath, absolute } from '../lib/routes';
 import { seoTitle, seoDescription, jsonForScript } from '../lib/seo';
 import { breadcrumbList } from '../lib/jsonld';
 import ptSans400 from '@fontsource/pt-sans/files/pt-sans-latin-400-normal.woff2?url';
@@ -22,6 +22,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import StickyBar from '../components/StickyBar.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import EnquiryModal from '../components/EnquiryModal.astro';
 
 export interface Props {
   locale: Locale;
@@ -38,9 +39,11 @@ export interface Props {
   crumbs?: { name: string; path: string }[];
   ogType?: string;
   scripts?: string[];
+  /** Prefill for the Enquire buttons in the header and the phone bar (goal, format, level, purpose slugs). */
+  enquire?: { goal?: string; format?: string; level?: string; purpose?: string };
 }
 
-const { locale, routeId, whatsappText, path, title, description, noindex = false, jsonLd = [], crumbs = [], ogType = 'website', scripts = [] } = Astro.props;
+const { locale, routeId, whatsappText, path, title, description, noindex = false, jsonLd = [], crumbs = [], ogType = 'website', scripts = [], enquire = {} } = Astro.props;
 const m = useMessages(locale);
 
 let canonicalPath: string;
@@ -66,9 +69,8 @@ if (routeId) {
 
 const canonical = absolute(canonicalPath);
 const isNotFound = canonicalPath === '/404.html';
-// Pages that carry their own enquiry form send the header and sticky Enquire buttons to it.
-const hasForm = !!routeId && (routeId.startsWith('course-') || routeId === 'contact' || routeId === 'trial');
-const enquireHref = hasForm ? '#enquiry' : pathFor('contact', locale) + '#enquiry';
+// On the contact and free trial pages the inline form IS the page, so Enquire scrolls to it. Everywhere else it opens the pop-in.
+const inline = routeId === 'contact' || routeId === 'trial';
 const fullTitle = seoTitle(title);
 const desc = seoDescription(description);
 const ogImage = absolute('/og/default.png');
@@ -88,7 +90,8 @@ const allJsonLd = [...jsonLd, ...(crumbList.length ? [breadcrumbList(crumbList)]
     {!isNotFound && <link rel="canonical" href={canonical} />}
     {!isNotFound && alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
     {noindex && <meta name="robots" content="noindex, follow" />}
-    <meta name="theme-color" content="#ffb606" />
+    <meta name="theme-color" content="#fbf8f2" />
+    <meta name="color-scheme" content="light" />
     <link rel="preload" href={ptSans400} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={robotoSlab700} as="font" type="font/woff2" crossorigin />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -111,15 +114,20 @@ const allJsonLd = [...jsonLd, ...(crumbList.length ? [breadcrumbList(crumbList)]
     {allJsonLd.map((d) => <script type="application/ld+json" set:html={jsonForScript(d)} />)}
   </head>
   <body>
+    <div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
     <a class="skip-link" href="#main">{m.site.skip}</a>
-    <SiteHeader locale={locale} switchLinks={switchLinks} currentRoute={routeId} currentPath={canonicalPath} enquireHref={enquireHref} />
+    <SiteHeader locale={locale} switchLinks={switchLinks} currentRoute={routeId} currentPath={canonicalPath} inline={inline} enquire={enquire} />
     <main id="main">
       <slot />
     </main>
     <SiteFooter locale={locale} />
-    <StickyBar locale={locale} enquireHref={enquireHref} whatsappText={whatsappText} />
+    <StickyBar locale={locale} inline={inline} enquire={enquire} whatsappText={whatsappText} />
+    <EnquiryModal locale={locale} />
     {SITE.gaId && <CookieBanner locale={locale} />}
     <script src="/js/nav.js" defer></script>
+    <script src="/js/lang.js" defer></script>
+    <script src="/js/attribution.js" defer></script>
+    <script src="/js/form.js" defer></script>
     {scripts.map((s) => <script src={s} defer></script>)}
   </body>
 </html>

@@ -10,6 +10,12 @@ const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
   <div class="wrap">
+    <div class="footer-strip">
+      <p>{m.footer.colContact}</p>
+      <a class="btn btn-secondary" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+      <a class="btn btn-secondary" href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a>
+      <a class="btn btn-whatsapp" href={SITE.whatsapp} rel="noopener">WhatsApp</a>
+    </div>
     <div class="footer-grid">
       <div>
         <img src="/brand/logo.svg" width="176" height="48" alt="Ucraya" class="bg-white rounded-lg p-2 h-12 w-auto" />

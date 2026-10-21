@@ -3,10 +3,15 @@ import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import FaqList from '../../components/FaqList.astro';
-import PostCard from '../../components/PostCard.astro';
-import { messagesEn as m, format } from '../../i18n';
-import { getPosts, postPath, pillarPath, formatDate, moneyHref } from '../../lib/blog';
-import { slugify } from '../../lib/seo';
+import SearchBox from '../../components/blog/SearchBox.astro';
+import BlogCard from '../../components/blog/BlogCard.astro';
+import PagefindMeta from '../../components/blog/PagefindMeta.astro';
+import '../../components/blog/blog.css';
+import {
+  getPosts, postPath, pillarPath, formatDate, isoDay, readMinutes, answerOf, pillarSlugOf, relatedTo, prevNext,
+  enquirePath, injectBeforeThirdH2, PLACEMENT_CARD_HTML,
+} from '../../lib/blog';
+import { pillarsWith, goalFromMoneyPage } from '../../lib/blog-map';
 import { SITE } from '../../lib/site';
 import { absolute } from '../../lib/routes';
 import { blogPosting, faqPage } from '../../lib/jsonld';
@@ -17,70 +22,134 @@ export async function getStaticPaths() {
 }
 const { post } = Astro.props;
 const d = post.data;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+const html = injectBeforeThirdH2(post.rendered?.html ?? '', PLACEMENT_CARD_HTML);
+const hasHtml = !!post.rendered?.html;
 const all = await getPosts();
-const related = all.filter((p) => p.id !== post.id && slugify(p.data.pillar) === slugify(d.pillar)).slice(0, 3);
-const checked = d.sources && d.sources.length ? (() => { const t = d.sources.map((s) => s.checked?.getTime()).filter((x): x is number => typeof x === 'number'); return t.length ? new Date(Math.max(...t)) : null; })() : null;
+const related = relatedTo(post, all, 3);
+const { prev, next } = prevNext(post, all);
+const slug = pillarSlugOf(post);
+const pillar = pillarsWith(all.map((p) => p.data)).find((p) => p.slug === slug);
+const goal = pillar?.goal ?? goalFromMoneyPage(d.moneyPage);
+const level = pillar?.level;
+const enquire = enquirePath(d.moneyPage, goal);
+const mins = readMinutes(post.body);
+const times = (d.sources ?? []).map((s) => s.checked?.getTime()).filter((x): x is number => typeof x === 'number');
+const checked = times.length ? new Date(Math.max(...times)) : null;
+const hasSources = !!d.sources && d.sources.length > 0;
 const path = postPath(post.id);
+const url = absolute(path);
 const crumbs = [
-  { name: m.blog.breadcrumb, path: '/blog/' },
-  { name: d.pillar, path: pillarPath(slugify(d.pillar)) },
+  { name: 'Guides', path: '/blog/' },
+  { name: d.pillar, path: pillarPath(slug) },
   { name: d.title, path },
 ];
-const ld = [blogPosting({ title: d.title, description: d.description, url: absolute(path), published: d.pubDate, updated: d.updatedDate, author: d.author })];
-if (d.faq.length) ld.push(faqPage(d.faq) as any);
+const toc = headings.filter((h) => h.depth === 2);
+if (d.faq.length) toc.push({ depth: 2, slug: 'questions', text: 'Questions answered in this guide' });
+const ld: object[] = [
+  {
+    ...blogPosting({ title: d.title, description: d.description, url, published: d.pubDate, updated: d.updatedDate, author: d.author }),
+    articleSection: d.pillar,
+    keywords: [d.primaryKeyword, ...d.secondaryKeywords].join(', '),
+    timeRequired: `PT${mins}M`,
+  },
+];
+if (d.faq.length) ld.push(faqPage(d.faq));
+const whatsappShare = `https://wa.me/?text=${encodeURIComponent(`${d.title} ${url}`)}`;
 ---
-<Base locale="en" path={path} title={d.title} description={d.description} crumbs={crumbs} jsonLd={ld} ogType="article">
-  <Breadcrumbs locale="en" crumbs={crumbs} />
-  <article>
-    <header class="page-hero">
-      <div class="wrap narrow">
-        <span class="eyebrow">{d.pillar}</span>
-        <h1>{d.title}</h1>
-        <p class="article-meta mt-3">
-          {format(m.blog.by, { author: d.author })} &middot; {m.blog.published} <time datetime={d.pubDate.toISOString().slice(0, 10)}>{formatDate(d.pubDate)}</time>
-          {d.updatedDate && <> &middot; {m.blog.updated} <time datetime={d.updatedDate.toISOString().slice(0, 10)}>{formatDate(d.updatedDate)}</time></>}
-          {checked && <><br />{format(m.blog.checked, { date: formatDate(checked) })}</>}
+<Base locale="en" path={path} title={d.title} description={d.description} crumbs={crumbs} jsonLd={ld} ogType="article" scripts={['/js/blog.js', '/js/search.js']}>
+  <div data-pagefind-ignore><Breadcrumbs locale="en" crumbs={crumbs} /></div>
+  <article class="bl-article">
+    <PagefindMeta post={post} />
+    <div class="bl-wrap bl-article-grid">
+      <div class="bl-article-head">
+        <p><a class="pill bl-pill" href={pillarPath(slug)}>{d.pillar}</a></p>
+        <h1 data-pagefind-meta="title">{d.title}</h1>
+        <p class="bl-byline">
+          {d.author} &middot; Published <time datetime={isoDay(d.pubDate)}>{formatDate(d.pubDate)}</time>
+          {d.updatedDate && <> &middot; Updated <time datetime={isoDay(d.updatedDate)}>{formatDate(d.updatedDate)}</time></>}
+          &middot; {mins} min read
         </p>
+        {checked
+          ? <p class="bl-byline">Checked against the official pages linked in the article (latest check {formatDate(checked)}).</p>
+          : hasSources && <p class="bl-byline">Links to the official pages are in the article.</p>}
       </div>
-    </header>
 
-    <section class="section">
-      <div class="wrap narrow">
-        <div class="prose-lite"><Content /></div>
+      <aside class="bl-side" aria-label="In this guide" data-pagefind-ignore>
+        <details class="bl-toc" data-bl-toc>
+          <summary>In this article</summary>
+          <nav aria-label="Contents">
+            <ol>
+              {toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}
+            </ol>
+          </nav>
+        </details>
+        <div class="bl-side-search glass">
+          <SearchBox id="bl-q-side" compact label="Search the guides" placeholder="Search guides" />
+        </div>
+      </aside>
 
-        {d.sources && d.sources.length > 0 && (
-          <div class="prose-lite mt-8">
-            <h2>{m.blog.sources}</h2>
-            <ul>{d.sources.map((s) => <li><a href={s.url} rel="noopener">{s.title}</a></li>)}</ul>
+      <div class="bl-article-body">
+        <p class="bl-question"><span>The question this guide answers</span>{d.aiQuestion}</p>
+        <div class="bl-prose">
+          {hasHtml ? <Fragment set:html={html} /> : <Content />}
+        </div>
+
+        {hasSources && (
+          <div class="bl-prose bl-sources">
+            <h2 id="sources">Sources</h2>
+            <ul>{d.sources!.map((s) => <li><a href={s.url} rel="noopener">{s.title}</a></li>)}</ul>
           </div>
         )}
 
         {d.faq.length > 0 && (
-          <div class="mt-10">
-            <h2 class="mb-5">{m.blog.faq}</h2>
+          <div class="bl-faq">
+            <h2 id="questions">Questions answered in this guide</h2>
             <FaqList items={d.faq} />
           </div>
         )}
 
-        <aside class="card card-accent accent-amber mt-10" aria-labelledby="next-step">
-          <h2 id="next-step" class="text-xl">{m.blog.ctaTitle}</h2>
-          <p class="mt-2">{m.blog.ctaText}</p>
-          <p class="mt-4 btn-row">
-            <a class="btn btn-primary" href={moneyHref(d.moneyPage) + (moneyHref(d.moneyPage).startsWith('/courses/') ? '#enquiry' : '')}>{d.cta || m.blog.defaultCta}</a>
-            <a class="btn btn-green" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a>
+        <div class="bl-share" data-pagefind-ignore>
+          <span class="bl-share-label">Share this guide</span>
+          <a class="btn btn-whatsapp" href={whatsappShare} rel="noopener">WhatsApp</a>
+          <button class="btn btn-secondary" type="button" data-bl-copy data-url={url} hidden>Copy link</button>
+          <span class="bl-copied" role="status" aria-live="polite" data-bl-copied></span>
+        </div>
+
+        <aside class="bl-cta glass-strong" aria-labelledby="next-step" data-pagefind-ignore>
+          <h2 id="next-step">Next step</h2>
+          <p>Tell us your goal and your date. The office replies by email with a tutor and a first lesson to suggest.</p>
+          <p class="btn-row">
+            <a class="btn btn-primary" href={enquire} data-enquire data-goal={goal} data-purpose="enquiry" data-level={level}>{d.cta || 'Enquire about lessons'}</a>
+            <a class="btn btn-whatsapp" href={SITE.whatsapp} rel="noopener">WhatsApp us</a>
           </p>
         </aside>
+
+        {(prev || next) && (
+          <nav class="bl-prevnext" aria-label="More in this goal" data-pagefind-ignore>
+            {prev ? <a class="card glass" rel="prev" href={postPath(prev.id)}><span>Previous in this goal</span>{prev.data.title}</a> : <span></span>}
+            {next ? <a class="card glass" rel="next" href={postPath(next.id)}><span>Next in this goal</span>{next.data.title}</a> : <span></span>}
+          </nav>
+        )}
+
+        <div class="bl-end-search" data-pagefind-ignore>
+          <SearchBox id="bl-q-end" label="Search the guides" placeholder="Search guides" />
+        </div>
       </div>
-    </section>
+    </div>
 
     {related.length > 0 && (
-      <section class="section section-warm">
-        <div class="wrap">
-          <h2 class="mb-6">{m.blog.related}</h2>
-          <div class="grid-cards cols-3">{related.map((p) => <PostCard post={p} />)}</div>
+      <section class="bl-section bl-related" aria-labelledby="keep-reading" data-pagefind-ignore>
+        <div class="bl-wrap">
+          <h2 id="keep-reading" class="bl-h2">Keep reading</h2>
+          <div class="bl-grid">{related.map((p) => <BlogCard post={p} />)}</div>
         </div>
       </section>
     )}
   </article>
+
+  <div class="bl-cta-bar glass-bar" data-bl-cta hidden data-pagefind-ignore role="region" aria-label="Enquire about lessons">
+    <p class="bl-cta-text">{d.cta || 'Enquire about lessons'}</p>
+    <a class="btn btn-primary" href={enquire} data-enquire data-goal={goal} data-purpose="enquiry" data-level={level}>Enquire</a>
+  </div>
 </Base>

@@ -14,7 +14,7 @@ const t = m.trial;
 const meta = pageMeta('trial', locale);
 const crumbs = [{ name: m.nav.trial, path: pathFor('trial', locale) }];
 ---
-<Base locale={locale} routeId="trial" title={meta.title} description={meta.description} crumbs={crumbs}>
+<Base locale={locale} routeId="trial" title={meta.title} description={meta.description} crumbs={crumbs} enquire={{ purpose: 'trial', format: 'group' }}>
   <Breadcrumbs locale={locale} crumbs={crumbs} />
   <PageHero h1={t.h1} lead={t.lead} />
   <section class="section">
@@ -29,7 +29,7 @@ const crumbs = [{ name: m.nav.trial, path: pathFor('trial', locale) }];
         ))}
       </div>
       <p class="mt-5">{t.note}</p>
-      <p class="mt-4"><a class="btn btn-outline" href={pathFor('placement', locale)}>{m.buttons.placement}</a></p>
+      <p class="mt-4"><a class="btn btn-secondary" href={pathFor('placement', locale)}>{m.buttons.placement}</a></p>
     </div>
   </section>
   <section class="section section-warm">

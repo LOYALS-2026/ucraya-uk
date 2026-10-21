@@ -1,0 +1,20 @@
+---
+import { useMessages, type Locale } from '../i18n';
+import EnquiryForm from './EnquiryForm.astro';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = useMessages(locale);
+---
+<dialog class="modal" id="enquiry-modal" aria-labelledby="enquiry-modal-title">
+  <div class="modal-wrap" data-modal-wrap>
+    <div class="modal-card" tabindex="-1" data-modal-card>
+      <div class="modal-head">
+        <h2 id="enquiry-modal-title">{m.form.title}</h2>
+        <button type="button" class="modal-x" data-modal-close aria-label={m.form.close}>
+          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M3 3l12 12M15 3L3 15" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>
+        </button>
+      </div>
+      <EnquiryForm locale={locale} variant="modal" />
+    </div>
+  </div>
+</dialog>

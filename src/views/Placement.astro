@@ -26,6 +26,8 @@ const total = questions.length;
       <p class="mb-5">{p.instruction}</p>
       <p id="quiz-error" class="quiz-error" role="alert" hidden data-template={p.missing}></p>
       <form id="quiz" class="quiz" novalidate>
+        <progress class="quiz-progress" id="quiz-progress" max={total} value="0" aria-labelledby="quiz-progress-label"></progress>
+        <p class="quiz-progress-label" id="quiz-progress-label" data-template={p.progress}>{format(p.progress, { n: 0, total })}</p>
         {questions.map((q, i) => (
           <fieldset data-correct={String(q.correct)}>
             <legend><span class="qnum">{format(p.questionLabel, { n: i + 1, total })}</span> <span class="qtext" lang="en">{q.q}</span></legend>
@@ -45,8 +47,8 @@ const total = questions.length;
         {levels.map((l) => <p class="mt-2" data-advice={l} hidden>{p.results[l]}</p>)}
         <p class="mt-3 muted">{p.guide}</p>
         <div class="btn-row mt-5">
-          <a class="btn btn-primary" id="quiz-enquire" data-base={pathFor('contact', locale)} href={pathFor('contact', locale) + '#enquiry'}>{p.enquire}</a>
-          <button type="button" class="btn btn-outline" id="quiz-again">{p.again}</button>
+          <a class="btn btn-primary" id="quiz-enquire" data-enquire data-purpose="placement" data-base={pathFor('contact', locale)} href={pathFor('contact', locale) + '#enquiry'}>{p.enquire}</a>
+          <button type="button" class="btn btn-secondary" id="quiz-again">{p.again}</button>
         </div>
       </div>
     </div>

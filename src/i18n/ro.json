@@ -197,7 +197,65 @@
     "noscript": "Trimite cererea la office@ucraya.co.uk dacă formularul nu funcționează.",
     "reply": "Răspundem prin email. Ne poți scrie și pe WhatsApp.",
     "honeypot": "Lasă acest câmp gol",
-    "deadline": "Data testului, interviului sau a altui termen limită (opțional)"
+    "deadline": "Data testului, interviului sau a altui termen limită (opțional)",
+    "close": "Închide",
+    "chipGoals": [
+      {
+        "slug": "oet",
+        "label": "Test pentru asistenți"
+      },
+      {
+        "slug": "selt-b1",
+        "label": "Test B1"
+      },
+      {
+        "slug": "ielts",
+        "label": "IELTS"
+      },
+      {
+        "slug": "interview",
+        "label": "Muncă"
+      },
+      {
+        "slug": "kids",
+        "label": "Copilul meu"
+      },
+      {
+        "slug": "everyday",
+        "label": "Engleză de zi cu zi"
+      },
+      {
+        "slug": "other",
+        "label": "Altceva"
+      }
+    ],
+    "chipFormats": [
+      {
+        "slug": "one-to-one",
+        "label": "Individual"
+      },
+      {
+        "slug": "group",
+        "label": "Grup mic"
+      },
+      {
+        "slug": "not-sure",
+        "label": "Nu sunt sigur"
+      }
+    ],
+    "phoneShort": "Telefon sau WhatsApp",
+    "messageShort": "Mesaj",
+    "sending": "Se trimite",
+    "preferWhatsapp": "Preferi WhatsApp?",
+    "consentTick": "Sunt de acord ca Ucraya să folosească aceste date doar pentru a-mi răspunde. Citește {privacyLink}.",
+    "errors": {
+      "email": "Introdu o adresă de email validă, de exemplu nume@exemplu.ro.",
+      "name": "Spune-ne cum te cheamă.",
+      "phone": "Verifică numărul de telefon. Folosește cifre și + înaintea prefixului țării.",
+      "goal": "Alege obiectivul tău.",
+      "consent": "Bifează căsuța ca să îți putem răspunde."
+    },
+    "requiredNote": "Câmpurile marcate cu * sunt necesare."
   },
   "meta": {
     "home": {
@@ -1195,7 +1253,8 @@
         ],
         "correct": 1
       }
-    ]
+    ],
+    "progress": "Răspunsuri: {n} din {total}"
   },
   "tutors": {
     "h1": "Profesorii noștri de engleză",

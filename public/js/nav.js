@@ -12,6 +12,11 @@
   btn.addEventListener('click', function () {
     set(header.getAttribute('data-open') !== 'true');
   });
+  // A link inside the panel (including Enquire, which opens the pop-in) closes it.
+  var panel = document.getElementById('nav-panel');
+  if (panel) panel.addEventListener('click', function (e) {
+    if (e.target.closest && e.target.closest('a')) set(false);
+  });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && header.getAttribute('data-open') === 'true') {
       set(false);

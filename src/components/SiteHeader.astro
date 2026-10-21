@@ -1,15 +1,18 @@
 ---
 import { useMessages, localeNames, locales, type Locale } from '../i18n';
 import { pathFor, localePath } from '../lib/routes';
+import EnquireLink from './EnquireLink.astro';
 
 interface Props {
   locale: Locale;
   switchLinks: Record<string, string>;
   currentRoute?: string;
   currentPath: string;
-  enquireHref?: string;
+  /** Page has its own inline enquiry form (contact, free trial): the Enquire button scrolls to it. */
+  inline?: boolean;
+  enquire?: { goal?: string; format?: string; level?: string; purpose?: string };
 }
-const { locale, switchLinks, currentRoute, currentPath, enquireHref } = Astro.props;
+const { locale, switchLinks, currentRoute, currentPath, inline = false, enquire = {} } = Astro.props;
 const m = useMessages(locale);
 const items = [
   { id: 'courses', label: m.nav.courses, href: pathFor('courses', locale), match: (r?: string) => r === 'courses' || (r ?? '').startsWith('course-') },
@@ -24,17 +27,12 @@ const items = [
 const isCurrent = (it: (typeof items)[number]) =>
   it.match ? it.match(currentRoute) : it.id === currentRoute || (it.id === 'blog' && currentPath.startsWith('/blog'));
 ---
-<header class="site-header" data-open="false">
+<header class="site-header glass-bar" data-open="false">
   <div class="wrap">
     <div class="header-bar">
       <a class="logo-link" href={localePath(locale, '/')} aria-label={m.header.homeLabel}>
         <img src="/brand/logo.svg" width="132" height="36" alt="Ucraya" />
       </a>
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-panel" data-menu-btn
-        data-open-label={m.header.menu} data-close-label={m.header.closeMenu}>
-        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
-        <span data-menu-label>{m.header.menu}</span>
-      </button>
       <div class="nav-panel" id="nav-panel">
         <nav aria-label={m.header.mainNav}>
           <ul class="nav-list">
@@ -43,19 +41,39 @@ const isCurrent = (it: (typeof items)[number]) =>
             ))}
           </ul>
         </nav>
-        <nav aria-label={m.header.language}>
-          <ul class="lang-list">
-            {locales.map((l) => (
-              <li>
-                {l === locale
-                  ? <span aria-current="true" lang={l} title={localeNames[l]}>{l.toUpperCase()}</span>
-                  : <a href={switchLinks[l]} hreflang={l} lang={l} title={localeNames[l]}>{l.toUpperCase()}</a>}
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <a class="btn btn-primary nav-cta" href={enquireHref ?? pathFor('contact', locale) + '#enquiry'}>{m.buttons.enquireShort}</a>
+        <ul class="panel-lang" aria-label={m.header.language}>
+          {locales.map((l) => (
+            <li>
+              <a href={switchLinks[l]} hreflang={l} lang={l} aria-current={l === locale ? 'true' : undefined}>
+                <img class="flag" src={`/brand/flags/${l === 'en' ? 'gb' : l}.svg`} width="30" height="20" alt="" loading="lazy" />{localeNames[l]}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <EnquireLink locale={locale} class="btn btn-primary nav-cta-panel" inline={inline} {...enquire}>{m.buttons.enquireShort}</EnquireLink>
       </div>
+      <details class="lang" data-lang>
+        <summary aria-label={`${m.header.language}: ${localeNames[locale]}`} aria-controls="lang-menu">
+          <img class="flag" src={`/brand/flags/${locale === 'en' ? 'gb' : locale}.svg`} width="30" height="20" alt="" />
+          <span class="lang-code" aria-hidden="true">{locale.toUpperCase()}</span>
+        </summary>
+        <ul class="lang-menu" id="lang-menu">
+          {locales.map((l) => (
+            <li>
+              <a href={switchLinks[l]} hreflang={l} lang={l} aria-current={l === locale ? 'true' : undefined}>
+                <img class="flag" src={`/brand/flags/${l === 'en' ? 'gb' : l}.svg`} width="30" height="20" alt="" loading="lazy" />
+                <span>{localeNames[l]}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </details>
+      <EnquireLink locale={locale} class="btn btn-primary nav-cta-bar" inline={inline} {...enquire}>{m.buttons.enquireShort}</EnquireLink>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-panel" data-menu-btn
+        data-open-label={m.header.menu} data-close-label={m.header.closeMenu}>
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+        <span data-menu-label>{m.header.menu}</span>
+      </button>
     </div>
   </div>
 </header>

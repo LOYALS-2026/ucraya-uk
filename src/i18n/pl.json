@@ -197,7 +197,65 @@
     "noscript": "Jeśli formularz nie działa, wyślij zapytanie na adres office@ucraya.co.uk.",
     "reply": "Odpowiadamy e-mailem. Możesz też napisać do nas na WhatsApp.",
     "honeypot": "Zostaw to pole puste",
-    "deadline": "Data egzaminu, rozmowy lub innego terminu (opcjonalnie)"
+    "deadline": "Data egzaminu, rozmowy lub innego terminu (opcjonalnie)",
+    "close": "Zamknij",
+    "chipGoals": [
+      {
+        "slug": "oet",
+        "label": "Test dla pielęgniarek"
+      },
+      {
+        "slug": "selt-b1",
+        "label": "Test B1"
+      },
+      {
+        "slug": "ielts",
+        "label": "IELTS"
+      },
+      {
+        "slug": "interview",
+        "label": "Praca"
+      },
+      {
+        "slug": "kids",
+        "label": "Moje dziecko"
+      },
+      {
+        "slug": "everyday",
+        "label": "Angielski na co dzień"
+      },
+      {
+        "slug": "other",
+        "label": "Inne"
+      }
+    ],
+    "chipFormats": [
+      {
+        "slug": "one-to-one",
+        "label": "Indywidualnie"
+      },
+      {
+        "slug": "group",
+        "label": "Mała grupa"
+      },
+      {
+        "slug": "not-sure",
+        "label": "Jeszcze nie wiem"
+      }
+    ],
+    "phoneShort": "Telefon lub WhatsApp",
+    "messageShort": "Wiadomość",
+    "sending": "Wysyłanie",
+    "preferWhatsapp": "Wolisz WhatsApp?",
+    "consentTick": "Zgadzam się, aby Ucraya używała tych danych tylko do odpowiedzi na moje zapytanie. Przeczytaj {privacyLink}.",
+    "errors": {
+      "email": "Podaj prawidłowy adres e-mail, na przykład imie@example.com.",
+      "name": "Podaj swoje imię.",
+      "phone": "Sprawdź numer telefonu. Użyj cyfr i znaku + przed numerem kierunkowym kraju.",
+      "goal": "Wybierz swój cel.",
+      "consent": "Zaznacz pole, abyśmy mogli Ci odpowiedzieć."
+    },
+    "requiredNote": "Pola oznaczone * są wymagane."
   },
   "meta": {
     "home": {
@@ -1195,7 +1253,8 @@
         ],
         "correct": 1
       }
-    ]
+    ],
+    "progress": "Odpowiedzi: {n} z {total}"
   },
   "tutors": {
     "h1": "Nasi lektorzy angielskiego",

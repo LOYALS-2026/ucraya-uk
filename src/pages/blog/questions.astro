@@ -1,0 +1,83 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import SearchBox from '../../components/blog/SearchBox.astro';
+import '../../components/blog/blog.css';
+import { getPosts, postPath, pillarSlugOf, pillarPath, answerOf, byDay } from '../../lib/blog';
+import { pillarsWith, mapRows, monthYear } from '../../lib/blog-map';
+import { slugify } from '../../lib/seo';
+import { absolute } from '../../lib/routes';
+
+const posts = await getPosts();
+const rows = mapRows();
+const publishedDays = new Set(posts.map((p) => p.data.day));
+const pillars = pillarsWith(posts.map((p) => p.data));
+// Every pillar that has a question, in the order of the goals.
+const names = pillars.map((p) => p.name);
+const groups = names
+  .map((name) => {
+    const slug = slugify(name);
+    const done = posts.filter((p) => pillarSlugOf(p) === slug).sort(byDay).map((p) => ({ q: p.data.aiQuestion, href: postPath(p.id), a: answerOf(p.body), title: p.data.title }));
+    const soon = rows
+      .filter((r) => r.pillar === name && !publishedDays.has(r.day) && r.aiQuestion)
+      .sort((a, b) => a.day - b.day)
+      .map((r) => ({ q: r.aiQuestion, when: monthYear(r.publishDate) }));
+    return { name, slug, hasPage: done.length > 0, done, soon };
+  })
+  .filter((g) => g.done.length + g.soon.length > 0);
+
+const answered = groups.flatMap((g) => g.done);
+const title = 'Questions we answer about learning English';
+const description = 'Every question our guides answer, with the short answer for each one that is published and the month the others are planned.';
+const crumbs = [{ name: 'Guides', path: '/blog/' }, { name: 'Questions', path: '/blog/questions/' }];
+// FAQPage only for questions that are already published (capped so a very large blog keeps a small page).
+const ld: object[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    url: absolute('/blog/questions/'),
+    mainEntity: answered.slice(0, 200).map((it) => ({
+      '@type': 'Question',
+      name: it.q,
+      acceptedAnswer: { '@type': 'Answer', text: it.a, url: absolute(it.href) },
+    })),
+  },
+];
+const scripts = ['/js/search.js'];
+---
+<Base locale="en" path="/blog/questions/" title={title} description={description} crumbs={crumbs} jsonLd={ld} scripts={scripts}>
+  <div data-pagefind-ignore>
+    <Breadcrumbs locale="en" crumbs={crumbs} />
+    <section class="bl-hero" aria-labelledby="bl-h1">
+      <div class="bl-wrap">
+        <div class="bl-search-panel glass-strong">
+          <h1 id="bl-h1">Questions we answer</h1>
+          <p class="bl-lead">The questions learners ask before they book, grouped by goal. Each published question links to the full guide. Questions without a link are planned, with the month we expect to answer them.</p>
+          <SearchBox id="bl-q" compact label="Search all guides" placeholder="Search guides" />
+        </div>
+      </div>
+    </section>
+
+    {groups.map((g) => (
+      <section class="bl-section bl-wrap" aria-labelledby={`g-${g.slug}`}>
+        <h2 id={`g-${g.slug}`} class="bl-h2">{g.hasPage ? <a href={pillarPath(g.slug)}>{g.name}</a> : g.name}</h2>
+        <dl class="bl-qlist">
+          {g.done.map((it) => (
+            <>
+              <dt><a href={it.href}>{it.q}</a></dt>
+              <dd>{it.a}</dd>
+            </>
+          ))}
+          {g.soon.map((it) => (
+            <>
+              <dt class="is-soon">{it.q}</dt>
+              <dd class="is-soon">Planned for {it.when}.</dd>
+            </>
+          ))}
+        </dl>
+      </section>
+    ))}
+  </div>
+  <CtaBand locale="en" />
+</Base>

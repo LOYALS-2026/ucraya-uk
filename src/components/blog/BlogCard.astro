@@ -1,0 +1,13 @@
+---
+import { formatDate, postPath, readMinutes, answerOf, isoDay, type Post } from '../../lib/blog';
+interface Props { post: Post; /** Show the pillar name as a pill (default true). */ showPillar?: boolean; headingLevel?: 2 | 3 }
+const { post, showPillar = true, headingLevel = 3 } = Astro.props;
+const d = post.data;
+const H = `h${headingLevel}` as 'h2' | 'h3';
+---
+<article class="bl-card card glass" data-pagefind-ignore>
+  {showPillar && <p><span class="pill bl-pill">{d.pillar}</span></p>}
+  <H class="bl-card-title"><a href={postPath(post.id)} class="bl-card-link">{d.title}</a></H>
+  <p class="bl-card-text">{d.description}</p>
+  <p class="bl-card-meta"><time datetime={isoDay(d.pubDate)}>{formatDate(d.pubDate)}</time> <span aria-hidden="true">&middot;</span> {readMinutes(post.body)} min read</p>
+</article>

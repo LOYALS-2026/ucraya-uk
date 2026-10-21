@@ -1,0 +1,22 @@
+---
+import { pageUrl } from '../../lib/blog';
+interface Props { base: string; current: number; total: number; label?: string }
+const { base, current, total, label = 'Pages of guides' } = Astro.props;
+// Show the first, last and the neighbours of the current page.
+const pages: (number | null)[] = [];
+for (let i = 1; i <= total; i++) {
+  if (i === 1 || i === total || Math.abs(i - current) <= 1) pages.push(i);
+  else if (pages[pages.length - 1] !== null) pages.push(null);
+}
+---
+{total > 1 && (
+  <nav class="bl-pager" aria-label={label} data-pagefind-ignore>
+    {current > 1 ? <a class="btn btn-secondary" rel="prev" href={pageUrl(base, current - 1)}>Newer guides</a> : <span class="bl-pager-gap"></span>}
+    <ol class="bl-pager-list">
+      {pages.map((n) => n === null
+        ? <li class="bl-pager-dots" aria-hidden="true">&hellip;</li>
+        : <li><a href={pageUrl(base, n)} aria-current={n === current ? 'page' : undefined} aria-label={`Page ${n}`}>{n}</a></li>)}
+    </ol>
+    {current < total ? <a class="btn btn-secondary" rel="next" href={pageUrl(base, current + 1)}>Older guides</a> : <span class="bl-pager-gap"></span>}
+  </nav>
+)}

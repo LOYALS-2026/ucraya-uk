@@ -15,7 +15,7 @@ const ld = [{ '@context': 'https://schema.org', '@type': 'WebPage', name: t.h1, 
 <Base locale={locale} routeId="thanks" title={meta.title} description={meta.description} noindex jsonLd={ld}>
   <PageHero h1={t.h1} lead={t.lead}>
     <div class="btn-row mt-6">
-      <a class="btn btn-green" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a>
+      <a class="btn btn-whatsapp" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a>
     </div>
   </PageHero>
   <section class="section">
@@ -23,8 +23,8 @@ const ld = [{ '@context': 'https://schema.org', '@type': 'WebPage', name: t.h1, 
       <h2>{t.next}</h2>
       <div class="btn-row mt-5">
         <a class="btn btn-primary" href={pathFor('placement', locale)}>{m.buttons.placement}</a>
-        <a class="btn btn-outline" href={pathFor('how', locale)}>{m.buttons.howItWorks}</a>
-        <a class="btn btn-outline" href={pathFor('pricing', locale)}>{m.buttons.prices}</a>
+        <a class="btn btn-secondary" href={pathFor('how', locale)}>{m.buttons.howItWorks}</a>
+        <a class="btn btn-secondary" href={pathFor('pricing', locale)}>{m.buttons.prices}</a>
       </div>
     </div>
   </section>

@@ -1,0 +1,41 @@
+---
+// The guide search box. Without JavaScript it is a plain GET form to /blog/?q=.
+// public/js/search.js adds suggestions (and, on the hub, the full results).
+interface Props {
+  /** Unique id prefix: the page can hold more than one box. */
+  id?: string;
+  compact?: boolean;
+  /** Label above the box; hidden visually in compact mode. */
+  label?: string;
+  placeholder?: string;
+}
+const {
+  id = 'bl-q',
+  compact = false,
+  label = 'Search the guides',
+  placeholder = 'Try OET, B1, interview or a question',
+} = Astro.props;
+---
+<form class:list={['bl-search', { 'is-compact': compact }]} role="search" action="/blog/" method="get" data-bl-search data-compact={compact ? 'true' : 'false'} data-pagefind-ignore>
+  <label class:list={['bl-search-label', { 'sr-only': compact }]} for={id}>{label}</label>
+  <div class="bl-search-field">
+    <svg class="bl-search-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2" /><path d="M15.5 15.5 21 21" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" /></svg>
+    <input
+      id={id}
+      class="input bl-search-input"
+      type="search"
+      name="q"
+      autocomplete="off"
+      autocapitalize="off"
+      spellcheck="false"
+      enterkeyhint="search"
+      placeholder={placeholder}
+      role="combobox"
+      aria-expanded="false"
+      aria-controls={`${id}-list`}
+      aria-autocomplete="list"
+    />
+    <button class="btn btn-primary bl-search-btn" type="submit">Search</button>
+  </div>
+  <ul id={`${id}-list`} class="bl-suggest glass-strong" role="listbox" aria-label="Suggestions" hidden></ul>
+</form>

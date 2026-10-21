@@ -1,0 +1,21 @@
+---
+// Hidden carrier of the search metadata and filters for one article (read by Pagefind at build time).
+import { answerOf, readMinutes, isoDay, STAGE_LABEL, type Post } from '../../lib/blog';
+interface Props { post: Post }
+const { post } = Astro.props;
+const d = post.data;
+---
+<span
+  hidden
+  data-pagefind-meta="answer[data-answer], date[data-date], readtime[data-read], pillar[data-pillar], kind[data-kind]"
+  data-pagefind-filter="pillar[data-pillar], segment[data-segment], stage[data-stage], money[data-money], month[data-month], type[data-kind]"
+  data-answer={answerOf(post.body)}
+  data-date={isoDay(d.pubDate)}
+  data-read={String(readMinutes(post.body))}
+  data-pillar={d.pillar}
+  data-segment={d.segment}
+  data-stage={STAGE_LABEL[d.funnelStage] ?? d.funnelStage}
+  data-money={d.moneyPage.endsWith('/') ? d.moneyPage : d.moneyPage + '/'}
+  data-month={isoDay(d.pubDate).slice(0, 7)}
+  data-kind="Guide"
+></span>

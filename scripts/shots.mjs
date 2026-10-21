@@ -47,6 +47,21 @@ for (const width of [375, 1280]) {
     if (wide > 0) { overflow++; console.log(`HORIZONTAL SCROLL ${wide}px at ${width}: ${url}`); }
     await page.screenshot({ path: path.join(out, `${name}-${width}.png`), fullPage: true });
   }
+  // The language dropdown open, and the pop-in enquiry open (viewport shots, not full page).
+  await page.goto(base + '/courses/oet/', { waitUntil: 'networkidle' });
+  await page.click('details.lang summary');
+  await page.waitForTimeout(250);
+  await page.screenshot({ path: path.join(out, `lang-open-${width}.png`) });
+  await page.keyboard.press('Escape');
+  await page.click(width < 768 ? '.sticky-bar [data-enquire]' : '.nav-cta-bar[data-enquire]');
+  await page.waitForTimeout(500);
+  await page.screenshot({ path: path.join(out, `modal-${width}.png`) });
+  const modalFit = await page.evaluate(() => {
+    const card = document.querySelector('#enquiry-modal .modal-card');
+    const body = document.querySelector('#enquiry-modal .modal-body');
+    return { cardBottom: Math.round(card.getBoundingClientRect().bottom), vh: innerHeight, bodyScrolls: body.scrollHeight > body.clientHeight + 1 };
+  });
+  console.log(`modal at ${width}: ${JSON.stringify(modalFit)}`);
   await ctx.close();
 }
 await browser.close();

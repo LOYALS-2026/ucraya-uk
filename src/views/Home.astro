@@ -4,6 +4,7 @@ import HeroArt from '../components/HeroArt.astro';
 import ProductCards from '../components/ProductCards.astro';
 import FaqList from '../components/FaqList.astro';
 import CtaBand from '../components/CtaBand.astro';
+import EnquireLink from '../components/EnquireLink.astro';
 import Avatar from '../components/Avatar.astro';
 import { useMessages, type Locale } from '../i18n';
 import { pathFor } from '../lib/routes';
@@ -17,29 +18,30 @@ const m = useMessages(locale);
 const meta = pageMeta('home', locale);
 const faqTeaser = m.faqPage.items.slice(0, 4);
 const accents = ['accent-amber', 'accent-green', 'accent-orange', 'accent-navy', 'accent-amber', 'accent-green', 'accent-orange'];
-const contact = pathFor('contact', locale) + '#enquiry';
 ---
 <Base locale={locale} routeId="home" title={meta.title} description={meta.description} jsonLd={[organization(), website()]}>
   <section class="hero">
-    <div class="wrap section">
+    <div class="wrap">
+      <div class="glass hero-panel">
       <div class="hero-grid">
         <div>
           <span class="eyebrow">{m.site.since}</span>
           <h1>{m.home.h1}</h1>
           <p class="lead">{m.home.lead}</p>
           <div class="btn-row mt-6">
-            <a class="btn btn-primary" href={contact}>{m.buttons.enquire}</a>
-            <a class="btn btn-outline" href={pathFor('trial', locale)}>{m.buttons.trial}</a>
-            <a class="btn btn-green" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a>
+            <EnquireLink locale={locale} class="btn btn-primary">{m.buttons.enquire}</EnquireLink>
+            <a class="btn btn-secondary" href={pathFor('trial', locale)}>{m.buttons.trial}</a>
+            <a class="btn btn-whatsapp" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a>
           </div>
           <p class="muted mt-4">{m.home.heroNote}</p>
         </div>
         <div class="hidden md:block"><HeroArt /></div>
       </div>
+      </div>
     </div>
   </section>
 
-  <section class="py-5 border-b border-line">
+  <section class="proof-strip">
     <div class="wrap">
       <ul class="badge-row">
         <li><a href={SITE.googleReviews} rel="noopener">{m.common.ratedGoogle}</a></li>
@@ -74,7 +76,7 @@ const contact = pathFor('contact', locale) + '#enquiry';
           <li><h3>{s.title}</h3><p>{s.text}</p></li>
         ))}
       </ol>
-      <p class="mt-8"><a class="btn btn-outline" href={pathFor('how', locale)}>{m.buttons.howItWorks}</a></p>
+      <p class="mt-8"><a class="btn btn-secondary" href={pathFor('how', locale)}>{m.buttons.howItWorks}</a></p>
     </div>
   </section>
 
@@ -84,7 +86,7 @@ const contact = pathFor('contact', locale) + '#enquiry';
       <p class="lead mt-2 mb-8">{m.home.prices.intro}</p>
       <ProductCards locale={locale} />
       <p class="mt-6">{m.home.prices.note}</p>
-      <p class="mt-4"><a class="btn btn-outline" href={pathFor('pricing', locale)}>{m.buttons.prices}</a></p>
+      <p class="mt-4"><a class="btn btn-secondary" href={pathFor('pricing', locale)}>{m.buttons.prices}</a></p>
     </div>
   </section>
 
@@ -101,8 +103,8 @@ const contact = pathFor('contact', locale) + '#enquiry';
         ))}
       </div>
       <div class="btn-row mt-8">
-        <a class="btn btn-outline" href={pathFor('reviews', locale)}>{m.buttons.allReviews}</a>
-        <a class="btn btn-outline" href={SITE.googleReviews} rel="noopener">{m.buttons.reviewOnGoogle}</a>
+        <a class="btn btn-secondary" href={pathFor('reviews', locale)}>{m.buttons.allReviews}</a>
+        <a class="btn btn-secondary" href={SITE.googleReviews} rel="noopener">{m.buttons.reviewOnGoogle}</a>
       </div>
     </div>
   </section>
@@ -113,7 +115,7 @@ const contact = pathFor('contact', locale) + '#enquiry';
         <div>
           <h2>{m.home.tutors.title}</h2>
           <p class="mt-3 max-w-2xl">{m.home.tutors.text}</p>
-          <p class="mt-5"><a class="btn btn-outline" href={pathFor('tutors', locale)}>{m.buttons.tutors}</a></p>
+          <p class="mt-5"><a class="btn btn-secondary" href={pathFor('tutors', locale)}>{m.buttons.tutors}</a></p>
         </div>
         <div class="flex gap-3" aria-hidden="true">
           {m.tutors.items.slice(0, 4).map((t, i) => <Avatar name={t.name} index={i} />)}
@@ -126,7 +128,7 @@ const contact = pathFor('contact', locale) + '#enquiry';
     <div class="wrap narrow">
       <h2 class="mb-6">{m.home.faq.title}</h2>
       <FaqList items={faqTeaser} />
-      <p class="mt-6"><a class="btn btn-outline" href={pathFor('faq', locale)}>{m.buttons.allFaq}</a></p>
+      <p class="mt-6"><a class="btn btn-secondary" href={pathFor('faq', locale)}>{m.buttons.allFaq}</a></p>
     </div>
   </section>
 

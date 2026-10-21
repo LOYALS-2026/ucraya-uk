@@ -5,3 +5,4 @@ dist
 verify/
 .DS_Store
 .env
+.tmp/

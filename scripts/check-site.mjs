@@ -5,12 +5,13 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const dist = path.join(root, 'dist');
+// DIST lets a build in another folder be checked: DIST=.tmp/dist-blog node scripts/check-site.mjs
+const dist = process.env.DIST ? path.resolve(process.env.DIST) : path.join(root, 'dist');
 const failures = [];
 const fail = (page, msg) => failures.push(`${page}: ${msg}`);
 
 if (!existsSync(dist)) {
-  console.error('dist/ not found. Run "npm run build" first.');
+  console.error(`${path.relative(root, dist) || dist}/ not found. Run "npm run build" first.`);
   process.exit(1);
 }
 

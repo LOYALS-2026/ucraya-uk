@@ -1,0 +1,169 @@
+---
+import type { GetStaticPaths, Page } from 'astro';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import SearchBox from '../../components/blog/SearchBox.astro';
+import BlogCard from '../../components/blog/BlogCard.astro';
+import Pagination from '../../components/blog/Pagination.astro';
+import '../../components/blog/blog.css';
+import { getPosts, pillarSlugOf, pillarPath, postPath, formatDate, pageUrl, PAGE_SIZE, type Post } from '../../lib/blog';
+import { pillarsWith, pillarGuideRows, longDate } from '../../lib/blog-map';
+import { absolute } from '../../lib/routes';
+
+// /blog/ is page 1, /blog/page/2/ and so on are the rest. paginate() slices; the URL shape is ours.
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = await getPosts();
+  return paginate(posts, { pageSize: PAGE_SIZE, params: { page: undefined } }).map((p) => ({
+    params: { page: p.props.page.currentPage === 1 ? undefined : `page/${p.props.page.currentPage}` },
+    props: p.props,
+  }));
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props as { page: Page<Post> };
+const current = page.currentPage;
+const total = page.lastPage;
+const all = await getPosts();
+const pillars = pillarsWith(all.map((p) => p.data));
+const counts = new Map<string, number>();
+for (const p of all) counts.set(pillarSlugOf(p), (counts.get(pillarSlugOf(p)) ?? 0) + 1);
+const first = current === 1;
+
+// "Start here": the pillar guides. Written ones link, the others say when they are planned.
+const guideRows = pillarGuideRows();
+const startHere = pillars.map((pl) => {
+  const written = all.find((p) => pillarSlugOf(p) === pl.slug && p.data.cluster === 'pillar guide');
+  const row = guideRows.find((r) => r.pillar === pl.name);
+  return { pl, written, row };
+});
+
+const canonicalPath = pageUrl('/blog/', current);
+const title = first ? 'English guides for learners' : `English guides, page ${current}`;
+const description = first
+  ? 'Search plain guides to English tests, interviews and everyday lessons: nursing OET and IELTS, B1 for settlement, work, children and care.'
+  : `Page ${current} of ${total} of our plain English guides, newest first. Search by test, job or question.`;
+const crumbs = [{ name: 'Guides', path: '/blog/' }, ...(first ? [] : [{ name: `Page ${current}`, path: canonicalPath }])];
+
+const ld: object[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: title,
+    url: absolute(canonicalPath),
+    description,
+    inLanguage: 'en-GB',
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: page.data.map((p, i) => ({ '@type': 'ListItem', position: (current - 1) * PAGE_SIZE + i + 1, url: absolute(postPath(p.id)), name: p.data.title })),
+    },
+    ...(first
+      ? { potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: absolute('/blog/') + '?q={search_term_string}' }, 'query-input': 'required name=search_term_string' } }
+      : {}),
+  },
+];
+const scripts = ['/js/search.js'];
+const examples = ['OET or IELTS', 'B1 for citizenship', 'interview English', 'child at school'];
+---
+<Base locale="en" path={canonicalPath} title={title} description={description} crumbs={crumbs} jsonLd={ld} scripts={scripts}>
+  <div data-pagefind-ignore><Breadcrumbs locale="en" crumbs={crumbs} /></div>
+
+  <div data-pagefind-ignore>
+    <section class="bl-hero" aria-labelledby="bl-h1">
+      <div class="bl-wrap">
+        <div class="bl-search-panel glass-strong">
+          <h1 id="bl-h1">{first ? 'Find the English guide you need' : `All guides, page ${current}`}</h1>
+          <p class="bl-lead">Search by a test, a job or a question. Each guide is plain, short and links to the lessons that can help.</p>
+          <SearchBox id="bl-q" />
+          <p class="bl-examples" aria-label="Examples">
+            <span>Try:</span>
+            {examples.map((e) => <a class="pill bl-pill" href={`/blog/?q=${encodeURIComponent(e)}`} data-bl-q={e}>{e}</a>)}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <p id="bl-status" class="sr-only" role="status"></p>
+    <section id="bl-results" class="bl-wrap bl-results" aria-label="Search results" hidden>
+      <div class="bl-results-head">
+        <h2 id="bl-results-title" class="bl-h2"></h2>
+        <a class="bl-clear" href="/blog/" data-bl-clear>Clear search</a>
+      </div>
+      <div class="bl-filters" id="bl-filters"></div>
+      <div class="bl-grid" id="bl-results-grid"></div>
+      <p><button type="button" class="btn btn-secondary" id="bl-more" hidden>Show more guides</button></p>
+      <div class="bl-empty glass" id="bl-empty" hidden>
+        <h3 id="bl-empty-title" class="bl-h2"></h3>
+        <p>Try fewer or simpler words, or start with the guides for your goal.</p>
+        <ul>
+          {pillars.filter((pl) => counts.get(pl.slug)).map((pl) => <li><a class="pill bl-pill" href={pillarPath(pl.slug)}>{pl.short}</a></li>)}
+        </ul>
+        <p class="btn-row">
+          <a class="btn btn-primary" href="/contact/?purpose=enquiry#enquiry" data-enquire data-purpose="enquiry">Ask us your question</a>
+          <a class="btn btn-secondary" href="/placement-test/">Take the placement test</a>
+        </p>
+      </div>
+    </section>
+
+    <noscript>
+      <div class="bl-wrap"><p class="bl-notice">Search needs JavaScript. You can still browse: choose a goal below or read the latest guides.</p></div>
+    </noscript>
+
+    <div id="bl-browse">
+      {first && all.length > 0 && (
+        <section class="bl-section bl-wrap" aria-labelledby="start-here">
+          <h2 id="start-here" class="bl-h2">Start here</h2>
+          <p class="bl-sub">One main guide for each goal. Read the one closest to yours first.</p>
+          <div class="bl-grid">
+            {startHere.map(({ pl, written, row }) =>
+              written ? (
+                <article class="bl-card card glass">
+                  <p><span class="pill bl-pill">{pl.short}</span></p>
+                  <h3 class="bl-card-title"><a class="bl-card-link" href={postPath(written.id)}>{written.data.title}</a></h3>
+                  <p class="bl-card-text">{written.data.description}</p>
+                </article>
+              ) : (
+                <article class="bl-card card glass is-soon">
+                  <p><span class="pill bl-pill">{pl.short}</span></p>
+                  <h3 class="bl-card-title">{row ? row.title : pl.name}</h3>
+                  <p class="bl-card-text">{row ? `Coming on ${longDate(row.publishDate)}.` : 'Coming soon.'}</p>
+                </article>
+              ),
+            )}
+          </div>
+        </section>
+      )}
+
+      <section class="bl-section bl-wrap" aria-labelledby="latest">
+        <h2 id="latest" class="bl-h2">{first ? 'Latest guides' : `Guides, page ${current} of ${total}`}</h2>
+        {all.length === 0 ? (
+          <p class="bl-notice">Our first guides are on the way. In the meantime, send us an enquiry and we will answer your question directly.</p>
+        ) : (
+          <div class="bl-grid">{page.data.map((p) => <BlogCard post={p} />)}</div>
+        )}
+        <Pagination base="/blog/" current={current} total={total} />
+      </section>
+
+      {first && (
+        <section class="bl-section bl-wrap" aria-labelledby="by-goal">
+          <h2 id="by-goal" class="bl-h2">By goal</h2>
+          <p class="bl-sub">Choose what you are working towards.</p>
+          <div class="bl-grid">
+            {pillars.map((pl) => {
+              const n = counts.get(pl.slug) ?? 0;
+              return (
+                <article class:list={['bl-card card glass', { 'is-soon': n === 0 }]}>
+                  <h3 class="bl-card-title">{n > 0 ? <a class="bl-card-link" href={pillarPath(pl.slug)}>{pl.name}</a> : pl.name}</h3>
+                  <p class="bl-card-text">{pl.intro}</p>
+                  <p class="bl-card-meta">{n > 0 ? `${n} ${n === 1 ? 'guide' : 'guides'} published` : 'Guides coming soon'}</p>
+                </article>
+              );
+            })}
+          </div>
+          <p class="bl-sub"><a href="/blog/questions/">Browse every question we answer</a> or follow the <a href="/rss.xml">RSS feed</a>.</p>
+        </section>
+      )}
+    </div>
+  </div>
+
+  <CtaBand locale="en" />
+</Base>
