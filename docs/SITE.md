@@ -11,7 +11,7 @@ Astro 5 (static), Tailwind v4, TypeScript, self hosted fonts (Roboto Slab, PT Sa
 - `src/lib/site.ts` holds contact details and URLs (from `content/FACTS.md`); `src/lib/routes.ts` is the page table.
 - `src/views/*.astro` are the pages; `src/pages/[...path].astro` builds every locale of every route from the table; `src/pages/blog/*` and `rss.xml.ts` are the blog.
 - `src/components/` shared parts; `src/layouts/Base.astro` does head, SEO tags, hreflang, JSON-LD, header, footer, sticky mobile bar and cookie banner.
-- `public/js/` has the only client scripts: `nav.js` (menu and the phone header that hides on scroll), `ui.js` (back to top, smooth FAQ, quote dots), `form.js` (form prefill and validation), `attribution.js` (where an enquiry came from), `placement.js` (quiz), `estimator.js` (pricing page), `consent.js` (cookie banner and Google Analytics), plus the blog scripts. No inline scripts, so the Content Security Policy in `netlify.toml` stays strict.
+- `public/js/` has the only client scripts: `nav.js` (menu and the phone header that hides on scroll), `ui.js` (back to top, the floating dock, smooth FAQ, quote dots), `form.js` (form prefill and validation), `attribution.js` (where an enquiry came from), `placement.js` (quiz), `estimator.js` (pricing page), `hero.js` (home page hero lesson), `consent.js` (cookie banner and Google Analytics), plus the blog scripts. `ui.js` also drives the floating dock. No inline scripts, so the Content Security Policy in `netlify.toml` stays strict.
 - Styles: `src/styles/global.css` (Tailwind theme tokens plus a few component classes). Amber is only used as a background or button with dark text.
 
 ## Languages (how a translator edits the JSON)

@@ -12,7 +12,6 @@
 :where(.bl-card, .bl-search-panel, .bl-cta, .bl-side-search, .bl-empty, .bl-prevnext a, .bl-inline-card) {
   background: #fff; border: 1px solid var(--color-line, #e7dfcf); border-radius: 1rem;
 }
-:where(.bl-suggest) { background: #fff; border: 1px solid var(--color-line, #e7dfcf); border-radius: 0.9rem; box-shadow: 0 12px 30px rgb(30 25 10 / 0.16); }
 :where(.bl-cta-bar) { background: rgb(255 255 255 / 0.96); border-top: 1px solid var(--color-line, #e7dfcf); box-shadow: 0 -6px 18px rgb(0 0 0 / 0.08); }
 :where(.bl-pill) { display: inline-flex; align-items: center; padding: 0.15rem 0.7rem; border-radius: 999px; background: var(--color-warm-2, #f3eee3); color: var(--color-ink, #1a1a1a); font-size: 0.85rem; font-weight: 700; text-decoration: none; border: 1px solid var(--color-line, #e7dfcf); }
 .bl-search a.btn, .bl-card a.btn, .bl-cta a.btn, .bl-pager a.btn, .bl-share a.btn, .bl-cta-bar a.btn, .bl-inline-card a.btn { text-decoration: none; }
@@ -40,14 +39,34 @@
 .bl-search-input::-webkit-search-cancel-button { display: none; }
 .bl-search-input:focus-visible { outline: 3px solid var(--color-navy, #1f2a44); outline-offset: 1px; }
 
-.bl-suggest { position: absolute; z-index: 60; left: 0; right: 0; top: calc(100% + 0.35rem); margin: 0; padding: 0.4rem; list-style: none; max-height: min(26rem, 62vh); overflow-y: auto; }
+.bl-suggest {
+  /* A floating glass popover under the field (the field is its positioned wrapper, so it is exactly as wide as the input plus the button).
+     It never scrolls sideways and nothing around it (the sticky sidebar, cards) clips it: those wrappers keep overflow visible. */
+  position: absolute; z-index: 60; left: 0; right: 0; top: calc(100% + 0.4rem); margin: 0; padding: 0.35rem; list-style: none;
+  max-height: 60vh; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: rgb(31 42 68 / 0.35) transparent;
+  border-radius: var(--r-md, 16px); border: 1px solid var(--rim, rgb(255 255 255 / 0.72));
+  -webkit-backdrop-filter: var(--bf); backdrop-filter: var(--bf);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.9), 0 0 0 1px var(--edge, rgb(120 96 40 / 0.14)), 0 18px 40px -14px rgb(80 60 20 / 0.38);
+}
+.bl-suggest.is-up { top: auto; bottom: calc(100% + 0.4rem); }
+.bl-suggest::-webkit-scrollbar { width: 8px; }
+.bl-suggest::-webkit-scrollbar-thumb { background: rgb(31 42 68 / 0.3); border-radius: 8px; }
 .bl-suggest[hidden] { display: none; }
 .bl-suggest-h { padding: 0.5rem 0.65rem 0.2rem; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; color: var(--color-muted, #5d5d5d); }
-.bl-opt { display: flex; flex-wrap: wrap; align-items: center; gap: 0.2rem 0.6rem; padding: 0.6rem 0.65rem; border-radius: 0.6rem; text-decoration: none; color: var(--color-ink, #1a1a1a); min-height: 2.75rem; }
+.bl-opt { display: flex; flex-wrap: nowrap; align-items: center; gap: 0.6rem; padding: 0.5rem 0.65rem; border-radius: 0.6rem; min-width: 0; text-decoration: none; color: var(--color-ink, #1a1a1a); min-height: 2.75rem; }
 .bl-opt:hover, .bl-opt.is-active { background: var(--color-warm-2, #f3eee3); outline: 2px solid var(--color-navy, #1f2a44); outline-offset: -2px; }
-.bl-opt-title { font-weight: 700; flex: 1 1 14rem; }
-.bl-opt .bl-pill { font-size: 0.78rem; }
-.bl-opt-kw { flex: 1; }
+.bl-opt-main { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 0.1rem; }
+.bl-opt-title { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; font-weight: 700; font-size: 15px; line-height: 1.3; color: var(--color-ink, #1a1a1a); }
+.bl-opt-sub { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; line-height: 1.3; color: var(--color-muted, #5d5d5d); }
+.bl-opt .bl-pill, .bl-opt-kind { flex: 0 1 auto; max-width: 36%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bl-opt .bl-pill { display: none; min-height: 0; font-size: 0.74rem; line-height: 1.5; padding: 0.1rem 0.6rem; }
+/* Wide list (the hub search): the goal is a pill at the right. Narrow list (sidebar, phones): a muted line under the title, no pill. */
+.bl-suggest { container-type: inline-size; }
+@container (min-width: 420px) {
+  .bl-opt .bl-pill { display: block; }
+  .bl-opt-sub.is-goal { display: none; }
+}
+.bl-opt-kw { flex: 1 1 0; min-width: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; font-size: 15px; line-height: 1.3; }
 .bl-opt-kind { font-size: 0.82rem; color: var(--color-muted, #5d5d5d); }
 .bl-suggest mark, .bl-card mark { background: #ffe9a8; color: inherit; border-radius: 0.2rem; padding: 0 0.1rem; }
 .bl-suggest-none { padding: 0.8rem 0.65rem; color: var(--color-muted, #5d5d5d); }
@@ -115,7 +134,9 @@
 @media (min-width: 1024px) {
   .bl-article-grid { grid-template-columns: minmax(0, 46rem) 18rem; justify-content: center; }
   .bl-article-head, .bl-article-body { grid-column: 1; }
-  .bl-side { grid-column: 2; grid-row: 1 / span 2; margin: 0; align-self: start; position: sticky; top: 5.5rem; max-height: calc(100vh - 6.5rem); overflow-y: auto; }
+  .bl-side { grid-column: 2; grid-row: 1 / span 2; margin: 0; align-self: start; position: sticky; top: 5.5rem; }
+  /* The sidebar itself keeps overflow visible so the search popover can float out of it; only the contents list scrolls when it is long. */
+  .bl-toc nav { max-height: calc(100vh - 17rem); overflow-y: auto; scrollbar-width: thin; }
 }
 .bl-toc { border: 1px solid var(--color-line, #e7dfcf); border-radius: 0.9rem; background: rgb(255 255 255 / 0.8); padding: 0.2rem 1rem; }
 .bl-toc > summary { cursor: pointer; font-weight: 700; min-height: 2.75rem; display: flex; align-items: center; color: var(--color-ink, #1a1a1a); }

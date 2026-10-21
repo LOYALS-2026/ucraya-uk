@@ -26,6 +26,36 @@
     sync();
   }
 
+  // ---- floating dock (768 px and up): Enquire and WhatsApp appear after about 600 px of scrolling and step aside while the footer,
+  // a search list or the slim article bar's space is needed. The CSS draws the dock only from 768 px, so on a phone this does nothing visible.
+  var dock = document.querySelector('[data-dock]');
+  var cta = dock && dock.querySelector('[data-dock-cta]');
+  if (cta) {
+    var footer = document.querySelector('.site-footer');
+    var bar = document.querySelector('[data-bl-cta]');
+    var inFooter = false, searching = false, lift = 0, dtick = false;
+    var wide = window.matchMedia('(min-width: 768px)');
+    var place = function () {
+      dtick = false;
+      cta.classList.toggle('is-on', wide.matches && (window.pageYOffset || 0) > 600 && !inFooter && !searching);
+      // The slim bar on article pages sits along the bottom edge: lift the dock above it while it is showing.
+      var l = bar && bar.classList.contains('is-on') && !bar.hidden ? Math.round(bar.getBoundingClientRect().height) + 12 : 0;
+      if (l !== lift) { lift = l; dock.style.setProperty('--dock-lift', l + 'px'); }
+    };
+    var queue = function () { if (!dtick) { dtick = true; window.requestAnimationFrame(place); } };
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    if (wide.addEventListener) wide.addEventListener('change', queue);
+    if (footer && 'IntersectionObserver' in window) {
+      // 80 px of margin: the dock leaves just before the footer reaches it.
+      new IntersectionObserver(function (entries) { inFooter = entries[entries.length - 1].isIntersecting; queue(); }, { rootMargin: '0px 0px -80px 0px' }).observe(footer);
+    }
+    if (bar && window.MutationObserver) new MutationObserver(queue).observe(bar, { attributes: true, attributeFilter: ['class', 'hidden'] });
+    // search.js tells the page when a suggestion list is open (class on <html>).
+    if (window.MutationObserver) new MutationObserver(function () { searching = document.documentElement.classList.contains('search-open'); queue(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    place();
+  }
+
   // ---- FAQ: details/summary with a smooth height change (the native element still does the work; this only eases it)
   qa('.faq details').forEach(function (d) {
     var s = d.querySelector('summary');

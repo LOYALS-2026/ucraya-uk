@@ -11,6 +11,7 @@ import robotoSlab700 from '@fontsource/roboto-slab/files/roboto-slab-latin-700-n
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import StickyBar from '../components/StickyBar.astro';
+import Dock from '../components/Dock.astro';
 import CookieBanner from '../components/CookieBanner.astro';
 import EnquiryModal from '../components/EnquiryModal.astro';
 
@@ -117,9 +118,7 @@ const allJsonLd = [...jsonLd, ...pageLd, ...(crumbList.length ? [breadcrumbList(
     </main>
     <SiteFooter locale={locale} />
     <StickyBar locale={locale} inline={inline} enquire={enquire} whatsappText={whatsappText} />
-    <button class="to-top" type="button" data-to-top aria-label={m.common.backToTop}>
-      <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 12l6-6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-    </button>
+    <Dock locale={locale} inline={inline} enquire={enquire} whatsappText={whatsappText} />
     <EnquiryModal locale={locale} />
     {SITE.gaId && <CookieBanner locale={locale} />}
     <script src="/js/nav.js" defer></script>

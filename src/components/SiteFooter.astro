@@ -5,7 +5,6 @@ import { COURSE_SLUGS } from '../lib/routes';
 import { SITE } from '../lib/site';
 import { getPosts, pillarSlugOf, pillarPath } from '../lib/blog';
 import { pillarsWith } from '../lib/blog-map';
-import EnquireLink from './EnquireLink.astro';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const m = useMessages(locale);
@@ -16,11 +15,6 @@ const hubs = pillarsWith(posts.map((p) => p.data)).filter((pl) => posts.some((p)
 ---
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-strip">
-      <p>{m.footer.colContact}</p>
-      <EnquireLink locale={locale} class="btn btn-primary">{m.buttons.enquireShort}</EnquireLink>
-      <a class="btn btn-whatsapp" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsappShort}</a>
-    </div>
     <div class="footer-grid">
       <div>
         <a class="footer-logo" href={localePath(locale, '/')} aria-label={m.header.homeLabel}><img src="/raya/raya-glass-light.svg" width="536" height="256" alt="" /></a>

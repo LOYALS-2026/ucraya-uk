@@ -21,24 +21,28 @@ const meta = pageMeta('home', locale);
 const faqTeaser = m.faqPage.items.slice(0, 4);
 const accents = ['accent-amber', 'accent-green', 'accent-orange', 'accent-navy', 'accent-amber', 'accent-green', 'accent-orange'];
 const latest = (await getPosts()).slice(0, 3);
+// The headline and the lead are split into words so each can rise in (CSS only, delays by position; no inline styles).
+// The headline breaks in a fixed place (m.home.h1Lines) so no word is ever split across lines.
+const h1Words = m.home.h1Lines.map((line) => line.split(' '));
+const leadWords = m.home.lead.split(' ');
 ---
-<Base locale={locale} routeId="home" title={meta.title} description={meta.description} jsonLd={[organization(), website()]}>
+<Base locale={locale} routeId="home" title={meta.title} description={meta.description} jsonLd={[organization(), website()]} scripts={['/js/hero.js']}>
   <section class="hero">
     <div class="wrap">
       <div class="glass hero-panel">
       <div class="hero-grid">
         <div>
           <span class="eyebrow">{m.site.since}</span>
-          <h1>{m.home.h1}</h1>
-          <p class="lead">{m.home.lead}</p>
-          <div class="btn-row mt-6">
+          <h1 class="rise-words">{h1Words.map((line, li) => (<Fragment>{li > 0 && <br />}{line.map((w, wi) => (<Fragment>{li > 0 || wi > 0 ? ' ' : ''}<span class="rw">{w}</span></Fragment>))}</Fragment>))}</h1>
+          <p class="lead rise-words">{leadWords.map((w, i) => (<Fragment>{i > 0 ? ' ' : ''}<span class="rw">{w}</span></Fragment>))}</p>
+          <div class="btn-row mt-6 rise-late">
             <EnquireLink locale={locale} class="btn btn-primary">{m.buttons.enquire}</EnquireLink>
             <a class="btn btn-secondary" href={pathFor('trial', locale)}>{m.buttons.trial}</a>
           </div>
-          <p><a class="wa-link hero-wa" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a></p>
-          <p class="muted mt-4">{m.home.heroNote}</p>
+          <p class="rise-late"><a class="wa-link hero-wa" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a></p>
+          <p class="muted mt-4 rise-late">{m.home.heroNote}</p>
         </div>
-        <div class="hidden md:block art-wrap"><HeroArt /></div>
+        <div class="art-wrap"><HeroArt locale={locale} /></div>
       </div>
       </div>
     </div>

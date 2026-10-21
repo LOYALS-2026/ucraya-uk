@@ -1,24 +1,61 @@
 ---
-// Decorative illustration of a live lesson: no text, no photos.
+// Decorative, living mock lesson: a video call window with a tutor and two students, a LIVE pill, a speaker ring,
+// a caption strip that types four lesson lines, and three floating level chips. public/js/hero.js drives it.
+// Without JavaScript (or with reduced motion) it is a still picture showing the first line.
+import { useMessages, type Locale } from '../i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const live = useMessages(locale).home.live;
+const first = live.lines[0];
+const labels = { tutor: live.tutor, student: live.student };
 ---
-<svg viewBox="0 0 420 340" role="img" aria-hidden="true" focusable="false" class="w-full h-auto art-card">
-  <rect x="10" y="20" width="400" height="290" rx="24" fill="#ffffff" stroke="#e7dfcf" stroke-width="2"/>
-  <rect x="10" y="20" width="400" height="44" rx="24" fill="#f3eee3"/>
-  <rect x="10" y="44" width="400" height="20" fill="#f3eee3"/>
-  <circle cx="38" cy="42" r="6" fill="#f24c0a"/>
-  <circle cx="58" cy="42" r="6" fill="#ffb606"/>
-  <circle cx="78" cy="42" r="6" fill="#4caf50"/>
-  <rect x="30" y="84" width="250" height="196" rx="16" fill="#1f2a44"/>
-  <circle cx="155" cy="154" r="38" fill="#ffb606"/>
-  <path d="M95 280c0-34 27-58 60-58s60 24 60 58z" fill="#4caf50"/>
-  <rect x="296" y="84" width="94" height="90" rx="14" fill="#4caf50"/>
-  <circle cx="343" cy="116" r="17" fill="#ffffff"/>
-  <path d="M312 174c0-18 14-30 31-30s31 12 31 30z" fill="#ffffff"/>
-  <rect x="296" y="190" width="94" height="90" rx="14" fill="#f24c0a"/>
-  <circle cx="343" cy="222" r="17" fill="#ffffff"/>
-  <path d="M312 280c0-18 14-30 31-30s31 12 31 30z" fill="#ffffff"/>
-  <rect x="44" y="96" width="92" height="28" rx="14" fill="#ffffff"/>
-  <circle cx="62" cy="110" r="5" fill="#ffb606"/><circle cx="80" cy="110" r="5" fill="#4caf50"/><circle cx="98" cy="110" r="5" fill="#f24c0a"/>
-  <rect x="330" y="2" width="76" height="40" rx="20" fill="#ffb606"/>
-  <circle cx="352" cy="22" r="5" fill="#1a1a1a"/><circle cx="368" cy="22" r="5" fill="#1a1a1a"/><circle cx="384" cy="22" r="5" fill="#1a1a1a"/>
-</svg>
+<div class="lesson" data-lesson data-speaker="tutor" data-lines={JSON.stringify(live.lines)} data-labels={JSON.stringify(labels)} aria-hidden="true">
+  <div class="lesson-tilt" data-tilt>
+    <svg viewBox="0 0 420 340" role="img" aria-hidden="true" focusable="false" class="lesson-art art-card">
+      <rect x="10" y="20" width="400" height="290" rx="24" fill="#ffffff" stroke="#e7dfcf" stroke-width="2"/>
+      <rect x="10" y="20" width="400" height="44" rx="24" fill="#f3eee3"/>
+      <rect x="10" y="44" width="400" height="20" fill="#f3eee3"/>
+      <circle cx="38" cy="42" r="6" fill="#f24c0a"/>
+      <circle cx="58" cy="42" r="6" fill="#ffb606"/>
+      <circle cx="78" cy="42" r="6" fill="#4caf50"/>
+
+      <rect class="ring ring-tutor" x="25" y="75" width="260" height="174" rx="20" fill="none" stroke="#4caf50" stroke-width="4"/>
+      <rect class="ring ring-student" x="291" y="75" width="104" height="88" rx="18" fill="none" stroke="#4caf50" stroke-width="4"/>
+
+      <rect x="30" y="80" width="250" height="164" rx="16" fill="#1f2a44"/>
+      <circle cx="155" cy="136" r="34" fill="#ffb606"/>
+      <path d="M95 244c0-30 27-52 60-52s60 22 60 52z" fill="#4caf50"/>
+      <g class="bars bars-tutor">
+        <rect x="44" y="92" width="56" height="26" rx="13" fill="#ffffff"/>
+        <rect class="bar" x="57" y="98" width="6" height="14" rx="3" fill="#1f2a44"/>
+        <rect class="bar" x="69" y="98" width="6" height="14" rx="3" fill="#1f2a44"/>
+        <rect class="bar" x="81" y="98" width="6" height="14" rx="3" fill="#1f2a44"/>
+      </g>
+
+      <rect x="296" y="80" width="94" height="78" rx="14" fill="#4caf50"/>
+      <circle cx="343" cy="108" r="15" fill="#ffffff"/>
+      <path d="M314 158c0-16 13-26 29-26s29 10 29 26z" fill="#ffffff"/>
+      <g class="bars bars-student">
+        <rect x="302" y="140" width="34" height="14" rx="7" fill="#1f2a44"/>
+        <rect class="bar" x="311" y="143" width="4" height="8" rx="2" fill="#ffffff"/>
+        <rect class="bar" x="319" y="143" width="4" height="8" rx="2" fill="#ffffff"/>
+        <rect class="bar" x="327" y="143" width="4" height="8" rx="2" fill="#ffffff"/>
+      </g>
+
+      <rect x="296" y="170" width="94" height="74" rx="14" fill="#f24c0a"/>
+      <circle cx="343" cy="196" r="14" fill="#ffffff"/>
+      <path d="M314 244c0-15 13-25 29-25s29 10 29 25z" fill="#ffffff"/>
+    </svg>
+    <span class="live-pill"><i class="live-dot"></i>{live.badge}</span>
+    <div class="lesson-cap">
+      <span class="cap-who"><i class="cap-dot"></i><span data-cap-who>{labels[first.who as 'tutor' | 'student']}</span></span>
+      <span class="cap-text" data-cap-text>{first.text}</span>
+    </div>
+    <span class="lesson-react" data-react>
+      <svg viewBox="0 0 28 28" width="100%" height="100%" aria-hidden="true" focusable="false"><circle cx="14" cy="14" r="13" fill="#4caf50" stroke="#ffffff" stroke-width="2"/><path d="M8 14.5l4 4 8-9" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+  </div>
+  <span class="lesson-chip chip-1">OET</span>
+  <span class="lesson-chip chip-2">B1</span>
+  <span class="lesson-chip chip-3">IELTS</span>
+</div>

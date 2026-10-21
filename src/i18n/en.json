@@ -361,6 +361,10 @@
   },
   "home": {
     "h1": "Online English lessons with real tutors",
+    "h1Lines": [
+      "Online English lessons",
+      "with real tutors"
+    ],
     "lead": "One-to-one lessons or a small live group, with a tutor who builds the lesson around your goal.",
     "heroNote": "No payment online: the office confirms your place, then you pay by bank transfer.",
     "audience": {
@@ -455,6 +459,29 @@
       "lead": "Short, practical guides to tests, interviews and choosing a tutor. They are written in English.",
       "all": "Read all guides",
       "questions": "Questions we answer"
+    },
+    "live": {
+      "badge": "LIVE",
+      "tutor": "Tutor",
+      "student": "Student",
+      "lines": [
+        {
+          "who": "tutor",
+          "text": "Tell me about your last shift at work."
+        },
+        {
+          "who": "student",
+          "text": "I worked a night shift on the ward."
+        },
+        {
+          "who": "tutor",
+          "text": "Good. Say it again with ‘I was working’."
+        },
+        {
+          "who": "student",
+          "text": "I was working a night shift on the ward."
+        }
+      ]
     }
   },
   "products": {

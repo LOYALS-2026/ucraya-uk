@@ -1,0 +1,20 @@
+---
+// Desktop and tablet (768 px and up): a floating glass dock, bottom right, with Enquire and WhatsApp, and the back to top button next to it.
+// public/js/ui.js shows the dock after about 600 px of scrolling and hides it when the footer, a search list or the pop-in is on screen.
+// On phones the dock is not drawn (the bottom bar does the job) and only the back to top button remains.
+import { useMessages, type Locale } from '../i18n';
+import { SITE, whatsappWith } from '../lib/site';
+import EnquireLink from './EnquireLink.astro';
+interface Props { locale: Locale; inline?: boolean; enquire?: { goal?: string; format?: string; level?: string; purpose?: string }; whatsappText?: string }
+const { locale, inline = false, enquire = {}, whatsappText } = Astro.props;
+const m = useMessages(locale);
+---
+<div class="dock" data-dock>
+  <div class="dock-cta glass-strong" data-dock-cta role="region" aria-label={m.sticky.label}>
+    <EnquireLink locale={locale} class="btn btn-primary" inline={inline} {...enquire}>{m.buttons.enquireShort}</EnquireLink>
+    <a class="btn btn-whatsapp" href={whatsappText ? whatsappWith(whatsappText) : SITE.whatsapp} rel="noopener">{m.buttons.whatsappShort}</a>
+  </div>
+  <button class="to-top" type="button" data-to-top aria-label={m.common.backToTop}>
+    <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 12l6-6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+  </button>
+</div>

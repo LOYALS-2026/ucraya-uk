@@ -354,6 +354,10 @@
   },
   "home": {
     "h1": "Lekcje angielskiego online z prawdziwymi lektorami",
+    "h1Lines": [
+      "Lekcje angielskiego online",
+      "z prawdziwymi lektorami"
+    ],
     "lead": "Lekcje indywidualne lub mała grupa na żywo, z lektorem, który buduje lekcję wokół Twojego celu.",
     "heroNote": "Bez płatności online: biuro potwierdza Twoje miejsce, a potem płacisz przelewem.",
     "audience": {
@@ -446,6 +450,29 @@
       "lead": "Krótkie, praktyczne poradniki o testach, rozmowach kwalifikacyjnych i wyborze lektora. Są napisane po angielsku.",
       "all": "Czytaj wszystkie poradniki",
       "questions": "Pytania, na które odpowiadamy"
+    },
+    "live": {
+      "badge": "LIVE",
+      "tutor": "Lektor",
+      "student": "Kursant",
+      "lines": [
+        {
+          "who": "tutor",
+          "text": "Opowiedz mi o swojej ostatniej zmianie w pracy."
+        },
+        {
+          "who": "student",
+          "text": "I worked a night shift on the ward."
+        },
+        {
+          "who": "tutor",
+          "text": "Dobrze. Powiedz to jeszcze raz, używając ‘I was working’."
+        },
+        {
+          "who": "student",
+          "text": "I was working a night shift on the ward."
+        }
+      ]
     }
   },
   "products": {

@@ -350,6 +350,12 @@
   // ---- suggestion lists -------------------------------------------------------------------------
   var boxes = [];
   function closeAll() { boxes.forEach(function (b) { b.close(); }); }
+  // <html class="search-open"> while any suggestion list is showing, so the floating dock (ui.js) steps aside.
+  function syncOpen() {
+    var any = false;
+    forms.forEach(function (f) { var l = f.querySelector('.bl-suggest'); if (l && !l.hidden) any = true; });
+    document.documentElement.classList.toggle('search-open', any);
+  }
 
   forms.forEach(function (form, fi) {
     var input = form.querySelector('input[name="q"]');
@@ -371,11 +377,28 @@
     function close() {
       list.hidden = true;
       list.textContent = '';
+      list.classList.remove('is-up');
+      list.style.maxHeight = '';
       options = []; active = -1;
       input.setAttribute('aria-expanded', 'false');
       input.removeAttribute('aria-activedescendant');
+      syncOpen();
     }
-    function open() { list.hidden = false; input.setAttribute('aria-expanded', 'true'); }
+    function open() {
+      list.hidden = false;
+      input.setAttribute('aria-expanded', 'true');
+      // Open downwards under the field, as tall as the room allows (never more than 60% of the screen). Only a field close to the bottom
+      // of the screen, with clearly more room above, opens upwards.
+      var vv = window.visualViewport;
+      var vh = vv ? vv.height : window.innerHeight;
+      var r = input.getBoundingClientRect();
+      var below = vh - r.bottom - 16, above = r.top - 16;
+      var cap = vh * 0.6;
+      var up = below < 220 && above > below;
+      list.classList.toggle('is-up', up);
+      list.style.maxHeight = Math.max(160, Math.min(cap, up ? above : below)) + 'px';
+      syncOpen();
+    }
     var group = null;
     function heading(t) {
       group = el('div');
@@ -410,7 +433,11 @@
           res.posts.forEach(function (p) {
             option(function (a) {
               a.href = '/blog/' + p.s + '/';
-              var t = el('span', 'bl-opt-title'); markInto(t, p.t, tok); a.appendChild(t);
+              var main = el('span', 'bl-opt-main');
+              var t = el('span', 'bl-opt-title'); markInto(t, p.t, tok); main.appendChild(t);
+              // The goal shows as a small muted line under the title in a narrow list, as a pill at the right in a wide one (CSS decides).
+              if (d.pillars[p.p]) main.appendChild(el('span', 'bl-opt-sub is-goal', d.pillars[p.p].n));
+              a.appendChild(main);
               if (d.pillars[p.p]) a.appendChild(el('span', 'pill bl-pill', d.pillars[p.p].n));
             });
           });
@@ -420,8 +447,10 @@
           res.lessons.forEach(function (g) {
             option(function (a) {
               a.href = g.u;
-              var t = el('span', 'bl-opt-title'); markInto(t, g.t, tok); a.appendChild(t);
-              a.appendChild(el('span', 'bl-opt-kind', 'page'));
+              var main = el('span', 'bl-opt-main');
+              var t = el('span', 'bl-opt-title'); markInto(t, g.t, tok); main.appendChild(t);
+              main.appendChild(el('span', 'bl-opt-sub', 'Lessons and prices'));
+              a.appendChild(main);
             });
           });
         }
@@ -457,6 +486,8 @@
 
     boxes.push({ close: close });
     form._blClose = close;
+    // Choosing a row closes the list (after the click has been handled, so a link still opens).
+    list.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('a')) setTimeout(close, 0); });
 
     input.addEventListener('focus', function () { loadData(); if (onHub) getPagefind(); });
     input.addEventListener('input', function () {
@@ -493,6 +524,12 @@
       if (e.relatedTarget && form.contains(e.relatedTarget)) return;
       setTimeout(function () { if (!form.contains(document.activeElement)) close(); }, 120);
     });
+  });
+
+  // Escape closes an open list wherever the focus is (inside the box it also keeps the focus in the field).
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    forms.forEach(function (f) { var l = f.querySelector('.bl-suggest'); if (l && !l.hidden && f._blClose) f._blClose(); });
   });
 
   // A press outside a box closes THAT box's list only. (Articles carry two boxes, one hidden by CSS: closing every list on any

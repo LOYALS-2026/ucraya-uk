@@ -354,6 +354,10 @@
   },
   "home": {
     "h1": "Lecții de engleză online cu profesori adevărați",
+    "h1Lines": [
+      "Lecții de engleză online",
+      "cu profesori adevărați"
+    ],
     "lead": "Lecții individuale sau într-un grup mic live, cu un profesor care construiește lecția în jurul obiectivului tău.",
     "heroNote": "Nu plătești online: biroul îți confirmă locul, apoi plătești prin transfer bancar.",
     "audience": {
@@ -446,6 +450,29 @@
       "lead": "Ghiduri scurte și practice despre teste, interviuri și alegerea unui profesor. Sunt scrise în engleză.",
       "all": "Citește toate ghidurile",
       "questions": "Întrebările la care răspundem"
+    },
+    "live": {
+      "badge": "LIVE",
+      "tutor": "Profesor",
+      "student": "Cursant",
+      "lines": [
+        {
+          "who": "tutor",
+          "text": "Spune-mi despre ultima ta tură la serviciu."
+        },
+        {
+          "who": "student",
+          "text": "I worked a night shift on the ward."
+        },
+        {
+          "who": "tutor",
+          "text": "Bine. Spune-o din nou cu ‘I was working’."
+        },
+        {
+          "who": "student",
+          "text": "I was working a night shift on the ward."
+        }
+      ]
     }
   },
   "products": {
