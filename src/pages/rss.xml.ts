@@ -14,6 +14,7 @@ export async function GET(context: APIContext) {
       pubDate: p.data.pubDate,
       link: postPath(p.id),
     })),
-    customData: '<language>en-gb</language>',
+    xmlns: { atom: 'http://www.w3.org/2005/Atom' },
+    customData: '<language>en-gb</language><atom:link href="https://ucraya.uk/rss.xml" rel="self" type="application/rss+xml" />',
   });
 }

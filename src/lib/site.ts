@@ -25,6 +25,9 @@ export const SITE = {
   gaId: (import.meta.env.PUBLIC_GA_ID as string | undefined) || '',
 } as const;
 
+/** WhatsApp link with a ready typed first message. */
+export const whatsappWith = (text: string) => `${SITE.whatsapp}?text=${encodeURIComponent(text)}`;
+
 export const OG_LOCALES: Record<string, string> = {
   en: 'en_GB',
   bg: 'bg_BG',

@@ -4,10 +4,11 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import PageHero from '../components/PageHero.astro';
 import FaqList from '../components/FaqList.astro';
 import EnquiryForm from '../components/EnquiryForm.astro';
-import { useMessages, type Locale } from '../i18n';
+import { useMessages, messagesEn, type Locale } from '../i18n';
 import { pathFor, absolute, COURSE_SLUGS, type CourseSlug } from '../lib/routes';
 import { pageMeta } from '../lib/page';
-import { SITE } from '../lib/site';
+import { SITE, whatsappWith } from '../lib/site';
+import { getPosts, postPath, moneyHref } from '../lib/blog';
 import { course as courseLd, faqPage } from '../lib/jsonld';
 
 interface Props { locale: Locale; slug: CourseSlug }
@@ -29,19 +30,24 @@ const ld = [
     url,
     language: locale,
     prices: c.prices.map((p) => ({ label: p.label, amount: p.amount })),
+    workload: slug === 'ielts' ? 'PT24H' : undefined,
   }),
   faqPage(c.faq),
 ];
+// The free class is a live GROUP class, so the free class button appears only where a group course is on offer.
+const offersGroup = slug === 'general-english' || slug === 'group-courses';
+const waHref = whatsappWith(`Hello, I am asking about ${messagesEn.courses.items[slug].name} lessons`);
+const guides = (await getPosts()).filter((p) => moneyHref(p.data.moneyPage) === pathFor(routeId, 'en')).slice(0, 3);
 const others = COURSE_SLUGS.filter((s) => s !== slug).slice(0, 4);
 ---
-<Base locale={locale} routeId={routeId} title={meta.title} description={meta.description} jsonLd={ld} crumbs={crumbs}>
+<Base locale={locale} routeId={routeId} whatsappText={`Hello, I am asking about ${messagesEn.courses.items[slug].name} lessons`} title={meta.title} description={meta.description} jsonLd={ld} crumbs={crumbs}>
   <Breadcrumbs locale={locale} crumbs={crumbs} />
   <PageHero h1={c.h1} lead={c.lead}>
     {'notice' in c && c.notice && <p class="notice mt-5">{c.notice}</p>}
     <div class="btn-row mt-6">
       <a class="btn btn-primary" href="#enquiry">{m.buttons.enquire}</a>
-      <a class="btn btn-outline" href={pathFor('trial', locale)}>{m.buttons.trial}</a>
-      <a class="btn btn-green" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a>
+      {offersGroup && <a class="btn btn-outline" href={pathFor('trial', locale)}>{m.buttons.trial}</a>}
+      <a class="btn btn-green" href={waHref} rel="noopener">{offersGroup ? m.buttons.whatsapp : m.buttons.whatsappMessage}</a>
     </div>
   </PageHero>
 
@@ -54,6 +60,14 @@ const others = COURSE_SLUGS.filter((s) => s !== slug).slice(0, 4);
 
           <h2>{h.lesson}</h2>
           {c.lesson.map((p) => <p>{p}</p>)}
+
+          {'sections' in c && Array.isArray(c.sections) && c.sections.map((s) => (
+            <>
+              <h2 id={s.id}>{s.title}</h2>
+              <p>{s.text}</p>
+              <p><a class="btn btn-outline" href={`${pathFor(routeId, locale)}?goal=${s.goal}#enquiry`}>{s.button}</a></p>
+            </>
+          ))}
 
           <h2>{h.levels}</h2>
           <p>{c.levels}</p>
@@ -75,6 +89,13 @@ const others = COURSE_SLUGS.filter((s) => s !== slug).slice(0, 4);
           <h2>{h.tutor}</h2>
           <p>{c.tutor}</p>
           <p><a href={pathFor('tutors', locale)}>{m.buttons.tutors}</a></p>
+
+          {guides.length > 0 && (
+            <>
+              <h2>{m.courses.guidesTitle}</h2>
+              <ul>{guides.map((g) => <li><a href={postPath(g.id)} lang="en">{g.data.title}</a></li>)}</ul>
+            </>
+          )}
         </div>
 
         <aside class="card card-accent accent-amber lg:sticky lg:top-24" aria-labelledby="price-h">

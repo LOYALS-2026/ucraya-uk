@@ -1,12 +1,12 @@
 ---
 import { useMessages, type Locale } from '../i18n';
 import { pathFor } from '../lib/routes';
-import { SITE } from '../lib/site';
-interface Props { locale: Locale }
-const { locale } = Astro.props;
+import { SITE, whatsappWith } from '../lib/site';
+interface Props { locale: Locale; enquireHref?: string; whatsappText?: string }
+const { locale, enquireHref, whatsappText } = Astro.props;
 const m = useMessages(locale);
 ---
 <div class="sticky-bar" role="region" aria-label={m.sticky.label}>
-  <a class="btn btn-primary" href={pathFor('contact', locale) + '#enquiry'}>{m.buttons.enquireShort}</a>
-  <a class="btn btn-green" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsappShort}</a>
+  <a class="btn btn-primary" href={enquireHref ?? pathFor('contact', locale) + '#enquiry'}>{m.buttons.enquireShort}</a>
+  <a class="btn btn-green" href={whatsappText ? whatsappWith(whatsappText) : SITE.whatsapp} rel="noopener">{m.buttons.whatsappShort}</a>
 </div>

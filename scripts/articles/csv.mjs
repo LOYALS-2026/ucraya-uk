@@ -6,8 +6,9 @@ import path from 'node:path';
 import { parse } from 'csv-parse/sync';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
-export const MAP_PATH = path.join(ROOT, 'content', 'topical-map.csv');
-export const BLOG_DIR = path.join(ROOT, 'src', 'content', 'blog');
+// ARTICLE_MAP and ARTICLE_BLOG let the tests point the scripts at a scratch copy.
+export const MAP_PATH = process.env.ARTICLE_MAP || path.join(ROOT, 'content', 'topical-map.csv');
+export const BLOG_DIR = process.env.ARTICLE_BLOG || path.join(ROOT, 'src', 'content', 'blog');
 export const SITE = 'https://ucraya.uk';
 
 export function readMap(file = MAP_PATH) {
@@ -41,4 +42,12 @@ export function todayLondon(now = new Date()) {
 export function slugFromUrl(url) {
   const m = /\/blog\/([a-z0-9-]+)\/?$/.exec(url || '');
   return m ? m[1] : '';
+}
+
+export function slugify(title) {
+  let s = title.toLowerCase().replace(/['’]/g, '').replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  if (s.length <= 60) return s;
+  const cut = s.slice(0, 61);
+  const i = cut.lastIndexOf('-');
+  return (i > 0 ? cut.slice(0, i) : s.slice(0, 60)).replace(/-+$/, '');
 }

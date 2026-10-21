@@ -4,9 +4,10 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import PageHero from '../components/PageHero.astro';
 import EnquiryForm from '../components/EnquiryForm.astro';
 import { useMessages, type Locale } from '../i18n';
-import { pathFor } from '../lib/routes';
+import { pathFor, absolute } from '../lib/routes';
 import { pageMeta } from '../lib/page';
 import { SITE } from '../lib/site';
+import { orgPage } from '../lib/jsonld';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const m = useMessages(locale);
@@ -15,7 +16,7 @@ const d = c.details;
 const meta = pageMeta('contact', locale);
 const crumbs = [{ name: m.nav.contact, path: pathFor('contact', locale) }];
 ---
-<Base locale={locale} routeId="contact" title={meta.title} description={meta.description} crumbs={crumbs}>
+<Base locale={locale} routeId="contact" title={meta.title} description={meta.description} crumbs={crumbs} jsonLd={[orgPage('ContactPage', absolute(pathFor('contact', locale)), meta.title)]}>
   <Breadcrumbs locale={locale} crumbs={crumbs} />
   <PageHero h1={c.h1} lead={c.lead} />
   <section class="section">

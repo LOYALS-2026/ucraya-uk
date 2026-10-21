@@ -21,7 +21,7 @@ const blog = defineCollection({
     secondaryKeywords: z.array(z.string()),
     faq: z.array(z.object({ q: z.string(), a: z.string() })),
     sources: z
-      .array(z.object({ title: z.string(), url: z.string(), checked: z.coerce.date() }))
+      .array(z.object({ title: z.string(), url: z.string(), checked: z.coerce.date().optional() }))
       .optional(),
     draft: z.boolean().default(false),
     author: z.string().default('The Ucraya team'),

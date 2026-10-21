@@ -5,7 +5,7 @@ Read this first. ucraya.uk sells online English lessons with real human tutors (
 ## Where things live
 - GitHub `LOYALS-2026/ucraya-uk`, branch `main`. Netlify builds and publishes every push to `main` (domain ucraya.uk, registered at Netlify). Node 22.
 - Stack: Astro (static), Tailwind, TypeScript, content collections for the blog. No database, no server code except Netlify Forms for the enquiry form.
-- Build: `npm ci && npm run build` (publish dir `dist/`). Checks: `npm run check` (site checker over `dist/`) and `npm run check:articles`.
+- Build: `npm ci && npm run build` (publish dir `dist/`). Checks: `npm run check` (site checker over `dist/`), `npm run check:articles` and `npm run test:articles` (proves the article checker); the Netlify build runs all of the build and the first two.
 - `content/FACTS.md` is the ONLY source of claims (prices, names, qualifications, policies, contact). Nothing may be said on the site or in an article that is not in it. `content/topical-map.csv` is the 90 day editorial plan; `content/ARTICLE-RULES.md` and `content/ARTICLE-TASK.md` drive the daily article session.
 - Research from ChatGPT (21 Oct 2026) is in `research/`: background, not a source of claims.
 

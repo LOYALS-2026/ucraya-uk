@@ -16,7 +16,7 @@
     "blog": "Poradniki",
     "contact": "Kontakt",
     "about": "O nas",
-    "trial": "Darmowe zajęcia",
+    "trial": "Darmowe zajęcia grupowe",
     "placement": "Test poziomujący"
   },
   "header": {
@@ -29,7 +29,7 @@
   "buttons": {
     "enquire": "Zapytaj o lekcje",
     "enquireShort": "Zapytaj",
-    "trial": "Wypróbuj zajęcia za darmo",
+    "trial": "Wypróbuj zajęcia grupowe za darmo",
     "whatsapp": "Napisz na WhatsApp",
     "whatsappShort": "WhatsApp",
     "placement": "Zrób test poziomujący",
@@ -40,7 +40,9 @@
     "send": "Wyślij zapytanie",
     "allReviews": "Przeczytaj opinie",
     "reviewOnGoogle": "Zobacz nas w Google",
-    "howItWorks": "Jak to działa"
+    "howItWorks": "Jak to działa",
+    "whatsappMessage": "Napisz do nas na WhatsApp",
+    "askAbout": "Zapytaj o to"
   },
   "common": {
     "breadcrumbs": "Ścieżka nawigacji",
@@ -108,6 +110,10 @@
       {
         "slug": "interview",
         "label": "Rozmowa kwalifikacyjna lub angielski w pracy"
+      },
+      {
+        "slug": "staff",
+        "label": "Angielski dla moich pracowników (pracodawca)"
       },
       {
         "slug": "kids",
@@ -182,7 +188,7 @@
     ],
     "times": "Preferowane dni i godziny (podaj swoją strefę czasową, jeśli mieszkasz poza Wielką Brytanią)",
     "message": "Czy jest coś jeszcze, co powinniśmy wiedzieć?",
-    "consent": "Zgadzam się, aby Ucraya wykorzystała te dane do odpowiedzi na moje zapytanie. Więcej informacji: {privacyLink}.",
+    "consent": "Używamy tych danych tylko po to, by Ci odpowiedzieć. Więcej informacji: {privacyLink}.",
     "privacyLinkText": "stronę o prywatności",
     "required": "Wymagane",
     "optional": "Opcjonalne",
@@ -190,7 +196,8 @@
     "placementNote": "Wykonano nasz test poziomujący. Użyjemy Twojego wyniku jako punktu wyjścia.",
     "noscript": "Jeśli formularz nie działa, wyślij zapytanie na adres office@ucraya.co.uk.",
     "reply": "Odpowiadamy e-mailem. Możesz też napisać do nas na WhatsApp.",
-    "honeypot": "Zostaw to pole puste"
+    "honeypot": "Zostaw to pole puste",
+    "deadline": "Data egzaminu, rozmowy lub innego terminu (opcjonalnie)"
   },
   "meta": {
     "home": {
@@ -210,7 +217,7 @@
       "description": "Zapytaj, poznaj lektora, odbądź pierwszą lekcję i zapłać przelewem po potwierdzeniu przez biuro. Oto każdy krok."
     },
     "trial": {
-      "title": "Wypróbuj zajęcia za darmo",
+      "title": "Darmowe zajęcia grupowe",
       "description": "Dołącz do jednych zajęć grupowych na żywo za darmo, by zobaczyć, jak uczymy, lub poproś o sprawdzenie poziomu. Wyślij zapytanie, a odpiszemy."
     },
     "placement": {
@@ -268,7 +275,7 @@
     "heroNote": "Bez płatności online: biuro potwierdza Twoje miejsce, a potem płacisz przelewem.",
     "audience": {
       "title": "Dla kogo są nasze lekcje",
-      "intro": "Większość osób przychodzi do nas z konkretną datą w głowie. Wybierz tę, która jest najbliższa Twojej.",
+      "intro": "Wybierz cel, który jest najbliższy Twojemu.",
       "items": [
         {
           "slug": "oet",
@@ -317,7 +324,7 @@
         },
         {
           "title": "Proponujemy lektora i pierwszą lekcję",
-          "text": "Biuro odpowiada e-mailem, podając lektora, plan lekcji i termin, który Ci odpowiada."
+          "text": "Biuro odpowiada e-mailem, proponując lektora, pierwszą lekcję i termin, który Ci odpowiada."
         },
         {
           "title": "Zaczynasz lekcje, płacisz przelewem",
@@ -642,6 +649,22 @@
             "q": "Ile to kosztuje?",
             "a": "£15 za lekcję 55 minut lub £20, jeśli chcesz, by lekcja była prowadzona w całości po angielsku."
           }
+        ],
+        "sections": [
+          {
+            "id": "interview",
+            "title": "Zbliża się rozmowa kwalifikacyjna",
+            "text": "Podaj datę i stanowisko. Zaproponujemy lektora i pierwszą lekcję, z ćwiczeniami pytań i rozmowy, których się spodziewasz. Nie możemy obiecać wyniku, ale lektor pomoże Ci poćwiczyć.",
+            "button": "Zapytaj o lekcje przed rozmową",
+            "goal": "interview"
+          },
+          {
+            "id": "employers",
+            "title": "Dla domów opieki i pracodawców",
+            "text": "Napisz, ilu pracowników potrzebuje lekcji i które sytuacje są ważne, na przykład przekazanie zmiany i rozmowy z rodzinami. Biuro odpowie, co jest możliwe.",
+            "button": "Zapytaj o lekcje dla pracowników",
+            "goal": "staff"
+          }
         ]
       },
       "ielts": {
@@ -716,10 +739,10 @@
         "summary": "Lekcje indywidualne do testu B1 z mówienia i słuchania.",
         "goal": "selt-b1",
         "format": "one-to-one",
-        "metaTitle": "Lekcje do testu B1 z mówienia i słuchania",
+        "metaTitle": "Przygotowanie do testu B1 SELT",
         "metaDescription": "Indywidualne lekcje online przygotowujące do testu B1 z mówienia i słuchania do pobytu stałego lub obywatelstwa. Nie przeprowadzamy testu. Od 15 funtów.",
         "h1": "Przygotowanie do testu B1 z mówienia i słuchania",
-        "lead": "Lekcje indywidualne z lektorem, który przygotowuje Cię do formatu mówienia i słuchania testu B1, takiego jak Trinity GESE Grade 5 lub zatwierdzony odpowiednik.",
+        "lead": "Lekcje indywidualne z lektorem, który przygotowuje Cię do formatu mówienia i słuchania testu B1 (Secure English Language Test, SELT), takiego jak Trinity GESE Grade 5 lub zatwierdzony odpowiednik.",
         "notice": "Nie przeprowadzamy testu. Test rezerwujesz osobno u zatwierdzonego organizatora, a swoją ścieżkę wizową lub pobytową musisz sprawdzić na gov.uk, aby wiedzieć, jakiego testu potrzebujesz.",
         "who": [
           "Osoby ubiegające się o pobyt stały lub obywatelstwo, które muszą wykazać znajomość B1 w mówieniu i słuchaniu",
@@ -904,7 +927,8 @@
           }
         ]
       }
-    }
+    },
+    "guidesTitle": "Poradniki do tego celu"
   },
   "pricing": {
     "h1": "Cennik lekcji angielskiego online",
@@ -982,15 +1006,15 @@
       },
       {
         "title": "Poznaj swojego lektora",
-        "text": "Biuro odpowiada e-mailem, proponując lektora, plan lekcji i terminy, które mogą pasować. Do lekcji indywidualnych dostępni są lektorzy mówiący po bułgarsku."
+        "text": "Biuro odpowiada e-mailem, proponując lektora, pierwszą lekcję i terminy, które mogą pasować. Do lekcji indywidualnych dostępni są lektorzy mówiący po bułgarsku."
+      },
+      {
+        "title": "Potwierdź miejsce i zapłać",
+        "text": "Biuro potwierdza Twoje miejsce i przesyła dane do przelewu wraz z potwierdzeniem rezerwacji. W kursach grupowych zaliczka £50 zabezpiecza miejsce. Płacisz przelewem. Na stronie nie ma płatności kartą."
       },
       {
         "title": "Odbądź pierwszą lekcję",
         "text": "Razem z rezerwacją wysyłamy link do wideorozmowy na żywo. Kursy grupowe odbywają się na żywo na Zoomie."
-      },
-      {
-        "title": "Zapłać przelewem",
-        "text": "Biuro potwierdza Twoje miejsce i przesyła dane do przelewu. Płacisz przelewem. Na stronie nie ma płatności kartą."
       },
       {
         "title": "Ucz się dalej",
@@ -1000,8 +1024,8 @@
     "cta": "Gotowy do pierwszego kroku?"
   },
   "trial": {
-    "h1": "Wypróbuj zajęcia za darmo",
-    "lead": "Dołącz do jednych zajęć grupowych na żywo za darmo, by zobaczyć, jak uczymy, lub poproś e-mailem o sprawdzenie poziomu.",
+    "h1": "Wypróbuj zajęcia grupowe za darmo",
+    "lead": "Dołącz do jednych zajęć grupowych na żywo za darmo, by zobaczyć, jak uczymy, lub poproś e-mailem o sprawdzenie poziomu. Darmowe zajęcia są grupowe. Lekcje indywidualne zaczynają się od propozycji biura: lektor i pierwsza lekcja.",
     "options": {
       "title": "Dwa sposoby na start",
       "items": [
@@ -1016,7 +1040,7 @@
       ]
     },
     "formTitle": "Poproś o darmowe zajęcia",
-    "note": "Darmowe zajęcia dotyczą kursów grupowych. Lekcje indywidualne są płatne od pierwszej lekcji."
+    "note": "Darmowe zajęcia są grupowe. W przypadku lekcji indywidualnych napisz, jaki masz cel, a zaproponujemy lektora i pierwszą lekcję."
   },
   "placement": {
     "h1": "Test poziomujący z angielskiego",

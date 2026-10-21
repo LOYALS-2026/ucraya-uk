@@ -1,14 +1,16 @@
 ---
 import { useMessages, type Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
 interface Props { locale: Locale; compact?: boolean }
 const { locale } = Astro.props;
 const m = useMessages(locale);
 const p = m.products;
+const ask = (fmt: string) => pathFor('contact', locale) + `?format=${fmt}#enquiry`;
 const cards = [
-  { ...p.oneToOne, accent: 'accent-amber' },
-  { ...p.oneToOneEnglish, accent: 'accent-green' },
-  { ...p.group, accent: 'accent-orange' },
-  { ...p.exam, accent: 'accent-navy' },
+  { ...p.oneToOne, accent: 'accent-amber', fmt: 'one-to-one' },
+  { ...p.oneToOneEnglish, accent: 'accent-green', fmt: 'one-to-one' },
+  { ...p.group, accent: 'accent-orange', fmt: 'group' },
+  { ...p.exam, accent: 'accent-navy', fmt: 'not-sure' },
 ];
 ---
 <div class="grid-cards cols-4">
@@ -17,6 +19,7 @@ const cards = [
       <h3>{c.name}</h3>
       <p class="price mt-3">{c.price}<small>{c.unit}</small></p>
       <p class="mt-3">{c.text}</p>
+      <p class="mt-3"><a href={ask(c.fmt)}>{m.buttons.askAbout}</a></p>
     </div>
   ))}
 </div>

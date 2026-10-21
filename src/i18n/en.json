@@ -16,7 +16,7 @@
     "blog": "Guides",
     "contact": "Contact",
     "about": "About",
-    "trial": "Free class",
+    "trial": "Free group class",
     "placement": "Placement test"
   },
   "header": {
@@ -29,7 +29,7 @@
   "buttons": {
     "enquire": "Enquire about lessons",
     "enquireShort": "Enquire",
-    "trial": "Try a class free",
+    "trial": "Try a group class free",
     "whatsapp": "WhatsApp us",
     "whatsappShort": "WhatsApp",
     "placement": "Take the placement test",
@@ -40,7 +40,9 @@
     "send": "Send my enquiry",
     "allReviews": "Read the reviews",
     "reviewOnGoogle": "See us on Google",
-    "howItWorks": "How it works"
+    "howItWorks": "How it works",
+    "whatsappMessage": "Message us on WhatsApp",
+    "askAbout": "Ask about this"
   },
   "common": {
     "breadcrumbs": "Breadcrumb",
@@ -108,6 +110,10 @@
       {
         "slug": "interview",
         "label": "Job interview or work English"
+      },
+      {
+        "slug": "staff",
+        "label": "English for my staff (employer)"
       },
       {
         "slug": "kids",
@@ -182,7 +188,7 @@
     ],
     "times": "Preferred days and times (include your time zone if outside the UK)",
     "message": "Anything else we should know?",
-    "consent": "I agree that Ucraya may use these details to reply to my enquiry. I have read the {privacyLink}.",
+    "consent": "We use these details only to reply to you. Read our {privacyLink}.",
     "privacyLinkText": "privacy page",
     "required": "Required",
     "optional": "Optional",
@@ -190,7 +196,8 @@
     "placementNote": "You took our placement test. We will use the level you got as a starting point.",
     "noscript": "Please send your enquiry to office@ucraya.co.uk if the form does not work.",
     "reply": "We reply by email. You can also message us on WhatsApp.",
-    "honeypot": "Leave this field empty"
+    "honeypot": "Leave this field empty",
+    "deadline": "Your test, interview or deadline date (optional)"
   },
   "meta": {
     "home": {
@@ -210,7 +217,7 @@
       "description": "Enquire, get matched to a tutor, have your first lesson and pay by bank transfer once the office confirms. Here is every step."
     },
     "trial": {
-      "title": "Try a class free",
+      "title": "Try a group class free",
       "description": "Join one live group class free of charge to see how we teach, or ask for a level check. Send your enquiry and we will reply."
     },
     "placement": {
@@ -268,7 +275,7 @@
     "heroNote": "No payment online: the office confirms your place, then you pay by bank transfer.",
     "audience": {
       "title": "Who our lessons are for",
-      "intro": "Most people come to us with a date in mind. Choose the one closest to yours.",
+      "intro": "Choose the goal closest to yours.",
       "items": [
         {
           "slug": "oet",
@@ -288,7 +295,8 @@
         {
           "slug": "business-english",
           "title": "A job interview coming up",
-          "text": "One-to-one lessons for interviews, meetings and everyday work English."
+          "text": "One-to-one lessons for interviews, meetings and everyday work English.",
+          "anchor": "interview"
         },
         {
           "slug": "kids",
@@ -298,7 +306,8 @@
         {
           "slug": "business-english",
           "title": "Care and workplace teams",
-          "text": "Lessons focused on communication at work, including care work. Tell us what your staff need."
+          "text": "Lessons focused on communication at work, including care work. Tell us what your staff need.",
+          "anchor": "employers"
         },
         {
           "slug": "general-english",
@@ -317,7 +326,7 @@
         },
         {
           "title": "We suggest a tutor and a first lesson",
-          "text": "The office replies by email with a tutor, a lesson plan and a time that suits you."
+          "text": "The office replies by email with a tutor and a first lesson to suggest, and a time that suits you."
         },
         {
           "title": "Start lessons, pay by bank transfer",
@@ -642,6 +651,22 @@
             "q": "What does it cost?",
             "a": "£15 per 55 minute lesson, or £20 if you want the lesson taught entirely in English."
           }
+        ],
+        "sections": [
+          {
+            "id": "interview",
+            "title": "A job interview coming up",
+            "text": "Tell us the date and the role. We will suggest a tutor and a first lesson, with practice for the questions and conversation you expect. We cannot promise a result, but a tutor can help you practise.",
+            "button": "Ask about interview lessons",
+            "goal": "interview"
+          },
+          {
+            "id": "employers",
+            "title": "For care homes and employers",
+            "text": "Tell us how many staff need lessons and which situations matter, such as handovers and talking to families. The office will reply with what is possible.",
+            "button": "Ask about lessons for staff",
+            "goal": "staff"
+          }
         ]
       },
       "ielts": {
@@ -716,10 +741,10 @@
         "summary": "One-to-one lessons for a B1 speaking and listening test.",
         "goal": "selt-b1",
         "format": "one-to-one",
-        "metaTitle": "B1 speaking and listening test lessons",
+        "metaTitle": "B1 SELT preparation for settlement",
         "metaDescription": "One-to-one online lessons to prepare for a B1 speaking and listening test for settlement or citizenship. We do not run the test. From 15 pounds.",
         "h1": "B1 speaking and listening test preparation",
-        "lead": "One-to-one lessons with a tutor who prepares you for the speaking and listening format of a B1 test, such as Trinity GESE Grade 5 or an approved equivalent.",
+        "lead": "One-to-one lessons with a tutor who prepares you for the speaking and listening format of a B1 Secure English Language Test (SELT), such as Trinity GESE Grade 5 or an approved equivalent.",
         "notice": "We do not run the test. You book the test separately with an approved provider, and you must check your own visa or settlement route on gov.uk to see which test you need.",
         "who": [
           "Applicants for settlement or citizenship who need to show B1 speaking and listening",
@@ -904,7 +929,8 @@
           }
         ]
       }
-    }
+    },
+    "guidesTitle": "Guides for this goal"
   },
   "pricing": {
     "h1": "Prices for online English lessons",
@@ -982,15 +1008,15 @@
       },
       {
         "title": "Get matched to a tutor",
-        "text": "The office replies by email with a tutor and a lesson plan to suggest, and with times that could work. Bulgarian speaking tutors are available for one-to-one lessons."
+        "text": "The office replies by email with a tutor and a first lesson to suggest, and with times that could work. Bulgarian speaking tutors are available for one-to-one lessons."
+      },
+      {
+        "title": "Confirm your place and pay",
+        "text": "The office confirms your place and sends the bank details with your booking confirmation. For group courses the £50 deposit secures your place. You pay by bank transfer. There is no card payment on the site."
       },
       {
         "title": "Have your first lesson",
         "text": "We send you the link for the live video call with your booking. Group courses run live on Zoom."
-      },
-      {
-        "title": "Pay by bank transfer",
-        "text": "The office confirms your place and sends the bank details. You pay by bank transfer. There is no card payment on the site."
       },
       {
         "title": "Keep going",
@@ -1000,8 +1026,8 @@
     "cta": "Ready for step one?"
   },
   "trial": {
-    "h1": "Try a class free",
-    "lead": "Join one live group class free of charge to see how we teach, or ask for a level check by email.",
+    "h1": "Try a group class free",
+    "lead": "Join one live group class free of charge to see how we teach, or ask for a level check by email. The free class is a group class. One-to-one lessons start with the office suggesting a tutor and a first lesson.",
     "options": {
       "title": "Two ways to start",
       "items": [
@@ -1016,7 +1042,7 @@
       ]
     },
     "formTitle": "Ask for your free class",
-    "note": "Free classes are for group courses. One-to-one lessons are charged from the first lesson."
+    "note": "The free class is a group class. For one-to-one lessons, tell us your goal and we will suggest a tutor and a first lesson."
   },
   "placement": {
     "h1": "English placement test",
@@ -1446,7 +1472,8 @@
     "breadcrumb": "Guides",
     "defaultCta": "Enquire about lessons",
     "ctaTitle": "Next step",
-    "by": "By {author}"
+    "by": "By {author}",
+    "ctaText": "Tell us your goal and your date. The office replies by email with a tutor and a first lesson to suggest."
   },
   "notFound": {
     "h1": "We could not find that page",

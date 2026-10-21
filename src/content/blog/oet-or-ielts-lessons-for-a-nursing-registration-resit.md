@@ -1,7 +1,7 @@
 ---
 title: "OET or IELTS lessons for a nursing registration resit?"
 description: "How to choose between OET and IELTS lessons when you must retake an English test for nursing registration, with a decision sheet you can copy."
-pubDate: "2026-10-22"
+pubDate: "2026-10-21"
 lang: "en"
 day: 1
 pillar: "Passing a nursing English resit"
@@ -18,7 +18,7 @@ secondaryKeywords:
   - "nursing registration English"
 faq:
   - q: "What is OET?"
-    a: "OET stands for the Occupational English Test. It is an English test built around healthcare settings, and the Nursing and Midwifery Council accepts it as evidence of English for registration."
+    a: "OET stands for the Occupational English Test. It is an English test built around healthcare settings, and the Nursing and Midwifery Council (NMC) names it among the tests it accepts. Check the NMC page for the current list."
   - q: "What is the NMC?"
     a: "The NMC is the Nursing and Midwifery Council, the UK regulator that keeps the register of nurses and midwives. It sets the English language evidence you need to join the register."
   - q: "Are care workers automatically nurses?"
@@ -26,19 +26,17 @@ faq:
 sources:
   - title: "NMC: accepted English language tests"
     url: "https://www.nmc.org.uk/registration/joining-the-register/english-language-requirements/accepted-english-language-tests/"
-    checked: "2026-10-21"
   - title: "IELTS: test types"
     url: "https://ielts.org/take-a-test/test-types"
-    checked: "2026-10-21"
 draft: false
 author: "The Ucraya team"
 ---
 
-Choose the test that matches your last scores and the earliest test date you can really get, because the Nursing and Midwifery Council (NMC) accepts both the Occupational English Test (OET) and the International English Language Testing System (IELTS) Academic. Then ask for lessons built around that test's four parts, starting with your weakest one.
+Choose the test that fits your last scores and the earliest date you can book. The Nursing and Midwifery Council (NMC) lists the tests it accepts, including the Occupational English Test (OET) and the International English Language Testing System (IELTS). Then ask for lessons built around that test, starting with your weakest skill.
 
 ## Check what the NMC accepts today
 
-Start with the regulator, not with a tutor or a forum. The NMC publishes the English tests it accepts and the scores it needs. When the [NMC page on accepted English language tests](https://www.nmc.org.uk/registration/joining-the-register/english-language-requirements/accepted-english-language-tests/) was checked on 21 October 2026, it listed OET and IELTS Academic. For IELTS it asked for 7 in listening, reading and speaking, and 6.5 in writing. For OET it asked for 350 in listening, reading and speaking, and 300 in writing.
+Start with the regulator, not with a tutor or a forum. The [NMC page on accepted English language tests](https://www.nmc.org.uk/registration/joining-the-register/english-language-requirements/accepted-english-language-tests/) lists the tests it accepts and the score it needs in each skill. Open it and write down the line for each of listening, reading, writing and speaking before you plan anything.
 
 The NMC also has rules on how recent a result must be and on whether results from different sittings can be put together. Those rules can change, so read the page again on the day you decide. Treat any summary, including this one, as a pointer and not as the rule.
 
@@ -46,28 +44,28 @@ One more point that saves money: lessons are not the test. Ucraya does not run O
 
 ## Compare the two tests
 
-Both tests check listening, reading, writing and speaking, and both are accepted for the same purpose. The difference is the material you work with.
+Both tests check listening, reading, writing and speaking. The difference is the material you work with.
 
 | | OET | IELTS Academic |
 |---|---|---|
 | What it is | An English test built around healthcare settings | A general academic English test |
 | Typical material | Tasks that look like clinical work and workplace communication | Topics that suit study and academic life |
-| NMC line for three skills | 350 in listening, reading and speaking | 7 in listening, reading and speaking |
-| NMC line for writing | 300 | 6.5 |
+| NMC line for listening, reading and speaking | See the NMC page | See the NMC page |
+| NMC line for writing | See the NMC page | See the NMC page |
 | Who sets it | The OET organisation | The IELTS test partners, described on [ielts.org](https://ielts.org/take-a-test/test-types) |
 
 Some nurses prefer OET because the tasks feel closer to their daily work. Others sit IELTS because the next date is sooner or because they have already practised for it. Neither is the better choice for everybody, which is why the decision sheet below starts with your own results.
 
 ## Review your current scores
 
-Get your last score report out and compare each skill with the NMC line, not just the overall result. A resit is usually about one or two skills. If listening and reading already meet the line, your lessons should protect those skills and spend most of their time on the gap.
+Get your last score report out and compare each skill with the line on the NMC page, not just the overall result. A resit is usually about one or two skills. If listening and reading already meet the line, your lessons should protect those skills and spend most of their time on the gap.
 
 Here is a decision sheet, filled in for a made up example. Ana is not a real person, and the numbers are invented to show how the sheet works.
 
 | Question | Ana's answer (a made up example) | What it points to |
 |---|---|---|
-| Which skills are below the NMC line? | Speaking 6.5 and writing 6 on IELTS | Work on those two first |
-| How big is the gap? | Half a point in each | Realistic with focused practice, but not certain |
+| Which skills are below the line on the NMC page? | Speaking and writing below the line on the NMC page | Work on those two first |
+| How big is the gap? | A small gap in each | Realistic with focused practice, but not certain |
 | What is the earliest test date I can get? | IELTS in five weeks, OET in eight | IELTS is sooner |
 | Which test have I already practised for? | IELTS, twice | Her practice carries over |
 | Which writing task suits me better? | A letter feels easier than an essay | A small point towards OET |

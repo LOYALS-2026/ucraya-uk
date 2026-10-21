@@ -39,6 +39,8 @@
   a { color: var(--color-navy); text-underline-offset: 3px; }
   a:hover { text-decoration-thickness: 2px; }
   :focus-visible { outline: 3px solid var(--color-navy); outline-offset: 2px; border-radius: 4px; }
+  .section-dark :focus-visible, .site-footer :focus-visible, .cookie :focus-visible { outline-color: var(--color-amber); }
+  [id] { scroll-margin-top: 5rem; }
   img, svg { max-width: 100%; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -283,8 +285,10 @@
 
   /* Placement quiz */
   .quiz fieldset { border: 1px solid var(--color-line); border-radius: 1rem; padding: 1rem 1.1rem 0.6rem; margin-bottom: 1rem; background: #fff; }
-  .quiz legend { font-weight: 700; color: var(--color-ink); padding-inline: 0.4rem; }
-  .quiz .qtext { font-size: 1.15rem; font-weight: 700; color: var(--color-ink); margin-bottom: 0.6rem; }
+  .quiz legend { float: left; width: 100%; padding: 0; margin-bottom: 0.6rem; font-weight: 700; color: var(--color-ink); }
+  .quiz legend + * { clear: both; }
+  .quiz .qnum { display: block; font-size: 0.92rem; color: var(--color-muted); }
+  .quiz .qtext { display: block; font-size: 1.15rem; font-weight: 700; color: var(--color-ink); }
   .quiz .opt {
     display: flex; align-items: center; gap: 0.75rem; min-height: 2.75rem; padding: 0.4rem 0.75rem; margin-bottom: 0.5rem;
     border: 1.5px solid var(--color-line); border-radius: 0.6rem; cursor: pointer;

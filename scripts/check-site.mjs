@@ -120,7 +120,9 @@ for (const file of htmlFiles) {
   // canonical
   const links = [...html.matchAll(/<link\s[^>]*>/gi)].map((m) => m[0]);
   const canon = links.find((t) => attr(t, 'rel') === 'canonical');
-  if (!canon) fail(url, 'no canonical');
+  if (url === '/404.html') {
+    if (canon) fail(url, 'the 404 page must not have a canonical');
+  } else if (!canon) fail(url, 'no canonical');
   else if (!/^https:\/\/ucraya\.uk\//.test(attr(canon, 'href') || '')) fail(url, 'canonical is not on https://ucraya.uk');
 
   // hreflang
@@ -213,6 +215,14 @@ for (const file of htmlFiles) {
     if (attr(m[0], 'alt') === null) fail(url, 'image without alt');
   }
 
+  // every button and link must have a name (the submit button was once empty in every language)
+  for (const m of html.matchAll(/<(button|a)\b([^>]*)>([\s\S]*?)<\/\1>/gi)) {
+    const inner = m[3].replace(/<img\b[^>]*\salt="([^"]+)"[^>]*>/gi, ' $1 ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').trim();
+    if (!inner && !/\saria-label="[^"]+"/.test(m[2]) && !/\saria-labelledby="[^"]+"/.test(m[2])) {
+      fail(url, `empty <${m[1].toLowerCase()}> with no accessible name (${m[2].trim().slice(0, 60)})`);
+    }
+  }
+
   // enquiry form rules (Netlify Forms)
   const forms = [...html.matchAll(/<form\b[^>]*>[\s\S]*?<\/form>/gi)].map((m) => m[0]).filter((f) => /name="enquiry"/.test(f));
   if (baseUrl === '/contact/' && forms.length === 0) fail(url, 'enquiry form missing on the contact page');
@@ -226,7 +236,7 @@ for (const file of htmlFiles) {
     if (!/<input[^>]*name="form-name"[^>]*value="enquiry"/.test(f)) fail(url, 'form lacks hidden form-name=enquiry');
     if (!/<input[^>]*name="subject"/.test(f)) fail(url, 'form lacks hidden subject');
     const names = [...f.matchAll(/<(?:input|select|textarea)\b[^>]*\sname="([^"]+)"/g)].map((m) => m[1]);
-    for (const n of ['email', 'name', 'phone', 'first-language', 'goal', 'format', 'level', 'preferred-times', 'message', 'consent', 'bot-field']) {
+    for (const n of ['email', 'name', 'phone', 'first-language', 'goal', 'format', 'level', 'deadline', 'preferred-times', 'message', 'bot-field']) {
       if (!names.includes(n)) fail(url, `form lacks field ${n}`);
     }
     const firstText = f.match(/<input\b[^>]*type="(?:text|email|tel)"[^>]*>/i);

@@ -5,17 +5,18 @@ These rules apply to every article on ucraya.uk. The checker (`npm run check:art
 ## 1. Where claims come from
 
 - `content/FACTS.md` is the only source of any claim about Ucraya: prices, names, qualifications, policies, contact details, what the lessons are.
-- Rules about tests, registration or immigration come only from the official source for that rule, read on the day you write (gov.uk, nmc.org.uk, ielts.org, oet.com, trinitycollege.com). Record each one in `sources` with today's date.
+- Rules about tests, registration or immigration come only from the official source for that rule, read on the day you write (gov.uk, nmc.org.uk, ielts.org, oet.com, trinitycollege.com). Record each one in `sources`.
+- A `checked:` date may be written only when you fetched that exact page in this session (WebFetch or curl returned its text) and read the figure there. Never copy a date, a fee, a score or a deadline from the research folder, from memory or from another article. If the page did not load, leave `checked` out of that source, name the page in the text, and tell the reader to check it on the day they book. Never write "checked on" in the text for a page you did not fetch.
 - If the official source contradicts the topical map row, the article follows the source and says the rule was checked on that date.
 - The research folder is background, not a source of claims.
 
 ## 2. The file
 
 - Path: `src/content/blog/<slug>.md`. The slug is the title in lower case with letters and digits only, words joined by hyphens, apostrophes dropped, "&" written as "and". If that is longer than 60 characters, cut it after the last whole word that fits in 60. The checker computes the same slug and fails on a difference.
-- Front matter has exactly these fields and no others: `title` (70 characters at most), `description` (160 at most), `pubDate` (YYYY-MM-DD, quoted), `updatedDate` (optional), `lang` ("en"), `day` (a number), `pillar`, `cluster`, `segment`, `funnelStage` (awareness, consideration or decision), `moneyPage` (a site path with a trailing slash, for example `/courses/oet/`), `cta`, `aiQuestion`, `primaryKeyword`, `secondaryKeywords` (a list), `faq` (a list of exactly three `q` and `a` pairs), `sources` (optional list of `title`, `url`, `checked`), `draft` (false), `author` ("The Ucraya team").
+- Front matter has exactly these fields and no others: `title` (59 characters at most, because the site cuts page titles at 60), `description` (160 at most), `pubDate` (YYYY-MM-DD, quoted), `updatedDate` (optional), `lang` ("en"), `day` (a number), `pillar`, `cluster`, `segment`, `funnelStage` (awareness, consideration or decision), `moneyPage` (a site path with a trailing slash, for example `/courses/oet/`), `cta`, `aiQuestion`, `primaryKeyword`, `secondaryKeywords` (a list), `faq` (a list of exactly three `q` and `a` pairs), `sources` (optional list of `title`, `url` and, only when the page was fetched in this session, `checked`), `draft` (false), `author` ("The Ucraya team").
 - Copy `pillar`, `cluster`, `segment`, `funnelStage`, `cta`, `aiQuestion` and `primaryKeyword` from the map row exactly. `moneyPage` is the row's money page with a trailing slash.
 - The three FAQ pairs start from the row's `faq` field. Rewrite each answer in full sentences, correct it against the sources, and remove any planning language such as "unconfirmed" or "confirm the offer".
-- `pubDate` is the row's `publish_date`.
+- `pubDate` is the day the article goes live: `today` from `npm run article:next`, not the row's `publish_date`.
 
 ## 3. The body
 
@@ -39,9 +40,10 @@ These rules apply to every article on ucraya.uk. The checker (`npm run check:art
 
 ## 5. Money
 
-- A pound amount is allowed only if it is one of the prices in FACTS section 3 (15, 20, 298, 320, plus the group course instalments 50, 124 and 248), or the published fee of a third party that the row's sources name with a URL. A third party fee goes on a line that also holds the link to the page that shows it, and the text says when it was checked.
+- A pound amount is allowed only if it is one of the prices in FACTS section 3 (15, 20, 298, 320, plus the group course instalments 50, 124 and 248), or the published fee of a third party, but only if you fetched the page that shows it in this session. A third party fee or number goes on a line that also holds the link to that page, the host of the link must be one of gov.uk, nmc.org.uk, oet.com, ielts.org, trinitycollege.com, britishcouncil.org, idp.com, cambridgeenglish.org, languagecert.org or pearsonpte.com, the same URL must be in `sources` with a `checked` date, and the text says when it was checked. If you did not fetch the page, write no figure and tell the reader to check the page on the day they book.
 - Never add up or multiply prices into new amounts. Say "per lesson" and let the reader do the sum.
 - Describe the lessons exactly as FACTS does: one-to-one 55 minute lessons on a live video call at £15, or £20 when taught entirely in English; exam preparation of 24 hours for £320; the online group course at £298 per level. We do not run tests. We do not promise a score, a visa or a job.
+- Never write that Ucraya runs, offers, administers or hosts a test, that it is an approved provider, or that it is authorised or an official partner. Never put a percentage next to pass, success, rate, score or results. Never write assured, guaranteed, guarantee or promise about an outcome.
 - Anything marked TO CONFIRM in FACTS is said only with the wording FACTS gives.
 
 ## 6. People and proof
@@ -50,6 +52,8 @@ These rules apply to every article on ucraya.uk. The checker (`npm run check:art
 - A worked example is allowed when it is labelled "a made up example" (or "made up") where it first appears.
 - Name a tutor only from FACTS section 7, using the qualification wording there. A statement by a tutor is allowed only if FACTS records it as their own words from the school site, and the sentence says so.
 - Testimonials come only from FACTS section 6, word for word.
+- A quotation of more than six words attributed to a person or student in the same or the previous sentence fails the checker, unless the person is a tutor from FACTS section 7 and the sentence says it is from the school site.
+- A past tense result about a student, learner or client (passed, achieved, got, scored) is a story. It is allowed only in a paragraph that says "made up example" or "imagined".
 
 ## 7. Legal, immigration and medical lines
 

@@ -16,7 +16,7 @@
     "blog": "Ghiduri",
     "contact": "Contact",
     "about": "Despre noi",
-    "trial": "Oră gratuită",
+    "trial": "Oră de grup gratuită",
     "placement": "Test de nivel"
   },
   "header": {
@@ -29,7 +29,7 @@
   "buttons": {
     "enquire": "Cere informații despre lecții",
     "enquireShort": "Cere informații",
-    "trial": "Încearcă o oră gratuit",
+    "trial": "Încearcă o oră de grup gratuită",
     "whatsapp": "Scrie-ne pe WhatsApp",
     "whatsappShort": "WhatsApp",
     "placement": "Fă testul de nivel",
@@ -40,7 +40,9 @@
     "send": "Trimite cererea",
     "allReviews": "Citește recenziile",
     "reviewOnGoogle": "Ne găsești pe Google",
-    "howItWorks": "Cum funcționează"
+    "howItWorks": "Cum funcționează",
+    "whatsappMessage": "Scrie-ne pe WhatsApp",
+    "askAbout": "Cere informații despre asta"
   },
   "common": {
     "breadcrumbs": "Navigare pe pagini",
@@ -108,6 +110,10 @@
       {
         "slug": "interview",
         "label": "Interviu de angajare sau engleză de serviciu"
+      },
+      {
+        "slug": "staff",
+        "label": "Engleză pentru angajații mei (angajator)"
       },
       {
         "slug": "kids",
@@ -182,7 +188,7 @@
     ],
     "times": "Zilele și orele preferate (include fusul orar dacă ești în afara Marii Britanii)",
     "message": "Mai este ceva ce ar trebui să știm?",
-    "consent": "Sunt de acord ca Ucraya să folosească aceste date pentru a răspunde cererii mele. Am citit {privacyLink}.",
+    "consent": "Folosim aceste date doar ca să îți răspundem. Citește {privacyLink}.",
     "privacyLinkText": "pagina de confidențialitate",
     "required": "Obligatoriu",
     "optional": "Opțional",
@@ -190,7 +196,8 @@
     "placementNote": "Ai făcut testul nostru de nivel. Vom porni de la nivelul obținut.",
     "noscript": "Trimite cererea la office@ucraya.co.uk dacă formularul nu funcționează.",
     "reply": "Răspundem prin email. Ne poți scrie și pe WhatsApp.",
-    "honeypot": "Lasă acest câmp gol"
+    "honeypot": "Lasă acest câmp gol",
+    "deadline": "Data testului, interviului sau a altui termen limită (opțional)"
   },
   "meta": {
     "home": {
@@ -210,7 +217,7 @@
       "description": "Ceri informații, primești un profesor, ai prima lecție și plătești prin transfer bancar după confirmarea biroului. Iată toți pașii."
     },
     "trial": {
-      "title": "Încearcă o oră gratuit",
+      "title": "Oră de grup gratuită",
       "description": "Participă gratuit la o oră de grup live ca să vezi cum predăm, sau cere o verificare de nivel. Trimite cererea și îți răspundem."
     },
     "placement": {
@@ -268,7 +275,7 @@
     "heroNote": "Nu plătești online: biroul îți confirmă locul, apoi plătești prin transfer bancar.",
     "audience": {
       "title": "Pentru cine sunt lecțiile noastre",
-      "intro": "Cei mai mulți vin la noi cu o dată în minte. Alege situația cea mai apropiată de a ta.",
+      "intro": "Alege obiectivul cel mai apropiat de al tău.",
       "items": [
         {
           "slug": "oet",
@@ -317,7 +324,7 @@
         },
         {
           "title": "Îți propunem un profesor și o primă lecție",
-          "text": "Biroul îți răspunde prin email cu un profesor, un plan de lecție și un interval care ți se potrivește."
+          "text": "Biroul îți răspunde prin email cu un profesor și o primă lecție propuse și cu un interval care ți se potrivește."
         },
         {
           "title": "Începi lecțiile, plătești prin transfer bancar",
@@ -642,6 +649,22 @@
             "q": "Cât costă?",
             "a": "£15 pe lecție de 55 de minute, sau £20 dacă vrei ca lecția să fie predată numai în engleză."
           }
+        ],
+        "sections": [
+          {
+            "id": "interview",
+            "title": "Urmează un interviu de angajare",
+            "text": "Spune-ne data și postul. Îți propunem un profesor și o primă lecție, cu exerciții pentru întrebările și conversația la care te aștepți. Nu putem promite un rezultat, dar un profesor te poate ajuta să exersezi.",
+            "button": "Cere informații despre lecțiile pentru interviu",
+            "goal": "interview"
+          },
+          {
+            "id": "employers",
+            "title": "Pentru cămine de îngrijire și angajatori",
+            "text": "Spune-ne câți angajați au nevoie de lecții și ce situații contează, de exemplu predarea turei și discuțiile cu familiile. Biroul îți răspunde cu ce este posibil.",
+            "button": "Cere informații despre lecții pentru angajați",
+            "goal": "staff"
+          }
         ]
       },
       "ielts": {
@@ -716,10 +739,10 @@
         "summary": "Lecții individuale pentru un test B1 de vorbire și ascultare.",
         "goal": "selt-b1",
         "format": "one-to-one",
-        "metaTitle": "Lecții pentru testul B1 de vorbire și ascultare",
+        "metaTitle": "Pregătire pentru testul B1 SELT",
         "metaDescription": "Lecții individuale online pentru un test B1 de vorbire și ascultare pentru stabilire sau cetățenie. Noi nu organizăm testul. De la £15.",
         "h1": "Pregătire pentru testul B1 de vorbire și ascultare",
-        "lead": "Lecții individuale cu un profesor care te pregătește pentru formatul de vorbire și ascultare al unui test B1, cum ar fi Trinity GESE Grade 5 sau un echivalent aprobat.",
+        "lead": "Lecții individuale cu un profesor care te pregătește pentru formatul de vorbire și ascultare al unui test B1 (Secure English Language Test, SELT), cum ar fi Trinity GESE Grade 5 sau un echivalent aprobat.",
         "notice": "Noi nu organizăm testul. Testul îl rezervi separat, la un furnizor aprobat, și trebuie să verifici singur pe gov.uk traseul tău de viză sau de stabilire, ca să vezi ce test îți trebuie.",
         "who": [
           "Solicitanți de stabilire sau de cetățenie care trebuie să dovedească nivelul B1 la vorbire și ascultare",
@@ -904,7 +927,8 @@
           }
         ]
       }
-    }
+    },
+    "guidesTitle": "Ghiduri pentru acest obiectiv"
   },
   "pricing": {
     "h1": "Prețuri pentru lecțiile de engleză online",
@@ -982,15 +1006,15 @@
       },
       {
         "title": "Primești un profesor",
-        "text": "Biroul îți răspunde prin email cu un profesor și un plan de lecție propuse, și cu intervale care ar putea merge. Pentru lecțiile individuale sunt disponibili profesori care vorbesc bulgară."
+        "text": "Biroul îți răspunde prin email cu un profesor și o primă lecție propuse, și cu intervale care ar putea merge. Pentru lecțiile individuale sunt disponibili profesori care vorbesc bulgară."
+      },
+      {
+        "title": "Confirmi locul și plătești",
+        "text": "Biroul îți confirmă locul și îți trimite datele bancare odată cu confirmarea rezervării. La cursurile de grup, avansul de £50 îți asigură locul. Plătești prin transfer bancar. Pe site nu se plătește cu cardul."
       },
       {
         "title": "Ai prima lecție",
         "text": "Îți trimitem linkul pentru apelul video live odată cu rezervarea. Cursurile de grup se țin live pe Zoom."
-      },
-      {
-        "title": "Plătești prin transfer bancar",
-        "text": "Biroul îți confirmă locul și îți trimite datele bancare. Plătești prin transfer bancar. Pe site nu se plătește cu cardul."
       },
       {
         "title": "Continui",
@@ -1000,8 +1024,8 @@
     "cta": "Gata pentru primul pas?"
   },
   "trial": {
-    "h1": "Încearcă o oră gratuit",
-    "lead": "Participă gratuit la o oră de grup live ca să vezi cum predăm, sau cere o verificare de nivel prin email.",
+    "h1": "Încearcă o oră de grup gratuită",
+    "lead": "Participă gratuit la o oră de grup live ca să vezi cum predăm, sau cere o verificare de nivel prin email. Ora gratuită este o oră de grup. Lecțiile individuale încep cu o propunere din partea biroului: un profesor și o primă lecție.",
     "options": {
       "title": "Două moduri de a începe",
       "items": [
@@ -1016,7 +1040,7 @@
       ]
     },
     "formTitle": "Cere ora ta gratuită",
-    "note": "Orele gratuite sunt pentru cursurile de grup. Lecțiile individuale se plătesc de la prima lecție."
+    "note": "Ora gratuită este o oră de grup. Pentru lecții individuale, spune-ne obiectivul tău și îți propunem un profesor și o primă lecție."
   },
   "placement": {
     "h1": "Test de nivel la engleză",

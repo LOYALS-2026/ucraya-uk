@@ -1,7 +1,7 @@
 ---
 title: "B1 SELT preparation: choosing online lessons"
 description: "How to choose online lessons for a B1 SELT: check your route, find the approved test, test your speaking and agree a plan. Includes a route-to-test checklist."
-pubDate: "2026-10-23"
+pubDate: "2026-10-21"
 lang: "en"
 day: 2
 pillar: "Passing B1 for settlement or citizenship"
@@ -26,16 +26,12 @@ faq:
 sources:
   - title: "GOV.UK: prove your knowledge of English for citizenship and settlement"
     url: "https://www.gov.uk/english-language"
-    checked: "2026-10-21"
   - title: "GOV.UK: prove your English language abilities with a Secure English Language Test"
     url: "https://www.gov.uk/guidance/prove-your-english-language-abilities-with-a-secure-english-language-test-selt"
-    checked: "2026-10-21"
   - title: "Trinity College London: SELT B1 (GESE Grade 5)"
     url: "https://www.trinitycollege.com/qualifications/SELT/B1-GESE-grade-5"
-    checked: "2026-10-21"
-  - title: "Trinity College London: SELT booking help and fees"
+  - title: "Trinity College London: SELT booking help"
     url: "https://seltbooking.trinitycollege.co.uk/OEWeb/help.do"
-    checked: "2026-10-21"
 draft: false
 author: "The Ucraya team"
 ---
@@ -48,17 +44,15 @@ Before anything else, find out whether you need an English test at all and at wh
 
 The place to look is gov.uk, starting with [how to prove your knowledge of English](https://www.gov.uk/english-language). Read the page for your own route, write down the level it asks for, and note the date you read it. Rules for immigration applications change, so the page you read matters more than anything a lesson provider tells you, including this guide.
 
-When this was checked on 21 October 2026, Trinity's page for the B1 test also mentioned changes to the test route from March 2027. If your application is likely to fall near that time, read the current page before you book.
-
 We cannot give immigration advice. If your case is complicated, ask an immigration adviser who is regulated to give that advice.
 
 ## Identify the approved test
 
 A SELT must be taken with a provider that is on the government's list, and gov.uk explains the list in its [guidance on Secure English Language Tests](https://www.gov.uk/guidance/prove-your-english-language-abilities-with-a-secure-english-language-test-selt). A certificate from a language school, including ours, does not count as the test.
 
-One option for B1 speaking and listening is Trinity College London's Graded Examinations in Spoken English (GESE) Grade 5. Trinity describes the [B1 test](https://www.trinitycollege.com/qualifications/SELT/B1-GESE-grade-5) as a short speaking and listening conversation with an examiner; it lasts about ten minutes according to the page we checked. Other providers and other tests may be listed for your route, so compare them on gov.uk.
+One option for B1 speaking and listening is Trinity College London's Graded Examinations in Spoken English (GESE) Grade 5. Trinity's [B1 test page](https://www.trinitycollege.com/qualifications/SELT/B1-GESE-grade-5) explains the format and length of the speaking and listening conversation with an examiner. Other providers and other tests may be listed for your route, so compare them on gov.uk.
 
-Test fees are paid to the test provider, not to us. When checked on 21 October 2026, [Trinity's booking help page](https://seltbooking.trinitycollege.co.uk/OEWeb/help.do) listed £160 for its speaking tests. Confirm the current fee on the booking site before you budget.
+Test fees are paid to the test provider, not to us. The provider's [booking help page](https://seltbooking.trinitycollege.co.uk/OEWeb/help.do) shows the current fee, so check it on the day you book and before you budget.
 
 ## Assess your speaking
 

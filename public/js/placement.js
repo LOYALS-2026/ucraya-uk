@@ -1,5 +1,6 @@
 // Placement test scoring. Runs in the browser only; nothing is sent anywhere.
 (function () {
+  var motion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
   var form = document.getElementById('quiz');
   if (!form) return;
   var result = document.getElementById('quiz-result');
@@ -47,7 +48,7 @@
     result.hidden = false;
     result.setAttribute('tabindex', '-1');
     result.focus();
-    result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    result.scrollIntoView({ behavior: motion, block: 'start' });
   });
 
   var again = document.getElementById('quiz-again');
@@ -55,6 +56,6 @@
     form.reset();
     result.hidden = true;
     form.hidden = false;
-    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    form.scrollIntoView({ behavior: motion, block: 'start' });
   });
 })();

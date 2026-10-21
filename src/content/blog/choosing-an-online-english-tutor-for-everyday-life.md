@@ -1,7 +1,7 @@
 ---
 title: "Choosing an online English tutor for everyday life"
 description: "How to choose an online English tutor in the UK: set a real-life goal, check experience and feedback, compare formats and costs, and start with an assessment."
-pubDate: "2026-10-24"
+pubDate: "2026-10-21"
 lang: "en"
 day: 3
 pillar: "Choosing a tutor for everyday English"
@@ -9,7 +9,7 @@ cluster: "pillar guide"
 segment: "Cross-segment tutor buyers"
 funnelStage: "consideration"
 moneyPage: "/pricing/"
-cta: "Request confirmed lesson options and prices"
+cta: "Ask about lessons and prices"
 aiQuestion: "How do I choose an online English tutor for everyday life in the UK?"
 primaryKeyword: "choose online English tutor UK"
 secondaryKeywords:
@@ -61,7 +61,7 @@ The same price can buy very different lessons, so compare what you actually get.
 |---|---|---|---|
 | Length | 55 minutes | 55 minutes | A 12 week level course of 72 lessons |
 | Who teaches | A tutor for you alone | A tutor for you alone | A tutor with a small group of no more than 12 |
-| Language of the lesson | Bulgarian speaking tutors are available | Entirely in English | In English |
+| Language of the lesson | Bulgarian speaking tutors are available | Entirely in English | Ask the office |
 | Price | £15 per lesson | £20 per lesson | £298 per level course |
 
 One-to-one lessons suit people with a specific goal or an unusual timetable, because you agree the time with your tutor. English through English suits people who want full immersion. A group course suits people who enjoy learning with others and want a steady structure from level A1 to B2. Levels A1 to B2 describe a path from beginner to upper intermediate, and one-to-one lessons are open to any level.

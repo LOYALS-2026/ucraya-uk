@@ -4,21 +4,14 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
-import { ROOT, BLOG_DIR, readMap } from './csv.mjs';
+import { ROOT, BLOG_DIR, readMap, slugify, todayLondon } from './csv.mjs';
 
 export const PRICE_ALLOW = [15, 20, 298, 320, 50, 124, 248];
-const COURSE_PATHS = [
-  '/courses/general-english/', '/courses/business-english/', '/courses/ielts/',
-  '/courses/selt-b1/', '/courses/oet/', '/courses/kids/',
-];
-// Any course page the site actually has is also accepted (the site is built by another agent).
-const coursesDir = path.join(ROOT, 'src', 'pages', 'courses');
-if (existsSync(coursesDir)) {
-  for (const f of readdirSync(coursesDir)) {
-    const n = f.replace(/\.(astro|md|mdx)$/, '');
-    if (n && n !== 'index' && !n.startsWith('[')) COURSE_PATHS.push(`/courses/${n}/`);
-  }
-}
+// The course pages are read from src/lib/routes.ts (COURSE_SLUGS), so a new course page is accepted at once.
+const routesSrc = readFileSync(path.join(ROOT, 'src', 'lib', 'routes.ts'), 'utf8');
+const slugBlock = /export const COURSE_SLUGS\s*=\s*\[([\s\S]*?)\]/.exec(routesSrc);
+const COURSE_PATHS = [...(slugBlock ? slugBlock[1].matchAll(/'([a-z0-9-]+)'/g) : [])].map((m) => `/courses/${m[1]}/`);
+COURSE_PATHS.push('/courses/');
 const MONEY_PAGES = [...new Set([...COURSE_PATHS, '/pricing/'])];
 
 const FIELDS = ['title', 'description', 'pubDate', 'updatedDate', 'lang', 'day', 'pillar', 'cluster', 'segment',
@@ -50,17 +43,31 @@ const ACRONYMS = {
   CV: 'curriculum vitae',
 };
 
+// Hosts whose published figures an article may quote (only if the page was fetched that session
+// and the same URL is in the front matter sources with a checked date).
+export const FEE_HOSTS = ['gov.uk', 'nmc.org.uk', 'oet.com', 'ielts.org', 'trinitycollege.com', 'britishcouncil.org',
+  'idp.com', 'cambridgeenglish.org', 'languagecert.org', 'pearsonpte.com'];
+const hostAllowed = (url) => {
+  try {
+    const h = new URL(url).hostname.toLowerCase().replace(/^www\./, '');
+    return FEE_HOSTS.some((d) => h === d || h.endsWith('.' + d));
+  } catch { return false; }
+};
+const ACRONYM_OK = ['UK', 'GBP', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'CV', 'NHS', 'PDF', 'ID', 'USA', 'EU', 'FAQ', 'VAT', 'ESOL', 'AM', 'PM', 'GMT', 'BST'];
+const TESTWORDS = '(?:oet|ielts|selt|b1|gese|trinity|cambridge|pte|toefl|duolingo|test|tests|exam|exams|examination|examinations)';
+const CLAIM_PATTERNS = [
+  [new RegExp(`\\b(?:we|ucraya|our\\s+(?:school|tutors?|team|centre|center))\\s+(?:run|runs|administer|administers|host|hosts|conduct|conducts|offer|offers|provide|provides|deliver|delivers)\\s+(?:the\\s+|a\\s+|an\\s+|your\\s+|official\\s+)?(?:[a-z0-9-]+\\s+){0,2}${TESTWORDS}\\b`, 'i'), 'a claim that Ucraya runs, offers or administers a test'],
+  [/\bour\s+(?:own\s+)?(?:test|tests|exam|exams)\b/i, 'a claim of "our test"'],
+  [/\b(?:ucraya|we|the school|our school)\s+(?:is|are|['’]re)\s+(?:\w+\s+){0,3}?(?:approved|authori[sz]ed|recogni[sz]ed|certified|licen[sc]ed|endorsed|official)\b/i, 'a claim that Ucraya is approved, authorised, recognised or official'],
+  [/\b(?:ucraya|we|the school|our school)\b[^.?!\n]{0,50}?\b(?:approved|authori[sz]ed|licen[sc]ed)\s+(?:[a-z]+\s+){0,2}(?:provider|centre|center|partner)\b/i, 'a claim that Ucraya is an approved or authorised provider, centre or partner'],
+  [/\bofficial\s+(?:partner|provider|centre|center)\b/i, 'a claim of being an official partner or provider'],
+];
+
 const TUTORS = ['Stefani Dimitrova', 'Avgustina Angelova', 'Elena Petrova', 'Elitsa Georgieva', 'Lena Vlahova',
   'Liubomira Srebrina', 'Mira Srebrina', 'Maria Naldzhieva', 'Stella Atanasova', 'Vyara Yordanova',
   'Angelina Meshekusheva', 'Lili Dimitrova'];
 
-export function slugify(title) {
-  let s = title.toLowerCase().replace(/['’]/g, '').replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-  if (s.length <= 60) return s;
-  const cut = s.slice(0, 61);
-  const i = cut.lastIndexOf('-');
-  return (i > 0 ? cut.slice(0, i) : s.slice(0, 60)).replace(/-+$/, '');
-}
+export { slugify };
 
 const isDate = (v) => /^\d{4}-\d{2}-\d{2}$/.test(v) && !Number.isNaN(Date.parse(v + 'T00:00:00Z'))
   && new Date(v + 'T00:00:00Z').toISOString().slice(0, 10) === v;
@@ -78,6 +85,7 @@ function plainText(md) {
 const wordCount = (md) => (plainText(md).match(/[A-Za-z0-9£][A-Za-z0-9£'’.,%/-]*/g) || []).length;
 
 export function checkArticle(file, ctx) {
+  const today = ctx.today || todayLondon();
   const fails = [];
   const warns = [];
   const fail = (m) => fails.push(m);
@@ -105,7 +113,7 @@ export function checkArticle(file, ctx) {
   for (const k of Object.keys(fm)) if (!FIELDS.includes(k)) fail(`unknown front matter field "${k}"`);
   for (const k of REQUIRED) if (fm[k] === undefined || fm[k] === null || fm[k] === '') fail(`front matter field "${k}" is missing`);
   const str = (k) => (typeof fm[k] === 'string' ? fm[k] : '');
-  if (fm.title !== undefined && (typeof fm.title !== 'string' || fm.title.length > 70)) fail(`title must be a string of at most 70 characters (is ${String(fm.title).length})`);
+  if (fm.title !== undefined && (typeof fm.title !== 'string' || fm.title.length > 59)) fail(`title must be a string of at most 59 characters (the site cuts page titles at 60) (is ${String(fm.title).length})`);
   if (fm.description !== undefined && (typeof fm.description !== 'string' || fm.description.length > 160)) fail(`description must be a string of at most 160 characters (is ${String(fm.description).length})`);
   if (fm.pubDate !== undefined && !isDate(dateStr(fm.pubDate))) fail(`pubDate "${fm.pubDate}" is not a valid YYYY-MM-DD date`);
   if (fm.updatedDate !== undefined && !isDate(dateStr(fm.updatedDate))) fail(`updatedDate "${fm.updatedDate}" is not a valid YYYY-MM-DD date`);
@@ -134,12 +142,15 @@ export function checkArticle(file, ctx) {
   if (fm.sources !== undefined) {
     if (!Array.isArray(fm.sources)) fail('sources must be a list');
     else fm.sources.forEach((s, i) => {
-      if (!s || typeof s.title !== 'string' || !/^https:\/\//.test(s.url || '') || !isDate(dateStr(s.checked))) {
-        fail(`sources entry ${i + 1} needs title, https url and checked (YYYY-MM-DD)`);
+      if (!s || typeof s.title !== 'string' || !/^https:\/\//.test(s.url || '')) {
+        fail(`sources entry ${i + 1} needs a title and an https url`);
+      } else if (s.checked !== undefined) {
+        if (!isDate(dateStr(s.checked))) fail(`sources entry ${i + 1}: checked must be YYYY-MM-DD`);
+        else if (dateStr(s.checked) > today) fail(`sources entry ${i + 1}: checked ${dateStr(s.checked)} is in the future (today is ${today})`);
       }
     });
   } else {
-    warn('no sources listed; time sensitive rules need a source with today\'s checked date');
+    warn('no sources listed; a rule, fee or number about a test needs a source page fetched in this session');
   }
 
   // ---- match the topical map row
@@ -176,15 +187,88 @@ export function checkArticle(file, ctx) {
   if (/\[(?![^\]\n]*\]\()/.test(body)) fail('a "[" placeholder or bracket found that is not a link');
   if (/\{\{|\}\}|<<|>>|\bXX+\b/.test(bodyNoLinks)) fail('template marker found in the body');
 
+  // ---- claims about tests, outcomes and people
+  const prose = [body, str('description'), ...(Array.isArray(fm.faq) ? fm.faq.flatMap((p) => [p && p.q, p && p.a]) : [])]
+    .filter((x) => typeof x === 'string').join('\n');
+  const sentencesAll = prose.replace(/\r/g, '').split(/(?<=[.?!][”"']?)\s+|\n+/);
+  for (const [re, label] of CLAIM_PATTERNS) {
+    const m = re.exec(prose);
+    if (m) fail(`${label}: "${m[0]}". Ucraya does not run or administer tests and is not an approved provider`);
+  }
+  for (const m of prose.matchAll(/(\d+(?:\.\d+)?\s?(?:%|per\s?cent|percent))/gi)) {
+    const win = prose.slice(Math.max(0, m.index - 60), m.index + m[0].length + 60);
+    if (/\b(pass(?:ed|es|ing)?|success(?:ful)?|rates?|scores?|scored|results?)\b/i.test(win)) {
+      fail(`a percentage next to pass, success, rate, score or results: "${win.replace(/\s+/g, ' ').trim()}". Pass rates and outcome figures are not allowed`);
+    }
+  }
+  if (/\b(?:assured|guaranteed?|guarantees|definitely|certain to|will pass|success rate|years of experience)\b/i.test(prose)) {
+    fail(`outcome or hype wording found: "${(/\b(?:assured|guaranteed?|guarantees|definitely|certain to|will pass|success rate|years of experience)\b/i.exec(prose))[0]}"`);
+  }
+  for (const m of prose.matchAll(/\bpromis(?:e|es|ed|ing)\b/gi)) {
+    const before = prose.slice(Math.max(0, m.index - 25), m.index).toLowerCase();
+    if (!/(?:\bnot|\bnever|n't|\bcannot|\bno|\bwithout)\s+(?:\w+\s+)?$/.test(before)) {
+      fail(`"${m[0]}" is used as a promise of an outcome; only a negated form such as "we cannot promise" is allowed`);
+    }
+  }
+  if (/[^\s|][ \t]+-[ \t]+[^\s|-]|--/.test(prose.replace(/\|[\s:|-]+\|/g, ' '))) {
+    fail('a spaced hyphen or double hyphen is used as a dash; use a comma, a colon or a new sentence');
+  }
+  if (/\b(?:microsoft teams|skype|meet by google|hangouts)\b/i.test(prose)) fail('a video platform other than Zoom (groups) or "a live video call" is named; see FACTS section 3');
+  // quotations of more than six words attributed to a person or student
+  sentencesAll.forEach((sent, idx) => {
+    for (const q of sent.matchAll(/[“"]([^”"]{10,})[”"]/g)) {
+      const words = (q[1].match(/[A-Za-z0-9'’]+/g) || []).length;
+      if (words <= 6) continue;
+      const outside = sent.replace(/[“"][^”"]*[”"]/g, ' ');
+      const prev = (sentencesAll[idx - 1] || '').replace(/[“"][^”"]*[”"]/g, ' ');
+      const after = sent.slice(q.index + q[0].length);
+      const next = (sentencesAll[idx + 1] || '').replace(/[“"][^”"]*[”"]/g, ' ').slice(0, 80);
+      const attributed = /\b(said|says|told|wrote|writes|explained|added|asked|replied|according to|recalls?|recalled|commented|reviewer|review|testimonial)\b/i.test(outside + ' ' + prev)
+        || /\b(student|learner|client|customer|parent|nurse|candidate|mother|father|teacher|tutor)\b/i.test(outside + ' ' + prev + ' ' + next)
+        || /^[A-Z][a-z]+(?:\s[A-Z][a-z]+)?\s*,/.test(next.trim())
+        || /^\s*,?\s*-?\s*[A-Z][a-z]+(?:\s[A-Z][a-z]+)?\s*(?:,|$)/.test(after)
+        || /\b[A-Z][a-z]+\s+[A-Z][a-z]+\b/.test(outside.replace(/^[A-Z][a-z]+\s/, ''));
+      if (!attributed) continue;
+      const ctxText = prev + ' ' + sent;
+      const okTutor = TUTORS.some((t) => ctxText.includes(t)) && /(school'?s?\s+(site|website)|ucraya\.co\.uk)/i.test(ctxText);
+      if (!okTutor) fail(`a quotation of ${words} words is attributed to a person or student: "${sent.slice(0, 90)}". Only a tutor named in FACTS section 7, with the sentence saying it is from the school site, is allowed`);
+    }
+  });
+  // results about students, learners or clients presented as real cases
+  for (const block of body.split(/\n\s*\n/)) {
+    if (/made up|imagined/i.test(block)) continue;
+    for (const sent of block.split(/(?<=[.?!])\s+/)) {
+      if (/\b(students?|learners?|clients?|customers?)\b/i.test(sent) && /\b(passed|achieved|got|scored|reached|gained)\b/i.test(sent)) {
+        fail(`a past result about a student, learner or client appears without "made up example" or "imagined" in the paragraph: "${sent.slice(0, 90)}"`);
+      }
+    }
+  }
+  // acronyms not on the allow list need a bracketed expansion beside them
+  {
+    const known = new Set([...Object.keys(ACRONYMS), ...ACRONYM_OK]);
+    const seen = new Set();
+    for (const m of plainText(body).matchAll(/\b[A-Z]{2,6}\b/g)) {
+      const a = m[0];
+      if (known.has(a) || seen.has(a)) continue;
+      seen.add(a);
+      if (!new RegExp(`\\(\\s*${a}\\s*\\)|\\b${a}\\s*\\(`).test(body)) fail(`${a} is not on the acronym list and has no bracketed explanation at first use`);
+    }
+  }
+
   // ---- pounds
+  const citedUrls = new Set((Array.isArray(fm.sources) ? fm.sources : [])
+    .filter((x) => x && typeof x.url === 'string' && x.checked !== undefined && isDate(dateStr(x.checked))).map((x) => x.url));
   const lines = body.split('\n');
   lines.forEach((l, i) => {
-    const hasUrl = /\]\(https?:\/\//.test(l);
+    const urls = [...l.matchAll(/\]\((https?:\/\/[^)\s]+)\)/g)].map((m) => m[1]);
+    const cited = urls.some((u) => hostAllowed(u) && citedUrls.has(u));
     for (const m of l.matchAll(/(?:£|GBP\s?)\s?([\d,]+(?:\.\d+)?)/g)) {
       const v = parseFloat(m[1].replace(/,/g, ''));
-      if (!PRICE_ALLOW.includes(v) && !hasUrl) fail(`line ${i + 1}: pound amount ${m[0].trim()} is not in FACTS section 3 and the line has no cited URL`);
+      if (!PRICE_ALLOW.includes(v) && !cited) {
+        fail(`line ${i + 1}: pound amount ${m[0].trim()} is not in FACTS section 3, and the line has no link to an official page (${FEE_HOSTS.join(', ')}) that is also in sources with a checked date`);
+      }
     }
-    if (/\b(pounds|quid)\b/i.test(l) && /\d/.test(l) && !hasUrl) warn(`line ${i + 1}: amount written in words; use the GBP sign and an allowed price`);
+    if (/\b(pounds|quid)\b/i.test(l) && /\d/.test(l) && !cited) warn(`line ${i + 1}: amount written in words; use the GBP sign and an allowed price`);
   });
 
   // ---- structure

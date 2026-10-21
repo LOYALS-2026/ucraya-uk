@@ -1,8 +1,11 @@
 // Prints the next article due as JSON. Exit code 3 when nothing is due.
-import { readMap, todayLondon, slugFromUrl } from './csv.mjs';
+import { existsSync } from 'node:fs';
+import path from 'node:path';
+import { readMap, todayLondon, slugFromUrl, slugify, BLOG_DIR } from './csv.mjs';
 
 const today = process.env.ARTICLE_TODAY || todayLondon();
 const { rows } = readMap();
+// Only rows with status 'planned' are ever returned: 'published' and 'skipped' rows are ignored.
 const due = rows
   .filter((r) => r.status === 'planned' && (!r.publish_date || r.publish_date <= today))
   .sort((a, b) => Number(a.day) - Number(b.day))[0];
@@ -10,6 +13,12 @@ const due = rows
 if (!due) {
   console.error(`Nothing is due on ${today} (Europe/London).`);
   process.exit(3);
+}
+
+const dueSlug = slugify(due.title);
+if (existsSync(path.join(BLOG_DIR, `${dueSlug}.md`))) {
+  console.error(`Day ${due.day}: the slug "${dueSlug}" already exists in src/content/blog/. Mark the day skipped with the reason "slug exists": npm run article:skip ${due.day} "slug exists"`);
+  process.exit(4);
 }
 
 const split = (s, sep) => (s || '').split(sep).map((x) => x.trim()).filter(Boolean);

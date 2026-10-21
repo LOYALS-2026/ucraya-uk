@@ -28,8 +28,7 @@ const total = questions.length;
       <form id="quiz" class="quiz" novalidate>
         {questions.map((q, i) => (
           <fieldset data-correct={String(q.correct)}>
-            <legend>{format(p.questionLabel, { n: i + 1, total })}</legend>
-            <p class="qtext" lang="en">{q.q}</p>
+            <legend><span class="qnum">{format(p.questionLabel, { n: i + 1, total })}</span> <span class="qtext" lang="en">{q.q}</span></legend>
             {q.options.map((o, j) => (
               <label class="opt" lang="en"><input type="radio" name={`q${i + 1}`} value={String(j)} /> <span>{o}</span></label>
             ))}

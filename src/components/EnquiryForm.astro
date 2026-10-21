@@ -91,6 +91,10 @@ const [consentBefore, consentAfter] = f.consent.split('{privacyLink}');
     </div>
 
     <div class="field">
+      <label for="f-deadline">{f.deadline}</label>
+      <input id="f-deadline" type="text" name="deadline" />
+    </div>
+    <div class="field">
       <label for="f-times">{f.times}</label>
       <input id="f-times" type="text" name="preferred-times" />
     </div>
@@ -99,17 +103,14 @@ const [consentBefore, consentAfter] = f.consent.split('{privacyLink}');
       <textarea id="f-message" name="message" rows="4"></textarea>
     </div>
 
-    <div class="field consent">
-      <input id="f-consent" type="checkbox" name="consent" value="yes" required />
-      <label for="f-consent">{consentBefore}<a href={privacy}>{f.privacyLinkText}</a>{consentAfter}</label>
-    </div>
-
     <p class="hp" aria-hidden="true">
       <label>{f.honeypot} <input type="text" name="bot-field" tabindex="-1" autocomplete="off" /></label>
     </p>
 
+    <p class="hint mb-4">{consentBefore}<a href={privacy}>{f.privacyLinkText}</a>{consentAfter}</p>
+
     <div class="btn-row">
-      <button type="submit" class="btn btn-primary">{f.send}</button>
+      <button type="submit" class="btn btn-primary">{m.buttons.send}</button>
       <a class="btn btn-outline" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a>
     </div>
     <p class="hint mt-3">{f.reply}</p>

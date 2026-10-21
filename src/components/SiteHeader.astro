@@ -7,8 +7,9 @@ interface Props {
   switchLinks: Record<string, string>;
   currentRoute?: string;
   currentPath: string;
+  enquireHref?: string;
 }
-const { locale, switchLinks, currentRoute, currentPath } = Astro.props;
+const { locale, switchLinks, currentRoute, currentPath, enquireHref } = Astro.props;
 const m = useMessages(locale);
 const items = [
   { id: 'courses', label: m.nav.courses, href: pathFor('courses', locale), match: (r?: string) => r === 'courses' || (r ?? '').startsWith('course-') },
@@ -53,7 +54,7 @@ const isCurrent = (it: (typeof items)[number]) =>
             ))}
           </ul>
         </nav>
-        <a class="btn btn-primary nav-cta" href={pathFor('contact', locale) + '#enquiry'}>{m.buttons.enquireShort}</a>
+        <a class="btn btn-primary nav-cta" href={enquireHref ?? pathFor('contact', locale) + '#enquiry'}>{m.buttons.enquireShort}</a>
       </div>
     </div>
   </div>

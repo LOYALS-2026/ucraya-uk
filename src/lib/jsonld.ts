@@ -11,24 +11,24 @@ export function organization() {
     name: SITE.name,
     legalName: SITE.legalName,
     url: SITE.url + '/',
-    logo: absolute('/brand/logo.svg'),
+    logo: absolute('/brand/icon-512.png'),
     image: absolute('/og/default.png'),
     description:
       'Online English lessons with real tutors: one-to-one lessons, small group level courses and exam preparation, from a London English school founded in 2015.',
     foundingDate: SITE.founded,
     email: SITE.email,
     telephone: SITE.phoneTel,
-    address: { '@type': 'PostalAddress', ...SITE.address },
+    address: { '@type': 'PostalAddress', addressLocality: SITE.address.addressLocality, postalCode: SITE.address.postalCode, addressCountry: SITE.address.addressCountry },
     contactPoint: [
       {
         '@type': 'ContactPoint',
         contactType: 'customer service',
         email: SITE.email,
         telephone: SITE.phoneTel,
-        availableLanguage: ['English', 'Bulgarian', 'Romanian', 'Polish'],
+        availableLanguage: ['English', 'Bulgarian'],
       },
     ],
-    sameAs: [SITE.facebook, SITE.instagram, SITE.googleReviews],
+    sameAs: [SITE.facebook, SITE.instagram],
   };
 }
 
@@ -75,6 +75,8 @@ export function course(opts: {
   url: string;
   language: string;
   prices: { label: string; amount: string }[];
+  /** ISO 8601 duration, only where FACTS gives the hours (exam preparation: 24 hours). */
+  workload?: string;
 }) {
   return {
     '@context': 'https://schema.org',
@@ -82,7 +84,7 @@ export function course(opts: {
     name: opts.name,
     description: opts.description,
     url: opts.url,
-    inLanguage: opts.language,
+    inLanguage: 'en',
     provider: { '@type': ['EducationalOrganization', 'Organization'], '@id': ORG_ID, name: SITE.name, url: SITE.url + '/' },
     offers: opts.prices.map((p) => ({
       '@type': 'Offer',
@@ -91,8 +93,9 @@ export function course(opts: {
       priceCurrency: 'GBP',
       url: opts.url,
       availability: 'https://schema.org/InStock',
+      category: 'Paid',
     })),
-    hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'online' },
+    hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'Online', ...(opts.workload ? { courseWorkload: opts.workload } : {}) },
   };
 }
 
@@ -117,5 +120,17 @@ export function blogPosting(opts: {
     image: absolute('/og/default.png'),
     author: { '@type': 'Organization', name: opts.author },
     publisher: { '@type': 'Organization', '@id': ORG_ID, name: SITE.name, logo: { '@type': 'ImageObject', url: absolute('/brand/logo.svg') } },
+  };
+}
+
+/** A page that is about the organisation: points at the Organization by @id instead of repeating it. */
+export function orgPage(type: 'AboutPage' | 'ContactPage', url: string, name: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': type,
+    url,
+    name,
+    mainEntity: { '@id': ORG_ID },
+    about: { '@id': ORG_ID },
   };
 }

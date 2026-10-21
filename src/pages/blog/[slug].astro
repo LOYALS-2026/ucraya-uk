@@ -7,6 +7,7 @@ import PostCard from '../../components/PostCard.astro';
 import { messagesEn as m, format } from '../../i18n';
 import { getPosts, postPath, pillarPath, formatDate, moneyHref } from '../../lib/blog';
 import { slugify } from '../../lib/seo';
+import { SITE } from '../../lib/site';
 import { absolute } from '../../lib/routes';
 import { blogPosting, faqPage } from '../../lib/jsonld';
 
@@ -19,7 +20,7 @@ const d = post.data;
 const { Content } = await render(post);
 const all = await getPosts();
 const related = all.filter((p) => p.id !== post.id && slugify(p.data.pillar) === slugify(d.pillar)).slice(0, 3);
-const checked = d.sources && d.sources.length ? new Date(Math.max(...d.sources.map((s) => s.checked.getTime()))) : null;
+const checked = d.sources && d.sources.length ? (() => { const t = d.sources.map((s) => s.checked?.getTime()).filter((x): x is number => typeof x === 'number'); return t.length ? new Date(Math.max(...t)) : null; })() : null;
 const path = postPath(post.id);
 const crumbs = [
   { name: m.blog.breadcrumb, path: '/blog/' },
@@ -64,8 +65,11 @@ if (d.faq.length) ld.push(faqPage(d.faq) as any);
 
         <aside class="card card-accent accent-amber mt-10" aria-labelledby="next-step">
           <h2 id="next-step" class="text-xl">{m.blog.ctaTitle}</h2>
-          <p class="mt-2">{d.aiQuestion}</p>
-          <p class="mt-4"><a class="btn btn-primary" href={moneyHref(d.moneyPage)}>{d.cta || m.blog.defaultCta}</a></p>
+          <p class="mt-2">{m.blog.ctaText}</p>
+          <p class="mt-4 btn-row">
+            <a class="btn btn-primary" href={moneyHref(d.moneyPage) + (moneyHref(d.moneyPage).startsWith('/courses/') ? '#enquiry' : '')}>{d.cta || m.blog.defaultCta}</a>
+            <a class="btn btn-green" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a>
+          </p>
         </aside>
       </div>
     </section>
