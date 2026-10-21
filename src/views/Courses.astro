@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { useMessages, type Locale } from '../i18n';
+import { pathFor, COURSE_SLUGS } from '../lib/routes';
+import { pageMeta } from '../lib/page';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = useMessages(locale);
+const meta = pageMeta('courses', locale);
+const crumbs = [{ name: m.nav.courses, path: pathFor('courses', locale) }];
+const accents = ['accent-amber', 'accent-green', 'accent-orange', 'accent-navy'];
+---
+<Base locale={locale} routeId="courses" title={meta.title} description={meta.description} crumbs={crumbs}>
+  <Breadcrumbs locale={locale} crumbs={crumbs} />
+  <PageHero h1={m.courses.title} lead={m.courses.lead} />
+  <section class="section">
+    <div class="wrap">
+      <div class="grid-cards cols-3">
+        {COURSE_SLUGS.map((slug, i) => {
+          const c = m.courses.items[slug];
+          return (
+            <a class={`card card-link card-accent ${accents[i % 4]}`} href={pathFor(`course-${slug}`, locale)}>
+              <h2 class="text-xl">{c.name}</h2>
+              <p class="mt-2">{c.summary}</p>
+              <p class="mt-3"><span class="more">{m.courses.cardLink}</span></p>
+            </a>
+          );
+        })}
+      </div>
+      <p class="mt-8">{m.common.classroomNote} <a href="https://ucraya.co.uk">{m.common.classroomLink}</a></p>
+    </div>
+  </section>
+  <CtaBand locale={locale} text={m.common.stillUnsure} />
+</Base>

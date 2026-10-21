@@ -1,0 +1,44 @@
+// Reads and writes content/topical-map.csv. Column order and the file's
+// CRLF line endings are preserved; fields are quoted only when RFC 4180 needs it.
+import { readFileSync, writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+import { parse } from 'csv-parse/sync';
+
+export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
+export const MAP_PATH = path.join(ROOT, 'content', 'topical-map.csv');
+export const BLOG_DIR = path.join(ROOT, 'src', 'content', 'blog');
+export const SITE = 'https://ucraya.uk';
+
+export function readMap(file = MAP_PATH) {
+  const text = readFileSync(file, 'utf8').replace(/^﻿/, '');
+  const records = parse(text, { columns: false, skip_empty_lines: true, relax_column_count: false });
+  const columns = records[0];
+  const rows = records.slice(1).map((r) => Object.fromEntries(columns.map((c, i) => [c, r[i]])));
+  return { columns, rows };
+}
+
+function field(v) {
+  const s = v == null ? '' : String(v);
+  return /[",\r\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+}
+
+export function writeMap(columns, rows, file = MAP_PATH) {
+  const lines = [columns.map(field).join(',')];
+  for (const r of rows) lines.push(columns.map((c) => field(r[c])).join(','));
+  writeFileSync(file, lines.join('\r\n') + '\r\n', 'utf8');
+}
+
+// Today in Europe/London as YYYY-MM-DD.
+export function todayLondon(now = new Date()) {
+  const p = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/London', year: 'numeric', month: '2-digit', day: '2-digit',
+  }).formatToParts(now);
+  const g = (t) => p.find((x) => x.type === t).value;
+  return `${g('year')}-${g('month')}-${g('day')}`;
+}
+
+export function slugFromUrl(url) {
+  const m = /\/blog\/([a-z0-9-]+)\/?$/.exec(url || '');
+  return m ? m[1] : '';
+}

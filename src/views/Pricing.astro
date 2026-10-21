@@ -1,0 +1,91 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import ProductCards from '../components/ProductCards.astro';
+import FaqList from '../components/FaqList.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { useMessages, type Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
+import { pageMeta } from '../lib/page';
+import { faqPage } from '../lib/jsonld';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = useMessages(locale);
+const p = m.pricing;
+const meta = pageMeta('pricing', locale);
+const crumbs = [{ name: m.nav.pricing, path: pathFor('pricing', locale) }];
+const rows = [m.products.oneToOne, m.products.oneToOneEnglish, m.products.group, m.products.exam];
+---
+<Base locale={locale} routeId="pricing" title={meta.title} description={meta.description} crumbs={crumbs} jsonLd={[faqPage(p.faq.items)]}>
+  <Breadcrumbs locale={locale} crumbs={crumbs} />
+  <PageHero h1={p.h1} lead={p.lead} />
+
+  <section class="section">
+    <div class="wrap">
+      <div class="only-mobile"><ProductCards locale={locale} /></div>
+      <table class="price-table only-desktop">
+        <caption class="sr-only-x">{p.tableCaption}</caption>
+        <thead>
+          <tr><th scope="col">{p.tableHead.product}</th><th scope="col">{p.tableHead.what}</th><th scope="col">{p.tableHead.price}</th></tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr>
+              <th scope="row">{r.name}</th>
+              <td>{r.text}</td>
+              <td><span class="price">{r.price}</span><br /><span class="muted">{r.unit}</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="mt-6">{p.extra}</p>
+    </div>
+  </section>
+
+  <section class="section section-warm">
+    <div class="wrap">
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="prose-lite">
+          <h2 class="no-top">{p.payment.title}</h2>
+          <ol>{p.payment.items.map((i) => <li>{i}</li>)}</ol>
+        </div>
+        <div class="grid gap-4 content-start">
+          <div class="card card-accent accent-orange">
+            <h3>{p.groupPay.title}</h3>
+            <p>{p.groupPay.text}</p>
+          </div>
+          <div class="card card-accent accent-green">
+            <h3>{p.oneToOnePay.title}</h3>
+            <p>{p.oneToOnePay.text}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="prose-lite">
+          <h2 class="no-top">{p.cancel.title}</h2>
+          <ul>{p.cancel.items.map((i) => <li>{i}</li>)}</ul>
+          <p><a href={pathFor('terms', locale)}>{p.cancel.more}</a></p>
+        </div>
+        <div class="card card-accent accent-amber content-start">
+          <h2 class="text-xl">{p.referral.title}</h2>
+          <p class="mt-2">{p.referral.text}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-warm">
+    <div class="wrap narrow">
+      <h2 class="mb-6">{p.faq.title}</h2>
+      <FaqList items={p.faq.items} />
+    </div>
+  </section>
+
+  <CtaBand locale={locale} />
+</Base>

@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { messagesEn as m } from '../i18n';
+---
+<Base locale="en" path="/404.html" title={m.meta.notFound.title} description={m.meta.notFound.description} noindex>
+  <PageHero h1={m.notFound.h1} lead={m.notFound.lead}>
+    <div class="btn-row mt-6">
+      <a class="btn btn-primary" href="/">{m.notFound.home}</a>
+      <a class="btn btn-outline" href="/contact/#enquiry">{m.buttons.enquire}</a>
+    </div>
+  </PageHero>
+</Base>

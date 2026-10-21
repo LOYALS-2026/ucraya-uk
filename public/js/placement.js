@@ -1,0 +1,60 @@
+// Placement test scoring. Runs in the browser only; nothing is sent anywhere.
+(function () {
+  var form = document.getElementById('quiz');
+  if (!form) return;
+  var result = document.getElementById('quiz-result');
+  var errorBox = document.getElementById('quiz-error');
+  var fieldsets = form.querySelectorAll('fieldset[data-correct]');
+  var total = fieldsets.length;
+
+  function levelFor(score) {
+    if (score <= 3) return 'A1';
+    if (score <= 6) return 'A2';
+    if (score <= 9) return 'B1';
+    return 'B2';
+  }
+  function fill(template, vars) {
+    return template.replace(/\{(\w+)\}/g, function (m, k) { return k in vars ? vars[k] : m; });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var score = 0;
+    var missing = [];
+    for (var i = 0; i < fieldsets.length; i++) {
+      var fs = fieldsets[i];
+      var checked = fs.querySelector('input:checked');
+      fs.classList.remove('unanswered');
+      if (!checked) { missing.push(String(i + 1)); fs.classList.add('unanswered'); continue; }
+      if (checked.value === fs.getAttribute('data-correct')) score++;
+    }
+    if (missing.length) {
+      errorBox.textContent = fill(errorBox.getAttribute('data-template'), { list: missing.join(', ') });
+      errorBox.hidden = false;
+      var first = form.querySelector('fieldset.unanswered input');
+      if (first) first.focus();
+      return;
+    }
+    errorBox.hidden = true;
+    var level = levelFor(score);
+    document.getElementById('quiz-level').textContent = fill(result.getAttribute('data-level-template'), { level: level });
+    document.getElementById('quiz-score').textContent = fill(result.getAttribute('data-score-template'), { score: String(score), total: String(total) });
+    var advice = result.querySelectorAll('[data-advice]');
+    for (var j = 0; j < advice.length; j++) advice[j].hidden = advice[j].getAttribute('data-advice') !== level;
+    var link = document.getElementById('quiz-enquire');
+    link.setAttribute('href', link.getAttribute('data-base') + '?level=' + level + '&purpose=placement#enquiry');
+    form.hidden = true;
+    result.hidden = false;
+    result.setAttribute('tabindex', '-1');
+    result.focus();
+    result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  var again = document.getElementById('quiz-again');
+  if (again) again.addEventListener('click', function () {
+    form.reset();
+    result.hidden = true;
+    form.hidden = false;
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();

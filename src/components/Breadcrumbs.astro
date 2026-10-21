@@ -1,0 +1,17 @@
+---
+import { useMessages, type Locale } from '../i18n';
+import { localePath } from '../lib/routes';
+interface Props { locale: Locale; crumbs: { name: string; path: string }[] }
+const { locale, crumbs } = Astro.props;
+const m = useMessages(locale);
+---
+<nav class="crumbs" aria-label={m.common.breadcrumbs}>
+  <div class="wrap">
+    <ol>
+      <li><a href={localePath(locale, '/')}>{m.common.home}</a></li>
+      {crumbs.map((c, i) => (
+        <li>{i === crumbs.length - 1 ? <span aria-current="page">{c.name}</span> : <a href={c.path}>{c.name}</a>}</li>
+      ))}
+    </ol>
+  </div>
+</nav>

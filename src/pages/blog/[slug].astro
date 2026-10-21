@@ -1,0 +1,82 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FaqList from '../../components/FaqList.astro';
+import PostCard from '../../components/PostCard.astro';
+import { messagesEn as m, format } from '../../i18n';
+import { getPosts, postPath, pillarPath, formatDate, moneyHref } from '../../lib/blog';
+import { slugify } from '../../lib/seo';
+import { absolute } from '../../lib/routes';
+import { blogPosting, faqPage } from '../../lib/jsonld';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const d = post.data;
+const { Content } = await render(post);
+const all = await getPosts();
+const related = all.filter((p) => p.id !== post.id && slugify(p.data.pillar) === slugify(d.pillar)).slice(0, 3);
+const checked = d.sources && d.sources.length ? new Date(Math.max(...d.sources.map((s) => s.checked.getTime()))) : null;
+const path = postPath(post.id);
+const crumbs = [
+  { name: m.blog.breadcrumb, path: '/blog/' },
+  { name: d.pillar, path: pillarPath(slugify(d.pillar)) },
+  { name: d.title, path },
+];
+const ld = [blogPosting({ title: d.title, description: d.description, url: absolute(path), published: d.pubDate, updated: d.updatedDate, author: d.author })];
+if (d.faq.length) ld.push(faqPage(d.faq) as any);
+---
+<Base locale="en" path={path} title={d.title} description={d.description} crumbs={crumbs} jsonLd={ld} ogType="article">
+  <Breadcrumbs locale="en" crumbs={crumbs} />
+  <article>
+    <header class="page-hero">
+      <div class="wrap narrow">
+        <span class="eyebrow">{d.pillar}</span>
+        <h1>{d.title}</h1>
+        <p class="article-meta mt-3">
+          {format(m.blog.by, { author: d.author })} &middot; {m.blog.published} <time datetime={d.pubDate.toISOString().slice(0, 10)}>{formatDate(d.pubDate)}</time>
+          {d.updatedDate && <> &middot; {m.blog.updated} <time datetime={d.updatedDate.toISOString().slice(0, 10)}>{formatDate(d.updatedDate)}</time></>}
+          {checked && <><br />{format(m.blog.checked, { date: formatDate(checked) })}</>}
+        </p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="wrap narrow">
+        <div class="prose-lite"><Content /></div>
+
+        {d.sources && d.sources.length > 0 && (
+          <div class="prose-lite mt-8">
+            <h2>{m.blog.sources}</h2>
+            <ul>{d.sources.map((s) => <li><a href={s.url} rel="noopener">{s.title}</a></li>)}</ul>
+          </div>
+        )}
+
+        {d.faq.length > 0 && (
+          <div class="mt-10">
+            <h2 class="mb-5">{m.blog.faq}</h2>
+            <FaqList items={d.faq} />
+          </div>
+        )}
+
+        <aside class="card card-accent accent-amber mt-10" aria-labelledby="next-step">
+          <h2 id="next-step" class="text-xl">{m.blog.ctaTitle}</h2>
+          <p class="mt-2">{d.aiQuestion}</p>
+          <p class="mt-4"><a class="btn btn-primary" href={moneyHref(d.moneyPage)}>{d.cta || m.blog.defaultCta}</a></p>
+        </aside>
+      </div>
+    </section>
+
+    {related.length > 0 && (
+      <section class="section section-warm">
+        <div class="wrap">
+          <h2 class="mb-6">{m.blog.related}</h2>
+          <div class="grid-cards cols-3">{related.map((p) => <PostCard post={p} />)}</div>
+        </div>
+      </section>
+    )}
+  </article>
+</Base>

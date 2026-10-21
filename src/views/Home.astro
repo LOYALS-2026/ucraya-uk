@@ -1,0 +1,134 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroArt from '../components/HeroArt.astro';
+import ProductCards from '../components/ProductCards.astro';
+import FaqList from '../components/FaqList.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Avatar from '../components/Avatar.astro';
+import { useMessages, type Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
+import { pageMeta } from '../lib/page';
+import { SITE } from '../lib/site';
+import { organization, website, faqPage } from '../lib/jsonld';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = useMessages(locale);
+const meta = pageMeta('home', locale);
+const faqTeaser = m.faqPage.items.slice(0, 4);
+const accents = ['accent-amber', 'accent-green', 'accent-orange', 'accent-navy', 'accent-amber', 'accent-green', 'accent-orange'];
+const contact = pathFor('contact', locale) + '#enquiry';
+---
+<Base locale={locale} routeId="home" title={meta.title} description={meta.description} jsonLd={[organization(), website(), faqPage(faqTeaser)]}>
+  <section class="hero">
+    <div class="wrap section">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">{m.site.since}</span>
+          <h1>{m.home.h1}</h1>
+          <p class="lead">{m.home.lead}</p>
+          <div class="btn-row mt-6">
+            <a class="btn btn-primary" href={contact}>{m.buttons.enquire}</a>
+            <a class="btn btn-outline" href={pathFor('trial', locale)}>{m.buttons.trial}</a>
+            <a class="btn btn-green" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a>
+          </div>
+          <p class="muted mt-4">{m.home.heroNote}</p>
+        </div>
+        <div class="hidden md:block"><HeroArt /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 border-b border-line">
+    <div class="wrap">
+      <ul class="badge-row">
+        <li><a href={SITE.googleReviews} rel="noopener">{m.common.ratedGoogle}</a></li>
+        <li>{m.common.sinceProof}</li>
+        <li>{m.common.tutorsProof}</li>
+        <li>{m.common.facebookFollowers}</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>{m.home.audience.title}</h2>
+      <p class="lead mt-2 mb-8">{m.home.audience.intro}</p>
+      <div class="grid-cards cols-3">
+        {m.home.audience.items.map((a, i) => (
+          <a class={`card card-link card-accent ${accents[i]}`} href={pathFor(`course-${a.slug}`, locale)}>
+            <h3>{a.title}</h3>
+            <p>{a.text}</p>
+            <p class="mt-3"><span class="more">{m.home.audience.link}</span></p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-warm">
+    <div class="wrap">
+      <h2>{m.home.steps.title}</h2>
+      <ol class="steps row mt-8">
+        {m.home.steps.items.map((s) => (
+          <li><h3>{s.title}</h3><p>{s.text}</p></li>
+        ))}
+      </ol>
+      <p class="mt-8"><a class="btn btn-outline" href={pathFor('how', locale)}>{m.buttons.howItWorks}</a></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>{m.home.prices.title}</h2>
+      <p class="lead mt-2 mb-8">{m.home.prices.intro}</p>
+      <ProductCards locale={locale} />
+      <p class="mt-6">{m.home.prices.note}</p>
+      <p class="mt-4"><a class="btn btn-outline" href={pathFor('pricing', locale)}>{m.buttons.prices}</a></p>
+    </div>
+  </section>
+
+  <section class="section section-warm">
+    <div class="wrap">
+      <h2>{m.home.proof.title}</h2>
+      <p class="lead mt-2 mb-8">{m.home.proof.lead}</p>
+      <div class="grid-cards cols-3">
+        {m.reviews.items.slice(0, 3).map((r) => (
+          <figure class="card quote">
+            <blockquote>&ldquo;{r.quote}&rdquo;</blockquote>
+            <figcaption>{r.name}{r.context && <span class="ctx">{r.context}</span>}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <div class="btn-row mt-8">
+        <a class="btn btn-outline" href={pathFor('reviews', locale)}>{m.buttons.allReviews}</a>
+        <a class="btn btn-outline" href={SITE.googleReviews} rel="noopener">{m.buttons.reviewOnGoogle}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid md:grid-cols-[1fr_auto] gap-8 items-center">
+        <div>
+          <h2>{m.home.tutors.title}</h2>
+          <p class="mt-3 max-w-2xl">{m.home.tutors.text}</p>
+          <p class="mt-5"><a class="btn btn-outline" href={pathFor('tutors', locale)}>{m.buttons.tutors}</a></p>
+        </div>
+        <div class="flex gap-3" aria-hidden="true">
+          {m.tutors.items.slice(0, 4).map((t, i) => <Avatar name={t.name} index={i} />)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-warm">
+    <div class="wrap narrow">
+      <h2 class="mb-6">{m.home.faq.title}</h2>
+      <FaqList items={faqTeaser} />
+      <p class="mt-6"><a class="btn btn-outline" href={pathFor('faq', locale)}>{m.buttons.allFaq}</a></p>
+    </div>
+  </section>
+
+  <CtaBand locale={locale} />
+</Base>

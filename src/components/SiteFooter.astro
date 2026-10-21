@@ -1,0 +1,62 @@
+---
+import { useMessages, format, type Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
+import { COURSE_SLUGS } from '../lib/routes';
+import { SITE } from '../lib/site';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = useMessages(locale);
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="/brand/logo.svg" width="176" height="48" alt="Ucraya" class="bg-white rounded-lg p-2 h-12 w-auto" />
+        <p class="mt-4 max-w-xs">{m.footer.about}</p>
+        <p class="mt-3 max-w-xs">{m.common.classroomNote} <a href={SITE.schoolSite}>{m.common.classroomLink}</a></p>
+      </div>
+      <div>
+        <h2>{m.footer.colCourses}</h2>
+        <ul>
+          {COURSE_SLUGS.map((s) => (
+            <li><a href={pathFor(`course-${s}`, locale)}>{m.courses.items[s].name}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2>{m.footer.colSite}</h2>
+        <ul>
+          <li><a href={pathFor('pricing', locale)}>{m.nav.pricing}</a></li>
+          <li><a href={pathFor('how', locale)}>{m.nav.how}</a></li>
+          <li><a href={pathFor('trial', locale)}>{m.nav.trial}</a></li>
+          <li><a href={pathFor('placement', locale)}>{m.nav.placement}</a></li>
+          <li><a href={pathFor('tutors', locale)}>{m.nav.tutors}</a></li>
+          <li><a href={pathFor('reviews', locale)}>{m.nav.reviews}</a></li>
+          <li><a href={pathFor('faq', locale)}>{m.nav.faq}</a></li>
+          <li><a href="/blog/">{m.nav.blog}</a></li>
+          <li><a href={pathFor('about', locale)}>{m.nav.about}</a></li>
+          <li><a href={pathFor('contact', locale)}>{m.nav.contact}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>{m.footer.colContact}</h2>
+        <ul>
+          <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+          <li><a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a></li>
+          <li><a href={SITE.whatsapp} rel="noopener">WhatsApp</a></li>
+          <li><a href={SITE.viber}>{m.footer.viber}</a></li>
+          <li><a href={SITE.facebook} rel="noopener">{m.footer.facebook}</a></li>
+          <li><a href={SITE.instagram} rel="noopener">{m.footer.instagram}</a></li>
+        </ul>
+        <h2 class="mt-5">{m.footer.colLegal}</h2>
+        <ul>
+          <li><a href={pathFor('privacy', locale)}>{m.footer.privacy}</a></li>
+          <li><a href={pathFor('terms', locale)}>{m.footer.terms}</a></li>
+          <li><a href={pathFor('london', locale)}>{m.footer.london}</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-small">{m.footer.company} {format(m.footer.copyright, { year })}</p>
+  </div>
+</footer>

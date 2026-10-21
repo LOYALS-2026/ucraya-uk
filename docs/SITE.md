@@ -1,0 +1,51 @@
+# ucraya.uk: how the site is built
+
+Astro 5 (static), Tailwind v4, TypeScript, self hosted fonts (Roboto Slab, PT Sans). Node 22. No database and no server code: the enquiry form is a Netlify Form.
+
+## Commands
+- `npm run dev` local site; `npm run build` builds to `dist/`; `npm run check` runs the site checker over `dist/`; `npm run shots` screenshots key pages (375 and 1280 px) into `verify/shots/` (git ignored); `npm run brand` regenerates the logo, favicons and default Open Graph image from the fonts (`scripts/gen-brand.mjs`).
+- Article scripts (`check:articles`, `article:next`, `article:publish`) belong to the content engine, not to the site.
+
+## Structure
+- `src/i18n/en.json` holds ALL copy. `bg.json`, `ro.json`, `pl.json` are currently exact copies of it.
+- `src/lib/site.ts` holds contact details and URLs (from `content/FACTS.md`); `src/lib/routes.ts` is the page table.
+- `src/views/*.astro` are the pages; `src/pages/[...path].astro` builds every locale of every route from the table; `src/pages/blog/*` and `rss.xml.ts` are the blog.
+- `src/components/` shared parts; `src/layouts/Base.astro` does head, SEO tags, hreflang, JSON-LD, header, footer, sticky mobile bar and cookie banner.
+- `public/js/` has the only client scripts: `nav.js` (menu), `form.js` (form prefill), `placement.js` (quiz), `consent.js` (cookie banner and Google Analytics). No inline scripts, so the Content Security Policy in `netlify.toml` stays strict.
+- Styles: `src/styles/global.css` (Tailwind theme tokens plus a few component classes). Amber is only used as a background or button with dark text.
+
+## Languages (how a translator edits the JSON)
+- Locales: `en` (no prefix), `bg` (/bg/), `ro` (/ro/), `pl` (/pl/). Every money page exists in all four with the same path. The blog is English only.
+- A translator edits `bg.json`, `ro.json` or `pl.json` and keeps the same keys and the same array lengths. Anything missing or empty falls back to English (`src/i18n/index.ts`, a deep merge), so a half translated file never breaks the build. Use `useMessages(locale)` for objects or `useTranslations(locale)('home.h1')` for single strings; `{name}` placeholders (for example `{year}`, `{privacyLink}`, `{n}`) must be kept.
+- Do NOT translate: the placement test questions (`placement.questions`, they test English and are always shown in English), the option labels that the form sends to the office (the English text is always sent; the labels shown to the visitor are translated), or the `slug` fields.
+- Privacy, Terms and London are English only; every locale links to the English versions.
+- hreflang (every locale plus x-default) is generated from the route table. Blog pages have `en` and `x-default` only; on a blog page the BG, RO and PL links in the header go to that locale's home page.
+
+## Add a page
+1. Add the copy under a new key in `en.json` (and `meta.<key>` with title and description) and copy it to the other three files.
+2. Make `src/views/<Name>.astro` (copy a similar one).
+3. Add a row to `ROUTES` in `src/lib/routes.ts` and map its `view` in `src/pages/[...path].astro`.
+4. Add a link in `SiteHeader.astro` or `SiteFooter.astro` if needed. Run `npm run build && npm run check`.
+
+## Enquiry form
+`EnquiryForm.astro` renders a static Netlify form named `enquiry` (`data-netlify="true"`, honeypot `bot-field`, hidden `form-name`, hidden `subject`, extensionless action to the locale's `/thank-you/`). The email field is the first text input so Netlify uses it as Reply-To. Hidden fields `purpose` (enquiry, trial or placement), `site-language` and `page` say where it came from. `public/js/form.js` only sets values from the query string (`?goal=oet&level=B1&purpose=placement&format=one-to-one`); no field is added by JavaScript. The thank you page is only reached after the POST.
+
+**Owner action in Netlify (not in the code):** after the first deploy open Site configuration, Forms, Form notifications and add an email notification to `office@ucraya.co.uk` for the form `enquiry`. Also check Forms is enabled for the site and look at the first test submission (it will also show in the Netlify Forms list).
+
+## Analytics
+No analytics and no cookie banner unless the environment variable `PUBLIC_GA_ID` (for example `G-XXXXXXX`) is set in Netlify (Site configuration, Environment variables) before a build. When set, a banner appears and Google Analytics loads only after the visitor accepts. The Content Security Policy already allows Google Tag Manager and Google Analytics.
+
+## Checker (`npm run check`)
+Fails on: not exactly one h1; title 60 characters or more; description 160 or more; no canonical; missing hreflang (money pages need four locales plus x-default); no JSON-LD or JSON-LD that does not parse; any em or en dash; banned wording from CLAUDE.md; a broken internal link, image or anchor; locale page sets that differ; the enquiry form missing from a locale's contact page or breaking the Netlify rules; inline scripts; missing llms.txt, robots.txt, sitemap-index.xml or rss.xml.
+
+## Blog
+Content collection `blog` (`src/content.config.ts`, schema fixed): files in `src/content/blog/<slug>.md`. `/blog/`, `/blog/<slug>/`, `/blog/pillar/<pillar-slug>/` (made only for pillars that have posts) and `/rss.xml`. Drafts are left out of production builds. Titles and descriptions longer than will fit the 59 and 158 character SEO limits are cut at a word boundary in the page title and meta description only (the article keeps its full title); keep article titles to 59 characters or fewer to avoid the cut.
+
+## Left out or to decide
+- Bulgarian, Romanian and Polish copy is still English (translate the three JSON files).
+- No photos, no logo files from the school (the site uses its own SVG wordmark; replace `public/brand/logo.svg` and rerun `npm run brand` if real files arrive).
+- Privacy and Terms are plain English drafts built from FACTS.md. The owner should read them (retention wording, cookie wording).
+- No aggregate rating markup (the live Google figure is still to confirm in FACTS.md).
+- No pagination on the blog index (fine for a few dozen posts; add it before about 60).
+- No Netlify redirect for the old `ucraya.co.uk` pages; none are needed.
+- Domain: `netlify.toml` redirects www to the apex. Make sure both names are added to the Netlify site and the apex is the primary domain.

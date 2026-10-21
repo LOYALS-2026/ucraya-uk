@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { useMessages, type Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
+import { pageMeta } from '../lib/page';
+import { SITE } from '../lib/site';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = useMessages(locale);
+const r = m.reviews;
+const meta = pageMeta('reviews', locale);
+const crumbs = [{ name: m.nav.reviews, path: pathFor('reviews', locale) }];
+const accents = ['accent-amber', 'accent-green', 'accent-orange', 'accent-navy'];
+---
+<Base locale={locale} routeId="reviews" title={meta.title} description={meta.description} crumbs={crumbs}>
+  <Breadcrumbs locale={locale} crumbs={crumbs} />
+  <PageHero h1={r.h1} lead={r.lead} />
+  <section class="section">
+    <div class="wrap">
+      <div class="card card-accent accent-amber mb-8 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl">{r.google.title}</h2>
+          <p>{r.google.text}</p>
+        </div>
+        <a class="btn btn-primary" href={SITE.googleReviews} rel="noopener">{r.google.link}</a>
+      </div>
+      <div class="grid-cards cols-3">
+        {r.items.map((it, i) => (
+          <figure class={`card card-accent quote ${accents[i % 4]}`}>
+            <blockquote>&ldquo;{it.quote}&rdquo;</blockquote>
+            <figcaption>{it.name}{it.context && <span class="ctx">{it.context}</span>}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <p class="mt-8">{r.facebook}</p>
+    </div>
+  </section>
+  <CtaBand locale={locale} />
+</Base>

@@ -1,0 +1,60 @@
+---
+import { useMessages, localeNames, locales, type Locale } from '../i18n';
+import { pathFor, localePath } from '../lib/routes';
+
+interface Props {
+  locale: Locale;
+  switchLinks: Record<string, string>;
+  currentRoute?: string;
+  currentPath: string;
+}
+const { locale, switchLinks, currentRoute, currentPath } = Astro.props;
+const m = useMessages(locale);
+const items = [
+  { id: 'courses', label: m.nav.courses, href: pathFor('courses', locale), match: (r?: string) => r === 'courses' || (r ?? '').startsWith('course-') },
+  { id: 'pricing', label: m.nav.pricing, href: pathFor('pricing', locale) },
+  { id: 'how', label: m.nav.how, href: pathFor('how', locale) },
+  { id: 'tutors', label: m.nav.tutors, href: pathFor('tutors', locale) },
+  { id: 'reviews', label: m.nav.reviews, href: pathFor('reviews', locale) },
+  { id: 'faq', label: m.nav.faq, href: pathFor('faq', locale) },
+  { id: 'blog', label: m.nav.blog, href: '/blog/' },
+  { id: 'contact', label: m.nav.contact, href: pathFor('contact', locale) },
+];
+const isCurrent = (it: (typeof items)[number]) =>
+  it.match ? it.match(currentRoute) : it.id === currentRoute || (it.id === 'blog' && currentPath.startsWith('/blog'));
+---
+<header class="site-header" data-open="false">
+  <div class="wrap">
+    <div class="header-bar">
+      <a class="logo-link" href={localePath(locale, '/')} aria-label={m.header.homeLabel}>
+        <img src="/brand/logo.svg" width="132" height="36" alt="Ucraya" />
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-panel" data-menu-btn
+        data-open-label={m.header.menu} data-close-label={m.header.closeMenu}>
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+        <span data-menu-label>{m.header.menu}</span>
+      </button>
+      <div class="nav-panel" id="nav-panel">
+        <nav aria-label={m.header.mainNav}>
+          <ul class="nav-list">
+            {items.map((it) => (
+              <li><a href={it.href} aria-current={isCurrent(it) ? 'page' : undefined}>{it.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+        <nav aria-label={m.header.language}>
+          <ul class="lang-list">
+            {locales.map((l) => (
+              <li>
+                {l === locale
+                  ? <span aria-current="true" lang={l} title={localeNames[l]}>{l.toUpperCase()}</span>
+                  : <a href={switchLinks[l]} hreflang={l} lang={l} title={localeNames[l]}>{l.toUpperCase()}</a>}
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <a class="btn btn-primary nav-cta" href={pathFor('contact', locale) + '#enquiry'}>{m.buttons.enquireShort}</a>
+      </div>
+    </div>
+  </div>
+</header>

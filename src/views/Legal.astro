@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import { useMessages, type Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
+import { pageMeta } from '../lib/page';
+interface Props { locale: Locale; kind: 'privacy' | 'terms' }
+const { locale, kind } = Astro.props;
+const m = useMessages(locale);
+const doc = m[kind];
+const meta = pageMeta(kind, locale);
+const crumbs = [{ name: doc.h1, path: pathFor(kind, locale) }];
+---
+<Base locale={locale} routeId={kind} title={meta.title} description={meta.description} crumbs={crumbs}>
+  <Breadcrumbs locale={locale} crumbs={crumbs} />
+  <PageHero h1={doc.h1} lead={doc.lead} />
+  <section class="section">
+    <div class="wrap narrow prose-lite">
+      <p class="muted">{doc.updated}</p>
+      {doc.sections.map((s) => (
+        <>
+          <h2>{s.title}</h2>
+          {s.body.map((p) => <p>{p}</p>)}
+        </>
+      ))}
+    </div>
+  </section>
+</Base>

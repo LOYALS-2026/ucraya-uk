@@ -1,0 +1,20 @@
+---
+import { useMessages, type Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
+import { SITE } from '../lib/site';
+interface Props { locale: Locale; title?: string; text?: string; goal?: string; trial?: boolean }
+const { locale, title, text, goal, trial = true } = Astro.props;
+const m = useMessages(locale);
+const contact = pathFor('contact', locale) + (goal ? `?goal=${goal}` : '') + '#enquiry';
+---
+<section class="section section-dark">
+  <div class="wrap">
+    <h2>{title ?? m.home.final.title}</h2>
+    <p class="mt-3 mb-6 max-w-2xl text-lg">{text ?? m.home.final.text}</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href={contact}>{m.buttons.enquire}</a>
+      {trial && <a class="btn btn-outline" href={pathFor('trial', locale)}>{m.buttons.trial}</a>}
+      <a class="btn btn-outline" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import { useMessages, messagesEn, format, type Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
+import { pageMeta } from '../lib/page';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = useMessages(locale);
+const p = m.placement;
+// The questions test English, so they stay in English in every locale.
+const questions = messagesEn.placement.questions;
+const levels = ['A1', 'A2', 'B1', 'B2'] as const;
+const meta = pageMeta('placement', locale);
+const crumbs = [{ name: m.nav.placement, path: pathFor('placement', locale) }];
+const total = questions.length;
+---
+<Base locale={locale} routeId="placement" title={meta.title} description={meta.description} crumbs={crumbs} scripts={['/js/placement.js']}>
+  <Breadcrumbs locale={locale} crumbs={crumbs} />
+  <PageHero h1={p.h1} lead={p.lead}>
+    <p class="notice mt-5">{p.guide}</p>
+  </PageHero>
+  <section class="section">
+    <div class="wrap narrow">
+      <p class="mb-5">{p.instruction}</p>
+      <p id="quiz-error" class="quiz-error" role="alert" hidden data-template={p.missing}></p>
+      <form id="quiz" class="quiz" novalidate>
+        {questions.map((q, i) => (
+          <fieldset data-correct={String(q.correct)}>
+            <legend>{format(p.questionLabel, { n: i + 1, total })}</legend>
+            <p class="qtext" lang="en">{q.q}</p>
+            {q.options.map((o, j) => (
+              <label class="opt" lang="en"><input type="radio" name={`q${i + 1}`} value={String(j)} /> <span>{o}</span></label>
+            ))}
+          </fieldset>
+        ))}
+        <button type="submit" class="btn btn-primary">{p.submit}</button>
+      </form>
+      <noscript><p class="notice">{p.noscript}</p></noscript>
+
+      <div id="quiz-result" class="quiz-result" hidden data-level-template={p.resultLevel} data-score-template={p.score}>
+        <h2>{p.resultTitle}</h2>
+        <p class="mt-3"><span class="level-badge" id="quiz-level"></span></p>
+        <p class="mt-3 font-bold text-ink" id="quiz-score"></p>
+        {levels.map((l) => <p class="mt-2" data-advice={l} hidden>{p.results[l]}</p>)}
+        <p class="mt-3 muted">{p.guide}</p>
+        <div class="btn-row mt-5">
+          <a class="btn btn-primary" id="quiz-enquire" data-base={pathFor('contact', locale)} href={pathFor('contact', locale) + '#enquiry'}>{p.enquire}</a>
+          <button type="button" class="btn btn-outline" id="quiz-again">{p.again}</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

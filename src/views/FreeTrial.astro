@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import EnquiryForm from '../components/EnquiryForm.astro';
+import { useMessages, type Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
+import { pageMeta } from '../lib/page';
+import { SITE } from '../lib/site';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = useMessages(locale);
+const t = m.trial;
+const meta = pageMeta('trial', locale);
+const crumbs = [{ name: m.nav.trial, path: pathFor('trial', locale) }];
+---
+<Base locale={locale} routeId="trial" title={meta.title} description={meta.description} crumbs={crumbs}>
+  <Breadcrumbs locale={locale} crumbs={crumbs} />
+  <PageHero h1={t.h1} lead={t.lead} />
+  <section class="section">
+    <div class="wrap">
+      <h2 class="mb-6">{t.options.title}</h2>
+      <div class="grid-cards">
+        {t.options.items.map((o, i) => (
+          <div class={`card card-accent ${i === 0 ? 'accent-amber' : 'accent-green'}`}>
+            <h3>{o.title}</h3>
+            <p>{o.text}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-5">{t.note}</p>
+      <p class="mt-4"><a class="btn btn-outline" href={pathFor('placement', locale)}>{m.buttons.placement}</a></p>
+    </div>
+  </section>
+  <section class="section section-warm">
+    <div class="wrap narrow">
+      <EnquiryForm locale={locale} purpose="trial" title={t.formTitle} />
+      <p class="mt-4"><a href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a></p>
+    </div>
+  </section>
+</Base>

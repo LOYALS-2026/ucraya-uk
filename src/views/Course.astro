@@ -1,0 +1,126 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import FaqList from '../components/FaqList.astro';
+import EnquiryForm from '../components/EnquiryForm.astro';
+import { useMessages, type Locale } from '../i18n';
+import { pathFor, absolute, COURSE_SLUGS, type CourseSlug } from '../lib/routes';
+import { pageMeta } from '../lib/page';
+import { SITE } from '../lib/site';
+import { course as courseLd, faqPage } from '../lib/jsonld';
+
+interface Props { locale: Locale; slug: CourseSlug }
+const { locale, slug } = Astro.props;
+const m = useMessages(locale);
+const c = m.courses.items[slug];
+const h = m.courses.headings;
+const routeId = `course-${slug}`;
+const meta = pageMeta(routeId, locale);
+const url = absolute(pathFor(routeId, locale));
+const crumbs = [
+  { name: m.nav.courses, path: pathFor('courses', locale) },
+  { name: c.name, path: pathFor(routeId, locale) },
+];
+const ld = [
+  courseLd({
+    name: c.name,
+    description: meta.description,
+    url,
+    language: locale,
+    prices: c.prices.map((p) => ({ label: p.label, amount: p.amount })),
+  }),
+  faqPage(c.faq),
+];
+const others = COURSE_SLUGS.filter((s) => s !== slug).slice(0, 4);
+---
+<Base locale={locale} routeId={routeId} title={meta.title} description={meta.description} jsonLd={ld} crumbs={crumbs}>
+  <Breadcrumbs locale={locale} crumbs={crumbs} />
+  <PageHero h1={c.h1} lead={c.lead}>
+    {'notice' in c && c.notice && <p class="notice mt-5">{c.notice}</p>}
+    <div class="btn-row mt-6">
+      <a class="btn btn-primary" href="#enquiry">{m.buttons.enquire}</a>
+      <a class="btn btn-outline" href={pathFor('trial', locale)}>{m.buttons.trial}</a>
+      <a class="btn btn-green" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a>
+    </div>
+  </PageHero>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid gap-10 lg:grid-cols-[1fr_21rem] items-start">
+        <div class="prose-lite">
+          <h2 class="no-top">{h.who}</h2>
+          <ul>{c.who.map((w) => <li>{w}</li>)}</ul>
+
+          <h2>{h.lesson}</h2>
+          {c.lesson.map((p) => <p>{p}</p>)}
+
+          <h2>{h.levels}</h2>
+          <p>{c.levels}</p>
+
+          <h2>{h.format}</h2>
+          <p>{c.platform}</p>
+
+          <div class="grid gap-6 md:grid-cols-2 mt-6">
+            <div>
+              <h2 class="no-top text-xl">{h.included}</h2>
+              <ul>{c.included.map((w) => <li>{w}</li>)}</ul>
+            </div>
+            <div>
+              <h2 class="no-top text-xl">{h.notIncluded}</h2>
+              <ul class="cross-list">{c.notIncluded.map((w) => <li>{w}</li>)}</ul>
+            </div>
+          </div>
+
+          <h2>{h.tutor}</h2>
+          <p>{c.tutor}</p>
+          <p><a href={pathFor('tutors', locale)}>{m.buttons.tutors}</a></p>
+        </div>
+
+        <aside class="card card-accent accent-amber lg:sticky lg:top-24" aria-labelledby="price-h">
+          <h2 id="price-h" class="text-xl">{h.price}</h2>
+          <ul class="mt-4 grid gap-4 list-none p-0">
+            {c.prices.map((p) => (
+              <li>
+                <p class="font-bold text-ink">{p.label}</p>
+                <p class="price">{p.amount}<small>{p.unit}</small></p>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-4 text-[0.95rem]">{c.priceNote}</p>
+          <p class="mt-4"><a class="btn btn-primary w-full" href="#enquiry">{m.buttons.enquire}</a></p>
+          <p class="mt-3 text-[0.95rem]"><a href={pathFor('pricing', locale)}>{m.buttons.prices}</a></p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-warm">
+    <div class="wrap narrow">
+      <h2 class="mb-6">{h.faq}</h2>
+      <FaqList items={c.faq} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap narrow">
+      <p class="mb-5 lead">{m.courses.ctaText}</p>
+      <EnquiryForm locale={locale} goal={c.goal} format={c.format} title={h.enquire} intro={false} />
+    </div>
+  </section>
+
+  <section class="section section-warm">
+    <div class="wrap">
+      <h2 class="mb-6">{h.related}</h2>
+      <div class="grid-cards cols-4">
+        {others.map((s) => (
+          <a class="card card-link" href={pathFor(`course-${s}`, locale)}>
+            <h3>{m.courses.items[s].name}</h3>
+            <p class="text-[0.95rem]">{m.courses.items[s].summary}</p>
+          </a>
+        ))}
+      </div>
+      <p class="mt-6">{m.common.classroomNote} <a href={SITE.schoolSite}>{m.common.classroomLink}</a></p>
+    </div>
+  </section>
+</Base>

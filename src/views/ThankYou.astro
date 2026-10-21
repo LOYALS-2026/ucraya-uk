@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { useMessages, type Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
+import { pageMeta } from '../lib/page';
+import { SITE } from '../lib/site';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = useMessages(locale);
+const t = m.thanks;
+const meta = pageMeta('thanks', locale);
+const ld = [{ '@context': 'https://schema.org', '@type': 'WebPage', name: t.h1, inLanguage: locale }];
+---
+<Base locale={locale} routeId="thanks" title={meta.title} description={meta.description} noindex jsonLd={ld}>
+  <PageHero h1={t.h1} lead={t.lead}>
+    <div class="btn-row mt-6">
+      <a class="btn btn-green" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a>
+    </div>
+  </PageHero>
+  <section class="section">
+    <div class="wrap narrow">
+      <h2>{t.next}</h2>
+      <div class="btn-row mt-5">
+        <a class="btn btn-primary" href={pathFor('placement', locale)}>{m.buttons.placement}</a>
+        <a class="btn btn-outline" href={pathFor('how', locale)}>{m.buttons.howItWorks}</a>
+        <a class="btn btn-outline" href={pathFor('pricing', locale)}>{m.buttons.prices}</a>
+      </div>
+    </div>
+  </section>
+</Base>

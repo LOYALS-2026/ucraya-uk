@@ -1,0 +1,16 @@
+---
+import { useMessages, type Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
+import { SITE } from '../lib/site';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = useMessages(locale);
+---
+<div class="cookie" role="region" aria-label={m.cookie.label} hidden data-cookie data-ga={SITE.gaId}>
+  <p>{m.cookie.text} <a href={pathFor('privacy', locale)}>{m.cookie.privacy}</a></p>
+  <div class="btn-row">
+    <button type="button" class="btn btn-primary" data-cookie-accept>{m.cookie.accept}</button>
+    <button type="button" class="btn btn-light" data-cookie-decline>{m.cookie.decline}</button>
+  </div>
+</div>
+<script src="/js/consent.js" defer></script>

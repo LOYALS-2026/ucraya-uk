@@ -1,0 +1,115 @@
+---
+import '@fontsource/roboto-slab/latin-600.css';
+import '@fontsource/roboto-slab/latin-700.css';
+import '@fontsource/roboto-slab/latin-ext-700.css';
+import '@fontsource/roboto-slab/cyrillic-700.css';
+import '@fontsource/pt-sans/latin-400.css';
+import '@fontsource/pt-sans/latin-700.css';
+import '@fontsource/pt-sans/latin-ext-400.css';
+import '@fontsource/pt-sans/latin-ext-700.css';
+import '@fontsource/pt-sans/cyrillic-400.css';
+import '@fontsource/pt-sans/cyrillic-700.css';
+import '../styles/global.css';
+
+import { htmlLang, useMessages, locales, type Locale } from '../i18n';
+import { SITE, OG_LOCALES } from '../lib/site';
+import { route, localePath, absolute } from '../lib/routes';
+import { seoTitle, seoDescription, jsonForScript } from '../lib/seo';
+import { breadcrumbList } from '../lib/jsonld';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import StickyBar from '../components/StickyBar.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+
+export interface Props {
+  locale: Locale;
+  /** Route id for locale pages. Blog pages pass `path` instead. */
+  routeId?: string;
+  /** Path (English, with slashes) for pages that are not in the route table. */
+  path?: string;
+  title: string;
+  description: string;
+  noindex?: boolean;
+  jsonLd?: object[];
+  crumbs?: { name: string; path: string }[];
+  ogType?: string;
+  scripts?: string[];
+}
+
+const { locale, routeId, path, title, description, noindex = false, jsonLd = [], crumbs = [], ogType = 'website', scripts = [] } = Astro.props;
+const m = useMessages(locale);
+
+let canonicalPath: string;
+let alternates: { hreflang: string; href: string }[] = [];
+let switchLinks: Record<string, string> = {};
+let pageLocales: readonly Locale[] = ['en'];
+
+if (routeId) {
+  const r = route(routeId);
+  pageLocales = r.locales;
+  canonicalPath = localePath(locale, r.path);
+  for (const l of r.locales) alternates.push({ hreflang: l, href: absolute(localePath(l, r.path)) });
+  alternates.push({ hreflang: 'x-default', href: absolute(localePath('en', r.path)) });
+  for (const l of locales) switchLinks[l] = r.locales.includes(l) ? localePath(l, r.path) : localePath(l, '/');
+} else {
+  canonicalPath = path ?? '/';
+  alternates = [
+    { hreflang: 'en', href: absolute(canonicalPath) },
+    { hreflang: 'x-default', href: absolute(canonicalPath) },
+  ];
+  for (const l of locales) switchLinks[l] = l === 'en' ? canonicalPath : localePath(l, '/');
+}
+
+const canonical = absolute(canonicalPath);
+const fullTitle = seoTitle(title);
+const desc = seoDescription(description);
+const ogImage = absolute('/og/default.png');
+
+const crumbList = crumbs.length
+  ? [{ name: m.common.home, url: absolute(localePath(locale, '/')) }, ...crumbs.map((c) => ({ name: c.name, url: absolute(c.path) }))]
+  : [];
+const allJsonLd = [...jsonLd, ...(crumbList.length ? [breadcrumbList(crumbList)] : [])];
+---
+<!doctype html>
+<html lang={htmlLang[locale]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta name="theme-color" content="#ffb606" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={m.site.strap} />
+    <meta property="og:locale" content={OG_LOCALES[locale]} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={desc} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="alternate" type="application/rss+xml" title="Ucraya guides" href="/rss.xml" />
+    {allJsonLd.map((d) => <script type="application/ld+json" set:html={jsonForScript(d)} />)}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{m.site.skip}</a>
+    <SiteHeader locale={locale} switchLinks={switchLinks} currentRoute={routeId} currentPath={canonicalPath} />
+    <main id="main">
+      <slot />
+    </main>
+    <SiteFooter locale={locale} />
+    <StickyBar locale={locale} />
+    {SITE.gaId && <CookieBanner locale={locale} />}
+    <script src="/js/nav.js" defer></script>
+    {scripts.map((s) => <script src={s} defer></script>)}
+  </body>
+</html>

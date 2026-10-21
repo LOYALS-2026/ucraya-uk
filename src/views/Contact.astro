@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import EnquiryForm from '../components/EnquiryForm.astro';
+import { useMessages, type Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
+import { pageMeta } from '../lib/page';
+import { SITE } from '../lib/site';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = useMessages(locale);
+const c = m.contact;
+const d = c.details;
+const meta = pageMeta('contact', locale);
+const crumbs = [{ name: m.nav.contact, path: pathFor('contact', locale) }];
+---
+<Base locale={locale} routeId="contact" title={meta.title} description={meta.description} crumbs={crumbs}>
+  <Breadcrumbs locale={locale} crumbs={crumbs} />
+  <PageHero h1={c.h1} lead={c.lead} />
+  <section class="section">
+    <div class="wrap">
+      <div class="grid gap-8 lg:grid-cols-[1.3fr_1fr] items-start">
+        <EnquiryForm locale={locale} title={c.formTitle} />
+        <div class="card card-accent accent-green">
+          <h2 class="text-xl">{d.title}</h2>
+          <dl class="mt-4 grid gap-4">
+            <div><dt class="font-bold text-ink">{d.email}</dt><dd><a href={`mailto:${SITE.email}`}>{SITE.email}</a></dd></div>
+            <div><dt class="font-bold text-ink">{d.phone}</dt><dd><a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a></dd></div>
+            <div><dt class="font-bold text-ink">{d.whatsapp}</dt><dd><a href={SITE.whatsapp} rel="noopener">{SITE.phoneDisplay}</a></dd></div>
+            <div><dt class="font-bold text-ink">{d.viber}</dt><dd><a href={SITE.viber}>{SITE.phoneDisplay}</a></dd></div>
+            <div><dt class="font-bold text-ink">{d.facebook}</dt><dd><a href={SITE.facebook} rel="noopener">facebook.com/ucraya</a></dd></div>
+            <div><dt class="font-bold text-ink">{d.messenger}</dt><dd><a href={SITE.messenger} rel="noopener">m.me/ucraya</a></dd></div>
+            <div><dt class="font-bold text-ink">{d.instagram}</dt><dd><a href={SITE.instagram} rel="noopener">trainingcentrerayalondon</a></dd></div>
+            <div>
+              <dt class="font-bold text-ink">{d.address}</dt>
+              <dd>{d.addressText}<br /><span class="muted">{d.addressNote}</span></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

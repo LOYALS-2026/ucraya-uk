@@ -1,0 +1,119 @@
+---
+import { useMessages, messagesEn, format, type Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
+import { SITE } from '../lib/site';
+
+interface Props {
+  locale: Locale;
+  goal?: string;
+  format?: string;
+  purpose?: 'enquiry' | 'trial' | 'placement';
+  title?: string;
+  headingLevel?: 'h2' | 'h3';
+  intro?: boolean;
+}
+const { locale, goal, format: fmt, purpose = 'enquiry', title, headingLevel = 'h2', intro = true } = Astro.props;
+const m = useMessages(locale);
+const f = m.form;
+const en = messagesEn.form;
+const action = pathFor('thanks', locale);
+const Heading = headingLevel;
+const privacy = pathFor('privacy', locale);
+const [consentBefore, consentAfter] = f.consent.split('{privacyLink}');
+---
+<div class="form-card" id="enquiry">
+  <Heading>{title ?? f.title}</Heading>
+  {intro && <p class="mt-2 mb-5">{f.intro}</p>}
+  <form
+    name="enquiry"
+    id="enquiry-form"
+    method="POST"
+    action={action}
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+  >
+    <input type="hidden" name="form-name" value="enquiry" />
+    <input type="hidden" name="subject" value="New enquiry from %{formName}: ucraya.uk" />
+    <input type="hidden" name="purpose" value={purpose} />
+    <input type="hidden" name="site-language" value={locale} />
+    <input type="hidden" name="page" value={Astro.url.pathname} />
+
+    <p class="form-note" data-note="trial" hidden={purpose !== 'trial'}>{f.trialNote}</p>
+    <p class="form-note" data-note="placement" hidden={purpose !== 'placement'}>{f.placementNote}</p>
+
+    <div class="form-grid two">
+      <div class="field">
+        <label for="f-email">{f.email}</label>
+        <input id="f-email" type="email" name="email" autocomplete="email" required />
+      </div>
+      <div class="field">
+        <label for="f-name">{f.name}</label>
+        <input id="f-name" type="text" name="name" autocomplete="name" required />
+      </div>
+      <div class="field">
+        <label for="f-phone">{f.phone}</label>
+        <input id="f-phone" type="tel" name="phone" autocomplete="tel" aria-describedby="f-phone-hint" />
+        <p class="hint" id="f-phone-hint">{f.phoneHint}</p>
+      </div>
+      <div class="field">
+        <label for="f-lang">{f.language}</label>
+        <input id="f-lang" type="text" name="first-language" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="f-goal">{f.goal}</label>
+      <select id="f-goal" name="goal" required>
+        <option value="">{f.goalPlaceholder}</option>
+        {f.goals.map((g, i) => (
+          <option value={en.goals[i].label} data-slug={g.slug} selected={g.slug === goal}>{g.label}</option>
+        ))}
+      </select>
+    </div>
+
+    <div class="form-grid two">
+      <div class="field">
+        <label for="f-format">{f.format}</label>
+        <select id="f-format" name="format">
+          {f.formats.map((g, i) => (
+            <option value={en.formats[i].label} data-slug={g.slug} selected={g.slug === (fmt ?? 'not-sure')}>{g.label}</option>
+          ))}
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-level">{f.level}</label>
+        <select id="f-level" name="level">
+          {f.levels.map((g, i) => (
+            <option value={en.levels[i].label} data-slug={g.slug}>{g.label}</option>
+          ))}
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="f-times">{f.times}</label>
+      <input id="f-times" type="text" name="preferred-times" />
+    </div>
+    <div class="field">
+      <label for="f-message">{f.message}</label>
+      <textarea id="f-message" name="message" rows="4"></textarea>
+    </div>
+
+    <div class="field consent">
+      <input id="f-consent" type="checkbox" name="consent" value="yes" required />
+      <label for="f-consent">{consentBefore}<a href={privacy}>{f.privacyLinkText}</a>{consentAfter}</label>
+    </div>
+
+    <p class="hp" aria-hidden="true">
+      <label>{f.honeypot} <input type="text" name="bot-field" tabindex="-1" autocomplete="off" /></label>
+    </p>
+
+    <div class="btn-row">
+      <button type="submit" class="btn btn-primary">{f.send}</button>
+      <a class="btn btn-outline" href={SITE.whatsapp} rel="noopener">{m.buttons.whatsapp}</a>
+    </div>
+    <p class="hint mt-3">{f.reply}</p>
+    <noscript><p class="hint">{f.noscript}</p></noscript>
+  </form>
+</div>
+<script src="/js/form.js" defer></script>

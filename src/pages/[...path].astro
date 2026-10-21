@@ -1,0 +1,40 @@
+---
+import { ROUTES, localePath } from '../lib/routes';
+import Home from '../views/Home.astro';
+import Courses from '../views/Courses.astro';
+import Course from '../views/Course.astro';
+import Pricing from '../views/Pricing.astro';
+import HowItWorks from '../views/HowItWorks.astro';
+import FreeTrial from '../views/FreeTrial.astro';
+import Placement from '../views/Placement.astro';
+import Tutors from '../views/Tutors.astro';
+import Reviews from '../views/Reviews.astro';
+import FaqPage from '../views/FaqPage.astro';
+import About from '../views/About.astro';
+import Contact from '../views/Contact.astro';
+import ThankYou from '../views/ThankYou.astro';
+import Legal from '../views/Legal.astro';
+import London from '../views/London.astro';
+
+export function getStaticPaths() {
+  const paths: { params: { path: string | undefined }; props: { routeId: string; locale: string } }[] = [];
+  for (const r of ROUTES) {
+    for (const locale of r.locales) {
+      const url = localePath(locale, r.path).replace(/^\/|\/$/g, '');
+      paths.push({ params: { path: url === '' ? undefined : url }, props: { routeId: r.id, locale } });
+    }
+  }
+  return paths;
+}
+
+const views: Record<string, any> = {
+  home: Home, courses: Courses, course: Course, pricing: Pricing, how: HowItWorks, trial: FreeTrial,
+  placement: Placement, tutors: Tutors, reviews: Reviews, faq: FaqPage, about: About, contact: Contact,
+  thanks: ThankYou, legal: Legal, london: London,
+};
+const { routeId, locale } = Astro.props;
+const r = ROUTES.find((x) => x.id === routeId)!;
+const View = views[r.view];
+const extra = r.view === 'course' ? { slug: r.course } : r.view === 'legal' ? { kind: r.id } : {};
+---
+<View locale={locale} {...extra} />

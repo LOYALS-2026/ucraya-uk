@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import FaqList from '../components/FaqList.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { useMessages, type Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
+import { pageMeta } from '../lib/page';
+import { faqPage } from '../lib/jsonld';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = useMessages(locale);
+const f = m.faqPage;
+const meta = pageMeta('faq', locale);
+const crumbs = [{ name: m.nav.faq, path: pathFor('faq', locale) }];
+---
+<Base locale={locale} routeId="faq" title={meta.title} description={meta.description} crumbs={crumbs} jsonLd={[faqPage(f.items)]}>
+  <Breadcrumbs locale={locale} crumbs={crumbs} />
+  <PageHero h1={f.h1} lead={f.lead} />
+  <section class="section">
+    <div class="wrap narrow">
+      <FaqList items={f.items} />
+    </div>
+  </section>
+  <CtaBand locale={locale} />
+</Base>

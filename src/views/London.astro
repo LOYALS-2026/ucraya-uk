@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import { useMessages, type Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
+import { pageMeta } from '../lib/page';
+import { SITE } from '../lib/site';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = useMessages(locale);
+const l = m.london;
+const meta = pageMeta('london', locale);
+const crumbs = [{ name: l.h1, path: pathFor('london', locale) }];
+---
+<Base locale={locale} routeId="london" title={meta.title} description={meta.description} crumbs={crumbs}>
+  <Breadcrumbs locale={locale} crumbs={crumbs} />
+  <PageHero h1={l.h1} lead={l.lead} />
+  <section class="section">
+    <div class="wrap narrow">
+      <p>{l.text}</p>
+      <div class="btn-row mt-6">
+        <a class="btn btn-primary" href={SITE.schoolSite}>{l.link}</a>
+        <a class="btn btn-outline" href={pathFor('courses', locale)}>{m.nav.courses}</a>
+      </div>
+      <p class="mt-6">{l.online}</p>
+    </div>
+  </section>
+</Base>
