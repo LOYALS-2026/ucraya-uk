@@ -1,0 +1,33 @@
+# Ucraya
+
+> Online English lessons with human tutors, offered individually and in small groups.
+
+Draft for ucraya.uk. Facts checked on 21 October 2026. The new site's live pages have not been verified.
+
+## Business facts
+
+- Ucraya is the supplied brand for the new online service; the existing school presents itself as Training Centre Raya London.
+- The supplied brief specifies UK-based tutors. This does not establish nationality or native-speaker status.
+- The existing school publishes Haverstock School, 24 Haverstock Hill, London NW3 2BQ as its location.
+- Its About page states a 2015 founding date. Other age claims conflict and need reconciliation.
+- Existing provision includes live online groups, private lessons and classroom courses.
+- Published English group levels are A1 to B2, elementary to upper-intermediate.
+- The existing school advertises General English, English through English and exam preparation, including IELTS.
+- Existing private lessons use Discord, a voice and video platform; the new site's platform is unconfirmed.
+- Bulgarian-speaking tutors are advertised for existing private lessons. Other support languages are unconfirmed.
+- Existing prices include £15 per 55-minute private lesson and £298 per online group course. The fees table calls private lessons hourly; confirm the charging basis.
+- New-site prices, group limits and a live trial are unconfirmed. The published free lesson offer is an emailed video.
+- Existing contact: office@ucraya.co.uk; +44 7459 702621.
+
+## Existing school sources
+
+- [About](https://ucraya.co.uk/en/about-us/)
+- [Tutors](https://ucraya.co.uk/en/team/)
+- [Online courses](https://ucraya.co.uk/en/english-online-courses-in-london/)
+- [Private lessons](https://ucraya.co.uk/en/online-courses/)
+- [Exam preparation](https://ucraya.co.uk/en/course/english-language-exam-preparation-for-certificate/)
+- [Fees](https://ucraya.co.uk/en/fees-20192020/)
+- [Contact](https://ucraya.co.uk/en/contact-us/)
+
+Existing-school offers must not be assumed to apply to the new online service.
+
