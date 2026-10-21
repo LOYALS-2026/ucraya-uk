@@ -1,151 +1,151 @@
 {
   "site": {
     "name": "Ucraya",
-    "strap": "Online English lessons with real tutors",
-    "since": "A London English school since 2015",
-    "skip": "Skip to main content",
-    "orgDescription": "Ucraya offers online English lessons with real tutors: one-to-one lessons, small group level courses and exam preparation. It is run by Training Centre Raya London, a London English school founded in 2015."
+    "strap": "Онлайн уроци по английски език с истински преподаватели",
+    "since": "Английско училище в Лондон от 2015 г.",
+    "skip": "Към основното съдържание",
+    "orgDescription": "Ucraya предлага онлайн уроци по английски език с истински преподаватели: индивидуални уроци, курсове по нива в малки групи и подготовка за изпити. Зад нея стои Training Centre Raya London, английско училище в Лондон, основано през 2015 г."
   },
   "nav": {
-    "courses": "Courses",
-    "pricing": "Prices",
-    "how": "How it works",
-    "tutors": "Tutors",
-    "reviews": "Reviews",
-    "faq": "FAQ",
-    "blog": "Guides",
-    "contact": "Contact",
-    "about": "About",
-    "trial": "Free class",
-    "placement": "Placement test"
+    "courses": "Курсове",
+    "pricing": "Цени",
+    "how": "Как работи",
+    "tutors": "Преподаватели",
+    "reviews": "Отзиви",
+    "faq": "Въпроси",
+    "blog": "Ръководства",
+    "contact": "Контакти",
+    "about": "За нас",
+    "trial": "Безплатен урок",
+    "placement": "Тест за ниво"
   },
   "header": {
-    "menu": "Menu",
-    "closeMenu": "Close menu",
-    "language": "Language",
-    "mainNav": "Main navigation",
-    "homeLabel": "Ucraya home"
+    "menu": "Меню",
+    "closeMenu": "Затвори менюто",
+    "language": "Език",
+    "mainNav": "Основна навигация",
+    "homeLabel": "Начална страница на Ucraya"
   },
   "buttons": {
-    "enquire": "Enquire about lessons",
-    "enquireShort": "Enquire",
-    "trial": "Try a class free",
-    "whatsapp": "WhatsApp us",
+    "enquire": "Попитайте за уроци",
+    "enquireShort": "Запитване",
+    "trial": "Опитайте безплатен урок",
+    "whatsapp": "Пишете ни в WhatsApp",
     "whatsappShort": "WhatsApp",
-    "placement": "Take the placement test",
-    "prices": "See prices",
-    "course": "See the course",
-    "tutors": "Meet the tutors",
-    "allFaq": "Read all questions",
-    "send": "Send my enquiry",
-    "allReviews": "Read the reviews",
-    "reviewOnGoogle": "See us on Google",
-    "howItWorks": "How it works"
+    "placement": "Направете теста за ниво",
+    "prices": "Вижте цените",
+    "course": "Вижте курса",
+    "tutors": "Запознайте се с преподавателите",
+    "allFaq": "Прочетете всички въпроси",
+    "send": "Изпратете запитването",
+    "allReviews": "Прочетете отзивите",
+    "reviewOnGoogle": "Намерете ни в Google",
+    "howItWorks": "Как работи"
   },
   "common": {
-    "breadcrumbs": "Breadcrumb",
-    "home": "Home",
-    "from": "from",
-    "perLesson": "per 55 minute lesson",
-    "perCourse": "per level course",
-    "classroomNote": "Looking for classroom lessons in London?",
-    "classroomLink": "Visit ucraya.co.uk",
-    "stillUnsure": "Not sure which lessons suit you? Tell us your goal and we will suggest a tutor and a first lesson.",
-    "ratedGoogle": "Rated 5 stars on Google",
-    "facebookFollowers": "Followed by thousands on Facebook",
-    "sinceProof": "A London English school since 2015",
-    "tutorsProof": "Qualified tutors, based in the UK or teaching for our London school"
+    "breadcrumbs": "Навигационна пътека",
+    "home": "Начало",
+    "from": "от",
+    "perLesson": "на урок от 55 минути",
+    "perCourse": "на курс за ниво",
+    "classroomNote": "Търсите ли уроци в класна стая в Лондон?",
+    "classroomLink": "Посетете ucraya.co.uk",
+    "stillUnsure": "Не сте сигурни кои уроци са подходящи? Разкажете ни целта си и ние ще предложим преподавател и първи урок.",
+    "ratedGoogle": "5 звезди в Google",
+    "facebookFollowers": "Следвани от хиляди във Facebook",
+    "sinceProof": "Английско училище в Лондон от 2015 г.",
+    "tutorsProof": "Квалифицирани преподаватели, базирани във Великобритания или преподаващи за нашето лондонско училище"
   },
   "footer": {
-    "about": "Online English lessons with real tutors, from a London English school since 2015.",
-    "colCourses": "Courses",
+    "about": "Онлайн уроци по английски език с истински преподаватели, от английско училище в Лондон от 2015 г.",
+    "colCourses": "Курсове",
     "colSite": "Ucraya",
-    "colContact": "Contact",
-    "colLegal": "Legal",
-    "privacy": "Privacy",
-    "terms": "Terms and cancellation",
-    "london": "Classroom lessons in London",
-    "company": "Ucraya is a trading name of Training Centre Raya London Ltd, company number 11618355.",
-    "copyright": "Copyright {year} Training Centre Raya London Ltd.",
-    "social": "Find us online",
+    "colContact": "Контакти",
+    "colLegal": "Правна информация",
+    "privacy": "Поверителност",
+    "terms": "Условия и отмяна",
+    "london": "Уроци в класна стая в Лондон",
+    "company": "Ucraya е търговско наименование на Training Centre Raya London Ltd, фирмен номер 11618355.",
+    "copyright": "Авторско право {year} Training Centre Raya London Ltd.",
+    "social": "Намерете ни онлайн",
     "facebook": "Facebook",
     "instagram": "Instagram",
     "viber": "Viber"
   },
   "sticky": {
-    "label": "Quick contact"
+    "label": "Бърза връзка"
   },
   "cookie": {
-    "label": "Cookie choices",
-    "text": "We would like to use Google Analytics cookies to see which pages are useful. Nothing is loaded unless you accept.",
-    "accept": "Accept",
-    "decline": "No thanks",
-    "privacy": "Read our privacy page"
+    "label": "Избор за бисквитките",
+    "text": "Искаме да използваме бисквитки на Google Analytics, за да видим кои страници са полезни. Нищо не се зарежда, ако не приемете.",
+    "accept": "Приемам",
+    "decline": "Не, благодаря",
+    "privacy": "Прочетете страницата за поверителност"
   },
   "form": {
-    "title": "Tell us what you need",
-    "intro": "Fill in the form and the office will reply by email. There is nothing to pay at this stage.",
-    "email": "Email address",
-    "name": "Your name",
-    "phone": "Phone or WhatsApp (optional)",
-    "phoneHint": "Include the country code if you are outside the UK.",
-    "language": "Your first language (optional)",
-    "goal": "What is your main goal?",
-    "goalPlaceholder": "Choose one",
+    "title": "Разкажете ни от какво имате нужда",
+    "intro": "Попълнете формуляра и офисът ще отговори по имейл. На този етап не се плаща нищо.",
+    "email": "Имейл адрес",
+    "name": "Вашето име",
+    "phone": "Телефон или WhatsApp (по желание)",
+    "phoneHint": "Добавете кода на държавата, ако сте извън Великобритания.",
+    "language": "Вашият роден език (по желание)",
+    "goal": "Каква е основната ви цел?",
+    "goalPlaceholder": "Изберете едно",
     "goals": [
       {
         "slug": "oet",
-        "label": "Nursing English test OET or IELTS"
+        "label": "Английски за медицински сестри: OET или IELTS"
       },
       {
         "slug": "selt-b1",
-        "label": "B1 test for settlement or citizenship"
+        "label": "B1 тест за уседналост или гражданство"
       },
       {
         "slug": "ielts",
-        "label": "IELTS for university or work"
+        "label": "IELTS за университет или работа"
       },
       {
         "slug": "interview",
-        "label": "Job interview or work English"
+        "label": "Интервю за работа или английски за работа"
       },
       {
         "slug": "kids",
-        "label": "English for my child"
+        "label": "Английски за моето дете"
       },
       {
         "slug": "everyday",
-        "label": "Everyday English"
+        "label": "Английски за ежедневието"
       },
       {
         "slug": "other",
-        "label": "Something else"
+        "label": "Нещо друго"
       }
     ],
-    "format": "Which format do you prefer?",
+    "format": "Какъв формат предпочитате?",
     "formats": [
       {
         "slug": "one-to-one",
-        "label": "One-to-one lessons"
+        "label": "Индивидуални уроци"
       },
       {
         "slug": "group",
-        "label": "Small group course"
+        "label": "Курс в малка група"
       },
       {
         "slug": "not-sure",
-        "label": "Not sure yet"
+        "label": "Още не съм сигурен"
       }
     ],
-    "level": "Your level, if you know it",
+    "level": "Вашето ниво, ако го знаете",
     "levels": [
       {
         "slug": "not-sure",
-        "label": "I am not sure"
+        "label": "Не съм сигурен"
       },
       {
         "slug": "a1",
-        "label": "A1 (beginner)"
+        "label": "A1 (начинаещ)"
       },
       {
         "slug": "a2",
@@ -161,882 +161,882 @@
       },
       {
         "slug": "c1",
-        "label": "C1 or above"
+        "label": "C1 или по-високо"
       },
       {
         "slug": "test-a1",
-        "label": "I took your placement test: A1"
+        "label": "Направих вашия тест за ниво: A1"
       },
       {
         "slug": "test-a2",
-        "label": "I took your placement test: A2"
+        "label": "Направих вашия тест за ниво: A2"
       },
       {
         "slug": "test-b1",
-        "label": "I took your placement test: B1"
+        "label": "Направих вашия тест за ниво: B1"
       },
       {
         "slug": "test-b2",
-        "label": "I took your placement test: B2"
+        "label": "Направих вашия тест за ниво: B2"
       }
     ],
-    "times": "Preferred days and times (include your time zone if outside the UK)",
-    "message": "Anything else we should know?",
-    "consent": "I agree that Ucraya may use these details to reply to my enquiry. I have read the {privacyLink}.",
-    "privacyLinkText": "privacy page",
-    "required": "Required",
-    "optional": "Optional",
-    "trialNote": "You are asking about a free class or level check. Tell us your goal and we will reply with the next step.",
-    "placementNote": "You took our placement test. We will use the level you got as a starting point.",
-    "noscript": "Please send your enquiry to office@ucraya.co.uk if the form does not work.",
-    "reply": "We reply by email. You can also message us on WhatsApp.",
-    "honeypot": "Leave this field empty"
+    "times": "Предпочитани дни и часове (посочете часовата си зона, ако сте извън Великобритания)",
+    "message": "Има ли още нещо, което трябва да знаем?",
+    "consent": "Съгласен съм Ucraya да използва тези данни, за да отговори на запитването ми. Прочел съм {privacyLink}.",
+    "privacyLinkText": "страницата за поверителност",
+    "required": "Задължително",
+    "optional": "По желание",
+    "trialNote": "Питате за безплатен урок или проверка на нивото. Разкажете ни целта си и ще отговорим със следващата стъпка.",
+    "placementNote": "Направихте нашия тест за ниво. Ще използваме полученото ниво като отправна точка.",
+    "noscript": "Моля, изпратете запитването си на office@ucraya.co.uk, ако формулярът не работи.",
+    "reply": "Отговаряме по имейл. Можете да ни пишете и в WhatsApp.",
+    "honeypot": "Оставете това поле празно"
   },
   "meta": {
     "home": {
-      "title": "Online English lessons with real tutors",
-      "description": "One-to-one and small group English lessons online with real tutors, from a London English school since 2015. Ask a question or try a class free."
+      "title": "Онлайн уроци по английски с истински преподаватели",
+      "description": "Индивидуални уроци и малки групи по английски език онлайн с истински преподаватели, от лондонско училище от 2015 г. Попитайте или опитайте безплатен урок."
     },
     "courses": {
-      "title": "English courses online",
-      "description": "General English, business English, IELTS, B1 test preparation, OET and lessons for children, taught online by real tutors."
+      "title": "Курсове по английски език онлайн",
+      "description": "Общ английски, бизнес английски, IELTS, подготовка за B1 тест, OET и уроци за деца, онлайн с истински преподаватели."
     },
     "pricing": {
-      "title": "Prices for online English lessons",
-      "description": "One-to-one lessons from 15 pounds, group courses 298 pounds and exam preparation 320 pounds. Pay by bank transfer after the office confirms."
+      "title": "Цени на онлайн уроците по английски",
+      "description": "Индивидуални уроци от £15, групови курсове £298 и подготовка за изпит £320. Плащане по банков път след потвърждение от офиса."
     },
     "how": {
-      "title": "How online lessons work",
-      "description": "Enquire, get matched to a tutor, have your first lesson and pay by bank transfer once the office confirms. Here is every step."
+      "title": "Как работят онлайн уроците",
+      "description": "Запитване, избор на преподавател, първи урок и плащане по банков път след потвърждение от офиса. Ето всяка стъпка."
     },
     "trial": {
-      "title": "Try a class free",
-      "description": "Join one live group class free of charge to see how we teach, or ask for a level check. Send your enquiry and we will reply."
+      "title": "Опитайте безплатен урок",
+      "description": "Присъединете се безплатно към един жив групов урок, за да видите как преподаваме, или поискайте проверка на нивото."
     },
     "placement": {
-      "title": "English placement test",
-      "description": "A 12 question quiz that gives a rough guide to your English level, from A1 to B2. It is a guide, not an assessment."
+      "title": "Тест за ниво по английски",
+      "description": "Тест с 12 въпроса, който дава приблизителна представа за нивото ви по английски, от A1 до B2. Това е ориентир, не оценка."
     },
     "tutors": {
-      "title": "Our English tutors",
-      "description": "Meet the qualified English teachers behind Ucraya, with the qualifications they have shared with us."
+      "title": "Нашите преподаватели по английски",
+      "description": "Запознайте се с квалифицираните преподаватели зад Ucraya и квалификациите, които са споделили с нас."
     },
     "reviews": {
-      "title": "Reviews and testimonials",
-      "description": "What learners say about the school, and a link to our Google reviews."
+      "title": "Отзиви и мнения",
+      "description": "Какво казват учениците за училището и връзка към отзивите ни в Google."
     },
     "faq": {
-      "title": "Questions about online lessons",
-      "description": "Answers about prices, payment, platform, cancellations, levels, children and the tests we do not run."
+      "title": "Въпроси за онлайн уроците",
+      "description": "Отговори за цените, плащането, платформата, отмяната, нивата, децата и изпитите, които не провеждаме."
     },
     "about": {
-      "title": "About Ucraya",
-      "description": "Ucraya is run by a London English school founded in 2015. Read about the school, the team and how we teach."
+      "title": "За Ucraya",
+      "description": "Ucraya се води от английско училище в Лондон, основано през 2015 г. Прочетете за училището, екипа и начина ни на преподаване."
     },
     "contact": {
-      "title": "Contact Ucraya",
-      "description": "Send an enquiry, email, phone, WhatsApp or message us. Find the school address and our social pages."
+      "title": "Контакти с Ucraya",
+      "description": "Изпратете запитване, имейл, обадете се или пишете в WhatsApp. Адрес на училището и страниците ни в социалните мрежи."
     },
     "thanks": {
-      "title": "Thank you for your enquiry",
-      "description": "Your enquiry has been sent. The office will reply by email."
+      "title": "Благодарим за запитването",
+      "description": "Запитването ви е изпратено. Офисът ще отговори по имейл."
     },
     "privacy": {
-      "title": "Privacy",
-      "description": "How Ucraya uses your details, in plain English, and your rights under UK data protection law."
+      "title": "Поверителност",
+      "description": "Как Ucraya използва данните ви, на ясен език, и правата ви според британския закон за защита на данните."
     },
     "terms": {
-      "title": "Terms and cancellation",
-      "description": "How booking, payment by bank transfer, rescheduling and cancellation work at Ucraya."
+      "title": "Условия и отмяна",
+      "description": "Как работят резервацията, плащането по банков път, пренасрочването и отмяната в Ucraya."
     },
     "london": {
-      "title": "Classroom lessons in London",
-      "description": "Ucraya is for online lessons. For classroom courses in London, visit our school at ucraya.co.uk."
+      "title": "Уроци в класна стая в Лондон",
+      "description": "Ucraya е за онлайн уроци. За курсове в класна стая в Лондон посетете нашето училище на ucraya.co.uk."
     },
     "blog": {
-      "title": "English guides for learners",
-      "description": "Plain guides for learners preparing for tests, interviews and everyday English, with links to the lessons that help."
+      "title": "Ръководства по английски за ученици",
+      "description": "Прости ръководства за подготовка за изпити, интервюта и ежедневен английски, с връзки към уроците, които помагат."
     },
     "notFound": {
-      "title": "Page not found",
-      "description": "We could not find that page. Try the home page or send us an enquiry."
+      "title": "Страницата не е намерена",
+      "description": "Не успяхме да намерим тази страница. Опитайте началната страница или ни изпратете запитване."
     }
   },
   "home": {
-    "h1": "Online English lessons with real tutors",
-    "lead": "One-to-one lessons or a small live group, with a tutor who builds the lesson around your goal. Taught by a London English school since 2015.",
-    "heroNote": "No payment online: the office confirms your place, then you pay by bank transfer.",
+    "h1": "Онлайн уроци по английски език с истински преподаватели",
+    "lead": "Индивидуални уроци или малка жива група, с преподавател, който изгражда урока около вашата цел. Преподава лондонско английско училище от 2015 г.",
+    "heroNote": "Без плащане онлайн: офисът потвърждава мястото ви, после плащате по банков път.",
     "audience": {
-      "title": "Who our lessons are for",
-      "intro": "Most people come to us with a date in mind. Choose the one closest to yours.",
+      "title": "За кого са нашите уроци",
+      "intro": "Повечето хора идват при нас с дата в ума. Изберете най-близкото до вашата.",
       "items": [
         {
           "slug": "oet",
-          "title": "Nurses retaking OET or IELTS",
-          "text": "Lessons built around the OET sub-tests and your profession, for your next attempt."
+          "title": "Медицински сестри, които повтарят OET или IELTS",
+          "text": "Уроци, изградени около подтестовете на OET и вашата професия, за следващия ви опит."
         },
         {
           "slug": "selt-b1",
-          "title": "B1 for settlement or citizenship",
-          "text": "Prepare for a B1 speaking and listening test with a tutor. Check your own route on gov.uk first."
+          "title": "B1 за уседналост или гражданство",
+          "text": "Подгответе се за B1 тест по говорене и слушане с преподавател. Първо проверете своя маршрут в gov.uk."
         },
         {
           "slug": "ielts",
-          "title": "IELTS for university or work",
-          "text": "Exam preparation or one-to-one lessons when an offer asks for an IELTS score."
+          "title": "IELTS за университет или работа",
+          "text": "Подготовка за изпит или индивидуални уроци, когато офертата изисква резултат от IELTS."
         },
         {
           "slug": "business-english",
-          "title": "A job interview coming up",
-          "text": "One-to-one lessons for interviews, meetings and everyday work English."
+          "title": "Предстои интервю за работа",
+          "text": "Индивидуални уроци за интервюта, срещи и ежедневен английски на работното място."
         },
         {
           "slug": "kids",
-          "title": "Your child's English",
-          "text": "One-to-one online lessons for school age children, with a parent or carer present or nearby."
+          "title": "Английският на вашето дете",
+          "text": "Индивидуални онлайн уроци за деца в училищна възраст, с родител или възрастен до тях."
         },
         {
           "slug": "business-english",
-          "title": "Care and workplace teams",
-          "text": "Lessons focused on communication at work, including care work. Tell us what your staff need."
+          "title": "Грижа и екипи на работното място",
+          "text": "Уроци с фокус върху общуването на работа, включително в сферата на грижата. Кажете ни от какво имат нужда служителите ви."
         },
         {
           "slug": "general-english",
-          "title": "Everyday English",
-          "text": "Choose private lessons or a level course for clearer English in daily life."
+          "title": "Ежедневен английски",
+          "text": "Изберете индивидуални уроци или курс по ниво за по-ясен английски в ежедневието."
         }
       ],
-      "link": "Read more"
+      "link": "Прочетете повече"
     },
     "steps": {
-      "title": "How it works",
+      "title": "Как работи",
       "items": [
         {
-          "title": "Tell us your goal",
-          "text": "Send a short enquiry or message us on WhatsApp. Say what you need English for and when."
+          "title": "Разкажете ни целта си",
+          "text": "Изпратете кратко запитване или ни пишете в WhatsApp. Кажете за какво ви е нужен английският и кога."
         },
         {
-          "title": "We suggest a tutor and a first lesson",
-          "text": "The office replies by email with a tutor, a lesson plan and a time that suits you."
+          "title": "Предлагаме преподавател и първи урок",
+          "text": "Офисът отговаря по имейл с преподавател, план на урока и удобен за вас час."
         },
         {
-          "title": "Start lessons, pay by bank transfer",
-          "text": "The office confirms your place and sends the bank details. There is no card payment on the site."
+          "title": "Започвате уроците и плащате по банков път",
+          "text": "Офисът потвърждава мястото ви и изпраща банковите данни. На сайта няма плащане с карта."
         }
       ]
     },
     "prices": {
-      "title": "Clear prices",
-      "intro": "These are the prices. Exam entry fees are separate and paid to the exam body.",
-      "note": "Payment is by bank transfer after the office confirms your place."
+      "title": "Ясни цени",
+      "intro": "Това са цените. Таксите за изпитите са отделно и се плащат на изпитния орган.",
+      "note": "Плащането е по банков път, след като офисът потвърди мястото ви."
     },
     "proof": {
-      "title": "What learners say",
-      "lead": "Short quotes, as published by our school."
+      "title": "Какво казват учениците",
+      "lead": "Кратки цитати, както са публикувани от нашето училище."
     },
     "tutors": {
-      "title": "Qualified tutors, based in the UK or teaching for our London school",
-      "text": "Our teachers hold degrees in English philology or TEFL qualifications, and one holds a CELTA. Bulgarian speaking tutors are available for one-to-one lessons."
+      "title": "Квалифицирани преподаватели, базирани във Великобритания или преподаващи за нашето лондонско училище",
+      "text": "Нашите преподаватели имат степени по английска филология или квалификации по TEFL, а един от тях има CELTA. За индивидуални уроци има преподаватели, говорещи български."
     },
     "faq": {
-      "title": "Quick answers"
+      "title": "Бързи отговори"
     },
     "final": {
-      "title": "Ready to start?",
-      "text": "Tell us your goal. We will reply with a tutor and a first lesson to suggest."
+      "title": "Готови ли сте да започнете?",
+      "text": "Разкажете ни целта си. Ще отговорим с предложение за преподавател и първи урок."
     }
   },
   "products": {
     "oneToOne": {
-      "name": "One-to-one lessons",
+      "name": "Индивидуални уроци",
       "price": "£15",
-      "unit": "per 55 minute lesson",
-      "text": "Private live lessons with a tutor, at any level, built around your goals."
+      "unit": "на урок от 55 минути",
+      "text": "Частни уроци на живо с преподавател, на всяко ниво, изградени около вашите цели."
     },
     "oneToOneEnglish": {
-      "name": "English through English, one-to-one",
+      "name": "Английски чрез английски, индивидуално",
       "price": "£20",
-      "unit": "per 55 minute lesson",
-      "text": "Private lessons taught entirely in English, for full immersion."
+      "unit": "на урок от 55 минути",
+      "text": "Частни уроци изцяло на английски език, за пълно потапяне."
     },
     "group": {
-      "name": "Online group course",
+      "name": "Онлайн групов курс",
       "price": "£298",
-      "unit": "per level course (A1, A2, B1 or B2)",
-      "text": "A 12 week course in a small live group: 72 lessons, four skills, grammar, vocabulary and assessments."
+      "unit": "на курс за ниво (A1, A2, B1 или B2)",
+      "text": "12-седмичен курс в малка група на живо: 72 урока, четири умения, граматика, лексика и проверки на знанията."
     },
     "exam": {
-      "name": "Exam preparation",
+      "name": "Подготовка за изпит",
       "price": "£320",
-      "unit": "for 24 hours of tuition",
-      "text": "IELTS, Cambridge and other certificates, usually over six to eight weeks. Exam entry fees are separate."
+      "unit": "за 24 часа обучение",
+      "text": "IELTS, Cambridge и други сертификати, обикновено за шест до осем седмици. Таксите за изпитите са отделно."
     }
   },
   "courses": {
-    "title": "Online English courses",
-    "lead": "Pick the course closest to your goal. If you are not sure, send an enquiry and we will suggest one.",
-    "cardLink": "See the course",
+    "title": "Онлайн курсове по английски език",
+    "lead": "Изберете курса, най-близък до вашата цел. Ако не сте сигурни, изпратете запитване и ние ще предложим един.",
+    "cardLink": "Вижте курса",
     "headings": {
-      "who": "Who this is for",
-      "lesson": "What a lesson looks like",
-      "levels": "Levels",
-      "format": "Format and platform",
-      "price": "Price",
-      "included": "What is included",
-      "notIncluded": "What is not included",
-      "tutor": "Your tutor",
-      "faq": "Questions about this course",
-      "enquire": "Enquire about this course",
-      "related": "Other courses"
+      "who": "За кого е",
+      "lesson": "Как изглежда един урок",
+      "levels": "Нива",
+      "format": "Формат и платформа",
+      "price": "Цена",
+      "included": "Какво е включено",
+      "notIncluded": "Какво не е включено",
+      "tutor": "Вашият преподавател",
+      "faq": "Въпроси за този курс",
+      "enquire": "Попитайте за този курс",
+      "related": "Други курсове"
     },
-    "ctaText": "Send a short enquiry. We reply by email with a tutor and a first lesson to suggest.",
+    "ctaText": "Изпратете кратко запитване. Отговаряме по имейл с предложение за преподавател и първи урок.",
     "items": {
       "general-english": {
-        "name": "General English",
-        "summary": "Group level courses and one-to-one lessons for everyday English.",
+        "name": "Общ английски",
+        "summary": "Групови курсове по нива и индивидуални уроци за ежедневен английски.",
         "goal": "everyday",
         "format": "not-sure",
-        "metaTitle": "General English lessons online",
-        "metaDescription": "Online general English with real tutors: a 12 week group course at 298 pounds or one-to-one lessons from 15 pounds. Ask us which suits you.",
-        "h1": "General English lessons online",
-        "lead": "Build clearer everyday English with a small live group course or private lessons. Choose the format that fits your week.",
+        "metaTitle": "Уроци по общ английски онлайн",
+        "metaDescription": "Общ английски онлайн с истински преподаватели: 12-седмичен групов курс за £298 или индивидуални уроци от £15. Попитайте кое ви подхожда.",
+        "h1": "Уроци по общ английски онлайн",
+        "lead": "Изградете по-ясен ежедневен английски с курс в малка група на живо или с частни уроци. Изберете формата, който пасва на седмицата ви.",
         "who": [
-          "Adults who want clearer English for daily life and work",
-          "People who like the structure of a level course from A1 to B2",
-          "People who prefer private lessons built around their own goals"
+          "Възрастни, които искат по-ясен английски за ежедневието и работата",
+          "Хора, на които допада структурата на курс по нива от A1 до B2",
+          "Хора, които предпочитат частни уроци, изградени около собствените им цели"
         ],
         "lesson": [
-          "In a group course you learn with a small live group of no more than 12. The course is 72 lessons over 12 weeks, covering the four skills, grammar and vocabulary, with assessments along the way.",
-          "In one-to-one lessons you have a private 55 minute lesson with a tutor who plans around what you want to do with your English: general English, work, exams or conversation."
+          "В груповия курс учите в малка група на живо, не повече от 12 души. Курсът е 72 урока за 12 седмици и обхваща четирите умения, граматика и лексика, с проверки на знанията по пътя.",
+          "В индивидуалните уроци имате частен урок от 55 минути с преподавател, който планира според това, което искате да правите с английския: общ английски, работа, изпити или разговор."
         ],
-        "levels": "Group courses are offered at A1, A2, B1 and B2. One-to-one lessons are available at any level.",
-        "platform": "Group courses run live on Zoom. One-to-one lessons run on a live video call, and we send you the link with your booking.",
+        "levels": "Груповите курсове са на нива A1, A2, B1 и B2. Индивидуалните уроци са възможни на всяко ниво.",
+        "platform": "Груповите курсове се провеждат на живо в Zoom. Индивидуалните уроци се провеждат по видеообаждане на живо, а връзката ви изпращаме с резервацията.",
         "prices": [
           {
-            "label": "Online group course",
+            "label": "Онлайн групов курс",
             "amount": "£298",
-            "unit": "per level course"
+            "unit": "на курс за ниво"
           },
           {
-            "label": "One-to-one lesson",
+            "label": "Индивидуален урок",
             "amount": "£15",
-            "unit": "per 55 minute lesson"
+            "unit": "на урок от 55 минути"
           },
           {
-            "label": "English through English, one-to-one",
+            "label": "Английски чрез английски, индивидуално",
             "amount": "£20",
-            "unit": "per 55 minute lesson"
+            "unit": "на урок от 55 минути"
           }
         ],
-        "priceNote": "Group courses: a £50 deposit secures your place and is part of the £298. Payment is by bank transfer after the office confirms.",
+        "priceNote": "Групови курсове: депозит от £50 запазва мястото ви и е част от £298. Плащането е по банков път, след като офисът потвърди.",
         "included": [
-          "Live lessons with a tutor",
-          "For group courses: four skills, grammar, vocabulary and assessments",
-          "For one-to-one lessons: a timetable agreed with your tutor",
-          "Bulgarian speaking tutors are available for one-to-one lessons"
+          "Уроци на живо с преподавател",
+          "За груповите курсове: четири умения, граматика, лексика и проверки на знанията",
+          "За индивидуалните уроци: график, уговорен с вашия преподавател",
+          "За индивидуални уроци има преподаватели, говорещи български"
         ],
         "notIncluded": [
-          "Exam entry fees (we do not run tests)",
-          "Classroom lessons in London: visit ucraya.co.uk"
+          "Такси за изпити (ние не провеждаме изпити)",
+          "Уроци в класна стая в Лондон: посетете ucraya.co.uk"
         ],
-        "tutor": "Your tutors are qualified English teachers, based in the UK or teaching for our London school. See the tutors page for their qualifications.",
+        "tutor": "Вашите преподаватели са квалифицирани учители по английски, базирани във Великобритания или преподаващи за нашето лондонско училище. Квалификациите им са на страницата с преподавателите.",
         "faq": [
           {
-            "q": "Should I choose a group course or one-to-one lessons?",
-            "a": "A group course gives you a set level, a clear structure and a live group. One-to-one lessons are built around your own goals and timetable. If you are not sure, tell us your goal and we will suggest one."
+            "q": "Да избера групов курс или индивидуални уроци?",
+            "a": "Груповият курс ви дава определено ниво, ясна структура и жива група. Индивидуалните уроци са изградени около вашите цели и график. Ако не сте сигурни, разкажете ни целта си и ние ще предложим един."
           },
           {
-            "q": "How long is a group course?",
-            "a": "A level course lasts 12 weeks and has 72 lessons. It covers four skills, grammar, vocabulary and assessments."
+            "q": "Колко дълъг е груповият курс?",
+            "a": "Курсът за ниво продължава 12 седмици и има 72 урока. Обхваща четири умения, граматика, лексика и проверки на знанията."
           },
           {
-            "q": "Can I try before I pay?",
-            "a": "Yes. You can join one live group class free of charge to see how we teach. Use the free class page to ask."
+            "q": "Мога ли да опитам, преди да платя?",
+            "a": "Да. Можете да се присъедините безплатно към един групов урок на живо, за да видите как преподаваме. Попитайте през страницата за безплатен урок."
           },
           {
-            "q": "How do I pay?",
-            "a": "By bank transfer, after the office confirms your place. We send the bank details with your booking confirmation."
+            "q": "Как се плаща?",
+            "a": "По банков път, след като офисът потвърди мястото ви. Банковите данни изпращаме с потвърждението на резервацията."
           }
         ]
       },
       "one-to-one": {
-        "name": "One-to-one lessons",
-        "summary": "Private 55 minute live lessons, at any level, built around your goal.",
+        "name": "Индивидуални уроци",
+        "summary": "Частни уроци на живо от 55 минути, на всяко ниво, изградени около вашата цел.",
         "goal": "everyday",
         "format": "one-to-one",
-        "metaTitle": "One-to-one English lessons online",
-        "metaDescription": "Private online English lessons with a real tutor: 15 pounds, or 20 pounds taught entirely in English, per 55 minute lesson. Any level.",
-        "h1": "One-to-one English lessons online",
-        "lead": "Private 55 minute lessons on a live video call, with a tutor who plans around your goal. Any level.",
+        "metaTitle": "Индивидуални уроци по английски онлайн",
+        "metaDescription": "Частни онлайн уроци по английски с истински преподавател: £15 или £20 изцяло на английски, на урок от 55 минути. Всяко ниво.",
+        "h1": "Индивидуални уроци по английски онлайн",
+        "lead": "Частни уроци от 55 минути по видеообаждане на живо, с преподавател, който планира около вашата цел. Всяко ниво.",
         "who": [
-          "Learners with a specific goal, such as work, a test or an interview",
-          "People who want a timetable that fits their week",
-          "Learners who want to speak more and be corrected as they go"
+          "Ученици с конкретна цел, като работа, изпит или интервю",
+          "Хора, които искат график, който пасва на седмицата им",
+          "Ученици, които искат да говорят повече и да бъдат поправяни в движение"
         ],
         "lesson": [
-          "Each lesson is 55 minutes, one to one with your tutor on a live video call. The lesson is built around your goal, whether that is general English, work, exams or conversation.",
-          "You can choose lessons with a Bulgarian speaking tutor, or English through English, where the whole lesson is taught in English for full immersion."
+          "Всеки урок е 55 минути, на четири очи с вашия преподавател по видеообаждане на живо. Уроците са изградени около вашата цел, независимо дали е общ английски, работа, изпити или разговор.",
+          "Можете да изберете уроци с преподавател, говорещ български, или английски чрез английски, при който целият урок е на английски за пълно потапяне."
         ],
-        "levels": "Any level, from beginner to advanced.",
-        "platform": "Lessons run on a live video call. We send you the link with your booking, and the timetable is agreed with your tutor.",
+        "levels": "Всяко ниво, от начинаещи до напреднали.",
+        "platform": "Уроците се провеждат по видеообаждане на живо. Връзката ви изпращаме с резервацията, а графикът се уговаря с вашия преподавател.",
         "prices": [
           {
-            "label": "One-to-one lesson",
+            "label": "Индивидуален урок",
             "amount": "£15",
-            "unit": "per 55 minute lesson"
+            "unit": "на урок от 55 минути"
           },
           {
-            "label": "English through English, one-to-one",
+            "label": "Английски чрез английски, индивидуално",
             "amount": "£20",
-            "unit": "per 55 minute lesson"
+            "unit": "на урок от 55 минути"
           }
         ],
-        "priceNote": "You pay per lesson or in blocks agreed with the office, by bank transfer after the office confirms. Fixed packages are not published.",
+        "priceNote": "Плащате на урок или на пакети, уговорени с офиса, по банков път, след като офисът потвърди. Фиксирани пакети не се публикуват.",
         "included": [
-          "A private 55 minute live lesson with a tutor",
-          "A timetable agreed with your tutor",
-          "Bulgarian speaking tutors available, or lessons taught entirely in English at £20"
+          "Частен урок на живо от 55 минути с преподавател",
+          "График, уговорен с вашия преподавател",
+          "Има преподаватели, говорещи български, или уроци изцяло на английски за £20"
         ],
         "notIncluded": [
-          "Exam entry fees (we do not run tests)",
-          "Group classes: see the group courses page"
+          "Такси за изпити (ние не провеждаме изпити)",
+          "Групови уроци: вижте страницата с груповите курсове"
         ],
-        "tutor": "Your tutor is a qualified English teacher, based in the UK or teaching for our London school. Tell us your goal and we will suggest who to start with.",
+        "tutor": "Вашият преподавател е квалифициран учител по английски, базиран във Великобритания или преподаващ за нашето лондонско училище. Разкажете ни целта си и ние ще предложим с кого да започнете.",
         "faq": [
           {
-            "q": "What is the difference between £15 and £20 lessons?",
-            "a": "The £15 lesson is a private 55 minute lesson, and Bulgarian speaking tutors are available. The £20 lesson is also 55 minutes but is taught entirely in English, for learners who want full immersion."
+            "q": "Каква е разликата между урока за £15 и този за £20?",
+            "a": "Урокът за £15 е частен урок от 55 минути и има преподаватели, говорещи български. Урокът за £20 също е 55 минути, но се води изцяло на английски, за ученици, които искат пълно потапяне."
           },
           {
-            "q": "Can I move a lesson?",
-            "a": "You can reschedule a one-to-one lesson once, with at least 48 hours notice by email, text or phone. With less than 48 hours notice the lesson is charged."
+            "q": "Мога ли да преместя урок?",
+            "a": "Можете да пренасрочите индивидуален урок веднъж, с предизвестие поне 48 часа по имейл, съобщение или телефон. При по-кратко предизвестие урокът се таксува."
           },
           {
-            "q": "How do I pay?",
-            "a": "Per lesson or in blocks agreed with the office, by bank transfer after the office confirms. We do not publish fixed packages."
+            "q": "Как се плаща?",
+            "a": "На урок или на пакети, уговорени с офиса, по банков път, след като офисът потвърди. Не публикуваме фиксирани пакети."
           },
           {
-            "q": "Which platform do you use?",
-            "a": "A live video call. We send you the link with your booking."
+            "q": "Коя платформа използвате?",
+            "a": "Видеообаждане на живо. Връзката ви изпращаме с резервацията."
           }
         ]
       },
       "group-courses": {
-        "name": "Group courses",
-        "summary": "A 12 week level course in a small live group, A1 to B2.",
+        "name": "Групови курсове",
+        "summary": "12-седмичен курс по ниво в малка група на живо, от A1 до B2.",
         "goal": "everyday",
         "format": "group",
-        "metaTitle": "Online English group courses, A1 to B2",
-        "metaDescription": "A 12 week English level course in a small live group on Zoom: 72 lessons, A1 to B2, 298 pounds. Join one class free to see how we teach.",
-        "h1": "Online English group courses",
-        "lead": "A 12 week level course in a small live group on Zoom, at A1, A2, B1 or B2. Join one class free to see how we teach.",
+        "metaTitle": "Онлайн групови курсове по английски, A1 до B2",
+        "metaDescription": "12-седмичен курс по английски в малка група на живо в Zoom: 72 урока, A1 до B2, £298. Присъединете се безплатно към един урок.",
+        "h1": "Онлайн групови курсове по английски",
+        "lead": "12-седмичен курс в малка група на живо в Zoom, на ниво A1, A2, B1 или B2. Присъединете се безплатно към един урок, за да видите как преподаваме.",
         "who": [
-          "Learners who like the structure and company of a group",
-          "People who want a clear level course with assessments",
-          "Friends or colleagues who want to learn together"
+          "Ученици, на които допадат структурата и компанията на групата",
+          "Хора, които искат ясен курс по ниво с проверки на знанията",
+          "Приятели или колеги, които искат да учат заедно"
         ],
         "lesson": [
-          "The course is 72 lessons over 12 weeks, in a small live group of no more than 12. You practise the four skills and work on grammar and vocabulary, with assessments along the way.",
-          "A group runs when enough learners have booked. If a group does not run, your deposit is refunded or moved."
+          "Курсът е 72 урока за 12 седмици, в малка група на живо, не повече от 12 души. Упражнявате четирите умения и работите по граматика и лексика, с проверки на знанията по пътя.",
+          "Групата започва, когато са се записали достатъчно ученици. Ако групата не започне, депозитът ви се връща или се прехвърля."
         ],
-        "levels": "A1, A2, B1 and B2. One level course takes 12 weeks.",
-        "platform": "Group lessons run live on Zoom.",
+        "levels": "A1, A2, B1 и B2. Един курс за ниво отнема 12 седмици.",
+        "platform": "Груповите уроци се провеждат на живо в Zoom.",
         "prices": [
           {
-            "label": "Online group course",
+            "label": "Онлайн групов курс",
             "amount": "£298",
-            "unit": "per level course"
+            "unit": "на курс за ниво"
           }
         ],
-        "priceNote": "A £50 deposit secures your place and is part of the £298. The balance of £248 is paid in two parts: £124 at the start and £124 at the third lesson. The deposit is not refundable but can be moved to another group of the same course and level.",
+        "priceNote": "Депозит от £50 запазва мястото ви и е част от £298. Остатъкът от £248 се плаща на две части: £124 в началото и £124 на третия урок. Депозитът не се възстановява, но може да се прехвърли в друга група на същия курс и ниво.",
         "included": [
-          "72 lessons over 12 weeks in a small live group",
-          "Four skills, grammar and vocabulary",
-          "Assessments during the course"
+          "72 урока за 12 седмици в малка група на живо",
+          "Четири умения, граматика и лексика",
+          "Проверки на знанията по време на курса"
         ],
         "notIncluded": [
-          "Exam entry fees (we do not run tests)",
-          "Individual timetables: for those, choose one-to-one lessons"
+          "Такси за изпити (ние не провеждаме изпити)",
+          "Индивидуален график: за него изберете индивидуални уроци"
         ],
-        "tutor": "Groups are taught by qualified English teachers. See the tutors page for their qualifications.",
+        "tutor": "Групите се водят от квалифицирани учители по английски. Квалификациите им са на страницата с преподавателите.",
         "faq": [
           {
-            "q": "How many people are in a group?",
-            "a": "No more than 12."
+            "q": "Колко души има в една група?",
+            "a": "Не повече от 12."
           },
           {
-            "q": "How do the payments work?",
-            "a": "A £50 deposit when you book, then £124 at the start and £124 at the third lesson. The deposit is part of the £298."
+            "q": "Как работи плащането?",
+            "a": "Депозит от £50 при записване, после £124 в началото и £124 на третия урок. Депозитът е част от £298."
           },
           {
-            "q": "Can I see a class first?",
-            "a": "Yes. You can join one live class free of charge to see how we teach."
+            "q": "Мога ли първо да видя един урок?",
+            "a": "Да. Можете да се присъедините безплатно към един урок на живо, за да видите как преподаваме."
           },
           {
-            "q": "What if I book with a friend?",
-            "a": "Two people booking together get 20% off the level, and three get one module free."
+            "q": "Ами ако се запиша с приятел?",
+            "a": "Двама души, които се записват заедно, получават 20% отстъпка от нивото, а трима получават един модул безплатно."
           },
           {
-            "q": "What if my course is postponed?",
-            "a": "A postponed course must be finished within the year it started, and a course cannot be postponed twice."
+            "q": "Ами ако курсът ми бъде отложен?",
+            "a": "Отложеният курс трябва да се завърши в рамките на годината, в която е започнал, и курс не може да се отлага два пъти."
           }
         ]
       },
       "business-english": {
-        "name": "Business English",
-        "summary": "One-to-one lessons for work, interviews and workplace communication.",
+        "name": "Бизнес английски",
+        "summary": "Индивидуални уроци за работа, интервюта и общуване на работното място.",
         "goal": "interview",
         "format": "one-to-one",
-        "metaTitle": "Business English lessons online",
-        "metaDescription": "One-to-one online English lessons for work, job interviews and workplace communication, including care work. From 15 pounds per 55 minutes.",
-        "h1": "Business English lessons online",
-        "lead": "One-to-one lessons focused on work: interviews, meetings and the English you use on the job, including care work.",
+        "metaTitle": "Уроци по бизнес английски онлайн",
+        "metaDescription": "Индивидуални онлайн уроци по английски за работа, интервюта и общуване на работното място, включително в сферата на грижата. От £15 за 55 минути.",
+        "h1": "Уроци по бизнес английски онлайн",
+        "lead": "Индивидуални уроци с фокус върху работата: интервюта, срещи и английският, който ползвате на работното място, включително в сферата на грижата.",
         "who": [
-          "Professionals with a job interview booked",
-          "People who use English at work and want to sound clearer",
-          "Care workers and their employers who want better communication on shift"
+          "Професионалисти с насрочено интервю за работа",
+          "Хора, които ползват английски на работа и искат да звучат по-ясно",
+          "Работещи в сферата на грижата и техните работодатели, които искат по-добро общуване по време на смяна"
         ],
         "lesson": [
-          "Each lesson is a private 55 minute session with your tutor on a live video call. The focus is workplace English, shaped by what you actually need to do: an interview, a meeting, a conversation with a client or a handover.",
-          "Tell us what your job involves and any date that matters, and we will suggest a tutor and a first lesson."
+          "Всеки урок е частна сесия от 55 минути с вашия преподавател по видеообаждане на живо. Фокусът е английски за работното място, оформен според това, което наистина трябва да правите: интервю, среща, разговор с клиент или предаване на смяна.",
+          "Кажете ни с какво се занимава работата ви и коя дата е важна, и ще предложим преподавател и първи урок."
         ],
-        "levels": "Any level.",
-        "platform": "Lessons run on a live video call. We send you the link with your booking, and the timetable is agreed with your tutor.",
+        "levels": "Всяко ниво.",
+        "platform": "Уроците се провеждат по видеообаждане на живо. Връзката ви изпращаме с резервацията, а графикът се уговаря с вашия преподавател.",
         "prices": [
           {
-            "label": "One-to-one lesson",
+            "label": "Индивидуален урок",
             "amount": "£15",
-            "unit": "per 55 minute lesson"
+            "unit": "на урок от 55 минути"
           },
           {
-            "label": "English through English, one-to-one",
+            "label": "Английски чрез английски, индивидуално",
             "amount": "£20",
-            "unit": "per 55 minute lesson"
+            "unit": "на урок от 55 минути"
           }
         ],
-        "priceNote": "Business English is taught as one-to-one lessons at the prices above. You pay per lesson or in blocks agreed with the office, by bank transfer.",
+        "priceNote": "Бизнес английският се води като индивидуални уроци на цените по-горе. Плащате на урок или на пакети, уговорени с офиса, по банков път.",
         "included": [
-          "Private 55 minute live lessons focused on your work",
-          "A timetable agreed with your tutor",
-          "Bulgarian speaking tutors available"
+          "Частни уроци на живо от 55 минути, насочени към работата ви",
+          "График, уговорен с вашия преподавател",
+          "Има преподаватели, говорещи български"
         ],
         "notIncluded": [
-          "Exam entry fees (we do not run tests)",
-          "A separate Business English course: lessons are one-to-one"
+          "Такси за изпити (ние не провеждаме изпити)",
+          "Отделен курс по бизнес английски: уроците са индивидуални"
         ],
-        "tutor": "Your tutor is a qualified English teacher, based in the UK or teaching for our London school.",
+        "tutor": "Вашият преподавател е квалифициран учител по английски, базиран във Великобритания или преподаващ за нашето лондонско училище.",
         "faq": [
           {
-            "q": "I have an interview next week. Is that enough time?",
-            "a": "Tell us the date when you enquire. We will suggest what lessons are possible before it. We cannot promise a result, but a tutor can help you practise."
+            "q": "Имам интервю следващата седмица. Достатъчно ли е времето?",
+            "a": "Посочете датата, когато пишете. Ще предложим какви уроци са възможни преди нея. Не можем да обещаем резултат, но преподавателят може да ви помогне да се упражнявате."
           },
           {
-            "q": "Can my employer arrange lessons for staff?",
-            "a": "Yes, you can enquire for staff. Tell us what communication your team needs and how many people, and the office will reply."
+            "q": "Може ли работодателят ми да организира уроци за служители?",
+            "a": "Да, можете да пишете за служители. Кажете ни какво общуване е нужно на екипа ви и колко души са, и офисът ще отговори."
           },
           {
-            "q": "Do you teach care work English?",
-            "a": "Our business lessons cover workplace communication, including care work. Tell us what situations you need to handle."
+            "q": "Преподавате ли английски за работа в сферата на грижата?",
+            "a": "Нашите бизнес уроци обхващат общуването на работното място, включително в сферата на грижата. Кажете ни с какви ситуации трябва да се справяте."
           },
           {
-            "q": "What does it cost?",
-            "a": "£15 per 55 minute lesson, or £20 if you want the lesson taught entirely in English."
+            "q": "Колко струва?",
+            "a": "£15 за урок от 55 минути или £20, ако искате урокът да е изцяло на английски."
           }
         ]
       },
       "ielts": {
         "name": "IELTS",
-        "summary": "Exam preparation, or one-to-one lessons, for IELTS.",
+        "summary": "Подготовка за изпит или индивидуални уроци за IELTS.",
         "goal": "ielts",
         "format": "not-sure",
-        "metaTitle": "IELTS preparation lessons online",
-        "metaDescription": "IELTS preparation online with real tutors: 24 hours of exam preparation for 320 pounds, or one-to-one lessons from 15 pounds. Exam fees are separate.",
-        "h1": "IELTS preparation online",
-        "lead": "Preparation for IELTS with real tutors, as a 24 hour exam preparation course or as one-to-one lessons built around your target score.",
+        "metaTitle": "Подготовка за IELTS онлайн",
+        "metaDescription": "Подготовка за IELTS онлайн с истински преподаватели: 24 часа подготовка за £320 или индивидуални уроци от £15. Таксите за изпита са отделно.",
+        "h1": "Подготовка за IELTS онлайн",
+        "lead": "Подготовка за IELTS с истински преподаватели, като курс за изпит от 24 часа или като индивидуални уроци, изградени около желания от вас резултат.",
         "who": [
-          "Applicants whose university or job offer asks for an IELTS score",
-          "Learners resitting IELTS who want to work on specific weak areas",
-          "Nurses and other professionals choosing between IELTS and OET"
+          "Кандидати, чийто университет или работодател изисква резултат от IELTS",
+          "Ученици, които се явяват отново на IELTS и искат да поработят върху конкретни слаби места",
+          "Медицински сестри и други професионалисти, които избират между IELTS и OET"
         ],
         "lesson": [
-          "Exam preparation is 24 hours of tuition, usually over six to eight weeks. One-to-one lessons are private 55 minute sessions that you can shape around the parts of the test you find hardest.",
-          "Tell us your test date and the score you need, and we will suggest which format makes sense."
+          "Подготовката за изпит е 24 часа обучение, обикновено за шест до осем седмици. Индивидуалните уроци са частни сесии от 55 минути, които можете да оформите около частите на теста, които ви се струват най-трудни.",
+          "Кажете ни датата на теста и резултата, който ви трябва, и ще предложим кой формат има смисъл."
         ],
-        "levels": "Tell us your current level, or take the placement test. We will suggest where to start.",
-        "platform": "Lessons run on a live video call. We send you the link with your booking.",
+        "levels": "Кажете ни сегашното си ниво или направете теста за ниво. Ще предложим откъде да започнете.",
+        "platform": "Уроците се провеждат по видеообаждане на живо. Връзката ви изпращаме с резервацията.",
         "prices": [
           {
-            "label": "Exam preparation",
+            "label": "Подготовка за изпит",
             "amount": "£320",
-            "unit": "for 24 hours of tuition"
+            "unit": "за 24 часа обучение"
           },
           {
-            "label": "One-to-one lesson",
+            "label": "Индивидуален урок",
             "amount": "£15",
-            "unit": "per 55 minute lesson"
+            "unit": "на урок от 55 минути"
           },
           {
-            "label": "English through English, one-to-one",
+            "label": "Английски чрез английски, индивидуално",
             "amount": "£20",
-            "unit": "per 55 minute lesson"
+            "unit": "на урок от 55 минути"
           }
         ],
-        "priceNote": "Payment is by bank transfer after the office confirms. Exam entry fees are separate and are paid to the exam body.",
+        "priceNote": "Плащането е по банков път, след като офисът потвърди. Таксите за изпита са отделно и се плащат на изпитния орган.",
         "included": [
-          "24 hours of exam preparation tuition, or private 55 minute lessons",
-          "A tutor who knows your target and your test date",
-          "Lessons on a live video call"
+          "24 часа обучение за подготовка за изпит или частни уроци от 55 минути",
+          "Преподавател, който знае целта ви и датата на теста",
+          "Уроци по видеообаждане на живо"
         ],
         "notIncluded": [
-          "The exam entry fee, which you pay to the exam body",
-          "The test itself: we teach and prepare, we do not run tests"
+          "Таксата за изпита, която плащате на изпитния орган",
+          "Самият тест: ние преподаваме и подготвяме, не провеждаме изпити"
         ],
-        "tutor": "Your tutor is a qualified English teacher, based in the UK or teaching for our London school. We cannot promise a result in the exam.",
+        "tutor": "Вашият преподавател е квалифициран учител по английски, базиран във Великобритания или преподаващ за нашето лондонско училище. Не можем да обещаем резултат на изпита.",
         "faq": [
           {
-            "q": "How much is IELTS preparation?",
-            "a": "Exam preparation is £320 for 24 hours of tuition, usually over six to eight weeks. One-to-one lessons are £15 per 55 minute lesson."
+            "q": "Колко струва подготовката за IELTS?",
+            "a": "Подготовката за изпит е £320 за 24 часа обучение, обикновено за шест до осем седмици. Индивидуалните уроци са £15 за урок от 55 минути."
           },
           {
-            "q": "Does the price include the exam?",
-            "a": "No. Exam entry fees are separate and are paid to the exam body. We do not run tests."
+            "q": "Включена ли е цената на изпита?",
+            "a": "Не. Таксите за изпита са отделно и се плащат на изпитния орган. Ние не провеждаме изпити."
           },
           {
-            "q": "Can you promise the score I need?",
-            "a": "No. Your result depends on your work and on the test. We can teach and prepare you, and tell you honestly what to practise."
+            "q": "Можете ли да обещаете резултата, който ми трябва?",
+            "a": "Не. Резултатът зависи от вашата работа и от теста. Можем да ви преподаваме, да ви подготвим и да ви кажем честно какво да упражнявате."
           },
           {
-            "q": "I am a nurse. Should I choose IELTS or OET?",
-            "a": "That depends on what your regulator accepts, so check with them first. See our OET page for lessons built around the OET sub-tests and your profession."
+            "q": "Аз съм медицинска сестра. Да избера ли IELTS или OET?",
+            "a": "Това зависи от това какво приема вашият регулатор, затова първо проверете при него. Вижте страницата ни за OET за уроци, изградени около подтестовете на OET и вашата професия."
           }
         ]
       },
       "selt-b1": {
-        "name": "B1 test preparation",
-        "summary": "One-to-one lessons for a B1 speaking and listening test.",
+        "name": "Подготовка за B1 тест",
+        "summary": "Индивидуални уроци за B1 тест по говорене и слушане.",
         "goal": "selt-b1",
         "format": "one-to-one",
-        "metaTitle": "B1 speaking and listening test lessons",
-        "metaDescription": "One-to-one online lessons to prepare for a B1 speaking and listening test for settlement or citizenship. We do not run the test. From 15 pounds.",
-        "h1": "B1 speaking and listening test preparation",
-        "lead": "One-to-one lessons with a tutor who prepares you for the speaking and listening format of a B1 test, such as Trinity GESE Grade 5 or an approved equivalent.",
-        "notice": "We do not run the test. You book the test separately with an approved provider, and you must check your own visa or settlement route on gov.uk to see which test you need.",
+        "metaTitle": "Уроци за B1 тест по говорене и слушане",
+        "metaDescription": "Индивидуални онлайн уроци за подготовка за B1 тест по говорене и слушане за уседналост или гражданство. Ние не провеждаме теста. От £15.",
+        "h1": "Подготовка за B1 тест по говорене и слушане",
+        "lead": "Индивидуални уроци с преподавател, който ви подготвя за формата на B1 тест по говорене и слушане, като Trinity GESE Grade 5 или одобрен еквивалент.",
+        "notice": "Ние не провеждаме теста. Теста го резервирате отделно при одобрен доставчик и сами трябва да проверите в gov.uk своя визов маршрут или маршрут за уседналост, за да видите кой тест ви трябва.",
         "who": [
-          "Applicants for settlement or citizenship who need to show B1 speaking and listening",
-          "Applicants whose route asks for B1 English",
-          "Learners who have a test date and want to practise speaking with a tutor"
+          "Кандидати за уседналост или гражданство, които трябва да докажат B1 по говорене и слушане",
+          "Кандидати, чийто маршрут изисква английски на ниво B1",
+          "Ученици с дата за тест, които искат да упражняват говорене с преподавател"
         ],
         "lesson": [
-          "Each lesson is a private 55 minute session on a live video call. Your tutor prepares you for the speaking and listening format, so you know what to expect and can practise.",
-          "Check which test your route needs before you book the test. If you are not sure whether B1 is right for you, tell us and we will point you to gov.uk."
+          "Всеки урок е частна сесия от 55 минути по видеообаждане на живо. Преподавателят ви подготвя за формата на говорене и слушане, за да знаете какво да очаквате и да можете да упражнявате.",
+          "Проверете кой тест изисква вашият маршрут, преди да резервирате теста. Ако не сте сигурни дали B1 е подходящо за вас, кажете ни и ще ви насочим към gov.uk."
         ],
-        "levels": "Preparation for B1. Take the placement test if you want a rough idea of where you are now.",
-        "platform": "Lessons run on a live video call. We send you the link with your booking, and the timetable is agreed with your tutor.",
+        "levels": "Подготовка за B1. Направете теста за ниво, ако искате приблизителна представа къде сте в момента.",
+        "platform": "Уроците се провеждат по видеообаждане на живо. Връзката ви изпращаме с резервацията, а графикът се уговаря с вашия преподавател.",
         "prices": [
           {
-            "label": "One-to-one lesson",
+            "label": "Индивидуален урок",
             "amount": "£15",
-            "unit": "per 55 minute lesson"
+            "unit": "на урок от 55 минути"
           },
           {
-            "label": "English through English, one-to-one",
+            "label": "Английски чрез английски, индивидуално",
             "amount": "£20",
-            "unit": "per 55 minute lesson"
+            "unit": "на урок от 55 минути"
           }
         ],
-        "priceNote": "You pay per lesson or in blocks agreed with the office, by bank transfer after the office confirms.",
+        "priceNote": "Плащате на урок или на пакети, уговорени с офиса, по банков път, след като офисът потвърди.",
         "included": [
-          "Private 55 minute lessons preparing you for the speaking and listening format",
-          "A timetable agreed with your tutor",
-          "Bulgarian speaking tutors available"
+          "Частни уроци от 55 минути, които ви подготвят за формата на говорене и слушане",
+          "График, уговорен с вашия преподавател",
+          "Има преподаватели, говорещи български"
         ],
         "notIncluded": [
-          "The test itself: we do not run it, and it is booked separately with an approved provider",
-          "The test fee, which you pay to the test provider",
-          "Immigration advice: check your own route on gov.uk"
+          "Самият тест: ние не го провеждаме и той се резервира отделно при одобрен доставчик",
+          "Таксата за теста, която плащате на доставчика на теста",
+          "Имиграционни съвети: проверете своя маршрут в gov.uk"
         ],
-        "tutor": "Your tutor is a qualified English teacher, based in the UK or teaching for our London school. Tutors prepare you for the speaking and listening format. We cannot promise a result in the test.",
+        "tutor": "Вашият преподавател е квалифициран учител по английски, базиран във Великобритания или преподаващ за нашето лондонско училище. Преподавателите ви подготвят за формата на говорене и слушане. Не можем да обещаем резултат на теста.",
         "faq": [
           {
-            "q": "Do you run the B1 test?",
-            "a": "No. You book the test separately with an approved provider. We prepare you with lessons."
+            "q": "Вие провеждате ли B1 теста?",
+            "a": "Не. Теста го резервирате отделно при одобрен доставчик. Ние ви подготвяме с уроци."
           },
           {
-            "q": "Which test do I need?",
-            "a": "That depends on your own route and situation. Please check gov.uk before you book anything, because we cannot advise on immigration."
+            "q": "Кой тест ми трябва?",
+            "a": "Това зависи от вашия маршрут и ситуация. Моля, проверете в gov.uk, преди да резервирате каквото и да било, защото не можем да даваме имиграционни съвети."
           },
           {
-            "q": "Can you promise I will pass?",
-            "a": "No. We cannot promise a result. We can help you practise speaking and listening so you know what to expect."
+            "q": "Можете ли да обещаете, че ще издържа?",
+            "a": "Не. Не можем да обещаем резултат. Можем да ви помогнем да упражнявате говорене и слушане, за да знаете какво да очаквате."
           },
           {
-            "q": "How much are the lessons?",
-            "a": "£15 per 55 minute lesson, or £20 if you want the lesson taught entirely in English."
+            "q": "Колко струват уроците?",
+            "a": "£15 за урок от 55 минути или £20, ако искате урокът да е изцяло на английски."
           }
         ]
       },
       "oet": {
-        "name": "OET and IELTS for nurses",
-        "summary": "One-to-one lessons for healthcare staff preparing for OET or IELTS.",
+        "name": "OET и IELTS за медицински сестри",
+        "summary": "Индивидуални уроци за медицински специалисти, които се подготвят за OET или IELTS.",
         "goal": "oet",
         "format": "one-to-one",
-        "metaTitle": "OET and IELTS lessons for nurses",
-        "metaDescription": "One-to-one online lessons for nurses and healthcare staff preparing for OET or IELTS, built around the sub-tests and your profession. From 15 pounds.",
-        "h1": "OET and IELTS lessons for nurses",
-        "lead": "One-to-one lessons for nurses and other healthcare staff preparing for OET or IELTS, built around the OET sub-tests and your profession.",
+        "metaTitle": "Уроци по OET и IELTS за медицински сестри",
+        "metaDescription": "Индивидуални онлайн уроци за медицински сестри и здравни специалисти, които се подготвят за OET или IELTS, изградени около подтестовете и професията. От £15.",
+        "h1": "Уроци по OET и IELTS за медицински сестри",
+        "lead": "Индивидуални уроци за медицински сестри и други здравни специалисти, които се подготвят за OET или IELTS, изградени около подтестовете на OET и вашата професия.",
         "who": [
-          "Nurses retaking OET or IELTS for registration",
-          "Healthcare staff with a booked test or a registration deadline",
-          "People who want to see exactly what to practise before the next attempt"
+          "Медицински сестри, които повтарят OET или IELTS за регистрация",
+          "Здравни работници с резервиран тест или краен срок за регистрация",
+          "Хора, които искат да видят точно какво да упражняват преди следващия опит"
         ],
         "lesson": [
-          "Each lesson is a private 55 minute session with your tutor on a live video call. Lessons are built around the OET sub-tests and your profession, so your practice looks like the work you do.",
-          "Tell us which test you are taking, the date and the result you got last time, and we will suggest a tutor and a first lesson."
+          "Всеки урок е частна сесия от 55 минути с вашия преподавател по видеообаждане на живо. Уроците са изградени около подтестовете на OET и вашата професия, така че упражненията да приличат на работата ви.",
+          "Кажете ни кой тест ще държите, датата и резултата от последния път, и ще предложим преподавател и първи урок."
         ],
-        "levels": "Any level. Tell us your last result or take the placement test.",
-        "platform": "Lessons run on a live video call. We send you the link with your booking, and the timetable is agreed with your tutor.",
+        "levels": "Всяко ниво. Кажете ни последния си резултат или направете теста за ниво.",
+        "platform": "Уроците се провеждат по видеообаждане на живо. Връзката ви изпращаме с резервацията, а графикът се уговаря с вашия преподавател.",
         "prices": [
           {
-            "label": "One-to-one lesson",
+            "label": "Индивидуален урок",
             "amount": "£15",
-            "unit": "per 55 minute lesson"
+            "unit": "на урок от 55 минути"
           },
           {
-            "label": "English through English, one-to-one",
+            "label": "Английски чрез английски, индивидуално",
             "amount": "£20",
-            "unit": "per 55 minute lesson"
+            "unit": "на урок от 55 минути"
           },
           {
-            "label": "IELTS exam preparation",
+            "label": "Подготовка за изпит IELTS",
             "amount": "£320",
-            "unit": "for 24 hours of tuition"
+            "unit": "за 24 часа обучение"
           }
         ],
-        "priceNote": "You pay per lesson or in blocks agreed with the office, by bank transfer after the office confirms. Exam entry fees are separate and are paid to the exam body.",
+        "priceNote": "Плащате на урок или на пакети, уговорени с офиса, по банков път, след като офисът потвърди. Таксите за изпита са отделно и се плащат на изпитния орган.",
         "included": [
-          "Private 55 minute lessons built around the OET sub-tests and your profession",
-          "A timetable agreed with your tutor",
-          "Bulgarian speaking tutors available"
+          "Частни уроци от 55 минути, изградени около подтестовете на OET и вашата професия",
+          "График, уговорен с вашия преподавател",
+          "Има преподаватели, говорещи български"
         ],
         "notIncluded": [
-          "The test fee, which you pay to the test provider",
-          "The test itself: we teach and prepare, we do not run tests"
+          "Таксата за теста, която плащате на доставчика на теста",
+          "Самият тест: ние преподаваме и подготвяме, не провеждаме изпити"
         ],
-        "tutor": "Your tutor is a qualified English teacher, based in the UK or teaching for our London school. We cannot promise a result in the test.",
+        "tutor": "Вашият преподавател е квалифициран учител по английски, базиран във Великобритания или преподаващ за нашето лондонско училище. Не можем да обещаем резултат на теста.",
         "faq": [
           {
-            "q": "Do you run OET or IELTS?",
-            "a": "No. You book the test with the test provider. We prepare you with lessons."
+            "q": "Вие провеждате ли OET или IELTS?",
+            "a": "Не. Теста го резервирате при доставчика на теста. Ние ви подготвяме с уроци."
           },
           {
-            "q": "Which test should I take?",
-            "a": "Check what your regulator accepts before you book. Once you know, tell us which test and the date, and we will plan the lessons."
+            "q": "Кой тест да взема?",
+            "a": "Проверете какво приема вашият регулатор, преди да резервирате. Щом разберете, кажете ни кой тест и датата, и ще планираме уроците."
           },
           {
-            "q": "How much do lessons cost?",
-            "a": "£15 per 55 minute lesson, or £20 if the lesson is taught entirely in English. IELTS exam preparation is £320 for 24 hours."
+            "q": "Колко струват уроците?",
+            "a": "£15 за урок от 55 минути или £20, ако урокът е изцяло на английски. Подготовката за изпит IELTS е £320 за 24 часа."
           },
           {
-            "q": "I work shifts. Can I fit lessons around them?",
-            "a": "One-to-one lessons are timetabled with your tutor. Tell us your shift pattern in the enquiry and we will suggest times."
+            "q": "Работя на смени. Може ли уроците да се нагодят към тях?",
+            "a": "Индивидуалните уроци се насрочват с вашия преподавател. Посочете графика на смените си в запитването и ще предложим часове."
           }
         ]
       },
       "kids": {
-        "name": "English for children",
-        "summary": "One-to-one online lessons for school age children.",
+        "name": "Английски за деца",
+        "summary": "Индивидуални онлайн уроци за деца в училищна възраст.",
         "goal": "kids",
         "format": "one-to-one",
-        "metaTitle": "English lessons online for children",
-        "metaDescription": "One-to-one online English lessons for school age children with a real tutor. A parent or carer is present or nearby. From 15 pounds per lesson.",
-        "h1": "English lessons online for children",
-        "lead": "One-to-one online lessons for school age children, with a tutor who builds the lesson around what your child needs.",
+        "metaTitle": "Онлайн уроци по английски за деца",
+        "metaDescription": "Индивидуални онлайн уроци по английски за деца в училищна възраст с истински преподавател. Родител или възрастен е до детето. От £15 на урок.",
+        "h1": "Онлайн уроци по английски за деца",
+        "lead": "Индивидуални онлайн уроци за деца в училищна възраст, с преподавател, който изгражда урока около нуждите на детето ви.",
         "who": [
-          "Parents who want extra English support for a school age child",
-          "Families acting on feedback from school",
-          "Children who learn better one to one than in a large class"
+          "Родители, които искат допълнителна подкрепа по английски за дете в училищна възраст",
+          "Семейства, които отговарят на обратна връзка от училището",
+          "Деца, които учат по-добре индивидуално, отколкото в голям клас"
         ],
         "lesson": [
-          "Each lesson is a private 55 minute session on a live video call. Our teachers teach children and adults, and the lesson is planned around your child's needs.",
-          "A parent or carer is present or nearby during the lesson."
+          "Всеки урок е частна сесия от 55 минути по видеообаждане на живо. Нашите преподаватели учат деца и възрастни, а урокът се планира около нуждите на детето ви.",
+          "По време на урока родител или възрастен е до детето или наблизо."
         ],
-        "levels": "Any level. Tell us what your child's school has said and how they feel about English, and we will suggest a tutor.",
-        "platform": "Lessons run on a live video call. We send you the link with your booking, and the timetable is agreed with the tutor.",
+        "levels": "Всяко ниво. Кажете ни какво е казало училището на детето ви и как то се чувства по отношение на английския, и ще предложим преподавател.",
+        "platform": "Уроците се провеждат по видеообаждане на живо. Връзката ви изпращаме с резервацията, а графикът се уговаря с преподавателя.",
         "prices": [
           {
-            "label": "One-to-one lesson",
+            "label": "Индивидуален урок",
             "amount": "£15",
-            "unit": "per 55 minute lesson"
+            "unit": "на урок от 55 минути"
           },
           {
-            "label": "English through English, one-to-one",
+            "label": "Английски чрез английски, индивидуално",
             "amount": "£20",
-            "unit": "per 55 minute lesson"
+            "unit": "на урок от 55 минути"
           }
         ],
-        "priceNote": "You pay per lesson or in blocks agreed with the office, by bank transfer after the office confirms.",
+        "priceNote": "Плащате на урок или на пакети, уговорени с офиса, по банков път, след като офисът потвърди.",
         "included": [
-          "Private 55 minute live lessons for your child",
-          "A timetable agreed with the tutor",
-          "Bulgarian speaking tutors available"
+          "Частни уроци на живо от 55 минути за вашето дете",
+          "График, уговорен с преподавателя",
+          "Има преподаватели, говорещи български"
         ],
         "notIncluded": [
-          "Exam entry fees (we do not run tests)",
-          "Classroom lessons in London: visit ucraya.co.uk"
+          "Такси за изпити (ние не провеждаме изпити)",
+          "Уроци в класна стая в Лондон: посетете ucraya.co.uk"
         ],
-        "tutor": "Our teachers teach children and adults. Tell us about your child and we will suggest a tutor to start with.",
+        "tutor": "Нашите преподаватели учат деца и възрастни. Разкажете ни за детето си и ще предложим преподавател, с когото да започнете.",
         "faq": [
           {
-            "q": "Does a parent need to be there?",
-            "a": "A parent or carer is present or nearby during the lesson."
+            "q": "Нужно ли е родител да присъства?",
+            "a": "По време на урока родител или възрастен е до детето или наблизо."
           },
           {
-            "q": "How long is a lesson?",
-            "a": "55 minutes, one to one with a tutor on a live video call."
+            "q": "Колко дълъг е един урок?",
+            "a": "55 минути, на четири очи с преподавател по видеообаждане на живо."
           },
           {
-            "q": "How much does it cost?",
-            "a": "£15 per lesson, or £20 if the lesson is taught entirely in English."
+            "q": "Колко струва?",
+            "a": "£15 на урок или £20, ако урокът е изцяло на английски."
           },
           {
-            "q": "Can we move a lesson?",
-            "a": "You can reschedule once, with at least 48 hours notice by email, text or phone. With less notice the lesson is charged."
+            "q": "Можем ли да преместим урок?",
+            "a": "Можете да пренасрочите веднъж, с предизвестие поне 48 часа по имейл, съобщение или телефон. При по-кратко предизвестие урокът се таксува."
           }
         ]
       }
     }
   },
   "pricing": {
-    "h1": "Prices for online English lessons",
-    "lead": "Four ways to learn, with the prices in full. There is no checkout: the office confirms your place, then you pay by bank transfer.",
-    "tableCaption": "Prices of the four products",
+    "h1": "Цени на онлайн уроците по английски",
+    "lead": "Четири начина да учите, с пълни цени. Няма количка за плащане: офисът потвърждава мястото ви, после плащате по банков път.",
+    "tableCaption": "Цени на четирите продукта",
     "tableHead": {
-      "product": "Product",
-      "what": "What you get",
-      "price": "Price"
+      "product": "Продукт",
+      "what": "Какво получавате",
+      "price": "Цена"
     },
     "payment": {
-      "title": "How payment works",
+      "title": "Как работи плащането",
       "items": [
-        "Send an enquiry. The office replies by email with a tutor and a first lesson to suggest.",
-        "When you are happy, the office confirms your place and sends the bank details with your booking confirmation.",
-        "You pay by bank transfer. We do not take card payments on the site, and we never ask for card details."
+        "Изпратете запитване. Офисът отговаря по имейл с предложение за преподавател и първи урок.",
+        "Когато сте доволни, офисът потвърждава мястото ви и изпраща банковите данни с потвърждението на резервацията.",
+        "Плащате по банков път. На сайта не приемаме плащания с карта и никога не искаме данни на карта."
       ]
     },
     "groupPay": {
-      "title": "Group courses: deposit and instalments",
-      "text": "A £50 deposit secures your place and is part of the £298. The balance of £248 is paid in two parts: £124 at the start of the course and £124 at the third lesson. The deposit is not refundable but can be moved to another group of the same course and level. If a group does not run, the deposit is refunded or moved."
+      "title": "Групови курсове: депозит и вноски",
+      "text": "Депозит от £50 запазва мястото ви и е част от £298. Остатъкът от £248 се плаща на две части: £124 в началото на курса и £124 на третия урок. Депозитът не се възстановява, но може да се прехвърли в друга група на същия курс и ниво. Ако групата не започне, депозитът се връща или се прехвърля."
     },
     "oneToOnePay": {
-      "title": "One-to-one lessons: how you pay",
-      "text": "You pay per lesson or in blocks agreed with the office. We do not publish fixed packages."
+      "title": "Индивидуални уроци: как се плаща",
+      "text": "Плащате на урок или на пакети, уговорени с офиса. Не публикуваме фиксирани пакети."
     },
     "cancel": {
-      "title": "Rescheduling and cancellation",
+      "title": "Пренасрочване и отмяна",
       "items": [
-        "You can reschedule a one-to-one lesson once, with at least 48 hours notice by email, text or phone.",
-        "With less than 48 hours notice, the lesson is charged.",
-        "A postponed course must be finished within the year it started, and a course cannot be postponed twice.",
-        "Illness is considered case by case, and we answer within ten working days."
+        "Можете да пренасрочите индивидуален урок веднъж, с предизвестие поне 48 часа по имейл, съобщение или телефон.",
+        "При предизвестие под 48 часа урокът се таксува.",
+        "Отложеният курс трябва да се завърши в рамките на годината, в която е започнал, и курс не може да се отлага два пъти.",
+        "Болестта се разглежда във всеки отделен случай и отговаряме до десет работни дни."
       ],
-      "more": "Read the full terms"
+      "more": "Прочетете пълните условия"
     },
     "referral": {
-      "title": "Bring a friend",
-      "text": "Bring a friend to one-to-one lessons and you both get free lessons: 2 free lessons for 1 friend, 4 for 2 friends and 6 for 3 friends. Your friend studies for at least two months with two lessons a week. For group courses, two people booking together get 20% off the level, and three get one module free."
+      "title": "Доведете приятел",
+      "text": "Доведете приятел на индивидуални уроци и двамата получавате безплатни уроци: 2 безплатни урока за 1 приятел, 4 за 2 приятели и 6 за 3 приятели. Приятелят ви учи поне два месеца с по два урока седмично. При групови курсове двама души, които се записват заедно, получават 20% отстъпка от нивото, а трима получават един модул безплатно."
     },
-    "extra": "Exam entry fees are separate and are paid to the exam body. We do not run tests.",
+    "extra": "Таксите за изпитите са отделно и се плащат на изпитния орган. Ние не провеждаме изпити.",
     "faq": {
-      "title": "Questions about prices",
+      "title": "Въпроси за цените",
       "items": [
         {
-          "q": "Can I pay by card?",
-          "a": "No. Payment is by bank transfer, after the office confirms your place."
+          "q": "Мога ли да платя с карта?",
+          "a": "Не. Плащането е по банков път, след като офисът потвърди мястото ви."
         },
         {
-          "q": "When do I get the bank details?",
-          "a": "We send them with your booking confirmation email."
+          "q": "Кога получавам банковите данни?",
+          "a": "Изпращаме ги с имейла за потвърждение на резервацията."
         },
         {
-          "q": "Is the group deposit refundable?",
-          "a": "The £50 deposit is not refundable, but it can be moved to another group of the same course and level. If a group does not run, it is refunded or moved."
+          "q": "Възстановява ли се депозитът за групата?",
+          "a": "Депозитът от £50 не се възстановява, но може да се прехвърли в друга група на същия курс и ниво. Ако групата не започне, той се връща или се прехвърля."
         },
         {
-          "q": "Do prices include exam fees?",
-          "a": "No. Exam entry fees are separate and are paid to the exam body."
+          "q": "Включват ли цените таксите за изпити?",
+          "a": "Не. Таксите за изпитите са отделно и се плащат на изпитния орган."
         }
       ]
     }
   },
   "how": {
-    "h1": "How online lessons work",
-    "lead": "From first message to first lesson, here is every step.",
+    "h1": "Как работят онлайн уроците",
+    "lead": "От първото съобщение до първия урок, ето всяка стъпка.",
     "steps": [
       {
-        "title": "Enquire",
-        "text": "Fill in the enquiry form or message us on WhatsApp. Tell us your goal, any date that matters and what you have tried before."
+        "title": "Запитване",
+        "text": "Попълнете формуляра за запитване или ни пишете в WhatsApp. Кажете ни целта си, всяка важна дата и какво сте опитвали досега."
       },
       {
-        "title": "Check your level",
-        "text": "Take the placement test for a rough guide, or tell us your level. For group courses you can also join one live class free of charge. Tell us your goal and we will suggest a tutor and a first lesson."
+        "title": "Проверка на нивото",
+        "text": "Направете теста за ниво за приблизителна представа или ни кажете нивото си. За групови курсове можете да се присъедините и безплатно към един урок на живо. Разкажете ни целта си и ще предложим преподавател и първи урок."
       },
       {
-        "title": "Get matched to a tutor",
-        "text": "The office replies by email with a tutor and a lesson plan to suggest, and with times that could work. Bulgarian speaking tutors are available for one-to-one lessons."
+        "title": "Съпоставяне с преподавател",
+        "text": "Офисът отговаря по имейл с предложение за преподавател и план на уроците и с часове, които биха свършили работа. За индивидуални уроци има преподаватели, говорещи български."
       },
       {
-        "title": "Have your first lesson",
-        "text": "We send you the link for the live video call with your booking. Group courses run live on Zoom."
+        "title": "Първият ви урок",
+        "text": "Изпращаме ви връзката за видеообаждането на живо с резервацията. Груповите курсове се провеждат на живо в Zoom."
       },
       {
-        "title": "Pay by bank transfer",
-        "text": "The office confirms your place and sends the bank details. You pay by bank transfer. There is no card payment on the site."
+        "title": "Плащане по банков път",
+        "text": "Офисът потвърждава мястото ви и изпраща банковите данни. Плащате по банков път. На сайта няма плащане с карта."
       },
       {
-        "title": "Keep going",
-        "text": "Your lessons follow your goal. If your goal or your timetable changes, tell the office and we will suggest what to do next."
+        "title": "Продължавате напред",
+        "text": "Уроците ви следват вашата цел. Ако целта или графикът ви се променят, кажете на офиса и ще предложим какво да направите по-нататък."
       }
     ],
-    "cta": "Ready for step one?"
+    "cta": "Готови ли сте за първата стъпка?"
   },
   "trial": {
-    "h1": "Try a class free",
-    "lead": "Join one live group class free of charge to see how we teach, or ask for a level check by email.",
+    "h1": "Опитайте безплатен урок",
+    "lead": "Присъединете се безплатно към един групов урок на живо, за да видите как преподаваме, или поискайте проверка на нивото по имейл.",
     "options": {
-      "title": "Two ways to start",
+      "title": "Два начина да започнете",
       "items": [
         {
-          "title": "Join one live group class",
-          "text": "See how a live class works before you decide. Send your enquiry and the office will reply with the next class that fits your level."
+          "title": "Присъединете се към един групов урок на живо",
+          "text": "Вижте как работи урокът на живо, преди да решите. Изпратете запитване и офисът ще отговори със следващия урок, който подхожда на нивото ви."
         },
         {
-          "title": "Ask for a level check",
-          "text": "Not sure which level or tutor suits you? Tell us your goal and we will suggest a tutor and a first lesson. You can also take the placement test first."
+          "title": "Поискайте проверка на нивото",
+          "text": "Не сте сигурни кое ниво или кой преподавател ви подхожда? Разкажете ни целта си и ще предложим преподавател и първи урок. Можете първо да направите и теста за ниво."
         }
       ]
     },
-    "formTitle": "Ask for your free class",
-    "note": "Free classes are for group courses. One-to-one lessons are charged from the first lesson."
+    "formTitle": "Поискайте безплатния си урок",
+    "note": "Безплатните уроци са за групови курсове. Индивидуалните уроци се таксуват от първия урок."
   },
   "placement": {
-    "h1": "English placement test",
-    "lead": "Twelve short questions that give a rough idea of your level, from A1 to B2. It takes about five minutes.",
-    "guide": "This is a rough guide, not an assessment. It cannot replace a conversation with a tutor, and it does not predict a result in any exam.",
-    "instruction": "Choose one answer for each question.",
-    "questionLabel": "Question {n} of {total}",
-    "submit": "See my level",
-    "missing": "Please answer every question. You have not answered: {list}.",
-    "resultTitle": "Your estimated level",
-    "resultLevel": "Your estimated level is {level}",
-    "score": "You answered {score} of {total} correctly.",
-    "again": "Take the test again",
-    "enquire": "Enquire with this level",
-    "noscript": "The quiz needs JavaScript. You can still send us an enquiry and we will suggest a level.",
+    "h1": "Тест за ниво по английски",
+    "lead": "Дванадесет кратки въпроса, които дават приблизителна представа за нивото ви, от A1 до B2. Отнема около пет минути.",
+    "guide": "Това е приблизителен ориентир, не оценка. Не може да замени разговор с преподавател и не предсказва резултат на нито един изпит.",
+    "instruction": "Изберете по един отговор за всеки въпрос. Въпросите и отговорите са на английски, защото тестват английския ви.",
+    "questionLabel": "Въпрос {n} от {total}",
+    "submit": "Вижте нивото ми",
+    "missing": "Моля, отговорете на всеки въпрос. Не сте отговорили на: {list}.",
+    "resultTitle": "Вашето приблизително ниво",
+    "resultLevel": "Вашето приблизително ниво е {level}",
+    "score": "Отговорихте правилно на {score} от {total}.",
+    "again": "Направете теста отново",
+    "enquire": "Запитване с това ниво",
+    "noscript": "Тестът изисква JavaScript. Можете да ни изпратите запитване и ние ще предложим ниво.",
     "results": {
-      "A1": "Start with the basics: simple sentences, everyday words and speaking with confidence. A tutor can build from here at your pace.",
-      "A2": "You can handle simple everyday English. The next step is longer sentences and more natural speaking.",
-      "B1": "You can manage most everyday situations. Work on fluency, a wider vocabulary and speaking with fewer pauses.",
-      "B2": "You have a solid level. Lessons can focus on accuracy, range and your specific goal, such as work or a test."
+      "A1": "Започнете с основите: прости изречения, ежедневни думи и говорене с увереност. Оттук преподавател може да надгражда със собствено темпо.",
+      "A2": "Справяте се с прост ежедневен английски. Следващата стъпка са по-дълги изречения и по-естествено говорене.",
+      "B1": "Справяте се с повечето ежедневни ситуации. Поработете върху плавността, по-богатия речник и говоренето с по-малко паузи.",
+      "B2": "Имате стабилно ниво. Уроците могат да се фокусират върху точността, разнообразието и вашата конкретна цел, като работа или изпит."
     },
     "questions": [
       {
@@ -1174,251 +1174,251 @@
     ]
   },
   "tutors": {
-    "h1": "Our English tutors",
-    "lead": "The qualified English teachers behind Ucraya. Qualifications are as the tutors have shared them with us.",
-    "intro": "Our tutors are based in the UK or teach for our London school. Bulgarian speaking tutors are available for one-to-one lessons. Tell us your goal and we will suggest who to start with.",
-    "mentor": "Mentor",
-    "lessonsTitle": "What one-to-one lessons are like",
-    "lessonsText": "A private 55 minute lesson on a live video call, planned around your goal: general English, work, exams or conversation. You agree the timetable with your tutor, and we send you the link with your booking.",
+    "h1": "Нашите преподаватели по английски",
+    "lead": "Квалифицираните учители по английски зад Ucraya. Квалификациите са такива, каквито преподавателите са ги споделили с нас.",
+    "intro": "Нашите преподаватели са базирани във Великобритания или преподават за нашето лондонско училище. За индивидуални уроци има преподаватели, говорещи български. Разкажете ни целта си и ще предложим с кого да започнете.",
+    "mentor": "Ментор",
+    "lessonsTitle": "Как изглеждат индивидуалните уроци",
+    "lessonsText": "Частен урок от 55 минути по видеообаждане на живо, планиран около вашата цел: общ английски, работа, изпити или разговор. Графикът уговаряте с вашия преподавател, а връзката ви изпращаме с резервацията.",
     "items": [
       {
-        "name": "Stefani Dimitrova",
-        "role": "Mentor",
-        "text": "BA in TEFL (University of Essex, 2014), CELTA."
+        "name": "Стефани Димитрова",
+        "role": "Ментор",
+        "text": "Бакалавър по TEFL (Университет на Есекс, 2014 г.), CELTA."
       },
       {
-        "name": "Avgustina Angelova",
+        "name": "Августина Ангелова",
         "role": "",
-        "text": "BA English Language and Ethnology, MA English Philology, qualified EFL teacher, 8+ years of teaching."
+        "text": "Бакалавър по английски език и етнология, магистър по английска филология, квалифициран учител по английски като чужд език, над 8 години преподаване."
       },
       {
-        "name": "Elena Petrova",
+        "name": "Елена Петрова",
         "role": "",
-        "text": "BA Bulgarian and English Philology. Teaches children and adults."
+        "text": "Бакалавър по българска и английска филология. Преподава на деца и възрастни."
       },
       {
-        "name": "Elitsa Georgieva",
+        "name": "Елица Георгиева",
         "role": "",
-        "text": "Degree in teaching English as a foreign language, TEFL diploma, 13 years as an English teaching trainer abroad."
+        "text": "Степен по преподаване на английски като чужд език, диплома по TEFL, 13 години като обучител по английски в чужбина."
       },
       {
-        "name": "Lena Vlahova",
+        "name": "Лена Влахова",
         "role": "",
-        "text": "BA English Philology, teaching certificate (South-West University Neofit Rilski), 120 hour TEFL certificate. Has taught English online since 2018 and reports more than 15,000 online classes."
+        "text": "Бакалавър по английска филология, удостоверение за преподаване (Югозападен университет „Неофит Рилски“), 120-часов сертификат по TEFL. Преподава английски онлайн от 2018 г. и съобщава за над 15 000 онлайн урока."
       },
       {
-        "name": "Liubomira (Mira) Srebrina",
+        "name": "Любомира Сребрина",
         "role": "",
-        "text": "BA in English teaching (2013), nine years teaching English as a second language."
+        "text": "Бакалавър по преподаване на английски (2013 г.), девет години преподаване на английски като втори език."
       },
       {
-        "name": "Maria Naldzhieva",
+        "name": "Мария Налджиева",
         "role": "",
-        "text": "BA English Philology, MA Translation and Contemporary English Literature."
+        "text": "Бакалавър по английска филология, магистър по превод и съвременна английска литература."
       },
       {
-        "name": "Stella Atanasova",
+        "name": "Стела Атанасова",
         "role": "",
-        "text": "BA English translation and ethnology, MA in teaching. Lived in the USA and England for five years."
+        "text": "Бакалавър по английски превод и етнология, магистър по преподаване. Живяла е в САЩ и Англия пет години."
       },
       {
-        "name": "Vyara Yordanova",
+        "name": "Вяра Йорданова",
         "role": "",
-        "text": "English philology graduate (2003), further teaching method qualifications, 21+ years of teaching."
+        "text": "Завършила английска филология (2003 г.), допълнителни квалификации по методика на преподаването, над 21 години преподаване."
       },
       {
-        "name": "Angelina Meshekusheva",
+        "name": "Ангелина Мешекушева",
         "role": "",
-        "text": "BA Applied Linguistics, 4+ years of teaching English."
+        "text": "Бакалавър по приложна лингвистика, над 4 години преподаване на английски."
       },
       {
-        "name": "Lili Dimitrova",
+        "name": "Лили Димитрова",
         "role": "",
-        "text": "Graduate of the University of Plovdiv, English teacher."
+        "text": "Випускничка на Пловдивския университет, учител по английски."
       }
     ]
   },
   "reviews": {
-    "h1": "Reviews and testimonials",
-    "lead": "Short quotes as published by our school, with the name shown.",
+    "h1": "Отзиви и мнения",
+    "lead": "Кратки цитати, както са публикувани от нашето училище, с посоченото име.",
     "google": {
-      "title": "Rated 5 stars on Google",
-      "text": "Read the Google reviews, or leave your own.",
-      "link": "See our Google reviews"
+      "title": "5 звезди в Google",
+      "text": "Прочетете отзивите в Google или оставете свой.",
+      "link": "Вижте отзивите ни в Google"
     },
     "items": [
       {
         "name": "Rusi Stefanov",
         "context": "",
-        "quote": "The class organization is excellent."
+        "quote": "Организацията на часовете е отлична."
       },
       {
         "name": "Monika Boneva",
-        "context": "Thanking a teacher",
-        "quote": "for her understanding, patience, assistance"
+        "context": "Благодари на учител",
+        "quote": "за разбирането, търпението и помощта"
       },
       {
         "name": "Galina Ivanova",
         "context": "",
-        "quote": "I recommend it!"
+        "quote": "Препоръчвам!"
       },
       {
         "name": "Kremena Dancheva",
         "context": "",
-        "quote": "positive energy, professionals, and dreams"
+        "quote": "положителна енергия, професионалисти и мечти"
       },
       {
         "name": "Mary, Watford",
         "context": "",
-        "quote": "these courses are very convenient for me"
+        "quote": "тези курсове са много удобни за мен"
       },
       {
         "name": "Plamen, Brighton",
         "context": "",
-        "quote": "I recommend it to everyone"
+        "quote": "препоръчвам го на всички"
       }
     ],
-    "facebook": "We are also followed by thousands of people on Facebook."
+    "facebook": "Следват ни и хиляди души във Facebook."
   },
   "faqPage": {
-    "h1": "Questions about online lessons",
-    "lead": "Short answers to what people ask us most. If yours is not here, send an enquiry.",
+    "h1": "Въпроси за онлайн уроците",
+    "lead": "Кратки отговори на въпросите, които най-често ни задават. Ако вашият го няма, изпратете запитване.",
     "items": [
       {
-        "q": "How much do lessons cost?",
-        "a": "One-to-one lessons are £15 per 55 minute lesson, or £20 if the lesson is taught entirely in English. An online group course is £298 per level course. Exam preparation is £320 for 24 hours of tuition."
+        "q": "Колко струват уроците?",
+        "a": "Индивидуалните уроци са £15 за урок от 55 минути или £20, ако урокът е изцяло на английски. Онлайн груповият курс е £298 за курс за ниво. Подготовката за изпит е £320 за 24 часа обучение."
       },
       {
-        "q": "Which platform do lessons use?",
-        "a": "Group courses run live on Zoom. One-to-one lessons run on a live video call, and we send you the link with your booking."
+        "q": "Коя платформа се използва за уроците?",
+        "a": "Груповите курсове се провеждат на живо в Zoom. Индивидуалните уроци се провеждат по видеообаждане на живо, а връзката ви изпращаме с резервацията."
       },
       {
-        "q": "How do I pay?",
-        "a": "By bank transfer, after the office confirms your place. We send the bank details with your booking confirmation. We do not take card payments on the site."
+        "q": "Как се плаща?",
+        "a": "По банков път, след като офисът потвърди мястото ви. Банковите данни изпращаме с потвърждението на резервацията. На сайта не приемаме плащания с карта."
       },
       {
-        "q": "Can I try a class before I pay?",
-        "a": "Yes. You can join one live group class free of charge to see how we teach. Use the free class page to ask."
+        "q": "Мога ли да опитам урок, преди да платя?",
+        "a": "Да. Можете да се присъедините безплатно към един групов урок на живо, за да видите как преподаваме. Попитайте през страницата за безплатен урок."
       },
       {
-        "q": "What levels do you teach?",
-        "a": "Group courses run at A1, A2, B1 and B2. One-to-one lessons are available at any level."
+        "q": "Какви нива преподавате?",
+        "a": "Груповите курсове са на нива A1, A2, B1 и B2. Индивидуалните уроци са възможни на всяко ниво."
       },
       {
-        "q": "How long is a group course?",
-        "a": "A level course is 12 weeks and 72 lessons in a small live group of no more than 12 learners."
+        "q": "Колко дълъг е груповият курс?",
+        "a": "Курсът за ниво е 12 седмици и 72 урока в малка група на живо, не повече от 12 ученици."
       },
       {
-        "q": "How long is a one-to-one lesson?",
-        "a": "55 minutes."
+        "q": "Колко дълъг е индивидуалният урок?",
+        "a": "55 минути."
       },
       {
-        "q": "Can I change or cancel a lesson?",
-        "a": "You can reschedule a one-to-one lesson once, with at least 48 hours notice by email, text or phone. With less than 48 hours notice the lesson is charged."
+        "q": "Мога ли да променя или отменя урок?",
+        "a": "Можете да пренасрочите индивидуален урок веднъж, с предизвестие поне 48 часа по имейл, съобщение или телефон. При предизвестие под 48 часа урокът се таксува."
       },
       {
-        "q": "What if I am ill?",
-        "a": "Illness is considered case by case, and we answer within ten working days."
+        "q": "Ами ако съм болен?",
+        "a": "Болестта се разглежда във всеки отделен случай и отговаряме до десет работни дни."
       },
       {
-        "q": "What if a group does not run?",
-        "a": "A group runs when enough learners have booked. If it does not run, your deposit is refunded or moved."
+        "q": "Ами ако група не започне?",
+        "a": "Групата започва, когато са се записали достатъчно ученици. Ако не започне, депозитът ви се връща или се прехвърля."
       },
       {
-        "q": "Do you teach children?",
-        "a": "Yes. Our teachers teach children and adults. We offer one-to-one lessons for school age children, and a parent or carer is present or nearby during the lesson."
+        "q": "Преподавате ли на деца?",
+        "a": "Да. Нашите преподаватели учат деца и възрастни. Предлагаме индивидуални уроци за деца в училищна възраст, а по време на урока родител или възрастен е до детето или наблизо."
       },
       {
-        "q": "Do you run the IELTS, OET or B1 tests?",
-        "a": "No. We teach and prepare you, but we do not run tests. You book the test separately and pay the test fee to the test provider."
+        "q": "Вие провеждате ли тестовете IELTS, OET или B1?",
+        "a": "Не. Ние преподаваме и подготвяме, но не провеждаме тестове. Теста го резервирате отделно и таксата му плащате на доставчика на теста."
       },
       {
-        "q": "Can you promise I will pass my test?",
-        "a": "No. Your result depends on your own work and on the test. We cannot promise a result."
+        "q": "Можете ли да обещаете, че ще издържа теста си?",
+        "a": "Не. Резултатът зависи от вашата работа и от теста. Не можем да обещаем резултат."
       },
       {
-        "q": "Which B1 test do I need for my visa or citizenship?",
-        "a": "That depends on your own route, so please check gov.uk before you book a test. We cannot advise on immigration."
+        "q": "Кой B1 тест ми трябва за виза или гражданство?",
+        "a": "Това зависи от вашия маршрут, затова моля, проверете в gov.uk, преди да резервирате тест. Не можем да даваме имиграционни съвети."
       },
       {
-        "q": "Do you have Bulgarian speaking tutors?",
-        "a": "Yes, Bulgarian speaking tutors are available for one-to-one lessons. Tell us in the enquiry form if you would like one."
+        "q": "Имате ли преподаватели, говорещи български?",
+        "a": "Да, за индивидуални уроци има преподаватели, говорещи български. Кажете ни във формуляра за запитване, ако искате такъв."
       },
       {
-        "q": "I live outside the UK. Can I join?",
-        "a": "One-to-one lessons are timetabled with your tutor, so tell us your time zone in the enquiry form and we will say what is possible."
+        "q": "Живея извън Великобритания. Мога ли да се присъединя?",
+        "a": "Индивидуалните уроци се насрочват с вашия преподавател, затова посочете часовата си зона във формуляра за запитване и ще кажем какво е възможно."
       },
       {
-        "q": "Are your tutors qualified?",
-        "a": "Our tutors hold degrees in English philology or TEFL qualifications, and one holds a CELTA. See the tutors page for the qualifications each tutor has shared."
+        "q": "Квалифицирани ли са вашите преподаватели?",
+        "a": "Нашите преподаватели имат степени по английска филология или квалификации по TEFL, а един от тях има CELTA. Квалификациите, които всеки е споделил, са на страницата с преподавателите."
       },
       {
-        "q": "Do you offer classroom lessons?",
-        "a": "Not on this site. Ucraya is for online lessons. For classroom lessons in London, visit ucraya.co.uk."
+        "q": "Предлагате ли уроци в класна стая?",
+        "a": "Не на този сайт. Ucraya е за онлайн уроци. За уроци в класна стая в Лондон посетете ucraya.co.uk."
       },
       {
-        "q": "How do I start?",
-        "a": "Send an enquiry with your goal. The office replies by email with a tutor and a first lesson to suggest."
+        "q": "Как да започна?",
+        "a": "Изпратете запитване с целта си. Офисът отговаря по имейл с предложение за преподавател и първи урок."
       },
       {
-        "q": "Is there a discount if I bring a friend?",
-        "a": "Yes. For one-to-one lessons, 2 free lessons for 1 friend, 4 for 2 and 6 for 3, if the friend studies at least two months with two lessons a week. For group courses, two people booking together get 20% off the level, and three get one module free."
+        "q": "Има ли отстъпка, ако доведа приятел?",
+        "a": "Да. При индивидуални уроци: 2 безплатни урока за 1 приятел, 4 за 2 и 6 за 3, ако приятелят учи поне два месеца с по два урока седмично. При групови курсове двама души, които се записват заедно, получават 20% отстъпка от нивото, а трима получават един модул безплатно."
       }
     ]
   },
   "about": {
-    "h1": "About Ucraya",
-    "lead": "Ucraya is online English lessons with real tutors, from a London English school founded in 2015.",
+    "h1": "За Ucraya",
+    "lead": "Ucraya са онлайн уроци по английски с истински преподаватели, от английско училище в Лондон, основано през 2015 г.",
     "school": {
-      "title": "The school behind Ucraya",
-      "text": "Ucraya is a trading name of Training Centre Raya London Ltd, a London English school founded in 2015. The director is Georgi Georgiev. The school teaches at Haverstock School, 24 Haverstock Hill, London NW3 2BQ."
+      "title": "Училището зад Ucraya",
+      "text": "Ucraya е търговско наименование на Training Centre Raya London Ltd, английско училище в Лондон, основано през 2015 г. Директор е Георги Георгиев. Училището преподава в Haverstock School, 24 Haverstock Hill, London NW3 2BQ."
     },
     "online": {
-      "title": "Why this site is online only",
-      "text": "This site is for online lessons: one-to-one lessons, small group courses and exam preparation on live video. For classroom courses in London, visit our school site.",
-      "link": "Visit ucraya.co.uk"
+      "title": "Защо този сайт е само онлайн",
+      "text": "Този сайт е за онлайн уроци: индивидуални уроци, курсове в малки групи и подготовка за изпити на живо по видео. За курсове в класна стая в Лондон посетете сайта на нашето училище.",
+      "link": "Посетете ucraya.co.uk"
     },
     "team": {
-      "title": "The team",
-      "text": "Our tutors are qualified English teachers, based in the UK or teaching for our London school. Read about their qualifications on the tutors page.",
-      "link": "Meet the tutors"
+      "title": "Екипът",
+      "text": "Нашите преподаватели са квалифицирани учители по английски, базирани във Великобритания или преподаващи за нашето лондонско училище. Прочетете за квалификациите им на страницата с преподавателите.",
+      "link": "Запознайте се с преподавателите"
     },
     "approach": {
-      "title": "How we teach",
+      "title": "Как преподаваме",
       "items": [
-        "Real tutors, live, on video. Every lesson is taught live.",
-        "Lessons built around your goal: general English, work, exams or conversation.",
-        "Four skills, grammar and vocabulary, with assessments in group courses.",
-        "Plain prices, shown in full, and no card payments: you pay by bank transfer after the office confirms.",
-        "No promises about test results. We teach and prepare you, and tell you honestly what to practise."
+        "Истински преподаватели, на живо, по видео. Всеки урок се води на живо.",
+        "Уроци, изградени около вашата цел: общ английски, работа, изпити или разговор.",
+        "Четири умения, граматика и лексика, с проверки на знанията в груповите курсове.",
+        "Ясни цени, показани изцяло, и без плащания с карта: плащате по банков път, след като офисът потвърди.",
+        "Без обещания за резултати от тестове. Ние преподаваме и подготвяме и ви казваме честно какво да упражнявате."
       ]
     }
   },
   "contact": {
-    "h1": "Contact Ucraya",
-    "lead": "Send an enquiry and the office will reply by email. You can also write, call or message us.",
+    "h1": "Контакти с Ucraya",
+    "lead": "Изпратете запитване и офисът ще отговори по имейл. Можете да ни пишете, да се обадите или да ни изпратите съобщение.",
     "details": {
-      "title": "Ways to reach us",
-      "email": "Email",
-      "phone": "Phone",
+      "title": "Как да се свържете с нас",
+      "email": "Имейл",
+      "phone": "Телефон",
       "whatsapp": "WhatsApp",
       "viber": "Viber",
       "facebook": "Facebook",
       "messenger": "Messenger",
       "instagram": "Instagram",
-      "address": "School address",
+      "address": "Адрес на училището",
       "addressText": "Haverstock School, 24 Haverstock Hill, London NW3 2BQ",
-      "addressNote": "Classroom lessons are taught here. Online lessons are taught on live video. For classroom lessons visit ucraya.co.uk."
+      "addressNote": "Тук се провеждат уроците в класна стая. Онлайн уроците се провеждат по видео на живо. За уроци в класна стая посетете ucraya.co.uk."
     },
-    "formTitle": "Send an enquiry"
+    "formTitle": "Изпратете запитване"
   },
   "thanks": {
-    "h1": "Thank you, we have your enquiry",
-    "lead": "The office will reply by email. If you would rather talk now, message us on WhatsApp.",
-    "next": "While you wait",
+    "h1": "Благодарим, получихме запитването ви",
+    "lead": "Офисът ще отговори по имейл. Ако предпочитате да поговорим сега, пишете ни в WhatsApp.",
+    "next": "Докато чакате",
     "items": [
-      "Take the placement test for a rough guide to your level.",
-      "Read how online lessons work and how payment works."
+      "Направете теста за ниво за приблизителна представа за нивото ви.",
+      "Прочетете как работят онлайн уроците и как работи плащането."
     ]
   },
   "london": {
@@ -1429,31 +1429,31 @@
     "online": "Prefer to learn from home? See the online courses on this site."
   },
   "blog": {
-    "h1": "English guides for learners",
-    "lead": "Plain guides for people preparing for tests, interviews and everyday English, with links to the lessons that help.",
-    "empty": "Our first guides are on the way. In the meantime, send us an enquiry and we will answer your question directly.",
-    "filterTitle": "Browse by topic",
-    "all": "All guides",
-    "pillarTitle": "Guides: {pillar}",
-    "pillarLead": "All our guides on this topic, newest first.",
-    "read": "Read the guide",
-    "published": "Published",
-    "updated": "Updated",
-    "checked": "Checked against official sources on {date}",
-    "sources": "Sources",
-    "faq": "Questions answered in this guide",
-    "related": "Related guides",
-    "breadcrumb": "Guides",
-    "defaultCta": "Enquire about lessons",
-    "ctaTitle": "Next step",
-    "by": "By {author}"
+    "h1": "Ръководства по английски за ученици",
+    "lead": "Прости ръководства за хора, които се подготвят за тестове, интервюта и ежедневен английски, с връзки към уроците, които помагат.",
+    "empty": "Първите ни ръководства идват скоро. Дотогава ни изпратете запитване и ще отговорим на въпроса ви директно.",
+    "filterTitle": "Разгледайте по тема",
+    "all": "Всички ръководства",
+    "pillarTitle": "Ръководства: {pillar}",
+    "pillarLead": "Всички наши ръководства по тази тема, най-новите първи.",
+    "read": "Прочетете ръководството",
+    "published": "Публикувано",
+    "updated": "Обновено",
+    "checked": "Проверено спрямо официални източници на {date}",
+    "sources": "Източници",
+    "faq": "Въпроси, на които отговаря това ръководство",
+    "related": "Свързани ръководства",
+    "breadcrumb": "Ръководства",
+    "defaultCta": "Попитайте за уроци",
+    "ctaTitle": "Следваща стъпка",
+    "by": "От {author}"
   },
   "notFound": {
-    "h1": "We could not find that page",
-    "lead": "The page may have moved. Try the home page, or send us an enquiry.",
-    "home": "Go to the home page"
+    "h1": "Не можахме да намерим тази страница",
+    "lead": "Страницата може да е преместена. Опитайте началната страница или ни изпратете запитване.",
+    "home": "Към началната страница"
   },
-  "legalNote": "These pages are in English only.",
+  "legalNote": "Тези страници са само на английски.",
   "privacy": {
     "h1": "Privacy",
     "lead": "How Ucraya uses your details, in plain English.",

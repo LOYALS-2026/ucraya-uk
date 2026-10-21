@@ -1,151 +1,151 @@
 {
   "site": {
     "name": "Ucraya",
-    "strap": "Online English lessons with real tutors",
-    "since": "A London English school since 2015",
-    "skip": "Skip to main content",
-    "orgDescription": "Ucraya offers online English lessons with real tutors: one-to-one lessons, small group level courses and exam preparation. It is run by Training Centre Raya London, a London English school founded in 2015."
+    "strap": "Lekcje angielskiego online z prawdziwymi lektorami",
+    "since": "Londyńska szkoła angielskiego od 2015 roku",
+    "skip": "Przejdź do treści",
+    "orgDescription": "Ucraya oferuje lekcje angielskiego online z prawdziwymi lektorami: lekcje indywidualne, kursy poziomowe w małych grupach i przygotowanie do egzaminów. Prowadzi ją Training Centre Raya London, londyńska szkoła angielskiego założona w 2015 roku."
   },
   "nav": {
-    "courses": "Courses",
-    "pricing": "Prices",
-    "how": "How it works",
-    "tutors": "Tutors",
-    "reviews": "Reviews",
+    "courses": "Kursy",
+    "pricing": "Cennik",
+    "how": "Jak to działa",
+    "tutors": "Lektorzy",
+    "reviews": "Opinie",
     "faq": "FAQ",
-    "blog": "Guides",
-    "contact": "Contact",
-    "about": "About",
-    "trial": "Free class",
-    "placement": "Placement test"
+    "blog": "Poradniki",
+    "contact": "Kontakt",
+    "about": "O nas",
+    "trial": "Darmowe zajęcia",
+    "placement": "Test poziomujący"
   },
   "header": {
     "menu": "Menu",
-    "closeMenu": "Close menu",
-    "language": "Language",
-    "mainNav": "Main navigation",
-    "homeLabel": "Ucraya home"
+    "closeMenu": "Zamknij menu",
+    "language": "Język",
+    "mainNav": "Nawigacja główna",
+    "homeLabel": "Strona główna Ucraya"
   },
   "buttons": {
-    "enquire": "Enquire about lessons",
-    "enquireShort": "Enquire",
-    "trial": "Try a class free",
-    "whatsapp": "WhatsApp us",
+    "enquire": "Zapytaj o lekcje",
+    "enquireShort": "Zapytaj",
+    "trial": "Wypróbuj zajęcia za darmo",
+    "whatsapp": "Napisz na WhatsApp",
     "whatsappShort": "WhatsApp",
-    "placement": "Take the placement test",
-    "prices": "See prices",
-    "course": "See the course",
-    "tutors": "Meet the tutors",
-    "allFaq": "Read all questions",
-    "send": "Send my enquiry",
-    "allReviews": "Read the reviews",
-    "reviewOnGoogle": "See us on Google",
-    "howItWorks": "How it works"
+    "placement": "Zrób test poziomujący",
+    "prices": "Zobacz ceny",
+    "course": "Zobacz kurs",
+    "tutors": "Poznaj lektorów",
+    "allFaq": "Czytaj wszystkie pytania",
+    "send": "Wyślij zapytanie",
+    "allReviews": "Przeczytaj opinie",
+    "reviewOnGoogle": "Zobacz nas w Google",
+    "howItWorks": "Jak to działa"
   },
   "common": {
-    "breadcrumbs": "Breadcrumb",
-    "home": "Home",
-    "from": "from",
-    "perLesson": "per 55 minute lesson",
-    "perCourse": "per level course",
-    "classroomNote": "Looking for classroom lessons in London?",
-    "classroomLink": "Visit ucraya.co.uk",
-    "stillUnsure": "Not sure which lessons suit you? Tell us your goal and we will suggest a tutor and a first lesson.",
-    "ratedGoogle": "Rated 5 stars on Google",
-    "facebookFollowers": "Followed by thousands on Facebook",
-    "sinceProof": "A London English school since 2015",
-    "tutorsProof": "Qualified tutors, based in the UK or teaching for our London school"
+    "breadcrumbs": "Ścieżka nawigacji",
+    "home": "Strona główna",
+    "from": "od",
+    "perLesson": "za lekcję 55 minut",
+    "perCourse": "za kurs poziomowy",
+    "classroomNote": "Szukasz zajęć stacjonarnych w Londynie?",
+    "classroomLink": "Odwiedź ucraya.co.uk",
+    "stillUnsure": "Nie wiesz, jakie lekcje będą dla Ciebie dobre? Napisz, jaki masz cel, a zaproponujemy lektora i pierwszą lekcję.",
+    "ratedGoogle": "Oceniana na 5 gwiazdek w Google",
+    "facebookFollowers": "Obserwowana przez tysiące osób na Facebooku",
+    "sinceProof": "Londyńska szkoła angielskiego od 2015 roku",
+    "tutorsProof": "Wykwalifikowani lektorzy mieszkający w Wielkiej Brytanii lub uczący w naszej londyńskiej szkole"
   },
   "footer": {
-    "about": "Online English lessons with real tutors, from a London English school since 2015.",
-    "colCourses": "Courses",
+    "about": "Lekcje angielskiego online z prawdziwymi lektorami, prowadzone przez londyńską szkołę angielskiego od 2015 roku.",
+    "colCourses": "Kursy",
     "colSite": "Ucraya",
-    "colContact": "Contact",
-    "colLegal": "Legal",
-    "privacy": "Privacy",
-    "terms": "Terms and cancellation",
-    "london": "Classroom lessons in London",
-    "company": "Ucraya is a trading name of Training Centre Raya London Ltd, company number 11618355.",
+    "colContact": "Kontakt",
+    "colLegal": "Informacje prawne",
+    "privacy": "Prywatność",
+    "terms": "Regulamin i rezygnacje",
+    "london": "Zajęcia stacjonarne w Londynie",
+    "company": "Ucraya jest nazwą handlową spółki Training Centre Raya London Ltd, numer spółki 11618355.",
     "copyright": "Copyright {year} Training Centre Raya London Ltd.",
-    "social": "Find us online",
+    "social": "Znajdziesz nas w sieci",
     "facebook": "Facebook",
     "instagram": "Instagram",
     "viber": "Viber"
   },
   "sticky": {
-    "label": "Quick contact"
+    "label": "Szybki kontakt"
   },
   "cookie": {
-    "label": "Cookie choices",
-    "text": "We would like to use Google Analytics cookies to see which pages are useful. Nothing is loaded unless you accept.",
-    "accept": "Accept",
-    "decline": "No thanks",
-    "privacy": "Read our privacy page"
+    "label": "Ustawienia plików cookie",
+    "text": "Chcielibyśmy używać plików cookie Google Analytics, aby sprawdzać, które strony są przydatne. Nic się nie załaduje, dopóki się nie zgodzisz.",
+    "accept": "Akceptuję",
+    "decline": "Nie, dziękuję",
+    "privacy": "Przeczytaj naszą stronę o prywatności"
   },
   "form": {
-    "title": "Tell us what you need",
-    "intro": "Fill in the form and the office will reply by email. There is nothing to pay at this stage.",
-    "email": "Email address",
-    "name": "Your name",
-    "phone": "Phone or WhatsApp (optional)",
-    "phoneHint": "Include the country code if you are outside the UK.",
-    "language": "Your first language (optional)",
-    "goal": "What is your main goal?",
-    "goalPlaceholder": "Choose one",
+    "title": "Napisz, czego potrzebujesz",
+    "intro": "Wypełnij formularz, a biuro odpowie e-mailem. Na tym etapie nic nie płacisz.",
+    "email": "Adres e-mail",
+    "name": "Twoje imię",
+    "phone": "Telefon lub WhatsApp (opcjonalnie)",
+    "phoneHint": "Podaj numer kierunkowy kraju, jeśli mieszkasz poza Wielką Brytanią.",
+    "language": "Twój język ojczysty (opcjonalnie)",
+    "goal": "Jaki jest Twój główny cel?",
+    "goalPlaceholder": "Wybierz jedną opcję",
     "goals": [
       {
         "slug": "oet",
-        "label": "Nursing English test OET or IELTS"
+        "label": "Egzamin pielęgniarski OET lub IELTS"
       },
       {
         "slug": "selt-b1",
-        "label": "B1 test for settlement or citizenship"
+        "label": "Test B1 do pobytu stałego lub obywatelstwa"
       },
       {
         "slug": "ielts",
-        "label": "IELTS for university or work"
+        "label": "IELTS na studia lub do pracy"
       },
       {
         "slug": "interview",
-        "label": "Job interview or work English"
+        "label": "Rozmowa kwalifikacyjna lub angielski w pracy"
       },
       {
         "slug": "kids",
-        "label": "English for my child"
+        "label": "Angielski dla mojego dziecka"
       },
       {
         "slug": "everyday",
-        "label": "Everyday English"
+        "label": "Angielski na co dzień"
       },
       {
         "slug": "other",
-        "label": "Something else"
+        "label": "Coś innego"
       }
     ],
-    "format": "Which format do you prefer?",
+    "format": "Jaką formę wolisz?",
     "formats": [
       {
         "slug": "one-to-one",
-        "label": "One-to-one lessons"
+        "label": "Lekcje indywidualne"
       },
       {
         "slug": "group",
-        "label": "Small group course"
+        "label": "Kurs w małej grupie"
       },
       {
         "slug": "not-sure",
-        "label": "Not sure yet"
+        "label": "Jeszcze nie wiem"
       }
     ],
-    "level": "Your level, if you know it",
+    "level": "Twój poziom, jeśli go znasz",
     "levels": [
       {
         "slug": "not-sure",
-        "label": "I am not sure"
+        "label": "Nie wiem"
       },
       {
         "slug": "a1",
-        "label": "A1 (beginner)"
+        "label": "A1 (początkujący)"
       },
       {
         "slug": "a2",
@@ -161,882 +161,882 @@
       },
       {
         "slug": "c1",
-        "label": "C1 or above"
+        "label": "C1 lub wyżej"
       },
       {
         "slug": "test-a1",
-        "label": "I took your placement test: A1"
+        "label": "Mój wynik w teście poziomującym Ucraya: A1"
       },
       {
         "slug": "test-a2",
-        "label": "I took your placement test: A2"
+        "label": "Mój wynik w teście poziomującym Ucraya: A2"
       },
       {
         "slug": "test-b1",
-        "label": "I took your placement test: B1"
+        "label": "Mój wynik w teście poziomującym Ucraya: B1"
       },
       {
         "slug": "test-b2",
-        "label": "I took your placement test: B2"
+        "label": "Mój wynik w teście poziomującym Ucraya: B2"
       }
     ],
-    "times": "Preferred days and times (include your time zone if outside the UK)",
-    "message": "Anything else we should know?",
-    "consent": "I agree that Ucraya may use these details to reply to my enquiry. I have read the {privacyLink}.",
-    "privacyLinkText": "privacy page",
-    "required": "Required",
-    "optional": "Optional",
-    "trialNote": "You are asking about a free class or level check. Tell us your goal and we will reply with the next step.",
-    "placementNote": "You took our placement test. We will use the level you got as a starting point.",
-    "noscript": "Please send your enquiry to office@ucraya.co.uk if the form does not work.",
-    "reply": "We reply by email. You can also message us on WhatsApp.",
-    "honeypot": "Leave this field empty"
+    "times": "Preferowane dni i godziny (podaj swoją strefę czasową, jeśli mieszkasz poza Wielką Brytanią)",
+    "message": "Czy jest coś jeszcze, co powinniśmy wiedzieć?",
+    "consent": "Zgadzam się, aby Ucraya wykorzystała te dane do odpowiedzi na moje zapytanie. Więcej informacji: {privacyLink}.",
+    "privacyLinkText": "stronę o prywatności",
+    "required": "Wymagane",
+    "optional": "Opcjonalne",
+    "trialNote": "Pytasz o darmowe zajęcia lub sprawdzenie poziomu. Napisz, jaki masz cel, a odpiszemy z kolejnym krokiem.",
+    "placementNote": "Wykonano nasz test poziomujący. Użyjemy Twojego wyniku jako punktu wyjścia.",
+    "noscript": "Jeśli formularz nie działa, wyślij zapytanie na adres office@ucraya.co.uk.",
+    "reply": "Odpowiadamy e-mailem. Możesz też napisać do nas na WhatsApp.",
+    "honeypot": "Zostaw to pole puste"
   },
   "meta": {
     "home": {
-      "title": "Online English lessons with real tutors",
-      "description": "One-to-one and small group English lessons online with real tutors, from a London English school since 2015. Ask a question or try a class free."
+      "title": "Lekcje angielskiego online z prawdziwymi lektorami",
+      "description": "Lekcje angielskiego online, indywidualne i w małych grupach, z prawdziwymi lektorami z londyńskiej szkoły. Zadaj pytanie lub wypróbuj zajęcia za darmo."
     },
     "courses": {
-      "title": "English courses online",
-      "description": "General English, business English, IELTS, B1 test preparation, OET and lessons for children, taught online by real tutors."
+      "title": "Kursy angielskiego online",
+      "description": "Angielski ogólny, biznesowy, IELTS, przygotowanie do testu B1, OET i lekcje dla dzieci, prowadzone online przez prawdziwych lektorów."
     },
     "pricing": {
-      "title": "Prices for online English lessons",
-      "description": "One-to-one lessons from 15 pounds, group courses 298 pounds and exam preparation 320 pounds. Pay by bank transfer after the office confirms."
+      "title": "Cennik lekcji angielskiego online",
+      "description": "Lekcje indywidualne od 15 funtów, kursy grupowe 298 funtów i przygotowanie do egzaminu 320 funtów. Płatność przelewem po potwierdzeniu przez biuro."
     },
     "how": {
-      "title": "How online lessons work",
-      "description": "Enquire, get matched to a tutor, have your first lesson and pay by bank transfer once the office confirms. Here is every step."
+      "title": "Jak działają lekcje online",
+      "description": "Zapytaj, poznaj lektora, odbądź pierwszą lekcję i zapłać przelewem po potwierdzeniu przez biuro. Oto każdy krok."
     },
     "trial": {
-      "title": "Try a class free",
-      "description": "Join one live group class free of charge to see how we teach, or ask for a level check. Send your enquiry and we will reply."
+      "title": "Wypróbuj zajęcia za darmo",
+      "description": "Dołącz do jednych zajęć grupowych na żywo za darmo, by zobaczyć, jak uczymy, lub poproś o sprawdzenie poziomu. Wyślij zapytanie, a odpiszemy."
     },
     "placement": {
-      "title": "English placement test",
-      "description": "A 12 question quiz that gives a rough guide to your English level, from A1 to B2. It is a guide, not an assessment."
+      "title": "Test poziomujący z angielskiego",
+      "description": "Quiz z 12 pytaniami, który orientacyjnie pokazuje Twój poziom angielskiego, od A1 do B2. To wskazówka, a nie ocena."
     },
     "tutors": {
-      "title": "Our English tutors",
-      "description": "Meet the qualified English teachers behind Ucraya, with the qualifications they have shared with us."
+      "title": "Nasi lektorzy angielskiego",
+      "description": "Poznaj wykwalifikowanych nauczycieli angielskiego z Ucraya wraz z kwalifikacjami, którymi się z nami podzielili."
     },
     "reviews": {
-      "title": "Reviews and testimonials",
-      "description": "What learners say about the school, and a link to our Google reviews."
+      "title": "Opinie i referencje",
+      "description": "Co o szkole mówią uczniowie, oraz link do naszych opinii w Google."
     },
     "faq": {
-      "title": "Questions about online lessons",
-      "description": "Answers about prices, payment, platform, cancellations, levels, children and the tests we do not run."
+      "title": "Pytania o lekcje online",
+      "description": "Odpowiedzi o cenach, płatności, platformie, rezygnacji, poziomach, dzieciach i testach, których nie przeprowadzamy."
     },
     "about": {
-      "title": "About Ucraya",
-      "description": "Ucraya is run by a London English school founded in 2015. Read about the school, the team and how we teach."
+      "title": "O Ucraya",
+      "description": "Ucraya prowadzi londyńska szkoła angielskiego założona w 2015 roku. Przeczytaj o szkole, zespole i o tym, jak uczymy."
     },
     "contact": {
-      "title": "Contact Ucraya",
-      "description": "Send an enquiry, email, phone, WhatsApp or message us. Find the school address and our social pages."
+      "title": "Kontakt z Ucraya",
+      "description": "Wyślij zapytanie, e-mail, zadzwoń, napisz na WhatsApp lub wiadomość. Znajdziesz tu adres szkoły i nasze profile społecznościowe."
     },
     "thanks": {
-      "title": "Thank you for your enquiry",
-      "description": "Your enquiry has been sent. The office will reply by email."
+      "title": "Dziękujemy za zapytanie",
+      "description": "Twoje zapytanie zostało wysłane. Biuro odpowie e-mailem."
     },
     "privacy": {
-      "title": "Privacy",
-      "description": "How Ucraya uses your details, in plain English, and your rights under UK data protection law."
+      "title": "Prywatność",
+      "description": "Jak Ucraya wykorzystuje Twoje dane, prostym językiem, oraz Twoje prawa wynikające z brytyjskich przepisów o ochronie danych."
     },
     "terms": {
-      "title": "Terms and cancellation",
-      "description": "How booking, payment by bank transfer, rescheduling and cancellation work at Ucraya."
+      "title": "Regulamin i rezygnacje",
+      "description": "Jak działają rezerwacja, płatność przelewem, zmiana terminu i rezygnacja w Ucraya."
     },
     "london": {
-      "title": "Classroom lessons in London",
-      "description": "Ucraya is for online lessons. For classroom courses in London, visit our school at ucraya.co.uk."
+      "title": "Zajęcia stacjonarne w Londynie",
+      "description": "Ucraya to lekcje online. Kursy stacjonarne w Londynie znajdziesz w naszej szkole na ucraya.co.uk."
     },
     "blog": {
-      "title": "English guides for learners",
-      "description": "Plain guides for learners preparing for tests, interviews and everyday English, with links to the lessons that help."
+      "title": "Poradniki angielskiego dla uczących się",
+      "description": "Proste poradniki dla osób przygotowujących się do testów, rozmów kwalifikacyjnych i angielskiego na co dzień, z linkami do pomocnych lekcji."
     },
     "notFound": {
-      "title": "Page not found",
-      "description": "We could not find that page. Try the home page or send us an enquiry."
+      "title": "Nie znaleziono strony",
+      "description": "Nie możemy znaleźć tej strony. Wróć na stronę główną lub wyślij nam zapytanie."
     }
   },
   "home": {
-    "h1": "Online English lessons with real tutors",
-    "lead": "One-to-one lessons or a small live group, with a tutor who builds the lesson around your goal. Taught by a London English school since 2015.",
-    "heroNote": "No payment online: the office confirms your place, then you pay by bank transfer.",
+    "h1": "Lekcje angielskiego online z prawdziwymi lektorami",
+    "lead": "Lekcje indywidualne lub mała grupa na żywo, z lektorem, który buduje lekcję wokół Twojego celu. Uczy londyńska szkoła angielskiego od 2015 roku.",
+    "heroNote": "Bez płatności online: biuro potwierdza Twoje miejsce, a potem płacisz przelewem.",
     "audience": {
-      "title": "Who our lessons are for",
-      "intro": "Most people come to us with a date in mind. Choose the one closest to yours.",
+      "title": "Dla kogo są nasze lekcje",
+      "intro": "Większość osób przychodzi do nas z konkretną datą w głowie. Wybierz tę, która jest najbliższa Twojej.",
       "items": [
         {
           "slug": "oet",
-          "title": "Nurses retaking OET or IELTS",
-          "text": "Lessons built around the OET sub-tests and your profession, for your next attempt."
+          "title": "Pielęgniarki ponownie zdające OET lub IELTS",
+          "text": "Lekcje zbudowane wokół części testu OET i Twojego zawodu, na kolejne podejście."
         },
         {
           "slug": "selt-b1",
-          "title": "B1 for settlement or citizenship",
-          "text": "Prepare for a B1 speaking and listening test with a tutor. Check your own route on gov.uk first."
+          "title": "B1 do pobytu stałego lub obywatelstwa",
+          "text": "Przygotuj się z lektorem do testu B1 z mówienia i słuchania. Najpierw sprawdź swoją ścieżkę na gov.uk."
         },
         {
           "slug": "ielts",
-          "title": "IELTS for university or work",
-          "text": "Exam preparation or one-to-one lessons when an offer asks for an IELTS score."
+          "title": "IELTS na studia lub do pracy",
+          "text": "Przygotowanie do egzaminu lub lekcje indywidualne, gdy oferta wymaga wyniku IELTS."
         },
         {
           "slug": "business-english",
-          "title": "A job interview coming up",
-          "text": "One-to-one lessons for interviews, meetings and everyday work English."
+          "title": "Zbliża się rozmowa kwalifikacyjna",
+          "text": "Lekcje indywidualne na rozmowy kwalifikacyjne, spotkania i angielski w codziennej pracy."
         },
         {
           "slug": "kids",
-          "title": "Your child's English",
-          "text": "One-to-one online lessons for school age children, with a parent or carer present or nearby."
+          "title": "Angielski Twojego dziecka",
+          "text": "Indywidualne lekcje online dla dzieci w wieku szkolnym, w obecności rodzica lub opiekuna albo w jego pobliżu."
         },
         {
           "slug": "business-english",
-          "title": "Care and workplace teams",
-          "text": "Lessons focused on communication at work, including care work. Tell us what your staff need."
+          "title": "Zespoły opiekuńcze i pracownicze",
+          "text": "Lekcje skupione na komunikacji w pracy, także w opiece. Napisz, czego potrzebują Twoi pracownicy."
         },
         {
           "slug": "general-english",
-          "title": "Everyday English",
-          "text": "Choose private lessons or a level course for clearer English in daily life."
+          "title": "Angielski na co dzień",
+          "text": "Wybierz lekcje indywidualne lub kurs poziomowy, by mówić wyraźniej w codziennym życiu."
         }
       ],
-      "link": "Read more"
+      "link": "Czytaj więcej"
     },
     "steps": {
-      "title": "How it works",
+      "title": "Jak to działa",
       "items": [
         {
-          "title": "Tell us your goal",
-          "text": "Send a short enquiry or message us on WhatsApp. Say what you need English for and when."
+          "title": "Napisz, jaki masz cel",
+          "text": "Wyślij krótkie zapytanie lub napisz do nas na WhatsApp. Powiedz, do czego potrzebujesz angielskiego i na kiedy."
         },
         {
-          "title": "We suggest a tutor and a first lesson",
-          "text": "The office replies by email with a tutor, a lesson plan and a time that suits you."
+          "title": "Proponujemy lektora i pierwszą lekcję",
+          "text": "Biuro odpowiada e-mailem, podając lektora, plan lekcji i termin, który Ci odpowiada."
         },
         {
-          "title": "Start lessons, pay by bank transfer",
-          "text": "The office confirms your place and sends the bank details. There is no card payment on the site."
+          "title": "Zaczynasz lekcje, płacisz przelewem",
+          "text": "Biuro potwierdza Twoje miejsce i przesyła dane do przelewu. Na stronie nie ma płatności kartą."
         }
       ]
     },
     "prices": {
-      "title": "Clear prices",
-      "intro": "These are the prices. Exam entry fees are separate and paid to the exam body.",
-      "note": "Payment is by bank transfer after the office confirms your place."
+      "title": "Jasne ceny",
+      "intro": "Oto ceny. Opłaty egzaminacyjne są osobne i płaci się je organizatorowi egzaminu.",
+      "note": "Płatność przelewem po potwierdzeniu Twojego miejsca przez biuro."
     },
     "proof": {
-      "title": "What learners say",
-      "lead": "Short quotes, as published by our school."
+      "title": "Co mówią uczniowie",
+      "lead": "Krótkie opinie, tak jak publikuje je nasza szkoła."
     },
     "tutors": {
-      "title": "Qualified tutors, based in the UK or teaching for our London school",
-      "text": "Our teachers hold degrees in English philology or TEFL qualifications, and one holds a CELTA. Bulgarian speaking tutors are available for one-to-one lessons."
+      "title": "Wykwalifikowani lektorzy mieszkający w Wielkiej Brytanii lub uczący w naszej londyńskiej szkole",
+      "text": "Nasi nauczyciele mają dyplomy z filologii angielskiej lub kwalifikacje TEFL, a jedna osoba ma CELTA. Do lekcji indywidualnych dostępni są lektorzy mówiący po bułgarsku."
     },
     "faq": {
-      "title": "Quick answers"
+      "title": "Szybkie odpowiedzi"
     },
     "final": {
-      "title": "Ready to start?",
-      "text": "Tell us your goal. We will reply with a tutor and a first lesson to suggest."
+      "title": "Gotowy, żeby zacząć?",
+      "text": "Napisz, jaki masz cel. Odpiszemy, proponując lektora i pierwszą lekcję."
     }
   },
   "products": {
     "oneToOne": {
-      "name": "One-to-one lessons",
+      "name": "Lekcje indywidualne",
       "price": "£15",
-      "unit": "per 55 minute lesson",
-      "text": "Private live lessons with a tutor, at any level, built around your goals."
+      "unit": "za lekcję 55 minut",
+      "text": "Prywatne lekcje na żywo z lektorem, na każdym poziomie, zbudowane wokół Twoich celów."
     },
     "oneToOneEnglish": {
-      "name": "English through English, one-to-one",
+      "name": "Angielski po angielsku, lekcje indywidualne",
       "price": "£20",
-      "unit": "per 55 minute lesson",
-      "text": "Private lessons taught entirely in English, for full immersion."
+      "unit": "za lekcję 55 minut",
+      "text": "Prywatne lekcje prowadzone w całości po angielsku, dla pełnego zanurzenia w języku."
     },
     "group": {
-      "name": "Online group course",
+      "name": "Kurs grupowy online",
       "price": "£298",
-      "unit": "per level course (A1, A2, B1 or B2)",
-      "text": "A 12 week course in a small live group: 72 lessons, four skills, grammar, vocabulary and assessments."
+      "unit": "za kurs poziomowy (A1, A2, B1 lub B2)",
+      "text": "12-tygodniowy kurs w małej grupie na żywo: 72 lekcje, cztery umiejętności, gramatyka, słownictwo i sprawdziany."
     },
     "exam": {
-      "name": "Exam preparation",
+      "name": "Przygotowanie do egzaminu",
       "price": "£320",
-      "unit": "for 24 hours of tuition",
-      "text": "IELTS, Cambridge and other certificates, usually over six to eight weeks. Exam entry fees are separate."
+      "unit": "za 24 godziny zajęć",
+      "text": "IELTS, Cambridge i inne certyfikaty, zwykle w ciągu sześciu do ośmiu tygodni. Opłaty egzaminacyjne są osobne."
     }
   },
   "courses": {
-    "title": "Online English courses",
-    "lead": "Pick the course closest to your goal. If you are not sure, send an enquiry and we will suggest one.",
-    "cardLink": "See the course",
+    "title": "Kursy angielskiego online",
+    "lead": "Wybierz kurs najbliższy Twojemu celowi. Jeśli nie masz pewności, wyślij zapytanie, a coś zaproponujemy.",
+    "cardLink": "Zobacz kurs",
     "headings": {
-      "who": "Who this is for",
-      "lesson": "What a lesson looks like",
-      "levels": "Levels",
-      "format": "Format and platform",
-      "price": "Price",
-      "included": "What is included",
-      "notIncluded": "What is not included",
-      "tutor": "Your tutor",
-      "faq": "Questions about this course",
-      "enquire": "Enquire about this course",
-      "related": "Other courses"
+      "who": "Dla kogo to jest",
+      "lesson": "Jak wygląda lekcja",
+      "levels": "Poziomy",
+      "format": "Forma i platforma",
+      "price": "Cena",
+      "included": "Co jest w cenie",
+      "notIncluded": "Czego nie obejmuje cena",
+      "tutor": "Twój lektor",
+      "faq": "Pytania o ten kurs",
+      "enquire": "Zapytaj o ten kurs",
+      "related": "Inne kursy"
     },
-    "ctaText": "Send a short enquiry. We reply by email with a tutor and a first lesson to suggest.",
+    "ctaText": "Wyślij krótkie zapytanie. Odpowiemy e-mailem, proponując lektora i pierwszą lekcję.",
     "items": {
       "general-english": {
-        "name": "General English",
-        "summary": "Group level courses and one-to-one lessons for everyday English.",
+        "name": "Angielski ogólny",
+        "summary": "Kursy poziomowe w grupie i lekcje indywidualne z angielskiego na co dzień.",
         "goal": "everyday",
         "format": "not-sure",
-        "metaTitle": "General English lessons online",
-        "metaDescription": "Online general English with real tutors: a 12 week group course at 298 pounds or one-to-one lessons from 15 pounds. Ask us which suits you.",
-        "h1": "General English lessons online",
-        "lead": "Build clearer everyday English with a small live group course or private lessons. Choose the format that fits your week.",
+        "metaTitle": "Lekcje angielskiego ogólnego online",
+        "metaDescription": "Angielski ogólny online z prawdziwymi lektorami: 12-tygodniowy kurs grupowy za 298 funtów lub lekcje indywidualne od 15 funtów. Zapytaj, co Ci pasuje.",
+        "h1": "Lekcje angielskiego ogólnego online",
+        "lead": "Buduj wyraźniejszy angielski na co dzień dzięki kursowi w małej grupie na żywo lub lekcjom prywatnym. Wybierz formę, która pasuje do Twojego tygodnia.",
         "who": [
-          "Adults who want clearer English for daily life and work",
-          "People who like the structure of a level course from A1 to B2",
-          "People who prefer private lessons built around their own goals"
+          "Dorośli, którzy chcą mówić wyraźniej na co dzień i w pracy",
+          "Osoby, którym odpowiada struktura kursu poziomowego od A1 do B2",
+          "Osoby, które wolą lekcje prywatne zbudowane wokół własnych celów"
         ],
         "lesson": [
-          "In a group course you learn with a small live group of no more than 12. The course is 72 lessons over 12 weeks, covering the four skills, grammar and vocabulary, with assessments along the way.",
-          "In one-to-one lessons you have a private 55 minute lesson with a tutor who plans around what you want to do with your English: general English, work, exams or conversation."
+          "Na kursie grupowym uczysz się w małej grupie na żywo, liczącej najwyżej 12 osób. Kurs to 72 lekcje w 12 tygodni, z czterema umiejętnościami, gramatyką i słownictwem oraz sprawdzianami po drodze.",
+          "Na lekcjach indywidualnych masz prywatną 55-minutową lekcję z lektorem, który planuje ją wokół tego, do czego chcesz używać angielskiego: angielski ogólny, praca, egzaminy lub rozmowa."
         ],
-        "levels": "Group courses are offered at A1, A2, B1 and B2. One-to-one lessons are available at any level.",
-        "platform": "Group courses run live on Zoom. One-to-one lessons run on a live video call, and we send you the link with your booking.",
+        "levels": "Kursy grupowe są dostępne na poziomach A1, A2, B1 i B2. Lekcje indywidualne są dostępne na każdym poziomie.",
+        "platform": "Kursy grupowe odbywają się na żywo na Zoomie. Lekcje indywidualne odbywają się na wideorozmowie na żywo, a link wysyłamy razem z rezerwacją.",
         "prices": [
           {
-            "label": "Online group course",
+            "label": "Kurs grupowy online",
             "amount": "£298",
-            "unit": "per level course"
+            "unit": "za kurs poziomowy"
           },
           {
-            "label": "One-to-one lesson",
+            "label": "Lekcja indywidualna",
             "amount": "£15",
-            "unit": "per 55 minute lesson"
+            "unit": "za lekcję 55 minut"
           },
           {
-            "label": "English through English, one-to-one",
+            "label": "Angielski po angielsku, lekcje indywidualne",
             "amount": "£20",
-            "unit": "per 55 minute lesson"
+            "unit": "za lekcję 55 minut"
           }
         ],
-        "priceNote": "Group courses: a £50 deposit secures your place and is part of the £298. Payment is by bank transfer after the office confirms.",
+        "priceNote": "Kursy grupowe: depozyt £50 zabezpiecza Twoje miejsce i wchodzi w skład £298. Płatność przelewem po potwierdzeniu przez biuro.",
         "included": [
-          "Live lessons with a tutor",
-          "For group courses: four skills, grammar, vocabulary and assessments",
-          "For one-to-one lessons: a timetable agreed with your tutor",
-          "Bulgarian speaking tutors are available for one-to-one lessons"
+          "Lekcje na żywo z lektorem",
+          "Dla kursów grupowych: cztery umiejętności, gramatyka, słownictwo i sprawdziany",
+          "Dla lekcji indywidualnych: harmonogram ustalony z lektorem",
+          "Do lekcji indywidualnych dostępni są lektorzy mówiący po bułgarsku"
         ],
         "notIncluded": [
-          "Exam entry fees (we do not run tests)",
-          "Classroom lessons in London: visit ucraya.co.uk"
+          "Opłaty egzaminacyjne (nie przeprowadzamy testów)",
+          "Zajęcia stacjonarne w Londynie: odwiedź ucraya.co.uk"
         ],
-        "tutor": "Your tutors are qualified English teachers, based in the UK or teaching for our London school. See the tutors page for their qualifications.",
+        "tutor": "Twoimi lektorami są wykwalifikowani nauczyciele angielskiego, mieszkający w Wielkiej Brytanii lub uczący w naszej londyńskiej szkole. Ich kwalifikacje znajdziesz na stronie lektorów.",
         "faq": [
           {
-            "q": "Should I choose a group course or one-to-one lessons?",
-            "a": "A group course gives you a set level, a clear structure and a live group. One-to-one lessons are built around your own goals and timetable. If you are not sure, tell us your goal and we will suggest one."
+            "q": "Wybrać kurs grupowy czy lekcje indywidualne?",
+            "a": "Kurs grupowy daje określony poziom, jasną strukturę i grupę na żywo. Lekcje indywidualne są zbudowane wokół Twoich celów i harmonogramu. Jeśli nie masz pewności, napisz, jaki masz cel, a coś zaproponujemy."
           },
           {
-            "q": "How long is a group course?",
-            "a": "A level course lasts 12 weeks and has 72 lessons. It covers four skills, grammar, vocabulary and assessments."
+            "q": "Jak długo trwa kurs grupowy?",
+            "a": "Kurs poziomowy trwa 12 tygodni i obejmuje 72 lekcje. Zawiera cztery umiejętności, gramatykę, słownictwo i sprawdziany."
           },
           {
-            "q": "Can I try before I pay?",
-            "a": "Yes. You can join one live group class free of charge to see how we teach. Use the free class page to ask."
+            "q": "Czy mogę spróbować, zanim zapłacę?",
+            "a": "Tak. Możesz dołączyć do jednych zajęć grupowych na żywo za darmo, by zobaczyć, jak uczymy. Zapytaj na stronie darmowych zajęć."
           },
           {
-            "q": "How do I pay?",
-            "a": "By bank transfer, after the office confirms your place. We send the bank details with your booking confirmation."
+            "q": "Jak zapłacić?",
+            "a": "Przelewem, po potwierdzeniu Twojego miejsca przez biuro. Dane do przelewu wysyłamy z potwierdzeniem rezerwacji."
           }
         ]
       },
       "one-to-one": {
-        "name": "One-to-one lessons",
-        "summary": "Private 55 minute live lessons, at any level, built around your goal.",
+        "name": "Lekcje indywidualne",
+        "summary": "Prywatne 55-minutowe lekcje na żywo, na każdym poziomie, zbudowane wokół Twojego celu.",
         "goal": "everyday",
         "format": "one-to-one",
-        "metaTitle": "One-to-one English lessons online",
-        "metaDescription": "Private online English lessons with a real tutor: 15 pounds, or 20 pounds taught entirely in English, per 55 minute lesson. Any level.",
-        "h1": "One-to-one English lessons online",
-        "lead": "Private 55 minute lessons on a live video call, with a tutor who plans around your goal. Any level.",
+        "metaTitle": "Indywidualne lekcje angielskiego online",
+        "metaDescription": "Prywatne lekcje angielskiego online z prawdziwym lektorem: 15 funtów lub 20 funtów, gdy lekcja jest w całości po angielsku, za lekcję 55 minut. Każdy poziom.",
+        "h1": "Indywidualne lekcje angielskiego online",
+        "lead": "Prywatne 55-minutowe lekcje na wideorozmowie na żywo, z lektorem, który planuje je wokół Twojego celu. Każdy poziom.",
         "who": [
-          "Learners with a specific goal, such as work, a test or an interview",
-          "People who want a timetable that fits their week",
-          "Learners who want to speak more and be corrected as they go"
+          "Osoby z konkretnym celem, na przykład praca, test lub rozmowa kwalifikacyjna",
+          "Osoby, które chcą harmonogramu pasującego do ich tygodnia",
+          "Osoby, które chcą więcej mówić i być poprawiane na bieżąco"
         ],
         "lesson": [
-          "Each lesson is 55 minutes, one to one with your tutor on a live video call. The lesson is built around your goal, whether that is general English, work, exams or conversation.",
-          "You can choose lessons with a Bulgarian speaking tutor, or English through English, where the whole lesson is taught in English for full immersion."
+          "Każda lekcja trwa 55 minut, indywidualnie z lektorem na wideorozmowie na żywo. Lekcja jest zbudowana wokół Twojego celu, czy to angielski ogólny, praca, egzaminy czy rozmowa.",
+          "Możesz wybrać lekcje z lektorem mówiącym po bułgarsku albo angielski po angielsku, gdzie cała lekcja odbywa się po angielsku, dla pełnego zanurzenia."
         ],
-        "levels": "Any level, from beginner to advanced.",
-        "platform": "Lessons run on a live video call. We send you the link with your booking, and the timetable is agreed with your tutor.",
+        "levels": "Każdy poziom, od początkującego do zaawansowanego.",
+        "platform": "Lekcje odbywają się na wideorozmowie na żywo. Link wysyłamy razem z rezerwacją, a harmonogram ustalasz z lektorem.",
         "prices": [
           {
-            "label": "One-to-one lesson",
+            "label": "Lekcja indywidualna",
             "amount": "£15",
-            "unit": "per 55 minute lesson"
+            "unit": "za lekcję 55 minut"
           },
           {
-            "label": "English through English, one-to-one",
+            "label": "Angielski po angielsku, lekcje indywidualne",
             "amount": "£20",
-            "unit": "per 55 minute lesson"
+            "unit": "za lekcję 55 minut"
           }
         ],
-        "priceNote": "You pay per lesson or in blocks agreed with the office, by bank transfer after the office confirms. Fixed packages are not published.",
+        "priceNote": "Płacisz za lekcję lub za pakiety ustalone z biurem, przelewem po potwierdzeniu przez biuro. Nie publikujemy stałych pakietów.",
         "included": [
-          "A private 55 minute live lesson with a tutor",
-          "A timetable agreed with your tutor",
-          "Bulgarian speaking tutors available, or lessons taught entirely in English at £20"
+          "Prywatna 55-minutowa lekcja na żywo z lektorem",
+          "Harmonogram ustalony z lektorem",
+          "Dostępni lektorzy mówiący po bułgarsku lub lekcje prowadzone w całości po angielsku za £20"
         ],
         "notIncluded": [
-          "Exam entry fees (we do not run tests)",
-          "Group classes: see the group courses page"
+          "Opłaty egzaminacyjne (nie przeprowadzamy testów)",
+          "Zajęcia grupowe: zobacz stronę kursów grupowych"
         ],
-        "tutor": "Your tutor is a qualified English teacher, based in the UK or teaching for our London school. Tell us your goal and we will suggest who to start with.",
+        "tutor": "Twoim lektorem jest wykwalifikowany nauczyciel angielskiego, mieszkający w Wielkiej Brytanii lub uczący w naszej londyńskiej szkole. Napisz, jaki masz cel, a zaproponujemy, od kogo zacząć.",
         "faq": [
           {
-            "q": "What is the difference between £15 and £20 lessons?",
-            "a": "The £15 lesson is a private 55 minute lesson, and Bulgarian speaking tutors are available. The £20 lesson is also 55 minutes but is taught entirely in English, for learners who want full immersion."
+            "q": "Czym różnią się lekcje za £15 i za £20?",
+            "a": "Lekcja za £15 to prywatna lekcja 55 minut, do której dostępni są lektorzy mówiący po bułgarsku. Lekcja za £20 również trwa 55 minut, ale jest prowadzona w całości po angielsku, dla osób, które chcą pełnego zanurzenia."
           },
           {
-            "q": "Can I move a lesson?",
-            "a": "You can reschedule a one-to-one lesson once, with at least 48 hours notice by email, text or phone. With less than 48 hours notice the lesson is charged."
+            "q": "Czy mogę przesunąć lekcję?",
+            "a": "Lekcję indywidualną możesz przełożyć raz, powiadamiając nas co najmniej 48 godzin wcześniej e-mailem, SMS-em lub telefonicznie. Przy krótszym wyprzedzeniu lekcja jest płatna."
           },
           {
-            "q": "How do I pay?",
-            "a": "Per lesson or in blocks agreed with the office, by bank transfer after the office confirms. We do not publish fixed packages."
+            "q": "Jak zapłacić?",
+            "a": "Za każdą lekcję lub za pakiety ustalone z biurem, przelewem po potwierdzeniu przez biuro. Nie publikujemy stałych pakietów."
           },
           {
-            "q": "Which platform do you use?",
-            "a": "A live video call. We send you the link with your booking."
+            "q": "Z jakiej platformy korzystacie?",
+            "a": "Z wideorozmowy na żywo. Link wysyłamy razem z rezerwacją."
           }
         ]
       },
       "group-courses": {
-        "name": "Group courses",
-        "summary": "A 12 week level course in a small live group, A1 to B2.",
+        "name": "Kursy grupowe",
+        "summary": "12-tygodniowy kurs poziomowy w małej grupie na żywo, od A1 do B2.",
         "goal": "everyday",
         "format": "group",
-        "metaTitle": "Online English group courses, A1 to B2",
-        "metaDescription": "A 12 week English level course in a small live group on Zoom: 72 lessons, A1 to B2, 298 pounds. Join one class free to see how we teach.",
-        "h1": "Online English group courses",
-        "lead": "A 12 week level course in a small live group on Zoom, at A1, A2, B1 or B2. Join one class free to see how we teach.",
+        "metaTitle": "Kursy grupowe angielskiego online, A1 do B2",
+        "metaDescription": "12-tygodniowy kurs poziomowy w małej grupie na Zoomie: 72 lekcje, A1 do B2, 298 funtów. Dołącz do jednych zajęć za darmo, by zobaczyć, jak uczymy.",
+        "h1": "Kursy grupowe angielskiego online",
+        "lead": "12-tygodniowy kurs poziomowy w małej grupie na żywo na Zoomie, na poziomie A1, A2, B1 lub B2. Dołącz do jednych zajęć za darmo, by zobaczyć, jak uczymy.",
         "who": [
-          "Learners who like the structure and company of a group",
-          "People who want a clear level course with assessments",
-          "Friends or colleagues who want to learn together"
+          "Osoby, które cenią strukturę i towarzystwo grupy",
+          "Osoby, które chcą jasnego kursu poziomowego ze sprawdzianami",
+          "Znajomi lub współpracownicy, którzy chcą uczyć się razem"
         ],
         "lesson": [
-          "The course is 72 lessons over 12 weeks, in a small live group of no more than 12. You practise the four skills and work on grammar and vocabulary, with assessments along the way.",
-          "A group runs when enough learners have booked. If a group does not run, your deposit is refunded or moved."
+          "Kurs to 72 lekcje w 12 tygodni, w małej grupie na żywo liczącej najwyżej 12 osób. Ćwiczysz cztery umiejętności i pracujesz nad gramatyką i słownictwem, ze sprawdzianami po drodze.",
+          "Grupa rusza, gdy zapisze się wystarczająca liczba osób. Jeśli grupa nie ruszy, depozyt zostanie zwrócony lub przeniesiony."
         ],
-        "levels": "A1, A2, B1 and B2. One level course takes 12 weeks.",
-        "platform": "Group lessons run live on Zoom.",
+        "levels": "A1, A2, B1 i B2. Jeden kurs poziomowy trwa 12 tygodni.",
+        "platform": "Lekcje grupowe odbywają się na żywo na Zoomie.",
         "prices": [
           {
-            "label": "Online group course",
+            "label": "Kurs grupowy online",
             "amount": "£298",
-            "unit": "per level course"
+            "unit": "za kurs poziomowy"
           }
         ],
-        "priceNote": "A £50 deposit secures your place and is part of the £298. The balance of £248 is paid in two parts: £124 at the start and £124 at the third lesson. The deposit is not refundable but can be moved to another group of the same course and level.",
+        "priceNote": "Depozyt £50 zabezpiecza Twoje miejsce i wchodzi w skład £298. Pozostałe £248 płacisz w dwóch ratach: £124 na początku i £124 na trzeciej lekcji. Depozyt nie podlega zwrotowi, ale można go przenieść do innej grupy tego samego kursu i poziomu.",
         "included": [
-          "72 lessons over 12 weeks in a small live group",
-          "Four skills, grammar and vocabulary",
-          "Assessments during the course"
+          "72 lekcje w 12 tygodni w małej grupie na żywo",
+          "Cztery umiejętności, gramatyka i słownictwo",
+          "Sprawdziany w trakcie kursu"
         ],
         "notIncluded": [
-          "Exam entry fees (we do not run tests)",
-          "Individual timetables: for those, choose one-to-one lessons"
+          "Opłaty egzaminacyjne (nie przeprowadzamy testów)",
+          "Indywidualne harmonogramy: w tym celu wybierz lekcje indywidualne"
         ],
-        "tutor": "Groups are taught by qualified English teachers. See the tutors page for their qualifications.",
+        "tutor": "Grupy uczą wykwalifikowani nauczyciele angielskiego. Ich kwalifikacje znajdziesz na stronie lektorów.",
         "faq": [
           {
-            "q": "How many people are in a group?",
-            "a": "No more than 12."
+            "q": "Ile osób jest w grupie?",
+            "a": "Najwyżej 12."
           },
           {
-            "q": "How do the payments work?",
-            "a": "A £50 deposit when you book, then £124 at the start and £124 at the third lesson. The deposit is part of the £298."
+            "q": "Jak wyglądają płatności?",
+            "a": "Depozyt £50 przy rezerwacji, potem £124 na początku i £124 na trzeciej lekcji. Depozyt wchodzi w skład £298."
           },
           {
-            "q": "Can I see a class first?",
-            "a": "Yes. You can join one live class free of charge to see how we teach."
+            "q": "Czy mogę najpierw zobaczyć zajęcia?",
+            "a": "Tak. Możesz dołączyć do jednych zajęć na żywo za darmo, by zobaczyć, jak uczymy."
           },
           {
-            "q": "What if I book with a friend?",
-            "a": "Two people booking together get 20% off the level, and three get one module free."
+            "q": "A jeśli zapiszę się ze znajomym?",
+            "a": "Dwie osoby zapisujące się razem dostają 20% zniżki na poziom, a trzy osoby dostają jeden moduł za darmo."
           },
           {
-            "q": "What if my course is postponed?",
-            "a": "A postponed course must be finished within the year it started, and a course cannot be postponed twice."
+            "q": "Co, jeśli mój kurs zostanie odroczony?",
+            "a": "Odroczony kurs trzeba ukończyć w ciągu roku, w którym się rozpoczął, i nie można go odroczyć dwa razy."
           }
         ]
       },
       "business-english": {
-        "name": "Business English",
-        "summary": "One-to-one lessons for work, interviews and workplace communication.",
+        "name": "Angielski biznesowy",
+        "summary": "Lekcje indywidualne do pracy, rozmów kwalifikacyjnych i komunikacji w miejscu pracy.",
         "goal": "interview",
         "format": "one-to-one",
-        "metaTitle": "Business English lessons online",
-        "metaDescription": "One-to-one online English lessons for work, job interviews and workplace communication, including care work. From 15 pounds per 55 minutes.",
-        "h1": "Business English lessons online",
-        "lead": "One-to-one lessons focused on work: interviews, meetings and the English you use on the job, including care work.",
+        "metaTitle": "Lekcje angielskiego biznesowego online",
+        "metaDescription": "Indywidualne lekcje angielskiego online do pracy, rozmów kwalifikacyjnych i komunikacji w miejscu pracy, także w opiece. Od 15 funtów za 55 minut.",
+        "h1": "Lekcje angielskiego biznesowego online",
+        "lead": "Lekcje indywidualne skupione na pracy: rozmowy kwalifikacyjne, spotkania i angielski, którego używasz na stanowisku, także w opiece.",
         "who": [
-          "Professionals with a job interview booked",
-          "People who use English at work and want to sound clearer",
-          "Care workers and their employers who want better communication on shift"
+          "Specjaliści z umówioną rozmową kwalifikacyjną",
+          "Osoby, które używają angielskiego w pracy i chcą mówić wyraźniej",
+          "Opiekunowie i ich pracodawcy, którzy chcą lepszej komunikacji na zmianie"
         ],
         "lesson": [
-          "Each lesson is a private 55 minute session with your tutor on a live video call. The focus is workplace English, shaped by what you actually need to do: an interview, a meeting, a conversation with a client or a handover.",
-          "Tell us what your job involves and any date that matters, and we will suggest a tutor and a first lesson."
+          "Każda lekcja to prywatne spotkanie 55 minut z lektorem na wideorozmowie na żywo. Skupiamy się na angielskim w pracy, dopasowanym do tego, co faktycznie masz zrobić: rozmowa kwalifikacyjna, spotkanie, rozmowa z klientem lub przekazanie zmiany.",
+          "Napisz, na czym polega Twoja praca i jaka data jest ważna, a zaproponujemy lektora i pierwszą lekcję."
         ],
-        "levels": "Any level.",
-        "platform": "Lessons run on a live video call. We send you the link with your booking, and the timetable is agreed with your tutor.",
+        "levels": "Każdy poziom.",
+        "platform": "Lekcje odbywają się na wideorozmowie na żywo. Link wysyłamy razem z rezerwacją, a harmonogram ustalasz z lektorem.",
         "prices": [
           {
-            "label": "One-to-one lesson",
+            "label": "Lekcja indywidualna",
             "amount": "£15",
-            "unit": "per 55 minute lesson"
+            "unit": "za lekcję 55 minut"
           },
           {
-            "label": "English through English, one-to-one",
+            "label": "Angielski po angielsku, lekcje indywidualne",
             "amount": "£20",
-            "unit": "per 55 minute lesson"
+            "unit": "za lekcję 55 minut"
           }
         ],
-        "priceNote": "Business English is taught as one-to-one lessons at the prices above. You pay per lesson or in blocks agreed with the office, by bank transfer.",
+        "priceNote": "Angielski biznesowy prowadzimy jako lekcje indywidualne w podanych wyżej cenach. Płacisz za lekcję lub za pakiety ustalone z biurem, przelewem.",
         "included": [
-          "Private 55 minute live lessons focused on your work",
-          "A timetable agreed with your tutor",
-          "Bulgarian speaking tutors available"
+          "Prywatne 55-minutowe lekcje na żywo, skupione na Twojej pracy",
+          "Harmonogram ustalony z lektorem",
+          "Dostępni lektorzy mówiący po bułgarsku"
         ],
         "notIncluded": [
-          "Exam entry fees (we do not run tests)",
-          "A separate Business English course: lessons are one-to-one"
+          "Opłaty egzaminacyjne (nie przeprowadzamy testów)",
+          "Osobny kurs angielskiego biznesowego: lekcje są indywidualne"
         ],
-        "tutor": "Your tutor is a qualified English teacher, based in the UK or teaching for our London school.",
+        "tutor": "Twoim lektorem jest wykwalifikowany nauczyciel angielskiego, mieszkający w Wielkiej Brytanii lub uczący w naszej londyńskiej szkole.",
         "faq": [
           {
-            "q": "I have an interview next week. Is that enough time?",
-            "a": "Tell us the date when you enquire. We will suggest what lessons are possible before it. We cannot promise a result, but a tutor can help you practise."
+            "q": "Mam rozmowę kwalifikacyjną w przyszłym tygodniu. Czy to wystarczająco dużo czasu?",
+            "a": "Podaj datę, gdy do nas piszesz. Zaproponujemy, jakie lekcje są możliwe przed nią. Nie możemy obiecać wyniku, ale lektor pomoże Ci poćwiczyć."
           },
           {
-            "q": "Can my employer arrange lessons for staff?",
-            "a": "Yes, you can enquire for staff. Tell us what communication your team needs and how many people, and the office will reply."
+            "q": "Czy pracodawca może zorganizować lekcje dla pracowników?",
+            "a": "Tak, możesz zapytać o lekcje dla pracowników. Napisz, jakiej komunikacji potrzebuje Twój zespół i ile osób, a biuro odpowie."
           },
           {
-            "q": "Do you teach care work English?",
-            "a": "Our business lessons cover workplace communication, including care work. Tell us what situations you need to handle."
+            "q": "Czy uczycie angielskiego do pracy w opiece?",
+            "a": "Nasze lekcje biznesowe obejmują komunikację w miejscu pracy, także w opiece. Napisz, z jakimi sytuacjami musisz sobie radzić."
           },
           {
-            "q": "What does it cost?",
-            "a": "£15 per 55 minute lesson, or £20 if you want the lesson taught entirely in English."
+            "q": "Ile to kosztuje?",
+            "a": "£15 za lekcję 55 minut lub £20, jeśli chcesz, by lekcja była prowadzona w całości po angielsku."
           }
         ]
       },
       "ielts": {
         "name": "IELTS",
-        "summary": "Exam preparation, or one-to-one lessons, for IELTS.",
+        "summary": "Przygotowanie do egzaminu lub lekcje indywidualne do IELTS.",
         "goal": "ielts",
         "format": "not-sure",
-        "metaTitle": "IELTS preparation lessons online",
-        "metaDescription": "IELTS preparation online with real tutors: 24 hours of exam preparation for 320 pounds, or one-to-one lessons from 15 pounds. Exam fees are separate.",
-        "h1": "IELTS preparation online",
-        "lead": "Preparation for IELTS with real tutors, as a 24 hour exam preparation course or as one-to-one lessons built around your target score.",
+        "metaTitle": "Przygotowanie do IELTS online",
+        "metaDescription": "Przygotowanie do IELTS online z prawdziwymi lektorami: 24 godziny zajęć za 320 funtów lub lekcje indywidualne od 15 funtów. Opłaty egzaminacyjne osobno.",
+        "h1": "Przygotowanie do IELTS online",
+        "lead": "Przygotowanie do IELTS z prawdziwymi lektorami, jako 24-godzinny kurs przygotowujący do egzaminu lub lekcje indywidualne zbudowane wokół Twojego docelowego wyniku.",
         "who": [
-          "Applicants whose university or job offer asks for an IELTS score",
-          "Learners resitting IELTS who want to work on specific weak areas",
-          "Nurses and other professionals choosing between IELTS and OET"
+          "Kandydaci, których uczelnia lub pracodawca wymaga wyniku IELTS",
+          "Osoby zdające IELTS ponownie, które chcą popracować nad konkretnymi słabymi stronami",
+          "Pielęgniarki i inni specjaliści wybierający między IELTS a OET"
         ],
         "lesson": [
-          "Exam preparation is 24 hours of tuition, usually over six to eight weeks. One-to-one lessons are private 55 minute sessions that you can shape around the parts of the test you find hardest.",
-          "Tell us your test date and the score you need, and we will suggest which format makes sense."
+          "Przygotowanie do egzaminu to 24 godziny zajęć, zwykle w ciągu sześciu do ośmiu tygodni. Lekcje indywidualne to prywatne spotkania po 55 minut, które możesz dopasować do części testu sprawiających Ci najwięcej trudności.",
+          "Napisz, kiedy masz test i jaki wynik jest Ci potrzebny, a zaproponujemy, która forma ma sens."
         ],
-        "levels": "Tell us your current level, or take the placement test. We will suggest where to start.",
-        "platform": "Lessons run on a live video call. We send you the link with your booking.",
+        "levels": "Napisz, jaki masz obecnie poziom, lub zrób test poziomujący. Zaproponujemy, od czego zacząć.",
+        "platform": "Lekcje odbywają się na wideorozmowie na żywo. Link wysyłamy razem z rezerwacją.",
         "prices": [
           {
-            "label": "Exam preparation",
+            "label": "Przygotowanie do egzaminu",
             "amount": "£320",
-            "unit": "for 24 hours of tuition"
+            "unit": "za 24 godziny zajęć"
           },
           {
-            "label": "One-to-one lesson",
+            "label": "Lekcja indywidualna",
             "amount": "£15",
-            "unit": "per 55 minute lesson"
+            "unit": "za lekcję 55 minut"
           },
           {
-            "label": "English through English, one-to-one",
+            "label": "Angielski po angielsku, lekcje indywidualne",
             "amount": "£20",
-            "unit": "per 55 minute lesson"
+            "unit": "za lekcję 55 minut"
           }
         ],
-        "priceNote": "Payment is by bank transfer after the office confirms. Exam entry fees are separate and are paid to the exam body.",
+        "priceNote": "Płatność przelewem po potwierdzeniu przez biuro. Opłaty egzaminacyjne są osobne i płaci się je organizatorowi egzaminu.",
         "included": [
-          "24 hours of exam preparation tuition, or private 55 minute lessons",
-          "A tutor who knows your target and your test date",
-          "Lessons on a live video call"
+          "24 godziny zajęć przygotowujących do egzaminu lub prywatne lekcje po 55 minut",
+          "Lektor, który zna Twój cel i datę testu",
+          "Lekcje na wideorozmowie na żywo"
         ],
         "notIncluded": [
-          "The exam entry fee, which you pay to the exam body",
-          "The test itself: we teach and prepare, we do not run tests"
+          "Opłata egzaminacyjna, którą płacisz organizatorowi egzaminu",
+          "Sam test: uczymy i przygotowujemy, nie przeprowadzamy testów"
         ],
-        "tutor": "Your tutor is a qualified English teacher, based in the UK or teaching for our London school. We cannot promise a result in the exam.",
+        "tutor": "Twoim lektorem jest wykwalifikowany nauczyciel angielskiego, mieszkający w Wielkiej Brytanii lub uczący w naszej londyńskiej szkole. Nie możemy obiecać wyniku na egzaminie.",
         "faq": [
           {
-            "q": "How much is IELTS preparation?",
-            "a": "Exam preparation is £320 for 24 hours of tuition, usually over six to eight weeks. One-to-one lessons are £15 per 55 minute lesson."
+            "q": "Ile kosztuje przygotowanie do IELTS?",
+            "a": "Przygotowanie do egzaminu kosztuje £320 za 24 godziny zajęć, zwykle w ciągu sześciu do ośmiu tygodni. Lekcje indywidualne kosztują £15 za lekcję 55 minut."
           },
           {
-            "q": "Does the price include the exam?",
-            "a": "No. Exam entry fees are separate and are paid to the exam body. We do not run tests."
+            "q": "Czy cena obejmuje egzamin?",
+            "a": "Nie. Opłaty egzaminacyjne są osobne i płaci się je organizatorowi egzaminu. Nie przeprowadzamy testów."
           },
           {
-            "q": "Can you promise the score I need?",
-            "a": "No. Your result depends on your work and on the test. We can teach and prepare you, and tell you honestly what to practise."
+            "q": "Czy możecie obiecać wynik, którego potrzebuję?",
+            "a": "Nie. Twój wynik zależy od Twojej pracy i od samego testu. Możemy Cię uczyć i przygotowywać oraz szczerze powiedzieć, co ćwiczyć."
           },
           {
-            "q": "I am a nurse. Should I choose IELTS or OET?",
-            "a": "That depends on what your regulator accepts, so check with them first. See our OET page for lessons built around the OET sub-tests and your profession."
+            "q": "Jestem pielęgniarką lub pielęgniarzem. IELTS czy OET?",
+            "a": "To zależy od tego, co akceptuje Twój organ rejestrujący, więc najpierw sprawdź to u nich. Na stronie OET znajdziesz lekcje zbudowane wokół części testu OET i Twojego zawodu."
           }
         ]
       },
       "selt-b1": {
-        "name": "B1 test preparation",
-        "summary": "One-to-one lessons for a B1 speaking and listening test.",
+        "name": "Przygotowanie do testu B1",
+        "summary": "Lekcje indywidualne do testu B1 z mówienia i słuchania.",
         "goal": "selt-b1",
         "format": "one-to-one",
-        "metaTitle": "B1 speaking and listening test lessons",
-        "metaDescription": "One-to-one online lessons to prepare for a B1 speaking and listening test for settlement or citizenship. We do not run the test. From 15 pounds.",
-        "h1": "B1 speaking and listening test preparation",
-        "lead": "One-to-one lessons with a tutor who prepares you for the speaking and listening format of a B1 test, such as Trinity GESE Grade 5 or an approved equivalent.",
-        "notice": "We do not run the test. You book the test separately with an approved provider, and you must check your own visa or settlement route on gov.uk to see which test you need.",
+        "metaTitle": "Lekcje do testu B1 z mówienia i słuchania",
+        "metaDescription": "Indywidualne lekcje online przygotowujące do testu B1 z mówienia i słuchania do pobytu stałego lub obywatelstwa. Nie przeprowadzamy testu. Od 15 funtów.",
+        "h1": "Przygotowanie do testu B1 z mówienia i słuchania",
+        "lead": "Lekcje indywidualne z lektorem, który przygotowuje Cię do formatu mówienia i słuchania testu B1, takiego jak Trinity GESE Grade 5 lub zatwierdzony odpowiednik.",
+        "notice": "Nie przeprowadzamy testu. Test rezerwujesz osobno u zatwierdzonego organizatora, a swoją ścieżkę wizową lub pobytową musisz sprawdzić na gov.uk, aby wiedzieć, jakiego testu potrzebujesz.",
         "who": [
-          "Applicants for settlement or citizenship who need to show B1 speaking and listening",
-          "Applicants whose route asks for B1 English",
-          "Learners who have a test date and want to practise speaking with a tutor"
+          "Osoby ubiegające się o pobyt stały lub obywatelstwo, które muszą wykazać znajomość B1 w mówieniu i słuchaniu",
+          "Osoby, których ścieżka wymaga angielskiego na poziomie B1",
+          "Osoby z umówionym terminem testu, które chcą poćwiczyć mówienie z lektorem"
         ],
         "lesson": [
-          "Each lesson is a private 55 minute session on a live video call. Your tutor prepares you for the speaking and listening format, so you know what to expect and can practise.",
-          "Check which test your route needs before you book the test. If you are not sure whether B1 is right for you, tell us and we will point you to gov.uk."
+          "Każda lekcja to prywatne spotkanie 55 minut na wideorozmowie na żywo. Lektor przygotowuje Cię do formatu mówienia i słuchania, dzięki czemu wiesz, czego się spodziewać, i możesz poćwiczyć.",
+          "Zanim zarezerwujesz test, sprawdź, jakiego testu wymaga Twoja ścieżka. Jeśli nie masz pewności, czy B1 jest dla Ciebie właściwe, napisz do nas, a wskażemy Ci gov.uk."
         ],
-        "levels": "Preparation for B1. Take the placement test if you want a rough idea of where you are now.",
-        "platform": "Lessons run on a live video call. We send you the link with your booking, and the timetable is agreed with your tutor.",
+        "levels": "Przygotowanie do B1. Zrób test poziomujący, jeśli chcesz orientacyjnie wiedzieć, gdzie jesteś teraz.",
+        "platform": "Lekcje odbywają się na wideorozmowie na żywo. Link wysyłamy razem z rezerwacją, a harmonogram ustalasz z lektorem.",
         "prices": [
           {
-            "label": "One-to-one lesson",
+            "label": "Lekcja indywidualna",
             "amount": "£15",
-            "unit": "per 55 minute lesson"
+            "unit": "za lekcję 55 minut"
           },
           {
-            "label": "English through English, one-to-one",
+            "label": "Angielski po angielsku, lekcje indywidualne",
             "amount": "£20",
-            "unit": "per 55 minute lesson"
+            "unit": "za lekcję 55 minut"
           }
         ],
-        "priceNote": "You pay per lesson or in blocks agreed with the office, by bank transfer after the office confirms.",
+        "priceNote": "Płacisz za lekcję lub za pakiety ustalone z biurem, przelewem po potwierdzeniu przez biuro.",
         "included": [
-          "Private 55 minute lessons preparing you for the speaking and listening format",
-          "A timetable agreed with your tutor",
-          "Bulgarian speaking tutors available"
+          "Prywatne lekcje po 55 minut, przygotowujące do formatu mówienia i słuchania",
+          "Harmonogram ustalony z lektorem",
+          "Dostępni lektorzy mówiący po bułgarsku"
         ],
         "notIncluded": [
-          "The test itself: we do not run it, and it is booked separately with an approved provider",
-          "The test fee, which you pay to the test provider",
-          "Immigration advice: check your own route on gov.uk"
+          "Sam test: nie przeprowadzamy go, a rezerwuje się go osobno u zatwierdzonego organizatora",
+          "Opłata za test, którą płacisz organizatorowi testu",
+          "Porady imigracyjne: swoją ścieżkę sprawdź na gov.uk"
         ],
-        "tutor": "Your tutor is a qualified English teacher, based in the UK or teaching for our London school. Tutors prepare you for the speaking and listening format. We cannot promise a result in the test.",
+        "tutor": "Twoim lektorem jest wykwalifikowany nauczyciel angielskiego, mieszkający w Wielkiej Brytanii lub uczący w naszej londyńskiej szkole. Lektorzy przygotowują Cię do formatu mówienia i słuchania. Nie możemy obiecać wyniku w teście.",
         "faq": [
           {
-            "q": "Do you run the B1 test?",
-            "a": "No. You book the test separately with an approved provider. We prepare you with lessons."
+            "q": "Czy przeprowadzacie test B1?",
+            "a": "Nie. Test rezerwujesz osobno u zatwierdzonego organizatora. My przygotowujemy Cię lekcjami."
           },
           {
-            "q": "Which test do I need?",
-            "a": "That depends on your own route and situation. Please check gov.uk before you book anything, because we cannot advise on immigration."
+            "q": "Jakiego testu potrzebuję?",
+            "a": "To zależy od Twojej ścieżki i sytuacji. Sprawdź gov.uk, zanim cokolwiek zarezerwujesz, ponieważ nie doradzamy w sprawach imigracyjnych."
           },
           {
-            "q": "Can you promise I will pass?",
-            "a": "No. We cannot promise a result. We can help you practise speaking and listening so you know what to expect."
+            "q": "Czy możecie obiecać, że zdam?",
+            "a": "Nie. Nie możemy obiecać wyniku. Możemy pomóc Ci poćwiczyć mówienie i słuchanie, dzięki czemu wiesz, czego się spodziewać."
           },
           {
-            "q": "How much are the lessons?",
-            "a": "£15 per 55 minute lesson, or £20 if you want the lesson taught entirely in English."
+            "q": "Ile kosztują lekcje?",
+            "a": "£15 za lekcję 55 minut lub £20, jeśli chcesz, by lekcja była prowadzona w całości po angielsku."
           }
         ]
       },
       "oet": {
-        "name": "OET and IELTS for nurses",
-        "summary": "One-to-one lessons for healthcare staff preparing for OET or IELTS.",
+        "name": "OET i IELTS dla pielęgniarek",
+        "summary": "Lekcje indywidualne dla pracowników ochrony zdrowia przygotowujących się do OET lub IELTS.",
         "goal": "oet",
         "format": "one-to-one",
-        "metaTitle": "OET and IELTS lessons for nurses",
-        "metaDescription": "One-to-one online lessons for nurses and healthcare staff preparing for OET or IELTS, built around the sub-tests and your profession. From 15 pounds.",
-        "h1": "OET and IELTS lessons for nurses",
-        "lead": "One-to-one lessons for nurses and other healthcare staff preparing for OET or IELTS, built around the OET sub-tests and your profession.",
+        "metaTitle": "Lekcje OET i IELTS dla pielęgniarek",
+        "metaDescription": "Lekcje online dla pielęgniarek i pracowników ochrony zdrowia przygotowujących się do OET lub IELTS, zbudowane wokół testu i zawodu. Od 15 funtów.",
+        "h1": "Lekcje OET i IELTS dla pielęgniarek",
+        "lead": "Lekcje indywidualne dla pielęgniarek i innych pracowników ochrony zdrowia przygotowujących się do OET lub IELTS, zbudowane wokół części testu OET i Twojego zawodu.",
         "who": [
-          "Nurses retaking OET or IELTS for registration",
-          "Healthcare staff with a booked test or a registration deadline",
-          "People who want to see exactly what to practise before the next attempt"
+          "Pielęgniarki, które ponownie zdają OET lub IELTS do rejestracji",
+          "Pracownicy ochrony zdrowia z zarezerwowanym testem lub terminem rejestracji",
+          "Osoby, które chcą dokładnie wiedzieć, co ćwiczyć przed kolejnym podejściem"
         ],
         "lesson": [
-          "Each lesson is a private 55 minute session with your tutor on a live video call. Lessons are built around the OET sub-tests and your profession, so your practice looks like the work you do.",
-          "Tell us which test you are taking, the date and the result you got last time, and we will suggest a tutor and a first lesson."
+          "Każda lekcja to prywatne spotkanie 55 minut z lektorem na wideorozmowie na żywo. Lekcje są zbudowane wokół części testu OET i Twojego zawodu, więc ćwiczenia wyglądają jak praca, którą wykonujesz.",
+          "Napisz, który test zdajesz, na kiedy i jaki był Twój ostatni wynik, a zaproponujemy lektora i pierwszą lekcję."
         ],
-        "levels": "Any level. Tell us your last result or take the placement test.",
-        "platform": "Lessons run on a live video call. We send you the link with your booking, and the timetable is agreed with your tutor.",
+        "levels": "Każdy poziom. Napisz, jaki był Twój ostatni wynik, lub zrób test poziomujący.",
+        "platform": "Lekcje odbywają się na wideorozmowie na żywo. Link wysyłamy razem z rezerwacją, a harmonogram ustalasz z lektorem.",
         "prices": [
           {
-            "label": "One-to-one lesson",
+            "label": "Lekcja indywidualna",
             "amount": "£15",
-            "unit": "per 55 minute lesson"
+            "unit": "za lekcję 55 minut"
           },
           {
-            "label": "English through English, one-to-one",
+            "label": "Angielski po angielsku, lekcje indywidualne",
             "amount": "£20",
-            "unit": "per 55 minute lesson"
+            "unit": "za lekcję 55 minut"
           },
           {
-            "label": "IELTS exam preparation",
+            "label": "Przygotowanie do egzaminu IELTS",
             "amount": "£320",
-            "unit": "for 24 hours of tuition"
+            "unit": "za 24 godziny zajęć"
           }
         ],
-        "priceNote": "You pay per lesson or in blocks agreed with the office, by bank transfer after the office confirms. Exam entry fees are separate and are paid to the exam body.",
+        "priceNote": "Płacisz za lekcję lub za pakiety ustalone z biurem, przelewem po potwierdzeniu przez biuro. Opłaty egzaminacyjne są osobne i płaci się je organizatorowi egzaminu.",
         "included": [
-          "Private 55 minute lessons built around the OET sub-tests and your profession",
-          "A timetable agreed with your tutor",
-          "Bulgarian speaking tutors available"
+          "Prywatne lekcje po 55 minut, zbudowane wokół części testu OET i Twojego zawodu",
+          "Harmonogram ustalony z lektorem",
+          "Dostępni lektorzy mówiący po bułgarsku"
         ],
         "notIncluded": [
-          "The test fee, which you pay to the test provider",
-          "The test itself: we teach and prepare, we do not run tests"
+          "Opłata za test, którą płacisz organizatorowi testu",
+          "Sam test: uczymy i przygotowujemy, nie przeprowadzamy testów"
         ],
-        "tutor": "Your tutor is a qualified English teacher, based in the UK or teaching for our London school. We cannot promise a result in the test.",
+        "tutor": "Twoim lektorem jest wykwalifikowany nauczyciel angielskiego, mieszkający w Wielkiej Brytanii lub uczący w naszej londyńskiej szkole. Nie możemy obiecać wyniku w teście.",
         "faq": [
           {
-            "q": "Do you run OET or IELTS?",
-            "a": "No. You book the test with the test provider. We prepare you with lessons."
+            "q": "Czy przeprowadzacie OET lub IELTS?",
+            "a": "Nie. Test rezerwujesz u organizatora testu. My przygotowujemy Cię lekcjami."
           },
           {
-            "q": "Which test should I take?",
-            "a": "Check what your regulator accepts before you book. Once you know, tell us which test and the date, and we will plan the lessons."
+            "q": "Który test mam zdawać?",
+            "a": "Zanim zarezerwujesz, sprawdź, co akceptuje Twój organ rejestrujący. Gdy już będziesz wiedzieć, napisz, który test i kiedy, a zaplanujemy lekcje."
           },
           {
-            "q": "How much do lessons cost?",
-            "a": "£15 per 55 minute lesson, or £20 if the lesson is taught entirely in English. IELTS exam preparation is £320 for 24 hours."
+            "q": "Ile kosztują lekcje?",
+            "a": "£15 za lekcję 55 minut lub £20, jeśli lekcja jest prowadzona w całości po angielsku. Przygotowanie do egzaminu IELTS kosztuje £320 za 24 godziny."
           },
           {
-            "q": "I work shifts. Can I fit lessons around them?",
-            "a": "One-to-one lessons are timetabled with your tutor. Tell us your shift pattern in the enquiry and we will suggest times."
+            "q": "Pracuję na zmiany. Czy dopasujecie lekcje do nich?",
+            "a": "Lekcje indywidualne są ustalane z lektorem. Opisz w zapytaniu swój grafik zmian, a zaproponujemy terminy."
           }
         ]
       },
       "kids": {
-        "name": "English for children",
-        "summary": "One-to-one online lessons for school age children.",
+        "name": "Angielski dla dzieci",
+        "summary": "Indywidualne lekcje online dla dzieci w wieku szkolnym.",
         "goal": "kids",
         "format": "one-to-one",
-        "metaTitle": "English lessons online for children",
-        "metaDescription": "One-to-one online English lessons for school age children with a real tutor. A parent or carer is present or nearby. From 15 pounds per lesson.",
-        "h1": "English lessons online for children",
-        "lead": "One-to-one online lessons for school age children, with a tutor who builds the lesson around what your child needs.",
+        "metaTitle": "Lekcje angielskiego online dla dzieci",
+        "metaDescription": "Indywidualne lekcje angielskiego online dla dzieci w wieku szkolnym z prawdziwym lektorem. Rodzic lub opiekun jest w pobliżu. Od 15 funtów za lekcję.",
+        "h1": "Lekcje angielskiego online dla dzieci",
+        "lead": "Indywidualne lekcje online dla dzieci w wieku szkolnym, z lektorem, który buduje lekcję wokół tego, czego potrzebuje Twoje dziecko.",
         "who": [
-          "Parents who want extra English support for a school age child",
-          "Families acting on feedback from school",
-          "Children who learn better one to one than in a large class"
+          "Rodzice, którzy chcą dodatkowego wsparcia z angielskiego dla dziecka w wieku szkolnym",
+          "Rodziny, które reagują na uwagi ze szkoły",
+          "Dzieci, które lepiej uczą się indywidualnie niż w dużej klasie"
         ],
         "lesson": [
-          "Each lesson is a private 55 minute session on a live video call. Our teachers teach children and adults, and the lesson is planned around your child's needs.",
-          "A parent or carer is present or nearby during the lesson."
+          "Każda lekcja to prywatne spotkanie 55 minut na wideorozmowie na żywo. Nasi nauczyciele uczą dzieci i dorosłych, a lekcja jest zaplanowana wokół potrzeb Twojego dziecka.",
+          "Podczas lekcji rodzic lub opiekun jest obecny lub w pobliżu."
         ],
-        "levels": "Any level. Tell us what your child's school has said and how they feel about English, and we will suggest a tutor.",
-        "platform": "Lessons run on a live video call. We send you the link with your booking, and the timetable is agreed with the tutor.",
+        "levels": "Każdy poziom. Napisz, co powiedziała szkoła i jak dziecko czuje się z angielskim, a zaproponujemy lektora.",
+        "platform": "Lekcje odbywają się na wideorozmowie na żywo. Link wysyłamy razem z rezerwacją, a harmonogram ustalany jest z lektorem.",
         "prices": [
           {
-            "label": "One-to-one lesson",
+            "label": "Lekcja indywidualna",
             "amount": "£15",
-            "unit": "per 55 minute lesson"
+            "unit": "za lekcję 55 minut"
           },
           {
-            "label": "English through English, one-to-one",
+            "label": "Angielski po angielsku, lekcje indywidualne",
             "amount": "£20",
-            "unit": "per 55 minute lesson"
+            "unit": "za lekcję 55 minut"
           }
         ],
-        "priceNote": "You pay per lesson or in blocks agreed with the office, by bank transfer after the office confirms.",
+        "priceNote": "Płacisz za lekcję lub za pakiety ustalone z biurem, przelewem po potwierdzeniu przez biuro.",
         "included": [
-          "Private 55 minute live lessons for your child",
-          "A timetable agreed with the tutor",
-          "Bulgarian speaking tutors available"
+          "Prywatne 55-minutowe lekcje na żywo dla Twojego dziecka",
+          "Harmonogram ustalony z lektorem",
+          "Dostępni lektorzy mówiący po bułgarsku"
         ],
         "notIncluded": [
-          "Exam entry fees (we do not run tests)",
-          "Classroom lessons in London: visit ucraya.co.uk"
+          "Opłaty egzaminacyjne (nie przeprowadzamy testów)",
+          "Zajęcia stacjonarne w Londynie: odwiedź ucraya.co.uk"
         ],
-        "tutor": "Our teachers teach children and adults. Tell us about your child and we will suggest a tutor to start with.",
+        "tutor": "Nasi nauczyciele uczą dzieci i dorosłych. Opowiedz nam o swoim dziecku, a zaproponujemy lektora na początek.",
         "faq": [
           {
-            "q": "Does a parent need to be there?",
-            "a": "A parent or carer is present or nearby during the lesson."
+            "q": "Czy rodzic musi być obecny?",
+            "a": "Podczas lekcji rodzic lub opiekun jest obecny lub w pobliżu."
           },
           {
-            "q": "How long is a lesson?",
-            "a": "55 minutes, one to one with a tutor on a live video call."
+            "q": "Jak długo trwa lekcja?",
+            "a": "55 minut, indywidualnie z lektorem na wideorozmowie na żywo."
           },
           {
-            "q": "How much does it cost?",
-            "a": "£15 per lesson, or £20 if the lesson is taught entirely in English."
+            "q": "Ile to kosztuje?",
+            "a": "£15 za lekcję lub £20, jeśli lekcja jest prowadzona w całości po angielsku."
           },
           {
-            "q": "Can we move a lesson?",
-            "a": "You can reschedule once, with at least 48 hours notice by email, text or phone. With less notice the lesson is charged."
+            "q": "Czy możemy przesunąć lekcję?",
+            "a": "Możesz przełożyć lekcję raz, powiadamiając nas co najmniej 48 godzin wcześniej e-mailem, SMS-em lub telefonicznie. Przy krótszym wyprzedzeniu lekcja jest płatna."
           }
         ]
       }
     }
   },
   "pricing": {
-    "h1": "Prices for online English lessons",
-    "lead": "Four ways to learn, with the prices in full. There is no checkout: the office confirms your place, then you pay by bank transfer.",
-    "tableCaption": "Prices of the four products",
+    "h1": "Cennik lekcji angielskiego online",
+    "lead": "Cztery sposoby nauki, z pełnymi cenami. Nie ma koszyka: biuro potwierdza Twoje miejsce, a potem płacisz przelewem.",
+    "tableCaption": "Ceny czterech ofert",
     "tableHead": {
-      "product": "Product",
-      "what": "What you get",
-      "price": "Price"
+      "product": "Oferta",
+      "what": "Co dostajesz",
+      "price": "Cena"
     },
     "payment": {
-      "title": "How payment works",
+      "title": "Jak działa płatność",
       "items": [
-        "Send an enquiry. The office replies by email with a tutor and a first lesson to suggest.",
-        "When you are happy, the office confirms your place and sends the bank details with your booking confirmation.",
-        "You pay by bank transfer. We do not take card payments on the site, and we never ask for card details."
+        "Wyślij zapytanie. Biuro odpowie e-mailem, proponując lektora i pierwszą lekcję.",
+        "Gdy wszystko Ci odpowiada, biuro potwierdzi Twoje miejsce i prześle dane do przelewu razem z potwierdzeniem rezerwacji.",
+        "Płacisz przelewem. Na stronie nie przyjmujemy płatności kartą i nigdy nie prosimy o dane karty."
       ]
     },
     "groupPay": {
-      "title": "Group courses: deposit and instalments",
-      "text": "A £50 deposit secures your place and is part of the £298. The balance of £248 is paid in two parts: £124 at the start of the course and £124 at the third lesson. The deposit is not refundable but can be moved to another group of the same course and level. If a group does not run, the deposit is refunded or moved."
+      "title": "Kursy grupowe: depozyt i raty",
+      "text": "Depozyt £50 zabezpiecza Twoje miejsce i wchodzi w skład £298. Pozostałe £248 płacisz w dwóch ratach: £124 na początku kursu i £124 na trzeciej lekcji. Depozyt nie podlega zwrotowi, ale można go przenieść do innej grupy tego samego kursu i poziomu. Jeśli grupa nie ruszy, depozyt zostanie zwrócony lub przeniesiony."
     },
     "oneToOnePay": {
-      "title": "One-to-one lessons: how you pay",
-      "text": "You pay per lesson or in blocks agreed with the office. We do not publish fixed packages."
+      "title": "Lekcje indywidualne: jak płacisz",
+      "text": "Płacisz za każdą lekcję lub za pakiety ustalone z biurem. Nie publikujemy stałych pakietów."
     },
     "cancel": {
-      "title": "Rescheduling and cancellation",
+      "title": "Zmiana terminu i rezygnacja",
       "items": [
-        "You can reschedule a one-to-one lesson once, with at least 48 hours notice by email, text or phone.",
-        "With less than 48 hours notice, the lesson is charged.",
-        "A postponed course must be finished within the year it started, and a course cannot be postponed twice.",
-        "Illness is considered case by case, and we answer within ten working days."
+        "Lekcję indywidualną możesz przełożyć raz, powiadamiając nas co najmniej 48 godzin wcześniej e-mailem, SMS-em lub telefonicznie.",
+        "Przy krótszym wyprzedzeniu niż 48 godzin lekcja jest płatna.",
+        "Odroczony kurs trzeba ukończyć w ciągu roku, w którym się rozpoczął, i nie można go odroczyć dwa razy.",
+        "Chorobę rozpatrujemy indywidualnie i odpowiadamy w ciągu dziesięciu dni roboczych."
       ],
-      "more": "Read the full terms"
+      "more": "Przeczytaj pełny regulamin"
     },
     "referral": {
-      "title": "Bring a friend",
-      "text": "Bring a friend to one-to-one lessons and you both get free lessons: 2 free lessons for 1 friend, 4 for 2 friends and 6 for 3 friends. Your friend studies for at least two months with two lessons a week. For group courses, two people booking together get 20% off the level, and three get one module free."
+      "title": "Przyprowadź znajomego",
+      "text": "Przyprowadź znajomego na lekcje indywidualne, a oboje dostaniecie darmowe lekcje: 2 darmowe lekcje za 1 znajomego, 4 za 2 znajomych i 6 za 3 znajomych. Znajomy uczy się co najmniej dwa miesiące, z dwiema lekcjami tygodniowo. Przy kursach grupowych dwie osoby zapisujące się razem dostają 20% zniżki na poziom, a trzy osoby dostają jeden moduł za darmo."
     },
-    "extra": "Exam entry fees are separate and are paid to the exam body. We do not run tests.",
+    "extra": "Opłaty egzaminacyjne są osobne i płaci się je organizatorowi egzaminu. Nie przeprowadzamy testów.",
     "faq": {
-      "title": "Questions about prices",
+      "title": "Pytania o ceny",
       "items": [
         {
-          "q": "Can I pay by card?",
-          "a": "No. Payment is by bank transfer, after the office confirms your place."
+          "q": "Czy mogę zapłacić kartą?",
+          "a": "Nie. Płatność jest przelewem, po potwierdzeniu Twojego miejsca przez biuro."
         },
         {
-          "q": "When do I get the bank details?",
-          "a": "We send them with your booking confirmation email."
+          "q": "Kiedy dostanę dane do przelewu?",
+          "a": "Wysyłamy je e-mailem z potwierdzeniem rezerwacji."
         },
         {
-          "q": "Is the group deposit refundable?",
-          "a": "The £50 deposit is not refundable, but it can be moved to another group of the same course and level. If a group does not run, it is refunded or moved."
+          "q": "Czy depozyt na grupę podlega zwrotowi?",
+          "a": "Depozyt £50 nie podlega zwrotowi, ale można go przenieść do innej grupy tego samego kursu i poziomu. Jeśli grupa nie ruszy, zostanie zwrócony lub przeniesiony."
         },
         {
-          "q": "Do prices include exam fees?",
-          "a": "No. Exam entry fees are separate and are paid to the exam body."
+          "q": "Czy ceny obejmują opłaty egzaminacyjne?",
+          "a": "Nie. Opłaty egzaminacyjne są osobne i płaci się je organizatorowi egzaminu."
         }
       ]
     }
   },
   "how": {
-    "h1": "How online lessons work",
-    "lead": "From first message to first lesson, here is every step.",
+    "h1": "Jak działają lekcje online",
+    "lead": "Od pierwszej wiadomości do pierwszej lekcji: oto każdy krok.",
     "steps": [
       {
-        "title": "Enquire",
-        "text": "Fill in the enquiry form or message us on WhatsApp. Tell us your goal, any date that matters and what you have tried before."
+        "title": "Zapytaj",
+        "text": "Wypełnij formularz zapytania lub napisz do nas na WhatsApp. Napisz, jaki masz cel, jaka data jest ważna i jak dotąd uczysz się angielskiego."
       },
       {
-        "title": "Check your level",
-        "text": "Take the placement test for a rough guide, or tell us your level. For group courses you can also join one live class free of charge. Tell us your goal and we will suggest a tutor and a first lesson."
+        "title": "Sprawdź swój poziom",
+        "text": "Zrób test poziomujący, by orientacyjnie poznać poziom, lub napisz, jaki on jest. Na kursach grupowych możesz też dołączyć do jednych zajęć na żywo za darmo. Napisz, jaki masz cel, a zaproponujemy lektora i pierwszą lekcję."
       },
       {
-        "title": "Get matched to a tutor",
-        "text": "The office replies by email with a tutor and a lesson plan to suggest, and with times that could work. Bulgarian speaking tutors are available for one-to-one lessons."
+        "title": "Poznaj swojego lektora",
+        "text": "Biuro odpowiada e-mailem, proponując lektora, plan lekcji i terminy, które mogą pasować. Do lekcji indywidualnych dostępni są lektorzy mówiący po bułgarsku."
       },
       {
-        "title": "Have your first lesson",
-        "text": "We send you the link for the live video call with your booking. Group courses run live on Zoom."
+        "title": "Odbądź pierwszą lekcję",
+        "text": "Razem z rezerwacją wysyłamy link do wideorozmowy na żywo. Kursy grupowe odbywają się na żywo na Zoomie."
       },
       {
-        "title": "Pay by bank transfer",
-        "text": "The office confirms your place and sends the bank details. You pay by bank transfer. There is no card payment on the site."
+        "title": "Zapłać przelewem",
+        "text": "Biuro potwierdza Twoje miejsce i przesyła dane do przelewu. Płacisz przelewem. Na stronie nie ma płatności kartą."
       },
       {
-        "title": "Keep going",
-        "text": "Your lessons follow your goal. If your goal or your timetable changes, tell the office and we will suggest what to do next."
+        "title": "Ucz się dalej",
+        "text": "Lekcje podążają za Twoim celem. Jeśli zmieni się cel lub harmonogram, powiedz o tym biuru, a zaproponujemy, co dalej."
       }
     ],
-    "cta": "Ready for step one?"
+    "cta": "Gotowy do pierwszego kroku?"
   },
   "trial": {
-    "h1": "Try a class free",
-    "lead": "Join one live group class free of charge to see how we teach, or ask for a level check by email.",
+    "h1": "Wypróbuj zajęcia za darmo",
+    "lead": "Dołącz do jednych zajęć grupowych na żywo za darmo, by zobaczyć, jak uczymy, lub poproś e-mailem o sprawdzenie poziomu.",
     "options": {
-      "title": "Two ways to start",
+      "title": "Dwa sposoby na start",
       "items": [
         {
-          "title": "Join one live group class",
-          "text": "See how a live class works before you decide. Send your enquiry and the office will reply with the next class that fits your level."
+          "title": "Dołącz do jednych zajęć grupowych na żywo",
+          "text": "Zobacz, jak wyglądają zajęcia na żywo, zanim się zdecydujesz. Wyślij zapytanie, a biuro odpowie, podając najbliższe zajęcia pasujące do Twojego poziomu."
         },
         {
-          "title": "Ask for a level check",
-          "text": "Not sure which level or tutor suits you? Tell us your goal and we will suggest a tutor and a first lesson. You can also take the placement test first."
+          "title": "Poproś o sprawdzenie poziomu",
+          "text": "Nie wiesz, jaki poziom lub lektor będzie dla Ciebie dobry? Napisz, jaki masz cel, a zaproponujemy lektora i pierwszą lekcję. Możesz też najpierw zrobić test poziomujący."
         }
       ]
     },
-    "formTitle": "Ask for your free class",
-    "note": "Free classes are for group courses. One-to-one lessons are charged from the first lesson."
+    "formTitle": "Poproś o darmowe zajęcia",
+    "note": "Darmowe zajęcia dotyczą kursów grupowych. Lekcje indywidualne są płatne od pierwszej lekcji."
   },
   "placement": {
-    "h1": "English placement test",
-    "lead": "Twelve short questions that give a rough idea of your level, from A1 to B2. It takes about five minutes.",
-    "guide": "This is a rough guide, not an assessment. It cannot replace a conversation with a tutor, and it does not predict a result in any exam.",
-    "instruction": "Choose one answer for each question.",
-    "questionLabel": "Question {n} of {total}",
-    "submit": "See my level",
-    "missing": "Please answer every question. You have not answered: {list}.",
-    "resultTitle": "Your estimated level",
-    "resultLevel": "Your estimated level is {level}",
-    "score": "You answered {score} of {total} correctly.",
-    "again": "Take the test again",
-    "enquire": "Enquire with this level",
-    "noscript": "The quiz needs JavaScript. You can still send us an enquiry and we will suggest a level.",
+    "h1": "Test poziomujący z angielskiego",
+    "lead": "Dwanaście krótkich pytań, które orientacyjnie pokazują Twój poziom, od A1 do B2. Zajmuje to około pięciu minut.",
+    "guide": "To orientacyjna wskazówka, a nie ocena. Nie zastąpi rozmowy z lektorem i nie przewiduje wyniku na żadnym egzaminie.",
+    "instruction": "Wybierz jedną odpowiedź na każde pytanie.",
+    "questionLabel": "Pytanie {n} z {total}",
+    "submit": "Zobacz mój poziom",
+    "missing": "Odpowiedz na każde pytanie. Brakuje odpowiedzi na: {list}.",
+    "resultTitle": "Twój szacowany poziom",
+    "resultLevel": "Twój szacowany poziom to {level}",
+    "score": "Poprawne odpowiedzi: {score} z {total}.",
+    "again": "Zrób test jeszcze raz",
+    "enquire": "Zapytaj o lekcje na tym poziomie",
+    "noscript": "Quiz wymaga JavaScriptu. Nadal możesz wysłać zapytanie, a my zaproponujemy poziom.",
     "results": {
-      "A1": "Start with the basics: simple sentences, everyday words and speaking with confidence. A tutor can build from here at your pace.",
-      "A2": "You can handle simple everyday English. The next step is longer sentences and more natural speaking.",
-      "B1": "You can manage most everyday situations. Work on fluency, a wider vocabulary and speaking with fewer pauses.",
-      "B2": "You have a solid level. Lessons can focus on accuracy, range and your specific goal, such as work or a test."
+      "A1": "Zacznij od podstaw: proste zdania, codzienne słowa i pewne mówienie. Lektor może budować od tego miejsca w Twoim tempie.",
+      "A2": "Radzisz sobie z prostym angielskim na co dzień. Kolejny krok to dłuższe zdania i bardziej naturalne mówienie.",
+      "B1": "Radzisz sobie w większości codziennych sytuacji. Popracuj nad płynnością, szerszym słownictwem i mówieniem z mniejszą liczbą przerw.",
+      "B2": "Masz solidny poziom. Lekcje mogą skupić się na poprawności, bogactwie języka i Twoim konkretnym celu, takim jak praca lub test."
     },
     "questions": [
       {
@@ -1174,251 +1174,251 @@
     ]
   },
   "tutors": {
-    "h1": "Our English tutors",
-    "lead": "The qualified English teachers behind Ucraya. Qualifications are as the tutors have shared them with us.",
-    "intro": "Our tutors are based in the UK or teach for our London school. Bulgarian speaking tutors are available for one-to-one lessons. Tell us your goal and we will suggest who to start with.",
+    "h1": "Nasi lektorzy angielskiego",
+    "lead": "Wykwalifikowani nauczyciele angielskiego z Ucraya. Kwalifikacje podajemy tak, jak podzielili się nimi z nami lektorzy.",
+    "intro": "Nasi lektorzy mieszkają w Wielkiej Brytanii lub uczą w naszej londyńskiej szkole. Do lekcji indywidualnych dostępni są lektorzy mówiący po bułgarsku. Napisz, jaki masz cel, a zaproponujemy, od kogo zacząć.",
     "mentor": "Mentor",
-    "lessonsTitle": "What one-to-one lessons are like",
-    "lessonsText": "A private 55 minute lesson on a live video call, planned around your goal: general English, work, exams or conversation. You agree the timetable with your tutor, and we send you the link with your booking.",
+    "lessonsTitle": "Jak wyglądają lekcje indywidualne",
+    "lessonsText": "Prywatna lekcja 55 minut na wideorozmowie na żywo, zaplanowana wokół Twojego celu: angielski ogólny, praca, egzaminy lub rozmowa. Harmonogram ustalasz z lektorem, a link wysyłamy razem z rezerwacją.",
     "items": [
       {
         "name": "Stefani Dimitrova",
-        "role": "Mentor",
-        "text": "BA in TEFL (University of Essex, 2014), CELTA."
+        "role": "Mentorka",
+        "text": "Licencjat z TEFL (University of Essex, 2014), CELTA."
       },
       {
         "name": "Avgustina Angelova",
         "role": "",
-        "text": "BA English Language and Ethnology, MA English Philology, qualified EFL teacher, 8+ years of teaching."
+        "text": "Licencjat z filologii angielskiej i etnologii, magisterium z filologii angielskiej, wykwalifikowana nauczycielka EFL, ponad 8 lat nauczania."
       },
       {
         "name": "Elena Petrova",
         "role": "",
-        "text": "BA Bulgarian and English Philology. Teaches children and adults."
+        "text": "Licencjat z filologii bułgarskiej i angielskiej. Uczy dzieci i dorosłych."
       },
       {
         "name": "Elitsa Georgieva",
         "role": "",
-        "text": "Degree in teaching English as a foreign language, TEFL diploma, 13 years as an English teaching trainer abroad."
+        "text": "Dyplom z nauczania angielskiego jako języka obcego, dyplom TEFL, 13 lat pracy jako trenerka nauczycieli angielskiego za granicą."
       },
       {
         "name": "Lena Vlahova",
         "role": "",
-        "text": "BA English Philology, teaching certificate (South-West University Neofit Rilski), 120 hour TEFL certificate. Has taught English online since 2018 and reports more than 15,000 online classes."
+        "text": "Licencjat z filologii angielskiej, certyfikat nauczycielski (South-West University Neofit Rilski), 120-godzinny certyfikat TEFL. Uczy angielskiego online od 2018 roku i podaje, że przeprowadziła ponad 15 000 zajęć online."
       },
       {
         "name": "Liubomira (Mira) Srebrina",
         "role": "",
-        "text": "BA in English teaching (2013), nine years teaching English as a second language."
+        "text": "Licencjat z nauczania angielskiego (2013), dziewięć lat nauczania angielskiego jako drugiego języka."
       },
       {
         "name": "Maria Naldzhieva",
         "role": "",
-        "text": "BA English Philology, MA Translation and Contemporary English Literature."
+        "text": "Licencjat z filologii angielskiej, magisterium z przekładu i współczesnej literatury angielskiej."
       },
       {
         "name": "Stella Atanasova",
         "role": "",
-        "text": "BA English translation and ethnology, MA in teaching. Lived in the USA and England for five years."
+        "text": "Licencjat z przekładu angielskiego i etnologii, magisterium z dydaktyki. Mieszkała w USA i Anglii przez pięć lat."
       },
       {
         "name": "Vyara Yordanova",
         "role": "",
-        "text": "English philology graduate (2003), further teaching method qualifications, 21+ years of teaching."
+        "text": "Absolwentka filologii angielskiej (2003), dalsze kwalifikacje z metodyki nauczania, ponad 21 lat nauczania."
       },
       {
         "name": "Angelina Meshekusheva",
         "role": "",
-        "text": "BA Applied Linguistics, 4+ years of teaching English."
+        "text": "Licencjat z lingwistyki stosowanej, ponad 4 lata nauczania angielskiego."
       },
       {
         "name": "Lili Dimitrova",
         "role": "",
-        "text": "Graduate of the University of Plovdiv, English teacher."
+        "text": "Absolwentka Uniwersytetu w Płowdiwie, nauczycielka angielskiego."
       }
     ]
   },
   "reviews": {
-    "h1": "Reviews and testimonials",
-    "lead": "Short quotes as published by our school, with the name shown.",
+    "h1": "Opinie i referencje",
+    "lead": "Krótkie opinie, tak jak publikuje je nasza szkoła, z podpisem autora.",
     "google": {
-      "title": "Rated 5 stars on Google",
-      "text": "Read the Google reviews, or leave your own.",
-      "link": "See our Google reviews"
+      "title": "Oceniana na 5 gwiazdek w Google",
+      "text": "Przeczytaj opinie w Google lub dodaj własną.",
+      "link": "Zobacz nasze opinie w Google"
     },
     "items": [
       {
         "name": "Rusi Stefanov",
         "context": "",
-        "quote": "The class organization is excellent."
+        "quote": "Organizacja zajęć jest doskonała."
       },
       {
         "name": "Monika Boneva",
-        "context": "Thanking a teacher",
-        "quote": "for her understanding, patience, assistance"
+        "context": "Podziękowanie dla nauczycielki",
+        "quote": "za zrozumienie, cierpliwość, pomoc"
       },
       {
         "name": "Galina Ivanova",
         "context": "",
-        "quote": "I recommend it!"
+        "quote": "Polecam!"
       },
       {
         "name": "Kremena Dancheva",
         "context": "",
-        "quote": "positive energy, professionals, and dreams"
+        "quote": "pozytywna energia, profesjonaliści i marzenia"
       },
       {
         "name": "Mary, Watford",
         "context": "",
-        "quote": "these courses are very convenient for me"
+        "quote": "te kursy są dla mnie bardzo wygodne"
       },
       {
         "name": "Plamen, Brighton",
         "context": "",
-        "quote": "I recommend it to everyone"
+        "quote": "Polecam wszystkim"
       }
     ],
-    "facebook": "We are also followed by thousands of people on Facebook."
+    "facebook": "Obserwują nas też tysiące osób na Facebooku."
   },
   "faqPage": {
-    "h1": "Questions about online lessons",
-    "lead": "Short answers to what people ask us most. If yours is not here, send an enquiry.",
+    "h1": "Pytania o lekcje online",
+    "lead": "Krótkie odpowiedzi na to, o co pytacie nas najczęściej. Jeśli nie ma tu Twojego pytania, wyślij zapytanie.",
     "items": [
       {
-        "q": "How much do lessons cost?",
-        "a": "One-to-one lessons are £15 per 55 minute lesson, or £20 if the lesson is taught entirely in English. An online group course is £298 per level course. Exam preparation is £320 for 24 hours of tuition."
+        "q": "Ile kosztują lekcje?",
+        "a": "Lekcje indywidualne kosztują £15 za lekcję 55 minut lub £20, jeśli lekcja jest prowadzona w całości po angielsku. Kurs grupowy online kosztuje £298 za kurs poziomowy. Przygotowanie do egzaminu kosztuje £320 za 24 godziny zajęć."
       },
       {
-        "q": "Which platform do lessons use?",
-        "a": "Group courses run live on Zoom. One-to-one lessons run on a live video call, and we send you the link with your booking."
+        "q": "Z jakiej platformy korzystają lekcje?",
+        "a": "Kursy grupowe odbywają się na żywo na Zoomie. Lekcje indywidualne odbywają się na wideorozmowie na żywo, a link wysyłamy razem z rezerwacją."
       },
       {
-        "q": "How do I pay?",
-        "a": "By bank transfer, after the office confirms your place. We send the bank details with your booking confirmation. We do not take card payments on the site."
+        "q": "Jak zapłacić?",
+        "a": "Przelewem, po potwierdzeniu Twojego miejsca przez biuro. Dane do przelewu wysyłamy z potwierdzeniem rezerwacji. Na stronie nie przyjmujemy płatności kartą."
       },
       {
-        "q": "Can I try a class before I pay?",
-        "a": "Yes. You can join one live group class free of charge to see how we teach. Use the free class page to ask."
+        "q": "Czy mogę wypróbować zajęcia, zanim zapłacę?",
+        "a": "Tak. Możesz dołączyć do jednych zajęć grupowych na żywo za darmo, by zobaczyć, jak uczymy. Zapytaj na stronie darmowych zajęć."
       },
       {
-        "q": "What levels do you teach?",
-        "a": "Group courses run at A1, A2, B1 and B2. One-to-one lessons are available at any level."
+        "q": "Jakich poziomów uczycie?",
+        "a": "Kursy grupowe odbywają się na poziomach A1, A2, B1 i B2. Lekcje indywidualne są dostępne na każdym poziomie."
       },
       {
-        "q": "How long is a group course?",
-        "a": "A level course is 12 weeks and 72 lessons in a small live group of no more than 12 learners."
+        "q": "Jak długo trwa kurs grupowy?",
+        "a": "Kurs poziomowy trwa 12 tygodni i obejmuje 72 lekcje w małej grupie na żywo, liczącej najwyżej 12 osób."
       },
       {
-        "q": "How long is a one-to-one lesson?",
-        "a": "55 minutes."
+        "q": "Jak długo trwa lekcja indywidualna?",
+        "a": "55 minut."
       },
       {
-        "q": "Can I change or cancel a lesson?",
-        "a": "You can reschedule a one-to-one lesson once, with at least 48 hours notice by email, text or phone. With less than 48 hours notice the lesson is charged."
+        "q": "Czy mogę zmienić termin lekcji lub z niej zrezygnować?",
+        "a": "Lekcję indywidualną możesz przełożyć raz, powiadamiając nas co najmniej 48 godzin wcześniej e-mailem, SMS-em lub telefonicznie. Przy krótszym wyprzedzeniu niż 48 godzin lekcja jest płatna."
       },
       {
-        "q": "What if I am ill?",
-        "a": "Illness is considered case by case, and we answer within ten working days."
+        "q": "Co, jeśli zachoruję?",
+        "a": "Chorobę rozpatrujemy indywidualnie i odpowiadamy w ciągu dziesięciu dni roboczych."
       },
       {
-        "q": "What if a group does not run?",
-        "a": "A group runs when enough learners have booked. If it does not run, your deposit is refunded or moved."
+        "q": "Co, jeśli grupa nie ruszy?",
+        "a": "Grupa rusza, gdy zapisze się wystarczająca liczba osób. Jeśli nie ruszy, Twój depozyt zostanie zwrócony lub przeniesiony."
       },
       {
-        "q": "Do you teach children?",
-        "a": "Yes. Our teachers teach children and adults. We offer one-to-one lessons for school age children, and a parent or carer is present or nearby during the lesson."
+        "q": "Czy uczycie dzieci?",
+        "a": "Tak. Nasi nauczyciele uczą dzieci i dorosłych. Oferujemy lekcje indywidualne dla dzieci w wieku szkolnym, a podczas lekcji rodzic lub opiekun jest obecny lub w pobliżu."
       },
       {
-        "q": "Do you run the IELTS, OET or B1 tests?",
-        "a": "No. We teach and prepare you, but we do not run tests. You book the test separately and pay the test fee to the test provider."
+        "q": "Czy przeprowadzacie testy IELTS, OET lub B1?",
+        "a": "Nie. Uczymy i przygotowujemy, ale nie przeprowadzamy testów. Test rezerwujesz osobno i opłatę za test płacisz jego organizatorowi."
       },
       {
-        "q": "Can you promise I will pass my test?",
-        "a": "No. Your result depends on your own work and on the test. We cannot promise a result."
+        "q": "Czy możecie obiecać, że zdam test?",
+        "a": "Nie. Wynik zależy od Twojej pracy i od samego testu. Nie możemy obiecać wyniku."
       },
       {
-        "q": "Which B1 test do I need for my visa or citizenship?",
-        "a": "That depends on your own route, so please check gov.uk before you book a test. We cannot advise on immigration."
+        "q": "Jakiego testu B1 potrzebuję do wizy lub obywatelstwa?",
+        "a": "To zależy od Twojej ścieżki, więc sprawdź gov.uk, zanim zarezerwujesz test. Nie doradzamy w sprawach imigracyjnych."
       },
       {
-        "q": "Do you have Bulgarian speaking tutors?",
-        "a": "Yes, Bulgarian speaking tutors are available for one-to-one lessons. Tell us in the enquiry form if you would like one."
+        "q": "Czy macie lektorów mówiących po bułgarsku?",
+        "a": "Tak, do lekcji indywidualnych dostępni są lektorzy mówiący po bułgarsku. Napisz o tym w formularzu zapytania, jeśli chcesz mieć takiego lektora."
       },
       {
-        "q": "I live outside the UK. Can I join?",
-        "a": "One-to-one lessons are timetabled with your tutor, so tell us your time zone in the enquiry form and we will say what is possible."
+        "q": "Mieszkam poza Wielką Brytanią. Czy mogę dołączyć?",
+        "a": "Lekcje indywidualne ustalamy z lektorem, więc podaj w formularzu swoją strefę czasową, a napiszemy, co jest możliwe."
       },
       {
-        "q": "Are your tutors qualified?",
-        "a": "Our tutors hold degrees in English philology or TEFL qualifications, and one holds a CELTA. See the tutors page for the qualifications each tutor has shared."
+        "q": "Czy Wasi lektorzy mają kwalifikacje?",
+        "a": "Nasi lektorzy mają dyplomy z filologii angielskiej lub kwalifikacje TEFL, a jedna osoba ma CELTA. Kwalifikacje, którymi podzielili się lektorzy, znajdziesz na stronie lektorów."
       },
       {
-        "q": "Do you offer classroom lessons?",
-        "a": "Not on this site. Ucraya is for online lessons. For classroom lessons in London, visit ucraya.co.uk."
+        "q": "Czy oferujecie zajęcia stacjonarne?",
+        "a": "Nie na tej stronie. Ucraya to lekcje online. Zajęcia stacjonarne w Londynie znajdziesz na ucraya.co.uk."
       },
       {
-        "q": "How do I start?",
-        "a": "Send an enquiry with your goal. The office replies by email with a tutor and a first lesson to suggest."
+        "q": "Jak zacząć?",
+        "a": "Wyślij zapytanie ze swoim celem. Biuro odpowie e-mailem, proponując lektora i pierwszą lekcję."
       },
       {
-        "q": "Is there a discount if I bring a friend?",
-        "a": "Yes. For one-to-one lessons, 2 free lessons for 1 friend, 4 for 2 and 6 for 3, if the friend studies at least two months with two lessons a week. For group courses, two people booking together get 20% off the level, and three get one module free."
+        "q": "Czy jest zniżka, jeśli przyprowadzę znajomego?",
+        "a": "Tak. Przy lekcjach indywidualnych: 2 darmowe lekcje za 1 znajomego, 4 za 2 i 6 za 3, jeśli znajomy uczy się co najmniej dwa miesiące, z dwiema lekcjami tygodniowo. Przy kursach grupowych dwie osoby zapisujące się razem dostają 20% zniżki na poziom, a trzy osoby dostają jeden moduł za darmo."
       }
     ]
   },
   "about": {
-    "h1": "About Ucraya",
-    "lead": "Ucraya is online English lessons with real tutors, from a London English school founded in 2015.",
+    "h1": "O Ucraya",
+    "lead": "Ucraya to lekcje angielskiego online z prawdziwymi lektorami, prowadzone przez londyńską szkołę angielskiego założoną w 2015 roku.",
     "school": {
-      "title": "The school behind Ucraya",
-      "text": "Ucraya is a trading name of Training Centre Raya London Ltd, a London English school founded in 2015. The director is Georgi Georgiev. The school teaches at Haverstock School, 24 Haverstock Hill, London NW3 2BQ."
+      "title": "Szkoła stojąca za Ucraya",
+      "text": "Ucraya jest nazwą handlową spółki Training Centre Raya London Ltd, londyńskiej szkoły angielskiego założonej w 2015 roku. Dyrektorem jest Georgi Georgiev. Szkoła uczy w Haverstock School, 24 Haverstock Hill, London NW3 2BQ."
     },
     "online": {
-      "title": "Why this site is online only",
-      "text": "This site is for online lessons: one-to-one lessons, small group courses and exam preparation on live video. For classroom courses in London, visit our school site.",
-      "link": "Visit ucraya.co.uk"
+      "title": "Dlaczego ta strona jest tylko online",
+      "text": "Ta strona jest dla lekcji online: lekcji indywidualnych, kursów w małych grupach i przygotowania do egzaminów na wideo na żywo. Kursy stacjonarne w Londynie znajdziesz na stronie naszej szkoły.",
+      "link": "Odwiedź ucraya.co.uk"
     },
     "team": {
-      "title": "The team",
-      "text": "Our tutors are qualified English teachers, based in the UK or teaching for our London school. Read about their qualifications on the tutors page.",
-      "link": "Meet the tutors"
+      "title": "Zespół",
+      "text": "Nasi lektorzy to wykwalifikowani nauczyciele angielskiego, mieszkający w Wielkiej Brytanii lub uczący w naszej londyńskiej szkole. O ich kwalifikacjach przeczytasz na stronie lektorów.",
+      "link": "Poznaj lektorów"
     },
     "approach": {
-      "title": "How we teach",
+      "title": "Jak uczymy",
       "items": [
-        "Real tutors, live, on video. Every lesson is taught live.",
-        "Lessons built around your goal: general English, work, exams or conversation.",
-        "Four skills, grammar and vocabulary, with assessments in group courses.",
-        "Plain prices, shown in full, and no card payments: you pay by bank transfer after the office confirms.",
-        "No promises about test results. We teach and prepare you, and tell you honestly what to practise."
+        "Prawdziwi lektorzy, na żywo, na wideo. Każda lekcja jest prowadzona na żywo.",
+        "Lekcje zbudowane wokół Twojego celu: angielski ogólny, praca, egzaminy lub rozmowa.",
+        "Cztery umiejętności, gramatyka i słownictwo, ze sprawdzianami na kursach grupowych.",
+        "Jasne ceny, podane w całości, i brak płatności kartą: płacisz przelewem po potwierdzeniu przez biuro.",
+        "Bez obietnic dotyczących wyników testów. Uczymy i przygotowujemy, i szczerze mówimy, co ćwiczyć."
       ]
     }
   },
   "contact": {
-    "h1": "Contact Ucraya",
-    "lead": "Send an enquiry and the office will reply by email. You can also write, call or message us.",
+    "h1": "Kontakt z Ucraya",
+    "lead": "Wyślij zapytanie, a biuro odpowie e-mailem. Możesz też do nas napisać, zadzwonić lub wysłać wiadomość.",
     "details": {
-      "title": "Ways to reach us",
-      "email": "Email",
-      "phone": "Phone",
+      "title": "Jak się z nami skontaktować",
+      "email": "E-mail",
+      "phone": "Telefon",
       "whatsapp": "WhatsApp",
       "viber": "Viber",
       "facebook": "Facebook",
       "messenger": "Messenger",
       "instagram": "Instagram",
-      "address": "School address",
+      "address": "Adres szkoły",
       "addressText": "Haverstock School, 24 Haverstock Hill, London NW3 2BQ",
-      "addressNote": "Classroom lessons are taught here. Online lessons are taught on live video. For classroom lessons visit ucraya.co.uk."
+      "addressNote": "Tu odbywają się zajęcia stacjonarne. Lekcje online prowadzimy na wideo na żywo. Zajęcia stacjonarne znajdziesz na ucraya.co.uk."
     },
-    "formTitle": "Send an enquiry"
+    "formTitle": "Wyślij zapytanie"
   },
   "thanks": {
-    "h1": "Thank you, we have your enquiry",
-    "lead": "The office will reply by email. If you would rather talk now, message us on WhatsApp.",
-    "next": "While you wait",
+    "h1": "Dziękujemy, mamy Twoje zapytanie",
+    "lead": "Biuro odpowie e-mailem. Jeśli wolisz porozmawiać od razu, napisz do nas na WhatsApp.",
+    "next": "W międzyczasie",
     "items": [
-      "Take the placement test for a rough guide to your level.",
-      "Read how online lessons work and how payment works."
+      "Zrób test poziomujący, aby orientacyjnie poznać swój poziom.",
+      "Przeczytaj, jak działają lekcje online i jak działa płatność."
     ]
   },
   "london": {
@@ -1449,11 +1449,11 @@
     "by": "By {author}"
   },
   "notFound": {
-    "h1": "We could not find that page",
-    "lead": "The page may have moved. Try the home page, or send us an enquiry.",
-    "home": "Go to the home page"
+    "h1": "Nie znaleziono tej strony",
+    "lead": "Strona mogła zostać przeniesiona. Wróć na stronę główną lub wyślij nam zapytanie.",
+    "home": "Przejdź na stronę główną"
   },
-  "legalNote": "These pages are in English only.",
+  "legalNote": "Te strony są dostępne tylko po angielsku.",
   "privacy": {
     "h1": "Privacy",
     "lead": "How Ucraya uses your details, in plain English.",
