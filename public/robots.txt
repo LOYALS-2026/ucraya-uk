@@ -27,3 +27,4 @@ User-agent: Bytespider
 Allow: /
 
 Sitemap: https://ucraya.uk/sitemap-index.xml
+Sitemap: https://ucraya.uk/sitemap.xml

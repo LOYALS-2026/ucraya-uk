@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && pagefind --site dist",
+    "build": "astro build && pagefind --site dist && node scripts/postbuild.mjs",
     "preview": "astro preview",
     "check": "node scripts/check-site.mjs",
     "check:articles": "node scripts/articles/check.mjs",
@@ -20,7 +20,7 @@
     "test:articles": "node scripts/articles/test.mjs",
     "shots": "node scripts/shots.mjs",
     "brand": "node scripts/gen-brand.mjs",
-    "build:blog": "astro build --outDir .tmp/dist-blog && pagefind --site .tmp/dist-blog",
+    "build:blog": "astro build --outDir .tmp/dist-blog && pagefind --site .tmp/dist-blog && DIST=.tmp/dist-blog node scripts/postbuild.mjs",
     "check:ui": "node scripts/ui-checks.mjs"
   },
   "dependencies": {
