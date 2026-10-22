@@ -74,7 +74,41 @@ for (const set of setups) {
     await ctx.close();
   }
 }
+// The translation quote form is long (it has file fields), so it is not asked to fit one screen. It must still: use 16px or larger
+// fonts, never scroll sideways, lay out in one column on a phone and two on a desktop, and keep the same field names in every locale.
+const TQ_PAGES = ['/translation/', '/translation/certified/', '/translation/specialist/'];
+let tqNames = null;
+for (const set of setups) {
+  for (const loc of ['', '/bg', '/ro', '/pl']) {
+    const ctx = await browser.newContext(set.ctx);
+    const page = await ctx.newPage();
+    for (const p of TQ_PAGES) {
+      await page.goto(`${base}${loc}${p}`, { waitUntil: 'networkidle' });
+      const r = await page.evaluate(() => {
+        const f = document.querySelector('form[name="translation-quote"]');
+        const els = [...f.querySelectorAll('input, select, textarea')].filter((e) => e.type !== 'hidden' && !e.closest('.hp') && !e.closest('[hidden]'));
+        const small = els.filter((e) => parseFloat(getComputedStyle(e).fontSize) < 16).map((e) => e.name || e.id);
+        const tall = els.filter((e) => e.type !== 'checkbox' && e.getBoundingClientRect().height < 40).map((e) => e.name || e.id);
+        const email = f.querySelector('input[name="email"]').getBoundingClientRect(), name = f.querySelector('input[name="name"]').getBoundingClientRect();
+        const names = [...f.querySelectorAll('input, select, textarea')].map((e) => e.name).filter(Boolean).sort();
+        return { small, tall, twoCols: Math.abs(email.top - name.top) < 4, names, hOverflow: document.documentElement.scrollWidth - innerWidth, file: f.querySelector('input[type="file"]').getBoundingClientRect().width, formW: f.getBoundingClientRect().width };
+      });
+      const tag = `${set.name} ${loc || '/en'}${p}`;
+      if (r.small.length) fail(`${tag}: translation form font under 16px: ${r.small.join(', ')}`);
+      if (r.tall.length) fail(`${tag}: translation form controls under 40px tall: ${r.tall.join(', ')}`);
+      if (r.hOverflow > 0) fail(`${tag}: horizontal scroll ${r.hOverflow}px`);
+      const phone = set.ctx.viewport.width < 768;
+      if (phone && r.twoCols) fail(`${tag}: two columns on a phone`);
+      if (!phone && !r.twoCols) fail(`${tag}: single column on a desktop`);
+      if (r.file < 200) fail(`${tag}: file field only ${Math.round(r.file)}px wide`);
+      if (!tqNames) tqNames = JSON.stringify(r.names);
+      else if (JSON.stringify(r.names) !== tqNames) fail(`${tag}: translation form field names differ from the first page checked`);
+    }
+    console.log(`${set.name} ${loc || '/en'} translation form: checked`);
+    await ctx.close();
+  }
+}
 await browser.close();
 server.close();
-console.log(bad ? `${bad} problem(s).` : 'Pop-in fits the screen, fonts are 16px or more, field names match.');
+console.log(bad ? `${bad} problem(s).` : 'Pop-in fits the screen, fonts are 16px or more, field names match; translation form fonts, columns and field names are right.');
 process.exit(bad ? 1 : 0);

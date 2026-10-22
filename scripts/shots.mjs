@@ -33,7 +33,7 @@ const base = `http://127.0.0.1:${server.address().port}`;
 
 const pages = (process.env.PAGES ? process.env.PAGES.split(',') : [
   ['home', '/'], ['pricing', '/pricing/'], ['course-oet', '/courses/oet/'], ['placement', '/placement-test/'],
-  ['blog', '/blog/'], ['contact', '/contact/'],
+  ['blog', '/blog/'], ['contact', '/contact/'], ['translation', '/translation/'], ['translation-certified', '/translation/certified/'], ['translation-bg', '/bg/translation/'],
 ]);
 const list = pages.map((p) => (Array.isArray(p) ? p : [p.replace(/\W+/g, '-').replace(/^-|-$/g, '') || 'home', p]));
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });

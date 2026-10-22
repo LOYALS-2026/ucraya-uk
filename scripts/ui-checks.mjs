@@ -15,9 +15,16 @@ await mkdir(out, { recursive: true });
 const toml = readFileSync(path.join(root, 'netlify.toml'), 'utf8');
 const CSP = (toml.match(/Content-Security-Policy = "([^"]+)"/) || [])[1] || '';
 const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.mjs': 'text/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json', '.wasm': 'application/wasm', '.woff2': 'font/woff2', '.xml': 'application/xml', '.txt': 'text/plain' };
+let lastPost = null;
 const server = http.createServer(async (req, res) => {
   const p = decodeURIComponent((req.url || '/').split('?')[0]);
-  if (req.method === 'POST') { res.writeHead(200, { 'content-type': 'text/html' }); res.end('posted ' + p); return; }
+  if (req.method === 'POST') {
+    // Keep the last post (body as latin1 text) so a check can see what a form really sent, files included.
+    const chunks = [];
+    req.on('data', (c) => chunks.push(c));
+    req.on('end', () => { lastPost = { url: p, type: req.headers['content-type'] || '', body: Buffer.concat(chunks).toString('latin1') }; res.writeHead(200, { 'content-type': 'text/html' }); res.end('posted ' + p); });
+    return;
+  }
   let file = path.join(dist, p);
   if (existsSync(file) && statSync(file).isDirectory()) file = path.join(file, 'index.html');
   if (!existsSync(file)) { res.writeHead(404); res.end('nf'); return; }
@@ -142,7 +149,7 @@ for (const w of [768, 900]) {
   });
   ok(r.ul === 'disc' || r.ol === 'decimal', `article lists show markers (ul ${r.ul}, ol ${r.ol})`);
   ok(r.under === 'underline', `links in article text are underlined (${r.under})`);
-  ok(r.logo && r.logoW >= 150 && r.logoW <= 180, `header logo renders at ${r.logoW} px`);
+  ok(r.logo && r.logoW >= 195 && r.logoW <= 205, `header logo (the original artwork) renders at ${r.logoW} px on desktop`);
   ok(r.quick, 'quick answer block is present');
   await ctx.close();
 }
@@ -419,12 +426,12 @@ for (const w of [768, 900]) {
 
 // 8. No horizontal scroll at 375 (and 320) on the pages that carry the new parts, in every language, and no console errors.
 {
-  const pages = ['/', '/pricing/', '/courses/oet/', '/placement-test/', '/contact/', '/blog/', ARTICLE, '/blog/questions/'];
+  const pages = ['/', '/pricing/', '/courses/oet/', '/placement-test/', '/contact/', '/translation/', '/translation/certified/', '/translation/specialist/', '/translation/thank-you/', '/blog/', ARTICLE, '/blog/questions/'];
   for (const loc of ['', '/bg', '/ro', '/pl']) {
     for (const p of pages) {
       if (loc && /^\/blog/.test(p)) continue;
       for (const w of [375, 320]) {
-        if (w === 320 && !(loc === '/bg' && p === '/')) continue;
+        if (w === 320 && !(loc === '/bg' && (p === '/' || p === '/translation/'))) continue;
         const { ctx, page, errors } = await open({ ...PHONE, viewport: { width: w, height: 667 } }, loc + p);
         const wide = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
         ok(wide <= 0 && errors.length === 0, `${loc}${p} at ${w}: no sideways scroll (${wide}), errors ${errors.length}`);
@@ -432,6 +439,82 @@ for (const w of [768, 900]) {
       }
     }
   }
+}
+
+// 11. The original logo: header width on phone and tablet, the optimised files are under 60 KB, the footer shows the white version,
+// and the structured data logo is the black PNG.
+{
+  for (const [w, want] of [[375, 150], [768, 200]]) {
+    const { ctx, page } = await open({ viewport: { width: w, height: 800 } }, '/');
+    const r = await page.evaluate(() => { const i = document.querySelector('.logo-link img'); const a = document.querySelector('.logo-link'); const b = document.querySelector('.header-bar'); return { w: Math.round(i.getBoundingClientRect().width), ok: i.complete && i.naturalWidth > 0, label: a.getAttribute('aria-label'), bar: Math.round(b.getBoundingClientRect().height), wrap: document.documentElement.scrollWidth - innerWidth }; });
+    ok(r.ok && Math.abs(r.w - want) <= 2 && r.label === 'Training Centre Raya London, home' && r.wrap <= 0, `${w}: header logo ${r.w} px (want ${want}), label "${r.label}", bar ${r.bar} px, no sideways scroll`);
+    await ctx.close();
+  }
+  const { statSync } = await import('node:fs');
+  for (const f of ['raya-black-300.png', 'raya-black-400.png', 'raya-black-600.png', 'raya-white-480.png', 'raya-white-720.png']) {
+    const kb = statSync(path.join(dist, 'brand', f)).size / 1024;
+    ok(kb < 60, `${f} is ${kb.toFixed(1)} KB (under 60)`);
+  }
+  const { ctx, page } = await open(DESK, '/');
+  await page.locator('.footer-logo').scrollIntoViewIfNeeded();
+  await page.waitForTimeout(400);
+  const f = await page.evaluate(() => { const i = document.querySelector('.footer-logo img'); const bg = getComputedStyle(document.querySelector('.footer-logo')).backgroundColor; return { src: i.currentSrc.split('/').pop(), ok: i.complete && i.naturalWidth > 0, bg }; });
+  ok(f.ok && /raya-white/.test(f.src) && (f.bg === 'rgba(0, 0, 0, 0)' || f.bg === 'transparent'), `footer uses the white lettering logo on the dark footer (${f.src}, tile ${f.bg})`);
+  const ld = await page.evaluate(() => [...document.querySelectorAll('script[type="application/ld+json"]')].map((s) => JSON.parse(s.textContent)).find((d) => d.logo));
+  ok(ld && ld.logo === 'https://ucraya.uk/raya/original/raya-original-vector-black-1259.png', `Organization JSON-LD logo is the black PNG (${ld && ld.logo})`);
+  await ctx.close();
+}
+
+// 12. Translation quote form: required fields, the "other" language box, the file checks, and a real multipart post.
+for (const [name, opts] of [['desktop', DESK], ['phone', PHONE]]) {
+  const { ctx, page, errors } = await open(opts, '/translation/certified/');
+  const form = page.locator('form[name="translation-quote"]');
+  await form.locator('[data-submit]').scrollIntoViewIfNeeded();
+  await form.locator('[data-submit]').click();
+  await page.waitForTimeout(150);
+  const e1 = await page.evaluate(() => [...document.querySelectorAll('form[name="translation-quote"] .err:not([hidden])')].map((x) => x.id));
+  const focused = await page.evaluate(() => document.activeElement && document.activeElement.name);
+  ok(['tq-err-email', 'tq-err-name', 'tq-err-from', 'tq-err-to', 'tq-err-doctype', 'tq-err-consent'].every((id) => e1.includes(id)) && focused === 'email', `${name}: an empty send shows every message and focuses the email (${e1.join(', ')}; focus ${focused})`);
+  // other language box
+  ok(await form.locator('[data-other]').isHidden(), `${name}: the other language box is hidden at first`);
+  await form.locator('select[name="from_language"]').selectOption('Other');
+  ok(await form.locator('[data-other]').isVisible(), `${name}: choosing Other shows the other language box`);
+  await form.locator('select[name="from_language"]').selectOption('Bulgarian');
+  ok(await form.locator('[data-other]').isHidden(), `${name}: and hides it again`);
+  // files: too big, then a type we cannot read
+  const big = { name: 'scan.pdf', mimeType: 'application/pdf', buffer: Buffer.alloc(9 * 1000 * 1000, 1) };
+  await form.locator('input[name="file_1"]').setInputFiles(big);
+  await page.waitForTimeout(100);
+  const t1 = await page.locator('#tq-err-files').textContent();
+  ok(!(await page.locator('#tq-err-files').isHidden()) && /9(\.0)? MB/.test(t1) && /8 MB/.test(t1), `${name}: 9 MB of files is refused in words ("${t1}")`);
+  await form.locator('input[name="file_1"]').setInputFiles({ name: 'run.exe', mimeType: 'application/octet-stream', buffer: Buffer.from('x') });
+  await page.waitForTimeout(100);
+  const t2 = await page.locator('#tq-err-files').textContent();
+  ok(/run\.exe/.test(t2), `${name}: a file type we cannot read is named ("${t2}")`);
+  await form.locator('input[name="file_1"]').setInputFiles({ name: 'birth.pdf', mimeType: 'application/pdf', buffer: Buffer.from('%PDF-1.4 test') });
+  await form.locator('input[name="file_2"]').setInputFiles({ name: 'photo.jpg', mimeType: 'image/jpeg', buffer: Buffer.from([0xff, 0xd8, 0xff, 0xd9]) });
+  // a valid send
+  await form.locator('input[name="email"]').fill('someone@example.com');
+  await form.locator('input[name="name"]').fill('Test Person');
+  await form.locator('select[name="to_language"]').selectOption('English');
+  await form.locator('select[name="document_type"]').selectOption('Birth, marriage or death certificate');
+  await form.locator('input[name="consent"]').check();
+  const hidden = await page.evaluate(() => Object.fromEntries([...document.querySelectorAll('form[name="translation-quote"] input[type="hidden"]')].map((i) => [i.name, i.value])));
+  ok(hidden.source_channel && hidden.device && hidden.landing_page && hidden.visit_started && hidden.enquiry_page === '/translation/certified/' && hidden.subject === 'Translation quote request via ucraya.uk: %{submissionId}' && hidden['form-name'] === 'translation-quote', `${name}: attribution fields are filled and the subject is the fixed one (${hidden.source_channel}, ${hidden.device}, ${hidden.landing_page})`);
+  lastPost = null;
+  await Promise.all([page.waitForURL('**/translation/thank-you/', { timeout: 5000 }).catch(() => {}), form.locator('[data-submit]').click()]);
+  await page.waitForTimeout(200);
+  const body = lastPost ? lastPost.body : '';
+  const ctype = lastPost ? lastPost.type : '';
+  ok(lastPost && lastPost.url === '/translation/thank-you/' && /multipart\/form-data/.test(ctype) && /name="from_language"\r\n\r\nBulgarian/.test(body) && /name="form-name"\r\n\r\ntranslation-quote/.test(body) && /name="file_1"; filename="birth\.pdf"/.test(body) && /name="file_2"; filename="photo\.jpg"/.test(body) && /name="file_3"; filename=""/.test(body), `${name}: the form posts multipart to the thank you page with both files (${ctype.split(';')[0]})`);
+  ok(errors.length === 0, `${name}: no console errors on the translation page`);
+  await ctx.close();
+}
+for (const loc of ['/bg', '/ro', '/pl']) {
+  const { ctx, page } = await open(DESK, loc + '/translation/');
+  const r = await page.evaluate(() => { const f = document.querySelector('form[name="translation-quote"]'); return { action: f.getAttribute('action'), enc: f.enctype, opts: f.querySelector('select[name="from_language"]').options.length, first: f.querySelector('select[name="from_language"]').options[1].value + '|' + f.querySelector('select[name="from_language"]').options[1].textContent, lang: f.querySelector('input[name="site_language"]').value }; });
+  ok(r.action === `${loc}/translation/thank-you/` && /multipart/.test(r.enc) && r.opts === 16 && /^Bulgarian\|/.test(r.first) && r.lang === loc.slice(1), `${loc}: the translation form posts to its own thank you page, sends English option values (${r.first})`);
+  await ctx.close();
 }
 
 await browser.close();

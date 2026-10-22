@@ -10,6 +10,9 @@
   function val(name) { var el = q('[name="' + name + '"]'); return el ? el.value : ''; }
   function msg(key) { return form.getAttribute('data-err-' + key) || ''; }
 
+  // Our own messages replace the browser's bubbles (without JavaScript the native required checks still work).
+  form.noValidate = true;
+
   var MAX = parseInt(form.getAttribute('data-max-bytes') || '8000000', 10);
   var OK_EXT = /\.(pdf|jpe?g|png|heic|docx)$/i;
 
