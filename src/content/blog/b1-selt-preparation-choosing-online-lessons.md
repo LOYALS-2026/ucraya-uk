@@ -2,6 +2,7 @@
 title: "B1 SELT preparation: choosing online lessons"
 description: "How to choose online lessons for a B1 SELT: check your route, find the approved test, test your speaking and agree a plan. Includes a route-to-test checklist."
 pubDate: "2026-10-21"
+updatedDate: "2026-10-22"
 lang: "en"
 day: 2
 pillar: "Passing B1 for settlement or citizenship"
@@ -43,6 +44,8 @@ First check the rule for your own application, then book the approved test, then
 Before anything else, find out whether you need an English test at all and at which level. B1 is an intermediate level of English. It is not the level for every route, and some applicants are exempt or can use an earlier result.
 
 The place to look is gov.uk, starting with [how to prove your knowledge of English](https://www.gov.uk/english-language). Read the page for your own route, write down the level it asks for, and note the date you read it. Rules for immigration applications change, so the page you read matters more than anything a lesson provider tells you, including this guide.
+
+If a document in your application is in Bulgarian, check the gov.uk page for your route to see how it wants translations supplied. Our translation partner prepares certified translations for official use: tell us where the document will be submitted and [ask for a free quote](/translation/certified/).
 
 We cannot give immigration advice. If your case is complicated, ask an immigration adviser who is regulated to give that advice.
 

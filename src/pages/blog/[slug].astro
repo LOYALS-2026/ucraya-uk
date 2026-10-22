@@ -9,7 +9,7 @@ import PagefindMeta from '../../components/blog/PagefindMeta.astro';
 import '../../components/blog/blog.css';
 import {
   getPosts, postPath, pillarPath, formatDate, isoDay, readMinutes, answerOf, pillarSlugOf, relatedTo, prevNext, plainText,
-  enquirePath, injectBeforeThirdH2, splitQuickAnswer, PLACEMENT_CARD_HTML,
+  enquirePath, injectBeforeThirdH2, splitQuickAnswer, PLACEMENT_CARD_HTML, isTranslationPage, moneyHref,
 } from '../../lib/blog';
 import { pillarsWith, goalFromMoneyPage } from '../../lib/blog-map';
 import { SITE } from '../../lib/site';
@@ -27,7 +27,9 @@ const rendered = post.rendered?.html ?? '';
 const hasHtml = !!rendered;
 // The direct answer moves up under the title; the placement card goes before the third section of what is left.
 const { quick, rest } = splitQuickAnswer(rendered);
-const html = injectBeforeThirdH2(rest, PLACEMENT_CARD_HTML);
+// A translation guide is not about the reader's English level, so it gets no placement test card and its button is a plain link to the quote form.
+const isTranslation = isTranslationPage(d.moneyPage);
+const html = isTranslation ? rest : injectBeforeThirdH2(rest, PLACEMENT_CARD_HTML);
 const all = await getPosts();
 const related = relatedTo(post, all, 3);
 const { prev, next } = prevNext(post, all);
@@ -35,7 +37,8 @@ const slug = pillarSlugOf(post);
 const pillar = pillarsWith(all.map((p) => p.data)).find((p) => p.slug === slug);
 const goal = pillar?.goal ?? goalFromMoneyPage(d.moneyPage);
 const level = pillar?.level;
-const enquire = enquirePath(d.moneyPage, goal);
+const enquire = isTranslation ? moneyHref(d.moneyPage) + '#enquiry' : enquirePath(d.moneyPage, goal);
+const enquireData = isTranslation ? {} : { 'data-enquire': '', 'data-goal': goal, 'data-purpose': 'enquiry', 'data-level': level };
 const mins = readMinutes(post.body);
 const times = (d.sources ?? []).map((s) => s.checked?.getTime()).filter((x): x is number => typeof x === 'number');
 const checked = times.length ? new Date(Math.max(...times)) : null;
@@ -127,9 +130,11 @@ const whatsappShare = `https://wa.me/?text=${encodeURIComponent(`${d.title} ${ur
 
         <aside class="bl-cta glass-strong" aria-labelledby="next-step" data-pagefind-ignore>
           <h2 id="next-step">Next step</h2>
-          <p>Tell us your goal and your date. The office replies by email with a tutor and a first lesson to suggest.</p>
+          {isTranslation
+            ? <p>Tell us which document you have and where it will be submitted. The quote is free and usually arrives within one working day.</p>
+            : <p>Tell us your goal and your date. The office replies by email with a tutor and a first lesson to suggest.</p>}
           <p class="btn-row">
-            <a class="btn btn-primary" href={enquire} data-enquire data-goal={goal} data-purpose="enquiry" data-level={level}>{d.cta || 'Enquire about lessons'}</a>
+            <a class="btn btn-primary" href={enquire} {...enquireData}>{d.cta || (isTranslation ? 'Get a free translation quote' : 'Enquire about lessons')}</a>
             <a class="btn btn-whatsapp" href={SITE.whatsapp} rel="noopener">WhatsApp us</a>
           </p>
         </aside>
@@ -157,8 +162,8 @@ const whatsappShare = `https://wa.me/?text=${encodeURIComponent(`${d.title} ${ur
     )}
   </article>
 
-  <div class="bl-cta-bar glass-bar" data-bl-cta hidden data-pagefind-ignore role="region" aria-label="Enquire about lessons">
-    <p class="bl-cta-text">{d.cta || 'Enquire about lessons'}</p>
-    <a class="btn btn-primary" href={enquire} data-enquire data-goal={goal} data-purpose="enquiry" data-level={level}>Enquire</a>
+  <div class="bl-cta-bar glass-bar" data-bl-cta hidden data-pagefind-ignore role="region" aria-label={isTranslation ? 'Ask for a translation quote' : 'Enquire about lessons'}>
+    <p class="bl-cta-text">{d.cta || (isTranslation ? 'Get a free translation quote' : 'Enquire about lessons')}</p>
+    <a class="btn btn-primary" href={enquire} {...enquireData}>{isTranslation ? 'Get a quote' : 'Enquire'}</a>
   </div>
 </Base>

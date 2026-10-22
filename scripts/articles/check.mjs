@@ -25,6 +25,10 @@ const BANNED = [
   'chartered', 'guaranteed', 'guarantee', 'native speaker', 'native-speaker', 'native speaking', '15+ years',
   '12 years', 'pass rate', 'google meet', 'discord', 'specialist tutor', 'specialist oet', 'specialist ielts',
 ];
+// Translation wording (FACTS section 11): "sworn" is allowed only in "sworn translation and legalisation for Bulgaria".
+// "sworn translator in the UK" and the acceptance promises below are never allowed.
+const SWORN_OK = /^sworn\s+translation\s+and\s+legalisation\s+for\s+bulgaria\b/i;
+const TRANSLATION_BANNED = ['official translator', 'home office approved', 'accepted by all authorities'];
 const BANNED_FILE = ['unconfirmed', 'placeholder', 'lorem', 'todo', 'tbc', 'to confirm', 'fixme'];
 const WARN_PHRASES = ['free trial', 'free level check', 'free 20', 'free assessment', 'money back', 'refund',
   'center', 'color', 'organize', 'recognize', 'program ', 'favorite'];
@@ -120,7 +124,7 @@ export function checkArticle(file, ctx) {
   else if (fm.pubDate !== undefined && dateStr(fm.pubDate) > today) fail(`pubDate ${dateStr(fm.pubDate)} is in the future (today is ${today}); use the batch Monday from npm run article:next`);
   if (fm.updatedDate !== undefined && !isDate(dateStr(fm.updatedDate))) fail(`updatedDate "${fm.updatedDate}" is not a valid YYYY-MM-DD date`);
   if (fm.lang !== 'en') fail('lang must be "en"');
-  if (!Number.isInteger(fm.day) || fm.day < 1 || fm.day > 90) fail('day must be a whole number from 1 to 90');
+  if (!Number.isInteger(fm.day) || fm.day < 1 || fm.day > 110) fail('day must be a whole number from 1 to 110');
   if (!['awareness', 'consideration', 'decision'].includes(fm.funnelStage)) fail('funnelStage must be awareness, consideration or decision');
   if (fm.draft !== false) fail('draft must be false');
   if (fm.author !== 'The Ucraya team') fail('author must be "The Ucraya team"');
@@ -182,6 +186,13 @@ export function checkArticle(file, ctx) {
   if (/!/.test(whole)) fail('exclamation mark found');
   const lower = whole.toLowerCase();
   for (const w of BANNED) if (lower.includes(w)) fail(`banned word or phrase: "${w}"`);
+  for (const w of TRANSLATION_BANNED) if (lower.includes(w)) fail(`banned translation wording: "${w}" (FACTS section 11)`);
+  for (const m of whole.matchAll(/\bsworn\b/gi)) {
+    if (!SWORN_OK.test(whole.slice(m.index, m.index + 80))) {
+      fail(`"${whole.slice(m.index, m.index + 40).replace(/\s+/g, ' ')}": "sworn" may only appear as "sworn translation and legalisation for Bulgaria" (FACTS section 11)`);
+      break;
+    }
+  }
   for (const w of BANNED_FILE) {
     if (new RegExp(`(^|[^a-z])${w.replace(/ /g, '\\s+')}([^a-z]|$)`, 'i').test(whole)) fail(`forbidden word: "${w}"`);
   }

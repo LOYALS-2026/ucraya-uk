@@ -7,7 +7,7 @@ import SearchBox from '../../../../components/blog/SearchBox.astro';
 import BlogCard from '../../../../components/blog/BlogCard.astro';
 import Pagination from '../../../../components/blog/Pagination.astro';
 import '../../../../components/blog/blog.css';
-import { getPosts, pillarSlugOf, pillarPath, postPath, byDay, enquirePath, pageUrl, PAGE_SIZE, type Post } from '../../../../lib/blog';
+import { getPosts, pillarSlugOf, pillarPath, postPath, byDay, enquirePath, pageUrl, isTranslationPage, QUOTE_HREF, QUOTE_CTA, PAGE_SIZE, type Post } from '../../../../lib/blog';
 import { pillarsWith, type PillarInfo } from '../../../../lib/blog-map';
 import { messagesEn } from '../../../../i18n';
 import { absolute } from '../../../../lib/routes';
@@ -72,6 +72,8 @@ const ld: object[] = [
       : {}),
   },
 ];
+// The translation hub points at the free quote form on /translation/ with a plain link, not at the lessons pop-in.
+const isTranslation = isTranslationPage(pillar.moneyPage);
 const enquire = enquirePath(pillar.moneyPage, pillar.goal);
 ---
 <Base locale="en" path={path} title={title} description={description} crumbs={crumbs} jsonLd={ld} scripts={['/js/search.js']}>
@@ -85,8 +87,10 @@ const enquire = enquirePath(pillar.moneyPage, pillar.goal);
           <h1 id="bl-h1">{title}</h1>
           <p class="bl-lead">{pillar.intro}</p>
           <p class="btn-row bl-actions">
-            <a class="btn btn-primary" href={enquire} data-enquire data-goal={pillar.goal} data-purpose="enquiry" data-level={pillar.level}>{pillar.cta}</a>
-            <a class="btn btn-secondary" href={pillar.moneyPage}>{course ? 'See the course' : 'See prices'}</a>
+            {isTranslation
+              ? <a class="btn btn-primary" href={QUOTE_HREF}>{QUOTE_CTA}</a>
+              : <a class="btn btn-primary" href={enquire} data-enquire data-goal={pillar.goal} data-purpose="enquiry" data-level={pillar.level}>{pillar.cta}</a>}
+            <a class="btn btn-secondary" href={pillar.moneyPage}>{isTranslation ? 'About certified translation' : course ? 'See the course' : 'See prices'}</a>
           </p>
           <div class="bl-pillar-search"><SearchBox id="bl-q" compact label="Search all guides" placeholder="Search guides" /></div>
         </div>
@@ -107,5 +111,18 @@ const enquire = enquirePath(pillar.moneyPage, pillar.goal);
       <p class="bl-sub">Follow only this goal: <a href={`${base}rss.xml`}>RSS feed for {pillar.name}</a>. <a href="/blog/">All guides</a></p>
     </section>
   </div>
-  <CtaBand locale="en" goal={pillar.goal} />
+  {isTranslation ? (
+    <section class="section">
+      <div class="wrap">
+        <div class="cta-panel">
+          <h2>Need a document translated?</h2>
+          <p class="mt-3 mb-6 max-w-2xl text-lg">Tell us what you have and where it will be submitted. The quote is free.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href={QUOTE_HREF}>{QUOTE_CTA}</a>
+            <a class="btn btn-secondary" href={SITE.whatsapp} rel="noopener">{messagesEn.buttons.whatsapp}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  ) : <CtaBand locale="en" goal={pillar.goal} />}
 </Base>

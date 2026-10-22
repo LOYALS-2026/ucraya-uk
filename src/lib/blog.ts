@@ -82,6 +82,13 @@ export const STAGE_LABEL: Record<string, string> = {
 
 export const isoDay = (d: Date) => d.toISOString().slice(0, 10);
 
+/** Translation guides and their hub send readers to the free quote form on /translation/, never to the lessons pop-in. */
+export const QUOTE_HREF = '/translation/#enquiry';
+export const QUOTE_CTA = 'Get a free translation quote';
+export function isTranslationPage(moneyPage: string): boolean {
+  return moneyHref(moneyPage).startsWith('/translation/');
+}
+
 /** Where an Enquire button goes without JavaScript. Pages that carry their own form go straight to it. */
 export function enquirePath(moneyPage: string, goal: string): string {
   const mp = moneyHref(moneyPage);

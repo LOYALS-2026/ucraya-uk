@@ -1,4 +1,4 @@
-// Reads and writes content/topical-map.csv. Column order and the file's
+// Reads and writes content/topical-map.csv (20 columns plus `notes`, the last). Column order and the file's
 // CRLF line endings are preserved; fields are quoted only when RFC 4180 needs it.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -10,6 +10,9 @@ export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '
 export const MAP_PATH = process.env.ARTICLE_MAP || path.join(ROOT, 'content', 'topical-map.csv');
 export const BLOG_DIR = process.env.ARTICLE_BLOG || path.join(ROOT, 'src', 'content', 'blog');
 export const SITE = 'https://ucraya.uk';
+// Pillars scheduled on their own calendar (one row a Monday) with `schedule.mjs --pillar "<name>" --weekly ...`.
+// The plain `--weekly` run (five lesson rows a Monday) leaves them alone, so the lesson calendar never moves.
+export const SEPARATE_SCHEDULE_PILLARS = ['Translating Bulgarian and UK documents for official use'];
 
 export function readMap(file = MAP_PATH) {
   const text = readFileSync(file, 'utf8').replace(/^﻿/, '');

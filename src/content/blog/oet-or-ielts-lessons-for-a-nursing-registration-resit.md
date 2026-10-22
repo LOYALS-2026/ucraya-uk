@@ -2,6 +2,7 @@
 title: "OET or IELTS lessons for a nursing registration resit?"
 description: "How to choose between OET and IELTS lessons when you must retake an English test for nursing registration, with a decision sheet you can copy."
 pubDate: "2026-10-21"
+updatedDate: "2026-10-22"
 lang: "en"
 day: 1
 pillar: "Passing a nursing English resit"
@@ -39,6 +40,8 @@ Choose the test that fits your last scores and the earliest date you can book. T
 Start with the regulator, not with a tutor or a forum. The [NMC page on accepted English language tests](https://www.nmc.org.uk/registration/joining-the-register/english-language-requirements/accepted-english-language-tests/) lists the tests it accepts and the score it needs in each skill. Open it and write down the line for each of listening, reading, writing and speaking before you plan anything.
 
 The NMC also has rules on how recent a result must be and on whether results from different sittings can be put together. Those rules can change, so read the page again on the day you decide. Treat any summary, including this one, as a pointer and not as the rule.
+
+If any of your nursing documents are in Bulgarian, the NMC may ask for a translation, so check what it needs for yours. Our translation partner prepares certified translations for official use, and you can [ask for a free quote](/translation/certified/).
 
 One more point that saves money: lessons are not the test. Ucraya does not run OET or IELTS, so you book the test with the test provider and the lessons are separate.
 

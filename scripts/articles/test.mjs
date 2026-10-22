@@ -86,6 +86,43 @@ for (const [file, expected] of Object.entries(EXPECT)) {
   report(future.fails.some((m) => m.includes('is in the future')), 'a pubDate in the future is rejected', JSON.stringify(future.fails));
 }
 
+// ---- translation pillar: money pages, day numbers above 90, and the word "sworn" (FACTS section 11)
+{
+  const raw = readFileSync(path.join(fixtures, 'good.md'), 'utf8');
+  const fm = matter(raw).data;
+  const rowFor = (money, day) => ({
+    day: String(day), pillar: fm.pillar, cluster: fm.cluster, segment: fm.segment, funnel_stage: fm.funnelStage,
+    ai_question: fm.aiQuestion, primary_keyword: fm.primaryKeyword, money_page: money.replace(/\/$/, ''), cta: fm.cta, publish_date: '',
+  });
+  const run1 = (text, money = fm.moneyPage, day = fm.day) => {
+    const f = path.join(work, `${slugify(fm.title)}.md`);
+    writeFileSync(f, text);
+    return checkArticle(f, { rows: [rowFor(money, day)], blogSlugs: [], days: {}, today: '2026-10-21' }).fails;
+  };
+  for (const page of ['/translation/', '/translation/certified/', '/translation/specialist/']) {
+    const text = raw.replace('day: 90', 'day: 105').replace('moneyPage: "/courses/oet/"', `moneyPage: "${page}"`).replace('[OET lessons page](/courses/oet/)', `[quote form](${page})`);
+    const fails = run1(text, page, 105);
+    report(fails.length === 0, `a day 105 article with money page ${page} is accepted`, JSON.stringify(fails));
+  }
+  const over = run1(raw.replace('day: 90', 'day: 111'), fm.moneyPage, 111);
+  report(over.some((m) => m.includes('from 1 to 110')), 'a day above 110 is rejected', JSON.stringify(over));
+  const anchor = 'Treat any summary, including this one, as a pointer and not as the rule.';
+  report(raw.includes(anchor), 'the sworn tests find their insertion point in good.md');
+  const withSentence = (sentence) => raw.replace(anchor, `${anchor} ${sentence}`);
+  const okSworn = run1(withSentence('For Bulgaria, sworn translation and legalisation for Bulgaria are arranged on request by the translation partner.'));
+  report(!okSworn.some((m) => m.includes('sworn')), '"sworn translation and legalisation for Bulgaria" is accepted', JSON.stringify(okSworn));
+  const okSworn2 = run1(withSentence('Sworn\ntranslation and legalisation for Bulgaria can be arranged.'));
+  report(!okSworn2.some((m) => m.includes('sworn')), 'the allowed sworn phrase is accepted across a line break and with a capital', JSON.stringify(okSworn2));
+  for (const bad of ['A sworn translator in the UK can sign it.', 'We arrange a sworn translation for the UK.', 'Ask for a sworn translation.']) {
+    const fails = run1(withSentence(bad));
+    report(fails.some((m) => m.includes('"sworn" may only appear')), `"${bad}" is rejected`, JSON.stringify(fails));
+  }
+  for (const bad of ['Our official translator signs it.', 'It is Home Office approved.', 'It is accepted by all authorities.']) {
+    const fails = run1(withSentence(bad));
+    report(fails.some((m) => m.includes('banned translation wording')), `"${bad}" is rejected`, JSON.stringify(fails));
+  }
+}
+
 // ---- skip.mjs and next.mjs on a scratch map
 const columns = ['day', 'publish_date', 'pillar', 'cluster', 'segment', 'funnel_stage', 'title', 'primary_keyword',
   'secondary_keywords', 'ai_question', 'search_intent', 'money_page', 'cta', 'outline', 'original_element', 'faq',
@@ -150,9 +187,72 @@ report(r.status === 0 && readFileSync(weeklyMap, 'utf8') === bytes1, 'schedule -
   report(firstFive.every((x) => x === '2026-10-26'), 'the first five planned rows are dated 2026-10-26', firstFive.join(','));
   const mondays = [...new Set(planned.map((x) => x.publish_date))];
   report(mondays.every((x) => new Date(x + 'T00:00:00Z').getUTCDay() === 1), 'every planned publish_date is a Monday');
-  const perDate = Object.values(planned.reduce((a, x) => ((a[x.publish_date] = (a[x.publish_date] || 0) + 1), a), {}));
-  report(perDate.every((n) => n <= 5), 'no Monday holds more than five rows');
+  const TR = 'Translating Bulgarian and UK documents for official use';
+  const lessons = planned.filter((x) => x.pillar !== TR);
+  const translation = planned.filter((x) => x.pillar === TR);
+  const count = (list) => Object.values(list.reduce((a, x) => ((a[x.publish_date] = (a[x.publish_date] || 0) + 1), a), {}));
+  report(count(lessons).every((n) => n <= 5), 'no Monday holds more than five lesson rows');
+  report(count(translation).every((n) => n === 1), 'no Monday holds more than one translation row');
+  report(lessons.slice(0, 5).every((x) => x.publish_date === '2026-10-26') && lessons.slice(0, 5).map((x) => x.day).join() === '4,5,6,7,8', 'the lesson calendar still starts with days 4 to 8 on 2026-10-26', lessons.slice(0, 5).map((x) => x.day).join());
+  const trDates = Object.fromEntries(translation.map((x) => [x.day, x.publish_date]));
+  report(translation.length === 15 && trDates['91'] === '2026-10-26' && trDates['92'] === '2026-11-02' && trDates['105'] === '2027-02-01', 'translation rows 91 to 105 run one a Monday from 2026-10-26 to 2027-02-01', JSON.stringify(trDates));
+  report(translation.every((x, i) => i === 0 || translation[i - 1].publish_date < x.publish_date), 'translation rows are dated in day order');
+  report(real.columns[real.columns.length - 1] === 'notes' && real.columns.length === 21, 'the map has a 21st column, notes, at the end');
+  const noted = real.rows.filter((x) => x.notes);
+  report(noted.map((x) => x.day).join() === '5,6,7,18,51,65,67,72,84' && noted.every((x) => x.notes.startsWith('Cross link to add in the body: ') && x.notes.includes('/translation/certified/') && x.status === 'planned'), 'the nine unpublished cross link rows carry their note', noted.map((x) => x.day).join());
+  report(real.rows.filter((x) => Number(x.day) >= 91).every((x) => x.language === 'en' && x.status === 'planned' && !x.url), 'rows 91 to 105 are English, planned and have no url');
   report(real.rows.every((x) => x.money_page.endsWith('/')), 'every money_page in the map has a trailing slash');
+}
+
+// ---- separate pillar calendar: schedule.mjs --pillar, the notes column, next.mjs with notes
+{
+  const TR = 'Translating Bulgarian and UK documents for official use';
+  const ncols = [...columns, 'notes'];
+  const mk = (day, pillar, notes = '') => ({ ...mkRow(day, `Row title ${day}`, 'planned'), publish_date: '', pillar, notes });
+  const nrows = [];
+  for (let d = 1; d <= 12; d++) nrows.push(mk(d, 'Lessons'));
+  for (let d = 91; d <= 95; d++) nrows.push(mk(d, TR, d === 93 ? 'Cross link to add in the body: see "quotes", /translation/certified/, and a, comma' : ''));
+  nrows[2].notes = 'Cross link to add in the body: ok';
+  const pmap = path.join(work, 'pillar.csv');
+  writeMap(ncols, nrows, pmap);
+  const penv = { ...env, ARTICLE_MAP: pmap };
+  const prun = (script, ...args) => spawnSync('node', [path.join(here, script), ...args], { env: penv, encoding: 'utf8' });
+  const datesOf = () => Object.fromEntries(readMap(pmap).rows.map((x) => [x.day, x.publish_date]));
+  // the plain weekly run leaves the translation pillar alone
+  r = prun('schedule.mjs', '--weekly', '2026-10-26', '--per-week', '5');
+  let dd = datesOf();
+  report(r.status === 0 && [1, 2, 3, 4, 5].every((d) => dd[d] === '2026-10-26') && [6, 7, 8, 9, 10].every((d) => dd[d] === '2026-11-02') && [11, 12].every((d) => dd[d] === '2026-11-09') && [91, 92, 93, 94, 95].every((d) => dd[d] === ''), 'schedule --weekly leaves a separately scheduled pillar undated', JSON.stringify(dd));
+  const lessonBytes = readMap(pmap).rows.filter((x) => x.pillar === 'Lessons').map((x) => x.publish_date).join();
+  r = prun('schedule.mjs', '--pillar', TR, '--weekly', '2026-10-26', '--per-week', '1');
+  dd = datesOf();
+  report(r.status === 0 && dd[91] === '2026-10-26' && dd[92] === '2026-11-02' && dd[93] === '2026-11-09' && dd[94] === '2026-11-16' && dd[95] === '2026-11-23', 'schedule --pillar --per-week 1 dates one row a Monday in day order', JSON.stringify(dd));
+  report(readMap(pmap).rows.filter((x) => x.pillar === 'Lessons').map((x) => x.publish_date).join() === lessonBytes, 'schedule --pillar does not touch the lesson rows');
+  const pbytes = readFileSync(pmap, 'utf8');
+  r = prun('schedule.mjs', '--pillar', TR, '--weekly', '2026-10-26', '--per-week', '1');
+  report(r.status === 0 && readFileSync(pmap, 'utf8') === pbytes && /Filled 0 dates/.test(r.stdout), 'schedule --pillar is idempotent');
+  r = prun('schedule.mjs', '--weekly', '2026-10-26', '--per-week', '5');
+  report(r.status === 0 && readFileSync(pmap, 'utf8') === pbytes, 'schedule --weekly after --pillar changes nothing');
+  r = prun('schedule.mjs', '--pillar', 'No such pillar', '--weekly', '2026-10-26', '--per-week', '1');
+  report(r.status === 2, 'schedule --pillar with an unknown pillar exits 2', `exit ${r.status}`);
+  // the notes column survives a write, quotes and commas included, and the file keeps its CRLF
+  const after = readMap(pmap);
+  report(after.columns.join() === ncols.join() && after.rows.find((x) => x.day === '93').notes === 'Cross link to add in the body: see "quotes", /translation/certified/, and a, comma' && after.rows.find((x) => x.day === '3').notes === 'Cross link to add in the body: ok' && after.rows.find((x) => x.day === '4').notes === '', 'the notes column is preserved by the CSV writer');
+  report(readFileSync(pmap, 'utf8').split('\n').every((l, i, a) => i === a.length - 1 || l.endsWith('\r')), 'the map keeps its CRLF line endings');
+  // next.mjs: notes in the row JSON, and a Monday with five lessons plus one translation guide fits the cap of seven
+  r = spawnSync('node', [path.join(here, 'next.mjs')], { env: { ...penv, ARTICLE_TODAY: '2026-10-26' }, encoding: 'utf8' });
+  const nb = JSON.parse(r.stdout);
+  report(nb.rows.map((x) => x.day).join() === '1,2,3,4,5,91' && nb.returned === 6 && nb.rows.find((x) => x.day === 3).notes === 'Cross link to add in the body: ok' && nb.rows.find((x) => x.day === 1).notes === '', 'next.mjs returns notes on each row, and five lessons plus one translation guide fit one batch', r.stderr + JSON.stringify(nb.rows.map((x) => x.day)));
+  r = spawnSync('node', [path.join(here, 'next.mjs'), '--one'], { env: { ...penv, ARTICLE_TODAY: '2026-11-09' }, encoding: 'utf8' });
+  report(r.status === 0 && 'notes' in JSON.parse(r.stdout).row, 'next.mjs --one carries notes too');
+}
+// the real map: the first Monday is days 4 to 8 plus the translation pillar guide, six rows in all
+{
+  const realEnv = { ...process.env, ARTICLE_TODAY: '2026-10-26' };
+  delete realEnv.ARTICLE_MAP;
+  const rr = spawnSync('node', [path.join(here, 'next.mjs')], { env: realEnv, encoding: 'utf8' });
+  const o = rr.status === 0 ? JSON.parse(rr.stdout) : null;
+  report(o && o.rows.map((x) => x.day).join() === '4,5,6,7,8,91' && o.batch_date === '2026-10-26', 'on the real map, Monday 26 October 2026 is days 4 to 8 and 91', rr.stderr + (o ? o.rows.map((x) => x.day).join() : ''));
+  report(o && o.rows.find((x) => x.day === 5).notes.startsWith('Cross link to add in the body: ') && o.rows.find((x) => x.day === 91).notes === '', 'on the real map, day 5 carries its cross link note and day 91 has none');
 }
 
 // ---- next.mjs in batch mode

@@ -3,6 +3,7 @@
 // today (Europe/London), in day order, at most --max rows (default 7). Each row carries `slug` and
 // `slug_exists`; a row whose slug already exists is reported, not fatal. Exit code 3 when nothing is due.
 // --one: the old behaviour, the single next row as `row`; exit 4 when its slug already exists.
+// Each row carries `notes` (the last column of the map; empty when the row has none): follow it when it is not empty.
 // Only rows with status 'planned' are ever returned: 'published' and 'skipped' rows are ignored.
 import { existsSync } from 'node:fs';
 import path from 'node:path';
@@ -44,6 +45,8 @@ const shape = (r) => {
     day: Number(r.day),
     slug,
     slug_exists: existsSync(path.join(BLOG_DIR, `${slug}.md`)),
+    // Editorial instructions for this row (for example a cross link sentence to work into the body). Empty when none.
+    notes: (r.notes || '').trim(),
     secondary_keywords_list: split(r.secondary_keywords, ';'),
     outline_list: split(r.outline, '|'),
     faq_list: split(r.faq, '||').map((p) => {

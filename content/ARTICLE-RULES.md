@@ -9,6 +9,7 @@ These rules apply to every article on ucraya.uk. The checker (`npm run check:art
 - A `checked:` date may be written only when you fetched that exact page in this session (WebFetch or curl returned its text) and read the figure there. Never copy a date, a fee, a score or a deadline from the research folder, from memory or from another article. If the page did not load, leave `checked` out of that source, name the page in the text, and tell the reader to check it on the day they book. Never write "checked on" in the text for a page you did not fetch.
 - If the official source contradicts the topical map row, the article follows the source and says the rule was checked on that date.
 - The research folder is background, not a source of claims.
+- If the row has notes, follow them; a cross link sentence goes into the body as a natural sentence with a relative link (for example /translation/certified/), not as a bare URL. The map's `notes` column is the last one; it is empty for most rows.
 
 ## 2. The file
 

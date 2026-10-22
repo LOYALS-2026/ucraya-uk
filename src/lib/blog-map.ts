@@ -119,6 +119,12 @@ const PILLAR_COPY: Record<string, { short: string; intro: string; goal?: string;
     intro:
       'Guides for Skilled Worker applicants who need to show B2 English: which tests count, how far B1 is from B2 in practice, and how one-to-one lessons and exam preparation fit the weeks you have. Rules change, so every guide points to the official page to check on the day.',
   },
+  'translating-bulgarian-and-uk-documents-for-official-use': {
+    short: 'Documents for the UK and Bulgaria',
+    goal: 'other',
+    intro:
+      'Guides for Bulgarians in the UK who need a document translated for a UK application, or a UK document translated for use in Bulgaria: registering a birth or marriage, apostilles, university and Nursing and Midwifery Council (NMC) paperwork. The translations are prepared by the school\'s translation partner, in Bulgarian and English. Always check the rules of the office that will receive your document.',
+  },
   'choosing-a-tutor-for-everyday-english': {
     short: 'Choosing an online tutor',
     goal: 'everyday',
