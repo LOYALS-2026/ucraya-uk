@@ -15,6 +15,8 @@
     "article:next": "node scripts/articles/next.mjs",
     "article:publish": "node scripts/articles/mark-published.mjs",
     "article:skip": "node scripts/articles/skip.mjs",
+    "article:summary": "node scripts/articles/batch-summary.mjs",
+    "article:schedule": "node scripts/articles/schedule.mjs",
     "test:articles": "node scripts/articles/test.mjs",
     "shots": "node scripts/shots.mjs",
     "brand": "node scripts/gen-brand.mjs",

@@ -16,7 +16,7 @@ These rules apply to every article on ucraya.uk. The checker (`npm run check:art
 - Front matter has exactly these fields and no others: `title` (59 characters at most, because the site cuts page titles at 60), `description` (160 at most), `pubDate` (YYYY-MM-DD, quoted), `updatedDate` (optional), `lang` ("en"), `day` (a number), `pillar`, `cluster`, `segment`, `funnelStage` (awareness, consideration or decision), `moneyPage` (a site path with a trailing slash, for example `/courses/oet/`), `cta`, `aiQuestion`, `primaryKeyword`, `secondaryKeywords` (a list), `faq` (a list of exactly three `q` and `a` pairs), `sources` (optional list of `title`, `url` and, only when the page was fetched in this session, `checked`), `draft` (false), `author` ("The Ucraya team").
 - Copy `pillar`, `cluster`, `segment`, `funnelStage`, `cta`, `aiQuestion` and `primaryKeyword` from the map row exactly. `moneyPage` is the row's money page with a trailing slash.
 - The three FAQ pairs start from the row's `faq` field. Rewrite each answer in full sentences, correct it against the sources, and remove any planning language such as "unconfirmed" or "confirm the offer".
-- `pubDate` is the day the article goes live: `today` from `npm run article:next`, not the row's `publish_date`.
+- `pubDate` is the Monday the weekly batch goes live: `batch_date` from `npm run article:next`, the same for every article in the batch. It is never a date in the future (the checker fails on one) and not a different day of the week.
 
 ## 3. The body
 

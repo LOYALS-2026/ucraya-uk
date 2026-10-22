@@ -12,7 +12,8 @@ const routesSrc = readFileSync(path.join(ROOT, 'src', 'lib', 'routes.ts'), 'utf8
 const slugBlock = /export const COURSE_SLUGS\s*=\s*\[([\s\S]*?)\]/.exec(routesSrc);
 const COURSE_PATHS = [...(slugBlock ? slugBlock[1].matchAll(/'([a-z0-9-]+)'/g) : [])].map((m) => `/courses/${m[1]}/`);
 COURSE_PATHS.push('/courses/');
-const MONEY_PAGES = [...new Set([...COURSE_PATHS, '/pricing/'])];
+// The pricing page, the free class and the placement test are money pages too (the plan uses all three).
+export const MONEY_PAGES = [...new Set([...COURSE_PATHS, '/pricing/', '/free-trial/', '/placement-test/'])];
 
 const FIELDS = ['title', 'description', 'pubDate', 'updatedDate', 'lang', 'day', 'pillar', 'cluster', 'segment',
   'funnelStage', 'moneyPage', 'cta', 'aiQuestion', 'primaryKeyword', 'secondaryKeywords', 'faq', 'sources',
@@ -116,6 +117,7 @@ export function checkArticle(file, ctx) {
   if (fm.title !== undefined && (typeof fm.title !== 'string' || fm.title.length > 59)) fail(`title must be a string of at most 59 characters (the site cuts page titles at 60) (is ${String(fm.title).length})`);
   if (fm.description !== undefined && (typeof fm.description !== 'string' || fm.description.length > 160)) fail(`description must be a string of at most 160 characters (is ${String(fm.description).length})`);
   if (fm.pubDate !== undefined && !isDate(dateStr(fm.pubDate))) fail(`pubDate "${fm.pubDate}" is not a valid YYYY-MM-DD date`);
+  else if (fm.pubDate !== undefined && dateStr(fm.pubDate) > today) fail(`pubDate ${dateStr(fm.pubDate)} is in the future (today is ${today}); use the batch Monday from npm run article:next`);
   if (fm.updatedDate !== undefined && !isDate(dateStr(fm.updatedDate))) fail(`updatedDate "${fm.updatedDate}" is not a valid YYYY-MM-DD date`);
   if (fm.lang !== 'en') fail('lang must be "en"');
   if (!Number.isInteger(fm.day) || fm.day < 1 || fm.day > 90) fail('day must be a whole number from 1 to 90');
@@ -165,8 +167,9 @@ export function checkArticle(file, ctx) {
     same('primaryKeyword', fm.primaryKeyword, row.primary_keyword);
     same('moneyPage', fm.moneyPage, row.money_page.replace(/\/?$/, '/'));
     same('cta', fm.cta, row.cta);
-    if (row.publish_date && fm.pubDate !== undefined && dateStr(fm.pubDate) !== row.publish_date) {
-      warn(`pubDate ${dateStr(fm.pubDate)} differs from the map's publish_date ${row.publish_date}`);
+    // Weekly batches: every article carries the batch Monday, which is never before the row's publish_date.
+    if (row.publish_date && fm.pubDate !== undefined && dateStr(fm.pubDate) < row.publish_date) {
+      warn(`pubDate ${dateStr(fm.pubDate)} is earlier than the map's publish_date ${row.publish_date}`);
     }
   } else if (Number.isInteger(fm.day)) fail(`no row for day ${fm.day} in content/topical-map.csv`);
 

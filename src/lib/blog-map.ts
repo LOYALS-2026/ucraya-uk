@@ -107,6 +107,18 @@ const PILLAR_COPY: Record<string, { short: string; intro: string; goal?: string;
     intro:
       'Guides for care employers and care staff on clear communication at work: handovers, notes, families and everyday workplace English. This is communication practice, not clinical training or registration preparation.',
   },
+  'passing-the-partner-visa-english-test': {
+    short: 'Partner visa English test',
+    goal: 'selt-b1',
+    intro:
+      'Guides for partners and spouses who need an approved English test for a family visa or its extension: which level your application asks for, how speaking and listening lessons prepare you, and what to check on gov.uk before you book a test.',
+  },
+  'reaching-b2-english-for-a-uk-work-visa': {
+    short: 'B2 English for a work visa',
+    goal: 'ielts',
+    intro:
+      'Guides for Skilled Worker applicants who need to show B2 English: which tests count, how far B1 is from B2 in practice, and how one-to-one lessons and exam preparation fit the weeks you have. Rules change, so every guide points to the official page to check on the day.',
+  },
   'choosing-a-tutor-for-everyday-english': {
     short: 'Choosing an online tutor',
     goal: 'everyday',
