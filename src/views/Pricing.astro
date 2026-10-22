@@ -95,6 +95,20 @@ const guide = (price: number, n: number) => Math.round(price * n * WEEKS);
     </div>
   </section>
 
+  <section class="section" id="translation-price" aria-labelledby="tq-price-h">
+    <div class="wrap">
+      <div class="card card-accent accent-green strip-card">
+        <div>
+          <h2 id="tq-price-h" class="text-xl">{p.translation.title}</h2>
+          <p class="mt-2">{p.translation.text}</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-secondary" href={pathFor('translation', locale) + '#enquiry'}>{p.translation.link}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section section-warm">
     <div class="wrap">
       <div class="grid gap-8 md:grid-cols-2 items-start">

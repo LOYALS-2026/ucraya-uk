@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import FaqList from '../components/FaqList.astro';
+import TranslationQuoteForm from '../components/TranslationQuoteForm.astro';
+import { useMessages, type Locale } from '../i18n';
+import { pathFor, absolute } from '../lib/routes';
+import { pageMeta } from '../lib/page';
+import { SITE, whatsappWith } from '../lib/site';
+import { translationService, faqPage } from '../lib/jsonld';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const m = useMessages(locale);
+const t = m.translation;
+const h = t.headings;
+const meta = pageMeta('translation', locale);
+const url = absolute(pathFor('translation', locale));
+const crumbs = [{ name: m.nav.translation, path: pathFor('translation', locale) }];
+const accents = ['accent-amber', 'accent-green'];
+const ld = [
+  translationService({
+    name: t.h1,
+    description: meta.description,
+    url,
+    serviceType: 'Translation',
+    offers: t.services.items.map((s) => ({ name: s.title, url: absolute(pathFor(`translation-${s.slug}`, locale)) })),
+  }),
+  faqPage(t.faq.items),
+];
+---
+<Base locale={locale} routeId="translation" title={meta.title} description={meta.description} crumbs={crumbs} jsonLd={ld} scripts={['/js/translation.js']} whatsappText="Hello, I would like a quote for a document translation">
+  <Breadcrumbs locale={locale} crumbs={crumbs} />
+  <PageHero h1={t.h1} lead={t.lead}>
+    <div class="btn-row mt-6">
+      <a class="btn btn-primary" href="#enquiry">{t.buttons.quote}</a>
+      <a class="btn btn-secondary" href="#services">{t.buttons.services}</a>
+    </div>
+    <p class="muted mt-4">{t.heroNote}</p>
+  </PageHero>
+
+  <section class="section" id="services" aria-labelledby="services-h">
+    <div class="wrap">
+      <h2 id="services-h">{h.services}</h2>
+      <p class="lead mt-2 mb-8">{t.services.intro}</p>
+      <div class="grid-cards">
+        {t.services.items.map((s, i) => (
+          <a class={`card card-link card-accent ${accents[i]}`} href={pathFor(`translation-${s.slug}`, locale)}>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+            <p class="mt-3"><span class="more">{s.link}</span></p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-warm">
+    <div class="wrap">
+      <h2>{t.how.title}</h2>
+      <ol class="steps row steps-4 mt-8">
+        {t.how.steps.map((s) => (
+          <li><h3>{s.title}</h3><p>{s.text}</p></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid gap-8 md:grid-cols-2 items-start">
+        <div class="prose-lite">
+          <h2 class="no-top">{t.who.title}</h2>
+          <ul>{t.who.items.map((w) => <li>{w}</li>)}</ul>
+        </div>
+        <div class="card card-accent accent-navy">
+          <h2 class="text-xl">{t.partner.title}</h2>
+          <p class="mt-2">{t.partner.text}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-warm">
+    <div class="wrap narrow">
+      <h2 class="mb-6">{t.faq.title}</h2>
+      <FaqList items={t.faq.items} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap narrow">
+      <TranslationQuoteForm locale={locale} service="hub" />
+      <p class="mt-4"><a href={whatsappWith('Hello, I would like a quote for a document translation')} rel="noopener">{m.buttons.whatsapp}</a></p>
+    </div>
+  </section>
+</Base>

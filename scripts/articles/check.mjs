@@ -12,8 +12,8 @@ const routesSrc = readFileSync(path.join(ROOT, 'src', 'lib', 'routes.ts'), 'utf8
 const slugBlock = /export const COURSE_SLUGS\s*=\s*\[([\s\S]*?)\]/.exec(routesSrc);
 const COURSE_PATHS = [...(slugBlock ? slugBlock[1].matchAll(/'([a-z0-9-]+)'/g) : [])].map((m) => `/courses/${m[1]}/`);
 COURSE_PATHS.push('/courses/');
-// The pricing page, the free class and the placement test are money pages too (the plan uses all three).
-export const MONEY_PAGES = [...new Set([...COURSE_PATHS, '/pricing/', '/free-trial/', '/placement-test/'])];
+// The pricing page, the free class, the placement test and the translation pages are money pages too (the plan uses the first three).
+export const MONEY_PAGES = [...new Set([...COURSE_PATHS, '/pricing/', '/free-trial/', '/placement-test/', '/translation/', '/translation/certified/', '/translation/specialist/'])];
 
 const FIELDS = ['title', 'description', 'pubDate', 'updatedDate', 'lang', 'day', 'pillar', 'cluster', 'segment',
   'funnelStage', 'moneyPage', 'cta', 'aiQuestion', 'primaryKeyword', 'secondaryKeywords', 'faq', 'sources',

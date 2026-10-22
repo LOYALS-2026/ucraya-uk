@@ -94,10 +94,10 @@
 
   /* sizes */
   --tap: 2.75rem;
-  --bar-h: 4.25rem;
+  --bar-h: 4.75rem;
   --sweep-t: 220ms;
 }
-@media (min-width: 768px) { :root { --bar-h: 4.75rem; } }
+@media (min-width: 768px) { :root { --bar-h: 6rem; } }
 
 /* Glass off: browsers without backdrop-filter, and people who ask for less transparency or more contrast. */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
@@ -344,9 +344,9 @@
   .site-header { position: sticky; top: 0; z-index: 40; }
   .header-bar { display: flex; align-items: center; min-height: var(--bar-h); gap: 0.5rem; }
   .logo-link { display: inline-flex; align-items: center; min-height: var(--tap); margin-right: auto; flex: none; }
-  /* Raya London compact logo (artwork as supplied, 536 x 220): about 120 px wide on phones, 160 px from 768 px. */
-  .logo-link img { width: 7.5rem; height: auto; aspect-ratio: 536 / 220; display: block; }
-  @media (min-width: 768px) { .logo-link img { width: 10rem; } }
+  /* The original Raya London logo (artwork as supplied, 1259 x 471): 150 px wide on phones, 200 px from 768 px. */
+  .logo-link img { width: 9.375rem; height: auto; aspect-ratio: 1259 / 471; display: block; }
+  @media (min-width: 768px) { .logo-link img { width: 12.5rem; } }
   .site-header { transition: transform var(--t) var(--ease); }
   .site-header.is-away { transform: translateY(-100%); }
   .menu-btn {
@@ -409,7 +409,7 @@
     .logo-link { margin-right: 0; }
     .nav-cta-bar { margin-left: 0.25rem; }
   }
-  @media (max-width: 359px) { .lang summary .lang-code { display: none; } .logo-link img { width: 6.5rem; } }
+  @media (max-width: 359px) { .lang summary .lang-code { display: none; } .logo-link img { width: 8.25rem; } }
 
   /* Sticky mobile bar */
   .sticky-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: flex; gap: 0.6rem; padding: 0.6rem 0.75rem calc(0.6rem + env(safe-area-inset-bottom)); }
@@ -425,8 +425,9 @@
   .site-footer li a { display: inline-flex; align-items: center; min-height: 2.25rem; padding-block: 0.15rem; line-height: 1.3; }
   /* The room for the fixed phone bar lives inside the footer (no cream band below it). */
   @media (max-width: 767px) { .site-footer { padding-bottom: calc(2rem + 5rem + env(safe-area-inset-bottom)); } }
-  .footer-logo { display: inline-block; padding: 0.6rem 0.9rem; border-radius: 22px; background: #fbf8f2; box-shadow: inset 0 1px 0 #fff, 0 10px 24px -12px rgb(0 0 0 / 0.6); }
-  .footer-logo img { display: block; width: 13.75rem; max-width: 100%; height: auto; aspect-ratio: 536 / 256; }
+  /* The original logo with white lettering sits straight on the dark footer (no tile). */
+  .footer-logo { display: inline-block; }
+  .footer-logo img { display: block; width: 15rem; max-width: 100%; height: auto; aspect-ratio: 1259 / 471; }
   .footer-grid { display: grid; gap: 2rem 1.25rem; grid-template-columns: 1fr 1fr; }
   .footer-grid > :first-child { grid-column: 1 / -1; }
   @media (min-width: 640px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
@@ -832,6 +833,30 @@
   .eyebrow { white-space: normal; }
   @media (max-width: 359px) { h1 { font-size: 1.9rem; } .hero-panel { padding: 1.15rem; } }
   .article-meta, .bl-byline { overflow-wrap: normal; }
+  /* ---- Translation: quote form, strip card, four step row ---------------- */
+  .tq-grid { display: grid; gap: 0 0.9rem; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .tq-grid { grid-template-columns: 1fr 1fr; } .tq-grid .f-wide { grid-column: 1 / -1; } }
+  .tq-grid .field[hidden] { display: none; }
+  .tq-form textarea.input { min-height: 6.5rem; }
+  .tq-form select.input { appearance: auto; }
+  .tq-file-row { display: grid; gap: 0.6rem; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .tq-file-row { grid-template-columns: repeat(3, 1fr); } }
+  .tq-file-row input[type="file"] {
+    width: 100%; min-width: 0; min-height: var(--tap); padding: 0.4rem 0.5rem; border: 1px dashed var(--field-border); border-radius: 14px;
+    background: rgb(255 255 255 / 0.85); color: var(--ink); font-family: var(--font-body); font-size: max(16px, 1rem);
+  }
+  .tq-file-row input[type="file"]::file-selector-button {
+    margin-right: 0.6rem; min-height: 2.25rem; padding: 0 0.85rem; border: 1px solid var(--field-border); border-radius: var(--r-pill);
+    background: linear-gradient(180deg, #ffc93a, var(--amber)); color: var(--ink); font-family: var(--font-body); font-weight: 700; font-size: 0.9375rem; cursor: pointer;
+  }
+  .tq-file-row input[type="file"]:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+  .tq-files .hint { margin: 0 0 0.5rem; }
+  .strip-card { display: grid; gap: 1.1rem; align-items: center; }
+  @media (min-width: 900px) { .strip-card { grid-template-columns: 1fr auto; gap: 2rem; } }
+  .tq-strip { padding-block: 0 clamp(1.5rem, 1rem + 2vw, 3rem); }
+  .steps.steps-4 { grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .steps.steps-4 { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .steps.steps-4 { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; } }
 }
 
 @layer utilities {

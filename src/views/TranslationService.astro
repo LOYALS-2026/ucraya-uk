@@ -1,0 +1,107 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PageHero from '../components/PageHero.astro';
+import FaqList from '../components/FaqList.astro';
+import TranslationQuoteForm from '../components/TranslationQuoteForm.astro';
+import { useMessages, type Locale } from '../i18n';
+import { pathFor, absolute, SERVICE_SLUGS, type ServiceSlug } from '../lib/routes';
+import { pageMeta } from '../lib/page';
+import { whatsappWith } from '../lib/site';
+import { translationService, faqPage } from '../lib/jsonld';
+interface Props { locale: Locale; slug: ServiceSlug }
+const { locale, slug } = Astro.props;
+const m = useMessages(locale);
+const t = m.translation;
+const p = t.pages[slug];
+const routeId = `translation-${slug}`;
+const meta = pageMeta(routeId, locale);
+const url = absolute(pathFor(routeId, locale));
+const crumbs = [
+  { name: m.nav.translation, path: pathFor('translation', locale) },
+  { name: p.h1, path: pathFor(routeId, locale) },
+];
+const ld = [
+  translationService({ name: p.h1, description: meta.description, url, serviceType: slug === 'certified' ? 'Certified translation' : 'Specialist translation' }),
+  faqPage(p.faq),
+];
+const other = SERVICE_SLUGS.find((s) => s !== slug)!;
+const otherItem = t.services.items.find((s) => s.slug === other)!;
+const wa = whatsappWith(slug === 'certified' ? 'Hello, I would like a quote for a certified translation' : 'Hello, I would like a quote for a specialist translation');
+---
+<Base locale={locale} routeId={routeId} title={meta.title} description={meta.description} crumbs={crumbs} jsonLd={ld} scripts={['/js/translation.js']} whatsappText={slug === 'certified' ? 'Hello, I would like a quote for a certified translation' : 'Hello, I would like a quote for a specialist translation'}>
+  <Breadcrumbs locale={locale} crumbs={crumbs} />
+  <PageHero h1={p.h1} lead={p.lead}>
+    <div class="btn-row mt-6">
+      <a class="btn btn-primary" href="#enquiry">{t.buttons.quote}</a>
+      <a class="btn btn-secondary" href={pathFor('translation', locale)}>{t.buttons.back}</a>
+    </div>
+    <p class="muted mt-4">{t.heroNote}</p>
+  </PageHero>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid gap-10 lg:grid-cols-[1fr_21rem] items-start">
+        <div class="prose-lite">
+          <h2 class="no-top">{p.who.title}</h2>
+          <ul>{p.who.items.map((w) => <li>{w}</li>)}</ul>
+
+          <h2>{p.covers.title}</h2>
+          <ul>{p.covers.items.map((w) => <li>{w}</li>)}</ul>
+
+          <h2>{p.receive.title}</h2>
+          <ul>{p.receive.items.map((w) => <li>{w}</li>)}</ul>
+
+          <h2>{p.note.title}</h2>
+          <p>{p.note.text}</p>
+
+          <h2>{t.how.title}</h2>
+          <ol>{t.how.steps.map((s) => <li><strong>{s.title}.</strong> {s.text}</li>)}</ol>
+
+          <h2>{t.partner.title}</h2>
+          <p>{t.partner.text}</p>
+        </div>
+
+        <aside class="card card-accent accent-amber glow-amber lg:sticky lg:top-32" aria-labelledby="price-h">
+          <h2 id="price-h" class="text-xl">{t.headings.price}</h2>
+          <p class="mt-4 font-bold text-ink">{t.price.label}</p>
+          <p class="price">{t.price.amount}<small>{t.price.unit}</small></p>
+          <p class="mt-4 text-[0.95rem]">{t.price.note}</p>
+          <p class="mt-4"><a class="btn btn-primary w-full" href="#enquiry">{t.price.button}</a></p>
+          <p class="mt-3 text-[0.95rem]"><a href={wa} rel="noopener">{m.buttons.whatsapp}</a></p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-warm">
+    <div class="wrap narrow">
+      <h2 class="mb-6">{t.faq.title}</h2>
+      <FaqList items={p.faq} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap narrow">
+      <TranslationQuoteForm locale={locale} service={slug} />
+    </div>
+  </section>
+
+  <section class="section section-warm">
+    <div class="wrap">
+      <h2 class="mb-6">{t.headings.related}</h2>
+      <div class="grid-cards">
+        <a class="card card-link card-accent accent-green" href={pathFor(`translation-${other}`, locale)}>
+          <h3>{otherItem.title}</h3>
+          <p class="text-[0.95rem]">{otherItem.text}</p>
+          <p class="mt-3"><span class="more">{otherItem.link}</span></p>
+        </a>
+        <a class="card card-link card-accent accent-navy" href={pathFor('courses', locale)}>
+          <h3>{m.courses.title}</h3>
+          <p class="text-[0.95rem]">{m.courses.lead}</p>
+          <p class="mt-3"><span class="more">{m.nav.courses}</span></p>
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

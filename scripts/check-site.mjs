@@ -115,7 +115,7 @@ for (const file of htmlFiles) {
   const html = readFileSync(file, 'utf8');
   const isMoney = !EN_ONLY.some((re) => re.test(url));
   const baseUrl = url.replace(/^\/(bg|ro|pl)(?=\/|$)/, '') || '/';
-  const isThanks = baseUrl === '/thank-you/';
+  const isThanks = baseUrl === '/thank-you/' || baseUrl === '/translation/thank-you/';
 
   // h1
   const h1s = html.match(/<h1[\s>]/gi) || [];
@@ -253,24 +253,47 @@ for (const file of htmlFiles) {
     }
   }
 
-  // enquiry form rules (Netlify Forms)
-  const forms = [...html.matchAll(/<form\b[^>]*>[\s\S]*?<\/form>/gi)].map((m) => m[0]).filter((f) => /name="enquiry"/.test(f));
-  if (baseUrl === '/contact/' && forms.length === 0) fail(url, 'enquiry form missing on the contact page');
-  for (const f of forms) {
-    const open = f.match(/<form\b[^>]*>/i)[0];
-    if (attr(open, 'data-netlify') !== 'true') fail(url, 'form lacks data-netlify="true"');
-    if (attr(open, 'netlify-honeypot') !== 'bot-field') fail(url, 'form lacks netlify-honeypot="bot-field"');
-    if ((attr(open, 'method') || '').toLowerCase() !== 'post') fail(url, 'form method is not POST');
-    const action = attr(open, 'action') || '';
-    if (!/\/thank-you\/$/.test(action)) fail(url, `form action is not an extensionless thank-you path: ${action}`);
-    if (!/<input[^>]*name="form-name"[^>]*value="enquiry"/.test(f)) fail(url, 'form lacks hidden form-name=enquiry');
-    if (!/<input[^>]*name="subject"/.test(f)) fail(url, 'form lacks hidden subject');
-    const names = [...f.matchAll(/<(?:input|select|textarea)\b[^>]*\sname="([^"]+)"/g)].map((m) => m[1]);
-    for (const n of ['email', 'name', 'phone', 'first-language', 'goal', 'format', 'level', 'deadline', 'preferred-times', 'message', 'bot-field']) {
-      if (!names.includes(n)) fail(url, `form lacks field ${n}`);
+  // Netlify Forms rules, for both forms: "enquiry" (lessons) and "translation-quote" (document translation with uploads).
+  const forms = [...html.matchAll(/<form\b[^>]*>[\s\S]*?<\/form>/gi)].map((m) => m[0]);
+  const formsNamed = (n) => forms.filter((f) => new RegExp(`<form\\b[^>]*\\sname="${n}"`).test(f));
+  if (baseUrl === '/contact/' && formsNamed('enquiry').length === 0) fail(url, 'enquiry form missing on the contact page');
+  const isQuotePage = ['/translation/', '/translation/certified/', '/translation/specialist/'].includes(baseUrl);
+  if (isQuotePage && formsNamed('translation-quote').length !== 1) fail(url, `expected one translation-quote form, found ${formsNamed('translation-quote').length}`);
+  if (!isQuotePage && formsNamed('translation-quote').length) fail(url, 'translation-quote form on a page that is not a translation page');
+  const FORM_RULES = {
+    enquiry: { fields: ['email', 'name', 'phone', 'first-language', 'goal', 'format', 'level', 'deadline', 'preferred-times', 'message', 'bot-field'], thanks: /\/thank-you\/$/, enctype: false, subject: /name="subject"/ },
+    'translation-quote': {
+      fields: ['email', 'name', 'phone', 'from_language', 'to_language', 'document_type', 'purpose', 'certification', 'deadline', 'pages', 'message', 'file_1', 'file_2', 'file_3', 'consent', 'bot-field',
+        'source_channel', 'source_referrer', 'last_channel', 'last_referrer', 'landing_page', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'device', 'browser_language', 'visit_started', 'enquiry_page', 'site_language'],
+      thanks: /\/translation\/thank-you\/$/, enctype: true, subject: /name="subject"[^>]*value="Translation quote request via ucraya\.uk: %\{submissionId\}"/,
+    },
+  };
+  for (const [fname, rule] of Object.entries(FORM_RULES)) {
+    for (const f of formsNamed(fname)) {
+      const open = f.match(/<form\b[^>]*>/i)[0];
+      if (attr(open, 'data-netlify') !== 'true') fail(url, `${fname}: form lacks data-netlify="true"`);
+      if (attr(open, 'netlify-honeypot') !== 'bot-field') fail(url, `${fname}: form lacks netlify-honeypot="bot-field"`);
+      if ((attr(open, 'method') || '').toLowerCase() !== 'post') fail(url, `${fname}: form method is not POST`);
+      const action = attr(open, 'action') || '';
+      if (!rule.thanks.test(action)) fail(url, `${fname}: form action is not the extensionless thank-you path: ${action}`);
+      if (/\.html?$/i.test(action)) fail(url, `${fname}: form action has an extension: ${action}`);
+      if (rule.enctype && attr(open, 'enctype') !== 'multipart/form-data') fail(url, `${fname}: form lacks enctype="multipart/form-data"`);
+      if (!new RegExp(`<input[^>]*name="form-name"[^>]*value="${fname}"`).test(f)) fail(url, `${fname}: form lacks hidden form-name=${fname}`);
+      if (!rule.subject.test(f)) fail(url, `${fname}: form lacks the hidden subject`);
+      const names = [...f.matchAll(/<(?:input|select|textarea)\b[^>]*\sname="([^"]+)"/g)].map((m) => m[1]);
+      for (const n of rule.fields) {
+        if (!names.includes(n)) fail(url, `${fname}: form lacks field ${n}`);
+      }
+      const firstText = f.match(/<input\b[^>]*type="(?:text|email|tel)"[^>]*>/i);
+      if (firstText && !/type="email"/.test(firstText[0])) fail(url, `${fname}: the email field is not the first text input`);
+      if (rule.enctype) {
+        for (const tag of f.matchAll(/<input\b[^>]*type="file"[^>]*>/gi)) {
+          const acc = attr(tag[0], 'accept') || '';
+          for (const ext of ['.pdf', '.jpg', '.jpeg', '.png', '.heic', '.docx']) if (!acc.includes(ext)) fail(url, `${fname}: file input does not accept ${ext}`);
+        }
+        if (!/<input[^>]*type="checkbox"[^>]*name="consent"|<input[^>]*name="consent"[^>]*type="checkbox"/.test(f)) fail(url, `${fname}: no consent tick`);
+      }
     }
-    const firstText = f.match(/<input\b[^>]*type="(?:text|email|tel)"[^>]*>/i);
-    if (firstText && !/type="email"/.test(firstText[0])) fail(url, 'the email field is not the first text input');
   }
 }
 

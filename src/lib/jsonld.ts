@@ -4,9 +4,8 @@ import { absolute } from './routes';
 export const ORG_ID = `${SITE.url}/#organization`;
 /** The school behind the site. Ucraya is its online lessons service, so it is an alternate name. */
 export const ORG_NAME = 'Training Centre Raya London';
-/** The logo files of the Raya London pack (public/raya/). */
-export const LOGO_SVG = absolute('/raya/raya-flat-light.svg');
-export const LOGO_PNG = absolute('/raya/raya-flat-light.png');
+/** The original Raya London logo (black lettering, transparent PNG, 1259 px wide; the vector is next to it in public/raya/original/). */
+export const LOGO_PNG = absolute('/raya/original/raya-original-vector-black-1259.png');
 
 export function organization() {
   return {
@@ -17,7 +16,7 @@ export function organization() {
     alternateName: ['Ucraya', 'Raya London'],
     legalName: SITE.legalName,
     url: SITE.url + '/',
-    logo: [LOGO_SVG, LOGO_PNG],
+    logo: LOGO_PNG,
     image: [absolute('/og/default.png'), LOGO_PNG],
     description:
       'Online English lessons with real tutors: one-to-one lessons, small group level courses and exam preparation, from a London English school founded in 2015.',
@@ -168,5 +167,27 @@ export function orgPage(type: 'AboutPage' | 'ContactPage', url: string, name: st
     mainEntity: { '@id': ORG_ID },
     about: { '@id': ORG_ID },
     speakable: speakable(['h1', '.page-hero .lead']),
+  };
+}
+
+/** The translation service: the school offers it and a partner translator does the work. No price is published (quoted per job). */
+export function translationService(opts: { name: string; description: string; url: string; serviceType: string; offers?: { name: string; url: string }[] }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${opts.url}#service`,
+    name: opts.name,
+    serviceType: opts.serviceType,
+    description: opts.description,
+    url: opts.url,
+    provider: [
+      { '@type': ['EducationalOrganization', 'Organization'], '@id': ORG_ID, name: ORG_NAME, url: SITE.url + '/' },
+      { '@type': 'Organization', name: 'Lili Translations', url: 'https://lili-translations.bg/en', description: 'Translation partner of Training Centre Raya London' },
+    ],
+    areaServed: ['GB', 'BG'],
+    availableChannel: { '@type': 'ServiceChannel', serviceUrl: opts.url, availableLanguage: ['English', 'Bulgarian'] },
+    ...(opts.offers?.length
+      ? { hasOfferCatalog: { '@type': 'OfferCatalog', name: opts.name, itemListElement: opts.offers.map((o) => ({ '@type': 'Offer', url: o.url, itemOffered: { '@type': 'Service', name: o.name } })) } }
+      : {}),
   };
 }

@@ -12,6 +12,9 @@ export const COURSE_SLUGS = [
 ] as const;
 export type CourseSlug = (typeof COURSE_SLUGS)[number];
 
+export const SERVICE_SLUGS = ['certified', 'specialist'] as const;
+export type ServiceSlug = (typeof SERVICE_SLUGS)[number];
+
 export interface Route {
   id: string;
   /** Path in the default locale, with leading and trailing slash. */
@@ -22,6 +25,8 @@ export interface Route {
   locales: readonly Locale[];
   noindex?: boolean;
   course?: CourseSlug;
+  /** Translation service page (certified or specialist). */
+  service?: ServiceSlug;
 }
 
 const ALL = locales;
@@ -40,6 +45,18 @@ export const ROUTES: Route[] = [
       course: slug,
     }),
   ),
+  { id: 'translation', path: '/translation/', view: 'translation', meta: 'translation', locales: ALL },
+  ...SERVICE_SLUGS.map(
+    (slug): Route => ({
+      id: `translation-${slug}`,
+      path: `/translation/${slug}/`,
+      view: 'translationService',
+      meta: slug === 'certified' ? 'translationCertified' : 'translationSpecialist',
+      locales: ALL,
+      service: slug,
+    }),
+  ),
+  { id: 'translation-thanks', path: '/translation/thank-you/', view: 'translationThanks', meta: 'translationThanks', locales: ALL, noindex: true },
   { id: 'pricing', path: '/pricing/', view: 'pricing', meta: 'pricing', locales: ALL },
   { id: 'how', path: '/how-it-works/', view: 'how', meta: 'how', locales: ALL },
   { id: 'trial', path: '/free-trial/', view: 'trial', meta: 'trial', locales: ALL },

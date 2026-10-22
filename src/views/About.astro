@@ -40,6 +40,7 @@ const crumbs = [{ name: m.nav.about, path: pathFor('about', locale) }];
           <ul class="tick-list mt-3">{a.approach.items.map((i) => <li>{i}</li>)}</ul>
         </div>
       </div>
+      <p class="mt-8 max-w-3xl">{a.translation.text} <a href={pathFor('translation', locale)}>{a.translation.link}</a></p>
     </div>
   </section>
   <CtaBand locale={locale} />

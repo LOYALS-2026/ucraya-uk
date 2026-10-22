@@ -17,7 +17,7 @@ const hubs = pillarsWith(posts.map((p) => p.data)).filter((pl) => posts.some((p)
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a class="footer-logo" href={localePath(locale, '/')} aria-label={m.header.homeLabel}><img src="/raya/raya-glass-light.svg" width="536" height="256" alt="" /></a>
+        <a class="footer-logo" href={localePath(locale, '/')} aria-label={m.header.homeLabel}><img src="/brand/raya-white-480.png" srcset="/brand/raya-white-480.png 480w, /brand/raya-white-720.png 720w" sizes="240px" width="480" height="180" alt="" loading="lazy" decoding="async" /></a>
         <p class="mt-4 max-w-xs font-bold text-white">{m.footer.service}</p>
         <p class="mt-3 max-w-xs">{m.footer.about}</p>
         <p class="mt-3 max-w-xs">{m.common.classroomNote} <a href={SITE.schoolSite}>{m.common.classroomLink}</a></p>
@@ -33,6 +33,7 @@ const hubs = pillarsWith(posts.map((p) => p.data)).filter((pl) => posts.some((p)
       <div>
         <h2>{m.footer.colSite}</h2>
         <ul>
+          <li><a href={pathFor('translation', locale)}>{m.nav.translation}</a></li>
           <li><a href={pathFor('pricing', locale)}>{m.nav.pricing}</a></li>
           <li><a href={pathFor('how', locale)}>{m.nav.how}</a></li>
           <li><a href={pathFor('trial', locale)}>{m.nav.trial}</a></li>

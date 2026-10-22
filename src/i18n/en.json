@@ -17,14 +17,15 @@
     "contact": "Contact",
     "about": "About",
     "trial": "Free group class",
-    "placement": "Placement test"
+    "placement": "Placement test",
+    "translation": "Translation"
   },
   "header": {
     "menu": "Menu",
     "closeMenu": "Close menu",
     "language": "Language",
     "mainNav": "Main navigation",
-    "homeLabel": "Raya London Training Centre, home"
+    "homeLabel": "Training Centre Raya London, home"
   },
   "buttons": {
     "enquire": "Enquire about lessons",
@@ -357,6 +358,22 @@
     "notFound": {
       "title": "Page not found",
       "description": "We could not find that page. Try the home page or send us an enquiry."
+    },
+    "translation": {
+      "title": "Document translation, certified and specialist",
+      "description": "Certified translation of certificates, diplomas and records for UK applications, plus specialist business translation. Every job is quoted free."
+    },
+    "translationCertified": {
+      "title": "Certified document translation",
+      "description": "Certified translation of birth and marriage certificates, diplomas, police certificates and more, with a signed statement of accuracy. Free quote."
+    },
+    "translationSpecialist": {
+      "title": "Specialist and business translation",
+      "description": "Medical, technical, legal, commercial and website translation by a qualified translator, priced per document or page after a free quote."
+    },
+    "translationThanks": {
+      "title": "Thank you for your quote request",
+      "description": "Your documents have been sent. The translator will reply by email with a free quote."
     }
   },
   "home": {
@@ -482,6 +499,12 @@
           "text": "I was working a night shift on the ward."
         }
       ]
+    },
+    "translation": {
+      "title": "Also from the school: document translation",
+      "text": "Certified translation of certificates, diplomas and records, and specialist business translation, from a registered and qualified translator who has worked with the school for years. Upload your documents for a free quote.",
+      "link": "Get a translation quote",
+      "more": "See translation"
     }
   },
   "products": {
@@ -1134,6 +1157,11 @@
       "result": "About £{amount} a month",
       "detail": "Lessons a week: {n}, at £{price} each; about 4.33 weeks a month.",
       "note": "A guide only; you pay per lesson by bank transfer."
+    },
+    "translation": {
+      "title": "Document translation: quoted per job",
+      "text": "Translation is not priced from a list. Send your documents through the quote form and you get a free quote, per document or per page. You pay by bank transfer after you accept it, and the work starts after payment.",
+      "link": "Ask for a translation quote"
     }
   },
   "how": {
@@ -1561,6 +1589,10 @@
         "Plain prices, shown in full, and no card payments: you pay by bank transfer after the office confirms.",
         "No promises about test results. We teach and prepare you, and tell you honestly what to practise."
       ]
+    },
+    "translation": {
+      "text": "The school also offers document translation, through a registered and qualified translator who has worked with us for years.",
+      "link": "Document translation"
     }
   },
   "contact": {
@@ -1627,7 +1659,7 @@
   "privacy": {
     "h1": "Privacy",
     "lead": "How Ucraya uses your details, in plain English.",
-    "updated": "Last updated 21 October 2026",
+    "updated": "Last updated 22 October 2026",
     "sections": [
       {
         "title": "Who we are",
@@ -1654,7 +1686,8 @@
       {
         "title": "Who can see them",
         "body": [
-          "Your enquiry is delivered to the school office by email. It is handled through the form service of our website host, Netlify. We do not sell your details and we do not share them for advertising."
+          "Your enquiry is delivered to the school office by email. It is handled through the form service of our website host, Netlify. We do not sell your details and we do not share them for advertising.",
+          "If you ask for a translation quote, the documents you upload are stored by the form service of our website host, sent to the translator only to prepare your quote and do the job, and deleted after the job."
         ]
       },
       {
@@ -1742,5 +1775,450 @@
         ]
       }
     ]
+  },
+  "translation": {
+    "h1": "Document translation",
+    "lead": "Certified translation for official use and specialist translation for business, from a registered and qualified translator who has worked with the school for years. Send your documents and we quote you free.",
+    "heroNote": "Every job is quoted free before you pay anything.",
+    "buttons": {
+      "quote": "Get a free quote",
+      "services": "See the two services",
+      "certified": "Certified translation",
+      "specialist": "Specialist translation",
+      "back": "Back to translation"
+    },
+    "headings": {
+      "services": "Two translation services",
+      "how": "How it works",
+      "who": "Who it is for",
+      "partner": "Who does the translating",
+      "faq": "Questions about translation",
+      "price": "Price",
+      "related": "More from the school",
+      "quote": "Ask for a free quote"
+    },
+    "services": {
+      "intro": "Choose the one that matches your documents. Not sure? Send the form and we will tell you.",
+      "items": [
+        {
+          "slug": "certified",
+          "title": "Certified document translation",
+          "text": "For documents an authority, university, employer or court asks you to have translated: certificates, diplomas, police certificates, licences, bank and payslip documents, medical records and court or notarial papers. Delivered with the translator's signed statement of accuracy and contact details.",
+          "link": "See certified translation"
+        },
+        {
+          "slug": "specialist",
+          "title": "Specialist and business translation",
+          "text": "Medical, technical, legal, commercial, website and marketing text. Priced per document or per page after a free quote.",
+          "link": "See specialist translation"
+        }
+      ]
+    },
+    "how": {
+      "title": "How it works",
+      "steps": [
+        {
+          "title": "Upload your documents",
+          "text": "Fill in the quote form with your languages, what the translation is for and up to three files (8 MB in total). A clear photo or scan of each page is fine."
+        },
+        {
+          "title": "Get a free quote",
+          "text": "The translator reads your documents and replies by email with the price, the delivery time and the invoice details, usually within one working day."
+        },
+        {
+          "title": "Pay by bank transfer",
+          "text": "Accept the quote and pay by bank transfer using the invoice details we send. The work starts after payment."
+        },
+        {
+          "title": "Receive your translation",
+          "text": "We email your translation as a PDF. Originals can be posted to you on request."
+        }
+      ]
+    },
+    "who": {
+      "title": "Who it is for",
+      "items": [
+        "People applying for a UK visa or settlement",
+        "Students applying to a university or college",
+        "Workers whose employer or professional body asks for a translation",
+        "Nurses and other healthcare staff registering in the UK",
+        "Drivers exchanging a licence with the DVLA",
+        "Anyone with court, notarial or medical papers",
+        "Businesses that need technical, legal, commercial or website text translated"
+      ]
+    },
+    "partner": {
+      "title": "Who does the translating",
+      "text": "Translations are done by Lili Translations, a registered and qualified translator who has worked with the school for years. Bulgarian and English is the core pair, and there are more than 20 language combinations with English. Give your languages in the form and the quote confirms them."
+    },
+    "faq": {
+      "title": "Questions about translation",
+      "items": [
+        {
+          "q": "How much does a translation cost?",
+          "a": "There is no price list. Every job is priced after a free quote, per document or per page, depending on the languages, the length and how soon you need it."
+        },
+        {
+          "q": "How long does it take?",
+          "a": "The quote tells you the delivery time for your documents. If you have a deadline, give it in the form."
+        },
+        {
+          "q": "Will my translation be accepted?",
+          "a": "Certified translations are prepared in the format UK bodies normally ask for: a signed statement of accuracy, the date and the translator's details. We cannot speak for the body that receives it, so check its rules first and tell us who the translation is for."
+        },
+        {
+          "q": "Which files can I upload?",
+          "a": "PDF, JPG, JPEG, PNG, HEIC or DOCX, up to three files and 8 MB in total. A clear photo of each full page is fine. If your files are larger, send the form with what you can and say so in the message; we will tell you how to send the rest."
+        },
+        {
+          "q": "How do I pay?",
+          "a": "By bank transfer after you accept the quote. The work starts after payment. There is no card payment on the site."
+        },
+        {
+          "q": "What happens to my documents?",
+          "a": "They are stored by the form service of this site, sent to the translator only to prepare your quote and do the job, and deleted after the job. See the privacy page."
+        },
+        {
+          "q": "Can you translate from and into Bulgarian?",
+          "a": "Yes. Bulgarian and English is the core pair, and there are more than 20 language combinations with English. Give your languages in the form and the quote confirms them."
+        },
+        {
+          "q": "Can I have the original by post?",
+          "a": "Yes, on request. Translations are emailed as a PDF, and originals can be posted to you."
+        }
+      ]
+    },
+    "price": {
+      "label": "Translation",
+      "amount": "Free quote",
+      "unit": "for every job",
+      "note": "There is no price list. Every job is quoted free, per document or per page. You pay by bank transfer after you accept the quote, and the work starts after payment.",
+      "button": "Get a free quote"
+    },
+    "pages": {
+      "certified": {
+        "h1": "Certified translation for official use",
+        "lead": "A translation of your certificate, diploma or record that comes with the translator's signed statement of accuracy, for UK applications, universities, employers and courts.",
+        "who": {
+          "title": "What it is used for",
+          "items": [
+            "UK visa and settlement applications",
+            "Universities and colleges",
+            "Employers",
+            "Professional registration",
+            "The NHS",
+            "The DVLA",
+            "Courts"
+          ]
+        },
+        "covers": {
+          "title": "What we translate",
+          "items": [
+            "Birth, marriage and death certificates",
+            "Diplomas and transcripts",
+            "Criminal record and police certificates",
+            "Driving licences",
+            "Bank and payslip documents",
+            "Medical records",
+            "Court and notarial papers"
+          ]
+        },
+        "receive": {
+          "title": "What you receive",
+          "items": [
+            "Your translation with the translator's signed statement of accuracy, the date and the translator's contact details",
+            "Prepared in the format UK bodies normally ask for",
+            "A PDF by email, with originals by post on request",
+            "For Bulgaria, sworn translation and legalisation arranged on request"
+          ]
+        },
+        "note": {
+          "title": "Check before you order",
+          "text": "Every university, employer, professional body and authority sets its own rules. Before you order, check what the body that receives the translation asks for, and tell us who it is for in the form."
+        },
+        "faq": [
+          {
+            "q": "What is a certified translation?",
+            "a": "A translation that comes with a signed statement from the translator that it is a complete and accurate translation of the original, with the date and the translator's contact details."
+          },
+          {
+            "q": "Will my university or employer accept it?",
+            "a": "We prepare it in the format UK bodies normally ask for. Each body sets its own rules, so check them and tell us who the translation is for."
+          },
+          {
+            "q": "Do you need my original document?",
+            "a": "A clear scan or photo of each page is enough for the quote and the translation. If the body that receives it asks for something more, tell us in the form."
+          },
+          {
+            "q": "How much does it cost?",
+            "a": "No price is published. Every job is quoted free once you send your documents."
+          }
+        ]
+      },
+      "specialist": {
+        "h1": "Specialist and business translation",
+        "lead": "Medical, technical, legal and commercial text, and website and marketing copy, translated by a qualified translator. Priced per document or per page after a free quote.",
+        "who": {
+          "title": "Who it is for",
+          "items": [
+            "Businesses with contracts, manuals and commercial documents",
+            "Clinics and health organisations",
+            "Engineering and technical teams",
+            "People with legal papers to understand or submit",
+            "Websites and marketing teams"
+          ]
+        },
+        "covers": {
+          "title": "What we translate",
+          "items": [
+            "Medical text",
+            "Technical text",
+            "Legal text",
+            "Commercial and business text",
+            "Website and marketing text"
+          ]
+        },
+        "receive": {
+          "title": "How the quote works",
+          "items": [
+            "You send the text or document and the languages",
+            "The translator looks at what has to be translated and replies with the price and the delivery time",
+            "The price is per document or per page",
+            "The work starts after payment by bank transfer"
+          ]
+        },
+        "note": {
+          "title": "Tell us what the text is for",
+          "text": "In the form, say what the subject is, who will read the translation and when you need it. The quote tells you what can be done and what it costs."
+        },
+        "faq": [
+          {
+            "q": "How is the price worked out?",
+            "a": "Per document or per page, depending on the languages, the length, the subject and how soon you need it. The quote is free."
+          },
+          {
+            "q": "Can I send several documents?",
+            "a": "Yes. Upload up to three files in the form, and if you have more, say so in the message."
+          },
+          {
+            "q": "Do you also do certified translation?",
+            "a": "Yes, for documents used officially. See the certified translation page."
+          },
+          {
+            "q": "How do I pay?",
+            "a": "By bank transfer after you accept the quote. The work starts after payment."
+          }
+        ]
+      }
+    },
+    "form": {
+      "title": "Ask for a free quote",
+      "intro": "Tell us what you need translated and upload your documents. We reply by email with the price and the invoice details. The work starts after you pay.",
+      "email": "Email",
+      "name": "Your name",
+      "phone": "Phone or WhatsApp",
+      "optional": "optional",
+      "from": "Translate from",
+      "to": "Translate into",
+      "otherLanguage": "Which other language?",
+      "docType": "What kind of document?",
+      "purpose": "What is it for?",
+      "certification": "Which kind of translation?",
+      "deadline": "Date you need it by",
+      "pages": "Number of pages",
+      "message": "Anything we should know?",
+      "files": "Your documents",
+      "filesHint": "Up to three files: PDF, JPG, JPEG, PNG, HEIC or DOCX, 8 MB in total. A clear photo of each page is fine.",
+      "fileN": "File {n}",
+      "choose": "Choose",
+      "consent": "I agree that the documents I upload are sent to the translator only to prepare my quote and do the job. I have read the {privacyLink}.",
+      "privacyLinkText": "privacy page",
+      "send": "Send for a quote",
+      "sending": "Sending, please wait",
+      "reply": "We reply by email with a free quote, usually within one working day.",
+      "requiredNote": "* required",
+      "honeypot": "Leave this empty",
+      "noscript": "Please enable JavaScript to send the form, or message us on WhatsApp.",
+      "errors": {
+        "email": "Please enter a valid email address, for example name@example.com.",
+        "name": "Please tell us your name.",
+        "phone": "Please check the phone number. Use digits, and a + before the country code.",
+        "from": "Please choose the language to translate from.",
+        "to": "Please choose the language to translate into.",
+        "docType": "Please choose the kind of document.",
+        "consent": "Please tick the box so we can send your documents to the translator.",
+        "tooBig": "Your files are {size} MB. The limit is 8 MB in total. Send what you can and say so in the message.",
+        "badType": "We can only read PDF, JPG, JPEG, PNG, HEIC and DOCX files. Please check: {names}"
+      },
+      "languages": [
+        {
+          "value": "Bulgarian",
+          "label": "Bulgarian"
+        },
+        {
+          "value": "English",
+          "label": "English"
+        },
+        {
+          "value": "Romanian",
+          "label": "Romanian"
+        },
+        {
+          "value": "Polish",
+          "label": "Polish"
+        },
+        {
+          "value": "Turkish",
+          "label": "Turkish"
+        },
+        {
+          "value": "Russian",
+          "label": "Russian"
+        },
+        {
+          "value": "Ukrainian",
+          "label": "Ukrainian"
+        },
+        {
+          "value": "Arabic",
+          "label": "Arabic"
+        },
+        {
+          "value": "French",
+          "label": "French"
+        },
+        {
+          "value": "German",
+          "label": "German"
+        },
+        {
+          "value": "Spanish",
+          "label": "Spanish"
+        },
+        {
+          "value": "Italian",
+          "label": "Italian"
+        },
+        {
+          "value": "Greek",
+          "label": "Greek"
+        },
+        {
+          "value": "Portuguese",
+          "label": "Portuguese"
+        },
+        {
+          "value": "Other",
+          "label": "Other"
+        }
+      ],
+      "docTypes": [
+        {
+          "value": "Birth, marriage or death certificate",
+          "label": "Birth, marriage or death certificate"
+        },
+        {
+          "value": "Diploma or transcript",
+          "label": "Diploma or transcript"
+        },
+        {
+          "value": "Criminal record or police certificate",
+          "label": "Criminal record or police certificate"
+        },
+        {
+          "value": "Driving licence",
+          "label": "Driving licence"
+        },
+        {
+          "value": "Bank or payslip document",
+          "label": "Bank or payslip document"
+        },
+        {
+          "value": "Medical record",
+          "label": "Medical record"
+        },
+        {
+          "value": "Court or notarial paper",
+          "label": "Court or notarial paper"
+        },
+        {
+          "value": "Technical text",
+          "label": "Technical text"
+        },
+        {
+          "value": "Legal text",
+          "label": "Legal text"
+        },
+        {
+          "value": "Commercial or business text",
+          "label": "Commercial or business text"
+        },
+        {
+          "value": "Website or marketing text",
+          "label": "Website or marketing text"
+        },
+        {
+          "value": "Other",
+          "label": "Other"
+        }
+      ],
+      "purposes": [
+        {
+          "value": "UK visa or settlement",
+          "label": "UK visa or settlement"
+        },
+        {
+          "value": "University",
+          "label": "University or college"
+        },
+        {
+          "value": "Employer",
+          "label": "Employer"
+        },
+        {
+          "value": "Professional registration",
+          "label": "Professional registration"
+        },
+        {
+          "value": "NHS or medical",
+          "label": "NHS or medical"
+        },
+        {
+          "value": "Court or legal",
+          "label": "Court or legal"
+        },
+        {
+          "value": "Business",
+          "label": "Business"
+        },
+        {
+          "value": "Other",
+          "label": "Other"
+        }
+      ],
+      "certs": [
+        {
+          "value": "Certified translation",
+          "label": "Certified translation"
+        },
+        {
+          "value": "Sworn translation for Bulgaria",
+          "label": "Sworn translation for Bulgaria"
+        },
+        {
+          "value": "Not sure",
+          "label": "Not sure"
+        }
+      ]
+    },
+    "thanks": {
+      "h1": "Thank you, we have your documents",
+      "lead": "The translator will read them and reply by email with a free quote, usually within one working day. The work starts after you pay by bank transfer.",
+      "next": "While you wait",
+      "items": [
+        "Check what the body that receives the translation asks for, such as a university, an employer or an authority.",
+        "Keep the originals safe. You only need to send them if we agree it in the quote."
+      ]
+    }
   }
 }

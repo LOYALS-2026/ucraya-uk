@@ -1,0 +1,163 @@
+---
+// The Netlify form "translation-quote": a quote request with up to three uploaded documents. Rendered as static HTML on the
+// three translation pages (hub, certified, specialist) so Netlify detects it; every copy has the same field names.
+// Netlify emails the submission (the owner adds the notification address in Netlify, see docs/SITE.md). public/js/translation.js
+// does the validation and the 8 MB check; public/js/attribution.js fills the hidden "where did this come from" fields.
+import { useMessages, messagesEn, type Locale } from '../i18n';
+import { pathFor } from '../lib/routes';
+interface Props {
+  locale: Locale;
+  /** Which page the form is on: sets the preselected kind of translation. */
+  service?: 'hub' | 'certified' | 'specialist';
+}
+const { locale, service = 'hub' } = Astro.props;
+const m = useMessages(locale);
+const f = m.translation.form;
+const en = messagesEn.translation.form;
+const e = f.errors;
+const action = pathFor('translation-thanks', locale);
+const privacy = pathFor('privacy', locale);
+const [tickBefore, tickAfter] = f.consent.split('{privacyLink}');
+const certDefault = service === 'certified' ? 'Certified translation' : 'Not sure';
+const docDefault = '';
+---
+<div class="form-card tq-card" id="enquiry">
+<h2>{f.title}</h2>
+<p class="form-intro">{f.intro}</p>
+<form
+  name="translation-quote"
+  id="tq-form"
+  class="tq-form"
+  method="POST"
+  action={action}
+  enctype="multipart/form-data"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  data-translation
+  data-max-bytes="8000000"
+  data-err-email={e.email}
+  data-err-name={e.name}
+  data-err-phone={e.phone}
+  data-err-from={e.from}
+  data-err-to={e.to}
+  data-err-doctype={e.docType}
+  data-err-consent={e.consent}
+  data-err-toobig={e.tooBig}
+  data-err-badtype={e.badType}
+>
+  <input type="hidden" name="form-name" value="translation-quote" />
+  <input type="hidden" name="subject" value="Translation quote request via ucraya.uk: %{submissionId}" />
+  <input type="hidden" name="page_service" value={service} />
+  <input type="hidden" name="enquiry_page" value={Astro.url.pathname} />
+  <input type="hidden" name="site_language" value={locale} />
+  <input type="hidden" name="source_channel" value="" />
+  <input type="hidden" name="source_referrer" value="" />
+  <input type="hidden" name="last_channel" value="" />
+  <input type="hidden" name="last_referrer" value="" />
+  <input type="hidden" name="landing_page" value="" />
+  <input type="hidden" name="utm_source" value="" />
+  <input type="hidden" name="utm_medium" value="" />
+  <input type="hidden" name="utm_campaign" value="" />
+  <input type="hidden" name="utm_content" value="" />
+  <input type="hidden" name="device" value="" />
+  <input type="hidden" name="browser_language" value="" />
+  <input type="hidden" name="visit_started" value="" />
+
+  <div class="tq-grid">
+    <div class="field">
+      <label for="tq-email">{f.email} <span class="req" aria-hidden="true">*</span></label>
+      <input class="input" id="tq-email" type="email" name="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" enterkeyhint="next" required />
+      <p class="err" id="tq-err-email" hidden></p>
+    </div>
+    <div class="field">
+      <label for="tq-name">{f.name} <span class="req" aria-hidden="true">*</span></label>
+      <input class="input" id="tq-name" type="text" name="name" autocomplete="name" autocapitalize="words" spellcheck="false" enterkeyhint="next" required />
+      <p class="err" id="tq-err-name" hidden></p>
+    </div>
+    <div class="field">
+      <label for="tq-phone">{f.phone} <span class="opt">{f.optional}</span></label>
+      <input class="input" id="tq-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" spellcheck="false" enterkeyhint="next" />
+      <p class="err" id="tq-err-phone" hidden></p>
+    </div>
+    <div class="field">
+      <label for="tq-deadline">{f.deadline} <span class="opt">{f.optional}</span></label>
+      <input class="input" id="tq-deadline" type="date" name="deadline" autocomplete="off" />
+    </div>
+    <div class="field">
+      <label for="tq-from">{f.from} <span class="req" aria-hidden="true">*</span></label>
+      <select class="input" id="tq-from" name="from_language" required>
+        <option value="">{f.choose}</option>
+        {f.languages.map((o, i) => <option value={en.languages[i].value}>{o.label}</option>)}
+      </select>
+      <p class="err" id="tq-err-from" hidden></p>
+    </div>
+    <div class="field">
+      <label for="tq-to">{f.to} <span class="req" aria-hidden="true">*</span></label>
+      <select class="input" id="tq-to" name="to_language" required>
+        <option value="">{f.choose}</option>
+        {f.languages.map((o, i) => <option value={en.languages[i].value}>{o.label}</option>)}
+      </select>
+      <p class="err" id="tq-err-to" hidden></p>
+    </div>
+    <div class="field f-wide" data-other hidden>
+      <label for="tq-other">{f.otherLanguage}</label>
+      <input class="input" id="tq-other" type="text" name="other_language" autocomplete="off" spellcheck="false" enterkeyhint="next" />
+    </div>
+    <div class="field">
+      <label for="tq-doctype">{f.docType} <span class="req" aria-hidden="true">*</span></label>
+      <select class="input" id="tq-doctype" name="document_type" required>
+        <option value="">{f.choose}</option>
+        {f.docTypes.map((o, i) => <option value={en.docTypes[i].value} selected={en.docTypes[i].value === docDefault}>{o.label}</option>)}
+      </select>
+      <p class="err" id="tq-err-doctype" hidden></p>
+    </div>
+    <div class="field">
+      <label for="tq-purpose">{f.purpose} <span class="opt">{f.optional}</span></label>
+      <select class="input" id="tq-purpose" name="purpose">
+        <option value="">{f.choose}</option>
+        {f.purposes.map((o, i) => <option value={en.purposes[i].value}>{o.label}</option>)}
+      </select>
+    </div>
+    <div class="field">
+      <label for="tq-cert">{f.certification}</label>
+      <select class="input" id="tq-cert" name="certification">
+        {f.certs.map((o, i) => <option value={en.certs[i].value} selected={en.certs[i].value === certDefault}>{o.label}</option>)}
+      </select>
+    </div>
+    <div class="field">
+      <label for="tq-pages">{f.pages} <span class="opt">{f.optional}</span></label>
+      <input class="input" id="tq-pages" type="number" name="pages" min="1" max="999" inputmode="numeric" autocomplete="off" enterkeyhint="next" />
+    </div>
+    <div class="field f-wide">
+      <label for="tq-message">{f.message} <span class="opt">{f.optional}</span></label>
+      <textarea class="input" id="tq-message" name="message" rows="4" autocomplete="off" enterkeyhint="enter"></textarea>
+    </div>
+    <fieldset class="field f-wide tq-files" data-files>
+      <legend>{f.files} <span class="opt">{f.optional}</span></legend>
+      <p class="hint" id="tq-files-hint">{f.filesHint}</p>
+      <div class="tq-file-row">
+        {[1, 2, 3].map((n) => (
+          <input class="input" type="file" name={`file_${n}`} accept=".pdf,.jpg,.jpeg,.png,.heic,.docx,application/pdf,image/jpeg,image/png,image/heic" aria-label={f.fileN.replace('{n}', String(n))} aria-describedby="tq-files-hint tq-err-files" />
+        ))}
+      </div>
+      <p class="err" id="tq-err-files" hidden></p>
+    </fieldset>
+    <p class="hp" aria-hidden="true">
+      <label>{f.honeypot} <input type="text" name="bot-field" tabindex="-1" autocomplete="off" /></label>
+    </p>
+    <div class="field f-wide">
+      <label class="tick" for="tq-consent">
+        <input id="tq-consent" type="checkbox" name="consent" value="yes" required />
+        <span>{tickBefore}<a href={privacy} target="_blank" rel="noopener">{f.privacyLinkText}</a>{tickAfter}</span>
+      </label>
+      <p class="err" id="tq-err-consent" hidden></p>
+    </div>
+  </div>
+  <p class="hint mb-3">{f.requiredNote}</p>
+  <div class="btn-row">
+    <button type="submit" class="btn btn-primary" data-submit data-sending={f.sending}>{f.send}</button>
+  </div>
+  <p class="hint mt-3">{f.reply}</p>
+  <noscript><p class="hint">{f.noscript}</p></noscript>
+</form>
+</div>

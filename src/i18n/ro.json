@@ -17,14 +17,15 @@
     "contact": "Contact",
     "about": "Despre noi",
     "trial": "Oră de grup gratuită",
-    "placement": "Test de nivel"
+    "placement": "Test de nivel",
+    "translation": "Traduceri"
   },
   "header": {
     "menu": "Meniu",
     "closeMenu": "Închide meniul",
     "language": "Limba",
     "mainNav": "Navigare principală",
-    "homeLabel": "Raya London Training Centre, pagina principală"
+    "homeLabel": "Training Centre Raya London, pagina principală"
   },
   "buttons": {
     "enquire": "Cere informații despre lecții",
@@ -350,6 +351,22 @@
     "notFound": {
       "title": "Page not found",
       "description": "We could not find that page. Try the home page or send us an enquiry."
+    },
+    "translation": {
+      "title": "Traduceri de documente, certificate și specializate",
+      "description": "Traduceri certificate de certificate, diplome și acte pentru cereri în Marea Britanie și traduceri specializate pentru firme. Oferta este gratuită."
+    },
+    "translationCertified": {
+      "title": "Traducere certificată de documente",
+      "description": "Traducere certificată pentru certificate de naștere și căsătorie, diplome, cazier și alte acte, cu declarația semnată de exactitate. Ofertă gratuită."
+    },
+    "translationSpecialist": {
+      "title": "Traduceri specializate și pentru firme",
+      "description": "Traduceri medicale, tehnice, juridice, comerciale și pentru site-uri, de la un traducător calificat. Preț pe document sau pe pagină, după oferta gratuită."
+    },
+    "translationThanks": {
+      "title": "Mulțumim pentru cererea de ofertă",
+      "description": "Documentele tale au fost trimise. Traducătorul îți răspunde prin email cu o ofertă gratuită."
     }
   },
   "home": {
@@ -473,6 +490,12 @@
           "text": "I was working a night shift on the ward."
         }
       ]
+    },
+    "translation": {
+      "title": "Tot de la școală: traduceri de documente",
+      "text": "Traduceri certificate de certificate, diplome și acte și traduceri specializate pentru firme, de la un traducător înregistrat și calificat care lucrează cu școala de ani de zile. Încarcă documentele și primiți o ofertă gratuită.",
+      "link": "Cere o ofertă de traducere",
+      "more": "Vezi traducerile"
     }
   },
   "products": {
@@ -1125,6 +1148,11 @@
       "result": "Aproximativ £{amount} pe lună",
       "detail": "Lecții pe săptămână: {n}, la £{price} fiecare; aproximativ 4,33 săptămâni pe lună.",
       "note": "Doar un ghid; plătești pe lecție prin transfer bancar."
+    },
+    "translation": {
+      "title": "Traduceri de documente: ofertă pentru fiecare lucrare",
+      "text": "Traducerea nu are o listă de prețuri. Trimite documentele prin formular și primești o ofertă gratuită, pe document sau pe pagină. Plătești prin transfer bancar după ce o accepți, iar lucrarea începe după plată.",
+      "link": "Cere o ofertă de traducere"
     }
   },
   "how": {
@@ -1552,6 +1580,10 @@
         "Prețuri clare, afișate complet, și fără plăți cu cardul: plătești prin transfer bancar, după ce biroul îți confirmă locul.",
         "Nu promitem rezultate la teste. Te învățăm și te pregătim și îți spunem sincer ce să exersezi."
       ]
+    },
+    "translation": {
+      "text": "Școala oferă și traduceri de documente, printr-un traducător înregistrat și calificat care lucrează cu noi de ani de zile.",
+      "link": "Traducerea documentelor"
     }
   },
   "contact": {
@@ -1617,7 +1649,7 @@
   "privacy": {
     "h1": "Privacy",
     "lead": "How Ucraya uses your details, in plain English.",
-    "updated": "Last updated 21 October 2026",
+    "updated": "Last updated 22 October 2026",
     "sections": [
       {
         "title": "Who we are",
@@ -1643,7 +1675,8 @@
       {
         "title": "Who can see them",
         "body": [
-          "Your enquiry is delivered to the school office by email. It is handled through the form service of our website host, Netlify. We do not sell your details and we do not share them for advertising."
+          "Your enquiry is delivered to the school office by email. It is handled through the form service of our website host, Netlify. We do not sell your details and we do not share them for advertising.",
+          "If you ask for a translation quote, the documents you upload are stored by the form service of our website host, sent to the translator only to prepare your quote and do the job, and deleted after the job."
         ]
       },
       {
@@ -1731,5 +1764,412 @@
         ]
       }
     ]
+  },
+  "translation": {
+    "h1": "Traducerea documentelor",
+    "lead": "Traduceri certificate pentru uz oficial și traduceri specializate pentru firme, de la un traducător înregistrat și calificat care lucrează cu școala de ani de zile. Trimite documentele și primești o ofertă gratuită.",
+    "heroNote": "Fiecare lucrare primește o ofertă gratuită înainte să plătești ceva.",
+    "buttons": {
+      "quote": "Cere o ofertă gratuită",
+      "services": "Vezi cele două servicii",
+      "certified": "Traducere certificată",
+      "specialist": "Traducere specializată",
+      "back": "Înapoi la traduceri"
+    },
+    "headings": {
+      "services": "Două servicii de traducere",
+      "how": "Cum funcționează",
+      "who": "Pentru cine este",
+      "partner": "Cine traduce",
+      "faq": "Întrebări despre traduceri",
+      "price": "Preț",
+      "related": "Mai multe de la școală",
+      "quote": "Cere o ofertă gratuită"
+    },
+    "services": {
+      "intro": "Alege serviciul potrivit documentelor tale. Nu ești sigur? Trimite formularul și îți spunem noi.",
+      "items": [
+        {
+          "slug": "certified",
+          "title": "Traducere certificată de documente",
+          "text": "Pentru documentele pe care o autoritate, o universitate, un angajator sau o instanță le cere traduse: certificate, diplome, cazier, permise, acte bancare și fluturași de salariu, acte medicale, acte judiciare și notariale. Se livrează cu declarația semnată de exactitate a traducătorului și datele de contact ale acestuia.",
+          "link": "Vezi traducerea certificată"
+        },
+        {
+          "slug": "specialist",
+          "title": "Traduceri specializate și pentru firme",
+          "text": "Texte medicale, tehnice, juridice, comerciale, pentru site-uri și marketing. Prețul este pe document sau pe pagină, după o ofertă gratuită.",
+          "link": "Vezi traducerea specializată"
+        }
+      ]
+    },
+    "how": {
+      "title": "Cum funcționează",
+      "steps": [
+        {
+          "title": "Încarcă documentele",
+          "text": "Completează formularul cu limbile, scopul traducerii și până la trei fișiere (8 MB în total). O fotografie sau o scanare clară a fiecărei pagini este suficientă."
+        },
+        {
+          "title": "Primești o ofertă gratuită",
+          "text": "Traducătorul citește documentele și îți răspunde prin email cu prețul, termenul de livrare și datele de plată, de obicei în decurs de o zi lucrătoare."
+        },
+        {
+          "title": "Plătești prin transfer bancar",
+          "text": "Accepți oferta și plătești prin transfer bancar, cu datele trimise de noi. Lucrarea începe după plată."
+        },
+        {
+          "title": "Primești traducerea",
+          "text": "Îți trimitem traducerea prin email, în format PDF. La cerere, originalele se trimit prin poștă."
+        }
+      ]
+    },
+    "who": {
+      "title": "Pentru cine este",
+      "items": [
+        "Persoane care cer o viză sau stabilirea în Marea Britanie",
+        "Studenți care se înscriu la o universitate sau la un colegiu",
+        "Angajați cărora angajatorul sau un organism profesional le cere o traducere",
+        "Asistente medicale și alți lucrători din sănătate care se înregistrează în Marea Britanie",
+        "Șoferi care își schimbă permisul la DVLA",
+        "Oricine are acte judiciare, notariale sau medicale",
+        "Firme care au nevoie de texte tehnice, juridice, comerciale sau pentru site traduse"
+      ]
+    },
+    "partner": {
+      "title": "Cine traduce",
+      "text": "Traducerile sunt făcute de Lili Translations, un traducător înregistrat și calificat care lucrează cu școala de ani de zile. Perechea principală este bulgară și engleză, iar combinațiile de limbi cu engleza sunt peste 20. Spune-ne limbile în formular, iar oferta le confirmă."
+    },
+    "faq": {
+      "title": "Întrebări despre traduceri",
+      "items": [
+        {
+          "q": "Cât costă o traducere?",
+          "a": "Nu există o listă de prețuri. Fiecare lucrare este evaluată după o ofertă gratuită, pe document sau pe pagină, în funcție de limbi, lungime și cât de repede ai nevoie de ea."
+        },
+        {
+          "q": "Cât durează?",
+          "a": "Oferta îți spune termenul de livrare pentru documentele tale. Dacă ai un termen limită, scrie-l în formular."
+        },
+        {
+          "q": "Va fi acceptată traducerea mea?",
+          "a": "Traducerile certificate sunt pregătite în forma pe care instituțiile britanice o cer de obicei: declarație semnată de exactitate, data și datele traducătorului. Nu putem vorbi în numele instituției care o primește, așa că verifică regulile ei și spune-ne pentru cine este traducerea."
+        },
+        {
+          "q": "Ce fișiere pot încărca?",
+          "a": "PDF, JPG, JPEG, PNG, HEIC sau DOCX, până la trei fișiere și 8 MB în total. O fotografie clară a fiecărei pagini întregi este suficientă. Dacă fișierele sunt mai mari, trimite formularul cu ce poți, scrie asta în mesaj și îți spunem cum trimiți restul."
+        },
+        {
+          "q": "Cum plătesc?",
+          "a": "Prin transfer bancar, după ce accepți oferta. Lucrarea începe după plată. Pe site nu se plătește cu cardul."
+        },
+        {
+          "q": "Ce se întâmplă cu documentele mele?",
+          "a": "Sunt păstrate de serviciul de formulare al site-ului, trimise traducătorului doar pentru a pregăti oferta și a face lucrarea și șterse după încheierea lucrării. Vezi pagina de confidențialitate."
+        },
+        {
+          "q": "Traduceți din și în bulgară?",
+          "a": "Da. Perechea principală este bulgară și engleză, iar combinațiile de limbi cu engleza sunt peste 20. Spune-ne limbile în formular, iar oferta le confirmă."
+        },
+        {
+          "q": "Pot primi originalul prin poștă?",
+          "a": "Da, la cerere. Traducerile se trimit prin email în format PDF, iar originalele pot fi trimise prin poștă."
+        }
+      ]
+    },
+    "price": {
+      "label": "Traducere",
+      "amount": "Ofertă gratuită",
+      "unit": "pentru fiecare lucrare",
+      "note": "Nu există o listă de prețuri. Fiecare lucrare primește o ofertă gratuită, pe document sau pe pagină. Plătești prin transfer bancar după ce accepți oferta, iar lucrarea începe după plată.",
+      "button": "Cere o ofertă gratuită"
+    },
+    "pages": {
+      "certified": {
+        "h1": "Traducere certificată pentru uz oficial",
+        "lead": "O traducere a certificatului, diplomei sau actului tău, însoțită de declarația semnată de exactitate a traducătorului, pentru cereri în Marea Britanie, universități, angajatori și instanțe.",
+        "who": {
+          "title": "Pentru ce se folosește",
+          "items": [
+            "Cereri de viză și de stabilire în Marea Britanie",
+            "Universități și colegii",
+            "Angajatori",
+            "Înregistrare profesională",
+            "NHS",
+            "DVLA",
+            "Instanțe"
+          ]
+        },
+        "covers": {
+          "title": "Ce traducem",
+          "items": [
+            "Certificate de naștere, căsătorie și deces",
+            "Diplome și foi matricole",
+            "Cazier judiciar și certificate de la poliție",
+            "Permise de conducere",
+            "Acte bancare și fluturași de salariu",
+            "Acte medicale",
+            "Acte judiciare și notariale"
+          ]
+        },
+        "receive": {
+          "title": "Ce primești",
+          "items": [
+            "Traducerea, cu declarația semnată de exactitate a traducătorului, data și datele de contact ale traducătorului",
+            "Pregătită în forma pe care instituțiile britanice o cer de obicei",
+            "Un PDF prin email, iar originalele prin poștă la cerere",
+            "Pentru Bulgaria, traducere jurată și legalizare, organizate la cerere"
+          ]
+        },
+        "note": {
+          "title": "Verifică înainte să comanzi",
+          "text": "Fiecare universitate, angajator, organism profesional și autoritate are regulile sale. Înainte să comanzi, verifică ce cere cel care primește traducerea și spune-ne în formular pentru cine este."
+        },
+        "faq": [
+          {
+            "q": "Ce este o traducere certificată?",
+            "a": "O traducere însoțită de o declarație semnată a traducătorului că este o traducere completă și exactă a originalului, cu data și datele de contact ale traducătorului."
+          },
+          {
+            "q": "O va accepta universitatea sau angajatorul meu?",
+            "a": "O pregătim în forma pe care instituțiile britanice o cer de obicei. Fiecare instituție are regulile ei, așa că verifică-le și spune-ne pentru cine este traducerea."
+          },
+          {
+            "q": "Aveți nevoie de documentul meu original?",
+            "a": "O scanare sau o fotografie clară a fiecărei pagini este suficientă pentru ofertă și pentru traducere. Dacă cel care primește traducerea cere mai mult, spune-ne în formular."
+          },
+          {
+            "q": "Cât costă?",
+            "a": "Nu publicăm un preț. Fiecare lucrare primește o ofertă gratuită după ce trimiți documentele."
+          }
+        ]
+      },
+      "specialist": {
+        "h1": "Traduceri specializate și pentru firme",
+        "lead": "Texte medicale, tehnice, juridice și comerciale, precum și texte pentru site-uri și marketing, traduse de un traducător calificat. Prețul este pe document sau pe pagină, după o ofertă gratuită.",
+        "who": {
+          "title": "Pentru cine este",
+          "items": [
+            "Firme cu contracte, manuale și documente comerciale",
+            "Clinici și organizații din sănătate",
+            "Echipe de inginerie și echipe tehnice",
+            "Persoane cu acte juridice de înțeles sau de depus",
+            "Site-uri și echipe de marketing"
+          ]
+        },
+        "covers": {
+          "title": "Ce traducem",
+          "items": [
+            "Texte medicale",
+            "Texte tehnice",
+            "Texte juridice",
+            "Texte comerciale și de afaceri",
+            "Texte pentru site și marketing"
+          ]
+        },
+        "receive": {
+          "title": "Cum funcționează oferta",
+          "items": [
+            "Trimiți textul sau documentul și limbile",
+            "Traducătorul vede ce trebuie tradus și răspunde cu prețul și termenul de livrare",
+            "Prețul este pe document sau pe pagină",
+            "Lucrarea începe după plata prin transfer bancar"
+          ]
+        },
+        "note": {
+          "title": "Spune-ne pentru ce este textul",
+          "text": "În formular, scrie care este subiectul, cine va citi traducerea și când ai nevoie de ea. Oferta îți spune ce se poate face și cât costă."
+        },
+        "faq": [
+          {
+            "q": "Cum se calculează prețul?",
+            "a": "Pe document sau pe pagină, în funcție de limbi, lungime, subiect și cât de repede ai nevoie de traducere. Oferta este gratuită."
+          },
+          {
+            "q": "Pot trimite mai multe documente?",
+            "a": "Da. Încarcă până la trei fișiere în formular, iar dacă ai mai multe, scrie asta în mesaj."
+          },
+          {
+            "q": "Faceți și traduceri certificate?",
+            "a": "Da, pentru documentele folosite oficial. Vezi pagina de traducere certificată."
+          },
+          {
+            "q": "Cum plătesc?",
+            "a": "Prin transfer bancar, după ce acceptați oferta. Lucrarea începe după plată."
+          }
+        ]
+      }
+    },
+    "form": {
+      "title": "Cere o ofertă gratuită",
+      "intro": "Spune-ne ce trebuie tradus și încarcă documentele. Răspundem prin email cu prețul și datele de plată. Lucrarea începe după ce plătești.",
+      "email": "Email",
+      "name": "Numele tău",
+      "phone": "Telefon sau WhatsApp",
+      "optional": "opțional",
+      "from": "Traducere din",
+      "to": "Traducere în",
+      "otherLanguage": "Ce altă limbă?",
+      "docType": "Ce fel de document?",
+      "purpose": "Pentru ce este?",
+      "certification": "Ce fel de traducere?",
+      "deadline": "Data până când ai nevoie de ea",
+      "pages": "Numărul de pagini",
+      "message": "Ceva ce ar trebui să știm?",
+      "files": "Documentele tale",
+      "filesHint": "Până la trei fișiere: PDF, JPG, JPEG, PNG, HEIC sau DOCX, 8 MB în total. O fotografie clară a fiecărei pagini este suficientă.",
+      "fileN": "Fișierul {n}",
+      "choose": "Alege",
+      "consent": "Sunt de acord ca documentele pe care le încarc să fie trimise traducătorului doar pentru a pregăti oferta mea și a face lucrarea. Am citit {privacyLink}.",
+      "privacyLinkText": "pagina de confidențialitate",
+      "send": "Trimite pentru ofertă",
+      "sending": "Se trimite, te rugăm să aștepți",
+      "reply": "Răspundem prin email cu o ofertă gratuită, de obicei în decurs de o zi lucrătoare.",
+      "requiredNote": "* obligatoriu",
+      "honeypot": "Lăsați gol",
+      "noscript": "Activează JavaScript pentru a trimite formularul sau scrie-ne pe WhatsApp.",
+      "errors": {
+        "email": "Introdu o adresă de email validă, de exemplu nume@exemplu.com.",
+        "name": "Te rugăm să ne spui numele.",
+        "phone": "Verifică numărul de telefon. Folosește cifre și un + înaintea prefixului țării.",
+        "from": "Alege limba din care se traduce.",
+        "to": "Alege limba în care se traduce.",
+        "docType": "Alege tipul de document.",
+        "consent": "Bifează căsuța ca să putem trimite documentele traducătorului.",
+        "tooBig": "Fișierele tale au {size} MB. Limita este de 8 MB în total. Trimite ce poți și scrie asta în mesaj.",
+        "badType": "Putem citi doar fișiere PDF, JPG, JPEG, PNG, HEIC și DOCX. Verifică: {names}"
+      },
+      "languages": [
+        {
+          "label": "Bulgară"
+        },
+        {
+          "label": "Engleză"
+        },
+        {
+          "label": "Română"
+        },
+        {
+          "label": "Poloneză"
+        },
+        {
+          "label": "Turcă"
+        },
+        {
+          "label": "Rusă"
+        },
+        {
+          "label": "Ucraineană"
+        },
+        {
+          "label": "Arabă"
+        },
+        {
+          "label": "Franceză"
+        },
+        {
+          "label": "Germană"
+        },
+        {
+          "label": "Spaniolă"
+        },
+        {
+          "label": "Italiană"
+        },
+        {
+          "label": "Greacă"
+        },
+        {
+          "label": "Portugheză"
+        },
+        {
+          "label": "Altă limbă"
+        }
+      ],
+      "docTypes": [
+        {
+          "label": "Certificat de naștere, căsătorie sau deces"
+        },
+        {
+          "label": "Diplomă sau foaie matricolă"
+        },
+        {
+          "label": "Cazier judiciar sau certificat de la poliție"
+        },
+        {
+          "label": "Permis de conducere"
+        },
+        {
+          "label": "Act bancar sau fluturaș de salariu"
+        },
+        {
+          "label": "Act medical"
+        },
+        {
+          "label": "Act judiciar sau notarial"
+        },
+        {
+          "label": "Text tehnic"
+        },
+        {
+          "label": "Text juridic"
+        },
+        {
+          "label": "Text comercial sau de afaceri"
+        },
+        {
+          "label": "Text pentru site sau marketing"
+        },
+        {
+          "label": "Altceva"
+        }
+      ],
+      "purposes": [
+        {
+          "label": "Viză sau stabilire în Marea Britanie"
+        },
+        {
+          "label": "Universitate sau colegiu"
+        },
+        {
+          "label": "Angajator"
+        },
+        {
+          "label": "Înregistrare profesională"
+        },
+        {
+          "label": "NHS sau medical"
+        },
+        {
+          "label": "Instanță sau scop juridic"
+        },
+        {
+          "label": "Afaceri"
+        },
+        {
+          "label": "Altceva"
+        }
+      ],
+      "certs": [
+        {
+          "label": "Traducere certificată"
+        },
+        {
+          "label": "Traducere jurată pentru Bulgaria"
+        },
+        {
+          "label": "Nu sunt sigur"
+        }
+      ]
+    },
+    "thanks": {
+      "h1": "Mulțumim, am primit documentele",
+      "lead": "Traducătorul le va citi și îți va răspunde prin email cu o ofertă gratuită, de obicei în decurs de o zi lucrătoare. Lucrarea începe după ce plătești prin transfer bancar.",
+      "next": "Cât așteptați",
+      "items": [
+        "Verifică ce cere cel care primește traducerea, de exemplu o universitate, un angajator sau o autoritate.",
+        "Păstrează originalele în siguranță. Trebuie să ni le trimiți doar dacă ne înțelegem asupra asta în ofertă."
+      ]
+    }
   }
 }

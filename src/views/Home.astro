@@ -80,6 +80,21 @@ const leadWords = m.home.lead.split(' ');
     </div>
   </section>
 
+  <section class="section tq-strip" aria-labelledby="home-tq-h">
+    <div class="wrap">
+      <div class="card card-accent accent-green strip-card">
+        <div>
+          <h2 id="home-tq-h" class="text-xl">{m.home.translation.title}</h2>
+          <p class="mt-2">{m.home.translation.text}</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-primary" href={pathFor('translation', locale) + '#enquiry'}>{m.home.translation.link}</a>
+          <a class="btn btn-secondary" href={pathFor('translation', locale)}>{m.home.translation.more}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section section-warm">
     <div class="wrap">
       <h2>{m.home.steps.title}</h2>

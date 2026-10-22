@@ -15,6 +15,9 @@ import Contact from '../views/Contact.astro';
 import ThankYou from '../views/ThankYou.astro';
 import Legal from '../views/Legal.astro';
 import London from '../views/London.astro';
+import Translation from '../views/Translation.astro';
+import TranslationService from '../views/TranslationService.astro';
+import TranslationThanks from '../views/TranslationThanks.astro';
 
 export function getStaticPaths() {
   const paths: { params: { path: string | undefined }; props: { routeId: string; locale: string } }[] = [];
@@ -31,10 +34,11 @@ const views: Record<string, any> = {
   home: Home, courses: Courses, course: Course, pricing: Pricing, how: HowItWorks, trial: FreeTrial,
   placement: Placement, tutors: Tutors, reviews: Reviews, faq: FaqPage, about: About, contact: Contact,
   thanks: ThankYou, legal: Legal, london: London,
+  translation: Translation, translationService: TranslationService, translationThanks: TranslationThanks,
 };
 const { routeId, locale } = Astro.props;
 const r = ROUTES.find((x) => x.id === routeId)!;
 const View = views[r.view];
-const extra = r.view === 'course' ? { slug: r.course } : r.view === 'legal' ? { kind: r.id } : {};
+const extra = r.view === 'course' ? { slug: r.course } : r.view === 'translationService' ? { slug: r.service } : r.view === 'legal' ? { kind: r.id } : {};
 ---
 <View locale={locale} {...extra} />

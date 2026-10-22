@@ -17,14 +17,15 @@
     "contact": "Kontakt",
     "about": "O nas",
     "trial": "Darmowe zajęcia grupowe",
-    "placement": "Test poziomujący"
+    "placement": "Test poziomujący",
+    "translation": "Tłumaczenia"
   },
   "header": {
     "menu": "Menu",
     "closeMenu": "Zamknij menu",
     "language": "Język",
     "mainNav": "Nawigacja główna",
-    "homeLabel": "Raya London Training Centre, strona główna"
+    "homeLabel": "Training Centre Raya London, strona główna"
   },
   "buttons": {
     "enquire": "Zapytaj o lekcje",
@@ -350,6 +351,22 @@
     "notFound": {
       "title": "Nie znaleziono strony",
       "description": "Nie możemy znaleźć tej strony. Wróć na stronę główną lub wyślij nam zapytanie."
+    },
+    "translation": {
+      "title": "Tłumaczenia dokumentów, poświadczone i specjalistyczne",
+      "description": "Tłumaczenia poświadczone zaświadczeń, dyplomów i dokumentów do wniosków w Wielkiej Brytanii oraz tłumaczenia specjalistyczne dla firm. Wycena za darmo."
+    },
+    "translationCertified": {
+      "title": "Tłumaczenie poświadczone dokumentów",
+      "description": "Tłumaczenie poświadczone aktów urodzenia i małżeństwa, dyplomów, zaświadczeń o niekaralności i innych, z podpisanym oświadczeniem o zgodności. Wycena za darmo."
+    },
+    "translationSpecialist": {
+      "title": "Tłumaczenia specjalistyczne i dla firm",
+      "description": "Tłumaczenia medyczne, techniczne, prawne, handlowe i stron internetowych od wykwalifikowanego tłumacza. Cena za dokument lub stronę po darmowej wycenie."
+    },
+    "translationThanks": {
+      "title": "Dziękujemy za prośbę o wycenę",
+      "description": "Twoje dokumenty zostały wysłane. Tłumacz odpisze e-mailem z darmową wyceną."
     }
   },
   "home": {
@@ -473,6 +490,12 @@
           "text": "I was working a night shift on the ward."
         }
       ]
+    },
+    "translation": {
+      "title": "Także od szkoły: tłumaczenia dokumentów",
+      "text": "Tłumaczenia poświadczone zaświadczeń, dyplomów i dokumentów oraz tłumaczenia specjalistyczne dla firm, od zarejestrowanego i wykwalifikowanego tłumacza, który od lat współpracuje ze szkołą. Prześlij dokumenty i poproś o darmową wycenę.",
+      "link": "Poproś o wycenę tłumaczenia",
+      "more": "Zobacz tłumaczenia"
     }
   },
   "products": {
@@ -1125,6 +1148,11 @@
       "result": "Około £{amount} miesięcznie",
       "detail": "Lekcje w tygodniu: {n}, po £{price} każda; około 4,33 tygodnia w miesiącu.",
       "note": "Tylko orientacyjnie; płacisz za lekcję przelewem bankowym."
+    },
+    "translation": {
+      "title": "Tłumaczenia dokumentów: wycena za każde zlecenie",
+      "text": "Tłumaczenie nie ma cennika. Prześlij dokumenty przez formularz, a dostaniesz darmową wycenę, za dokument lub za stronę. Płacisz przelewem po jej zaakceptowaniu, a praca zaczyna się po zapłacie.",
+      "link": "Poproś o wycenę tłumaczenia"
     }
   },
   "how": {
@@ -1552,6 +1580,10 @@
         "Jasne ceny, podane w całości, i brak płatności kartą: płacisz przelewem po potwierdzeniu przez biuro.",
         "Bez obietnic dotyczących wyników testów. Uczymy i przygotowujemy, i szczerze mówimy, co ćwiczyć."
       ]
+    },
+    "translation": {
+      "text": "Szkoła oferuje też tłumaczenia dokumentów, przez zarejestrowanego i wykwalifikowanego tłumacza, który od lat z nami współpracuje.",
+      "link": "Tłumaczenia dokumentów"
     }
   },
   "contact": {
@@ -1617,7 +1649,7 @@
   "privacy": {
     "h1": "Privacy",
     "lead": "How Ucraya uses your details, in plain English.",
-    "updated": "Last updated 21 October 2026",
+    "updated": "Last updated 22 October 2026",
     "sections": [
       {
         "title": "Who we are",
@@ -1643,7 +1675,8 @@
       {
         "title": "Who can see them",
         "body": [
-          "Your enquiry is delivered to the school office by email. It is handled through the form service of our website host, Netlify. We do not sell your details and we do not share them for advertising."
+          "Your enquiry is delivered to the school office by email. It is handled through the form service of our website host, Netlify. We do not sell your details and we do not share them for advertising.",
+          "If you ask for a translation quote, the documents you upload are stored by the form service of our website host, sent to the translator only to prepare your quote and do the job, and deleted after the job."
         ]
       },
       {
@@ -1731,5 +1764,412 @@
         ]
       }
     ]
+  },
+  "translation": {
+    "h1": "Tłumaczenia dokumentów",
+    "lead": "Tłumaczenia poświadczone do użytku urzędowego i tłumaczenia specjalistyczne dla firm, od zarejestrowanego i wykwalifikowanego tłumacza, który od lat współpracuje ze szkołą. Wyślij dokumenty, a my wycenimy je za darmo.",
+    "heroNote": "Każde zlecenie jest wyceniane za darmo, zanim cokolwiek zapłacisz.",
+    "buttons": {
+      "quote": "Poproś o darmową wycenę",
+      "services": "Zobacz dwie usługi",
+      "certified": "Tłumaczenie poświadczone",
+      "specialist": "Tłumaczenie specjalistyczne",
+      "back": "Wróć do tłumaczeń"
+    },
+    "headings": {
+      "services": "Dwie usługi tłumaczeniowe",
+      "how": "Jak to działa",
+      "who": "Dla kogo",
+      "partner": "Kto tłumaczy",
+      "faq": "Pytania o tłumaczenia",
+      "price": "Cena",
+      "related": "Więcej od szkoły",
+      "quote": "Poproś o darmową wycenę"
+    },
+    "services": {
+      "intro": "Wybierz usługę, która pasuje do Twoich dokumentów. Nie masz pewności? Wyślij formularz, a podpowiemy.",
+      "items": [
+        {
+          "slug": "certified",
+          "title": "Tłumaczenie poświadczone dokumentów",
+          "text": "Dla dokumentów, które urząd, uczelnia, pracodawca lub sąd każe przetłumaczyć: zaświadczeń, dyplomów, zaświadczeń policyjnych, praw jazdy, dokumentów bankowych i pasków wypłat, dokumentacji medycznej oraz pism sądowych i notarialnych. Dostarczane z podpisanym oświadczeniem tłumacza o zgodności i jego danymi kontaktowymi.",
+          "link": "Zobacz tłumaczenie poświadczone"
+        },
+        {
+          "slug": "specialist",
+          "title": "Tłumaczenia specjalistyczne i dla firm",
+          "text": "Teksty medyczne, techniczne, prawne, handlowe, na strony internetowe i marketingowe. Cena za dokument lub za stronę, po darmowej wycenie.",
+          "link": "Zobacz tłumaczenie specjalistyczne"
+        }
+      ]
+    },
+    "how": {
+      "title": "Jak to działa",
+      "steps": [
+        {
+          "title": "Prześlij dokumenty",
+          "text": "Wypełnij formularz: języki, cel tłumaczenia i do trzech plików (łącznie 8 MB). Wyraźne zdjęcie lub skan każdej strony wystarczy."
+        },
+        {
+          "title": "Otrzymaj darmową wycenę",
+          "text": "Tłumacz czyta dokumenty i odpisuje e-mailem z ceną, terminem realizacji i danymi do faktury, zwykle w ciągu jednego dnia roboczego."
+        },
+        {
+          "title": "Zapłać przelewem",
+          "text": "Zaakceptuj wycenę i zapłać przelewem na dane, które Ci wyślemy. Praca zaczyna się po zapłacie."
+        },
+        {
+          "title": "Odbierz tłumaczenie",
+          "text": "Wysyłamy tłumaczenie e-mailem w formacie PDF. Oryginały można wysłać Ci pocztą na życzenie."
+        }
+      ]
+    },
+    "who": {
+      "title": "Dla kogo",
+      "items": [
+        "Osoby składające wniosek o wizę lub pobyt w Wielkiej Brytanii",
+        "Studenci aplikujący na uczelnię lub do college'u",
+        "Pracownicy, od których pracodawca lub organizacja zawodowa wymaga tłumaczenia",
+        "Pielęgniarki i inni pracownicy ochrony zdrowia rejestrujący się w Wielkiej Brytanii",
+        "Kierowcy wymieniający prawo jazdy w DVLA",
+        "Każdy, kto ma dokumenty sądowe, notarialne lub medyczne",
+        "Firmy, które potrzebują tłumaczenia tekstów technicznych, prawnych, handlowych lub na stronę internetową"
+      ]
+    },
+    "partner": {
+      "title": "Kto tłumaczy",
+      "text": "Tłumaczeń dokonuje Lili Translations, zarejestrowany i wykwalifikowany tłumacz, który od lat współpracuje ze szkołą. Główna para to bułgarski i angielski, a kombinacji językowych z angielskim jest ponad 20. Podaj języki w formularzu, a wycena je potwierdzi."
+    },
+    "faq": {
+      "title": "Pytania o tłumaczenia",
+      "items": [
+        {
+          "q": "Ile kosztuje tłumaczenie?",
+          "a": "Nie ma cennika. Każde zlecenie jest wyceniane po darmowej wycenie, za dokument lub za stronę, zależnie od języków, długości i tego, jak szybko go potrzebujesz."
+        },
+        {
+          "q": "Ile to trwa?",
+          "a": "Wycena podaje termin realizacji Twoich dokumentów. Jeśli masz termin, wpisz go w formularzu."
+        },
+        {
+          "q": "Czy moje tłumaczenie zostanie przyjęte?",
+          "a": "Tłumaczenia poświadczone przygotowujemy w formie, o którą zwykle proszą brytyjskie instytucje: podpisane oświadczenie o zgodności, data i dane tłumacza. Nie możemy wypowiadać się w imieniu instytucji, która je otrzyma, więc sprawdź jej zasady i powiedz nam, dla kogo jest tłumaczenie."
+        },
+        {
+          "q": "Jakie pliki mogę przesłać?",
+          "a": "PDF, JPG, JPEG, PNG, HEIC lub DOCX, do trzech plików i łącznie 8 MB. Wyraźne zdjęcie każdej całej strony wystarczy. Jeśli pliki są większe, wyślij formularz z tym, co możesz, napisz o tym w wiadomości, a powiemy, jak przesłać resztę."
+        },
+        {
+          "q": "Jak płacę?",
+          "a": "Przelewem, po zaakceptowaniu wyceny. Praca zaczyna się po zapłacie. Na stronie nie ma płatności kartą."
+        },
+        {
+          "q": "Co dzieje się z moimi dokumentami?",
+          "a": "Są przechowywane przez usługę formularzy tej strony, wysyłane tłumaczowi tylko po to, by przygotować wycenę i wykonać zlecenie, i usuwane po zakończeniu zlecenia. Zobacz stronę o prywatności."
+        },
+        {
+          "q": "Czy tłumaczycie z bułgarskiego i na bułgarski?",
+          "a": "Tak. Główna para to bułgarski i angielski, a kombinacji językowych z angielskim jest ponad 20. Podaj języki w formularzu, a wycena je potwierdzi."
+        },
+        {
+          "q": "Czy mogę dostać oryginał pocztą?",
+          "a": "Tak, na życzenie. Tłumaczenia wysyłamy e-mailem w formacie PDF, a oryginały można wysłać Ci pocztą."
+        }
+      ]
+    },
+    "price": {
+      "label": "Tłumaczenie",
+      "amount": "Darmowa wycena",
+      "unit": "każdego zlecenia",
+      "note": "Nie ma cennika. Każde zlecenie jest wyceniane za darmo, za dokument lub za stronę. Płacisz przelewem po zaakceptowaniu wyceny, a praca zaczyna się po zapłacie.",
+      "button": "Poproś o darmową wycenę"
+    },
+    "pages": {
+      "certified": {
+        "h1": "Tłumaczenie poświadczone do użytku urzędowego",
+        "lead": "Tłumaczenie Twojego zaświadczenia, dyplomu lub dokumentu wraz z podpisanym oświadczeniem tłumacza o zgodności, do wniosków w Wielkiej Brytanii, na uczelnie, dla pracodawców i sądów.",
+        "who": {
+          "title": "Do czego służy",
+          "items": [
+            "Wnioski o wizę i pobyt w Wielkiej Brytanii",
+            "Uczelnie i college'e",
+            "Pracodawcy",
+            "Rejestracja zawodowa",
+            "NHS",
+            "DVLA",
+            "Sądy"
+          ]
+        },
+        "covers": {
+          "title": "Co tłumaczymy",
+          "items": [
+            "Akty urodzenia, małżeństwa i zgonu",
+            "Dyplomy i suplementy",
+            "Zaświadczenia o niekaralności i zaświadczenia policyjne",
+            "Prawa jazdy",
+            "Dokumenty bankowe i paski wypłat",
+            "Dokumentację medyczną",
+            "Pisma sądowe i notarialne"
+          ]
+        },
+        "receive": {
+          "title": "Co otrzymujesz",
+          "items": [
+            "Tłumaczenie z podpisanym oświadczeniem tłumacza o zgodności, datą i danymi kontaktowymi tłumacza",
+            "Przygotowane w formie, o którą zwykle proszą brytyjskie instytucje",
+            "PDF e-mailem, a oryginały pocztą na życzenie",
+            "Dla Bułgarii tłumaczenie przysięgłe i legalizacja na życzenie"
+          ]
+        },
+        "note": {
+          "title": "Sprawdź przed zamówieniem",
+          "text": "Każda uczelnia, pracodawca, organizacja zawodowa i urząd ma własne zasady. Zanim zamówisz, sprawdź, czego wymaga odbiorca tłumaczenia, i napisz w formularzu, dla kogo ono jest."
+        },
+        "faq": [
+          {
+            "q": "Czym jest tłumaczenie poświadczone?",
+            "a": "Tłumaczeniem z podpisanym oświadczeniem tłumacza, że jest ono pełnym i wiernym tłumaczeniem oryginału, z datą i danymi kontaktowymi tłumacza."
+          },
+          {
+            "q": "Czy moja uczelnia lub pracodawca je przyjmie?",
+            "a": "Przygotowujemy je w formie, o którą zwykle proszą brytyjskie instytucje. Każda ma własne zasady, więc sprawdź je i powiedz nam, dla kogo jest tłumaczenie."
+          },
+          {
+            "q": "Czy potrzebujecie mojego oryginalnego dokumentu?",
+            "a": "Do wyceny i tłumaczenia wystarczy wyraźny skan lub zdjęcie każdej strony. Jeśli odbiorca wymaga czegoś więcej, napisz o tym w formularzu."
+          },
+          {
+            "q": "Ile to kosztuje?",
+            "a": "Nie podajemy ceny. Każde zlecenie jest wyceniane za darmo po przesłaniu dokumentów."
+          }
+        ]
+      },
+      "specialist": {
+        "h1": "Tłumaczenia specjalistyczne i dla firm",
+        "lead": "Teksty medyczne, techniczne, prawne i handlowe oraz teksty na strony internetowe i marketingowe, tłumaczone przez wykwalifikowanego tłumacza. Cena za dokument lub za stronę, po darmowej wycenie.",
+        "who": {
+          "title": "Dla kogo",
+          "items": [
+            "Firmy z umowami, instrukcjami i dokumentami handlowymi",
+            "Kliniki i organizacje zdrowotne",
+            "Zespoły inżynierskie i techniczne",
+            "Osoby z dokumentami prawnymi do zrozumienia lub złożenia",
+            "Strony internetowe i zespoły marketingu"
+          ]
+        },
+        "covers": {
+          "title": "Co tłumaczymy",
+          "items": [
+            "Teksty medyczne",
+            "Teksty techniczne",
+            "Teksty prawne",
+            "Teksty handlowe i biznesowe",
+            "Teksty na strony internetowe i marketingowe"
+          ]
+        },
+        "receive": {
+          "title": "Jak działa wycena",
+          "items": [
+            "Wysyłasz tekst lub dokument i języki",
+            "Tłumacz sprawdza, co trzeba przetłumaczyć, i odpisuje z ceną i terminem",
+            "Cena jest za dokument lub za stronę",
+            "Praca zaczyna się po zapłacie przelewem"
+          ]
+        },
+        "note": {
+          "title": "Powiedz nam, do czego jest tekst",
+          "text": "W formularzu napisz, jakiego tematu dotyczy tekst, kto przeczyta tłumaczenie i kiedy go potrzebujesz. Wycena podpowie, co można zrobić i ile to kosztuje."
+        },
+        "faq": [
+          {
+            "q": "Jak ustalana jest cena?",
+            "a": "Za dokument lub za stronę, zależnie od języków, długości, tematu i terminu. Wycena jest darmowa."
+          },
+          {
+            "q": "Czy mogę wysłać kilka dokumentów?",
+            "a": "Tak. Prześlij do trzech plików w formularzu, a jeśli masz więcej, napisz o tym w wiadomości."
+          },
+          {
+            "q": "Czy robicie też tłumaczenia poświadczone?",
+            "a": "Tak, dla dokumentów używanych urzędowo. Zobacz stronę o tłumaczeniu poświadczonym."
+          },
+          {
+            "q": "Jak płacę?",
+            "a": "Przelewem, po zaakceptowaniu wyceny. Praca zaczyna się po zapłacie."
+          }
+        ]
+      }
+    },
+    "form": {
+      "title": "Poproś o darmową wycenę",
+      "intro": "Napisz, co trzeba przetłumaczyć, i prześlij dokumenty. Odpowiadamy e-mailem z ceną i danymi do przelewu. Praca zaczyna się po zapłacie.",
+      "email": "E-mail",
+      "name": "Twoje imię i nazwisko",
+      "phone": "Telefon lub WhatsApp",
+      "optional": "opcjonalnie",
+      "from": "Tłumaczenie z języka",
+      "to": "Tłumaczenie na język",
+      "otherLanguage": "Jaki to język?",
+      "docType": "Jaki to dokument?",
+      "purpose": "Do czego jest potrzebny?",
+      "certification": "Jakie tłumaczenie?",
+      "deadline": "Termin, do kiedy potrzebujesz",
+      "pages": "Liczba stron",
+      "message": "Coś, co powinniśmy wiedzieć?",
+      "files": "Twoje dokumenty",
+      "filesHint": "Do trzech plików: PDF, JPG, JPEG, PNG, HEIC lub DOCX, łącznie 8 MB. Wyraźne zdjęcie każdej strony wystarczy.",
+      "fileN": "Plik {n}",
+      "choose": "Wybierz",
+      "consent": "Zgadzam się, aby przesłane dokumenty zostały wysłane tłumaczowi tylko po to, by przygotować moją wycenę i wykonać zlecenie. Przeczytałem(-am) {privacyLink}.",
+      "privacyLinkText": "stronę o prywatności",
+      "send": "Wyślij po wycenę",
+      "sending": "Wysyłanie, poczekaj chwilę",
+      "reply": "Odpowiadamy e-mailem z darmową wyceną, zwykle w ciągu jednego dnia roboczego.",
+      "requiredNote": "* wymagane",
+      "honeypot": "Zostaw puste",
+      "noscript": "Włącz JavaScript, aby wysłać formularz, albo napisz do nas na WhatsApp.",
+      "errors": {
+        "email": "Wpisz poprawny adres e-mail, na przykład imie@example.com.",
+        "name": "Podaj swoje imię i nazwisko.",
+        "phone": "Sprawdź numer telefonu. Użyj cyfr i znaku + przed numerem kierunkowym kraju.",
+        "from": "Wybierz język, z którego tłumaczymy.",
+        "to": "Wybierz język, na który tłumaczymy.",
+        "docType": "Wybierz rodzaj dokumentu.",
+        "consent": "Zaznacz pole, abyśmy mogli wysłać Twoje dokumenty tłumaczowi.",
+        "tooBig": "Twoje pliki mają {size} MB. Limit to 8 MB łącznie. Wyślij, co możesz, i napisz o tym w wiadomości.",
+        "badType": "Możemy czytać tylko pliki PDF, JPG, JPEG, PNG, HEIC i DOCX. Sprawdź: {names}"
+      },
+      "languages": [
+        {
+          "label": "Bułgarski"
+        },
+        {
+          "label": "Angielski"
+        },
+        {
+          "label": "Rumuński"
+        },
+        {
+          "label": "Polski"
+        },
+        {
+          "label": "Turecki"
+        },
+        {
+          "label": "Rosyjski"
+        },
+        {
+          "label": "Ukraiński"
+        },
+        {
+          "label": "Arabski"
+        },
+        {
+          "label": "Francuski"
+        },
+        {
+          "label": "Niemiecki"
+        },
+        {
+          "label": "Hiszpański"
+        },
+        {
+          "label": "Włoski"
+        },
+        {
+          "label": "Grecki"
+        },
+        {
+          "label": "Portugalski"
+        },
+        {
+          "label": "Inny"
+        }
+      ],
+      "docTypes": [
+        {
+          "label": "Akt urodzenia, małżeństwa lub zgonu"
+        },
+        {
+          "label": "Dyplom lub suplement"
+        },
+        {
+          "label": "Zaświadczenie o niekaralności lub zaświadczenie policyjne"
+        },
+        {
+          "label": "Prawo jazdy"
+        },
+        {
+          "label": "Dokument bankowy lub pasek wypłaty"
+        },
+        {
+          "label": "Dokumentacja medyczna"
+        },
+        {
+          "label": "Pismo sądowe lub notarialne"
+        },
+        {
+          "label": "Tekst techniczny"
+        },
+        {
+          "label": "Tekst prawny"
+        },
+        {
+          "label": "Tekst handlowy lub biznesowy"
+        },
+        {
+          "label": "Tekst na stronę internetową lub marketingowy"
+        },
+        {
+          "label": "Inny"
+        }
+      ],
+      "purposes": [
+        {
+          "label": "Wiza lub pobyt w Wielkiej Brytanii"
+        },
+        {
+          "label": "Uczelnia lub college"
+        },
+        {
+          "label": "Pracodawca"
+        },
+        {
+          "label": "Rejestracja zawodowa"
+        },
+        {
+          "label": "NHS lub cel medyczny"
+        },
+        {
+          "label": "Sąd lub cel prawny"
+        },
+        {
+          "label": "Biznes"
+        },
+        {
+          "label": "Inny"
+        }
+      ],
+      "certs": [
+        {
+          "label": "Tłumaczenie poświadczone"
+        },
+        {
+          "label": "Tłumaczenie przysięgłe dla Bułgarii"
+        },
+        {
+          "label": "Nie wiem"
+        }
+      ]
+    },
+    "thanks": {
+      "h1": "Dziękujemy, mamy Twoje dokumenty",
+      "lead": "Tłumacz je przeczyta i odpisze e-mailem z darmową wyceną, zwykle w ciągu jednego dnia roboczego. Praca zaczyna się po zapłacie przelewem.",
+      "next": "W międzyczasie",
+      "items": [
+        "Sprawdź, czego wymaga odbiorca tłumaczenia, na przykład uczelnia, pracodawca lub urząd.",
+        "Zachowaj oryginały w bezpiecznym miejscu. Musisz nam je wysłać tylko wtedy, gdy ustalimy to w wycenie."
+      ]
+    }
   }
 }

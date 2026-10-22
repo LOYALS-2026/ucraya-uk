@@ -32,6 +32,14 @@ Site summary: https://ucraya.uk/llms.txt
 Browse: https://ucraya.uk/blog/ and https://ucraya.uk/blog/questions/
 Feed: https://ucraya.uk/rss.xml
 
+## Translation
+
+Ucraya also takes document translation requests for the school's translation partner. No price is published: every job is quoted free and paid by bank transfer before the work starts.
+
+- Document translation: https://ucraya.uk/translation/
+- Certified document translation, with the translator's signed statement of accuracy, for official use: https://ucraya.uk/translation/certified/
+- Specialist and business translation, priced per document or per page: https://ucraya.uk/translation/specialist/
+
 ${sections.join('\n\n')}
 `;
   return new Response(text, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });

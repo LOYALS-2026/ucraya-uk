@@ -1,4 +1,4 @@
-// Where did this enquiry come from? Fills the hidden fields of every enquiry form (inline and pop-in).
+// Where did this enquiry come from? Fills the hidden fields of every enquiry form (inline and pop-in) and of the translation quote form.
 // First touch (the first page of a visit, its referrer and its utm values) is kept in localStorage for 30 days
 // under one key, so a visitor who comes back later still shows the original source. First party only, no cookies.
 (function () {
@@ -123,14 +123,18 @@
     set(form, 'browser_language', clean(navigator.language || '', 20));
     set(form, 'placement_level', placementLevel());
     set(form, 'visit_started', first.started);
-    var goal = form.querySelector('input[name="goal"]:checked');
-    set(form, 'subject', 'New enquiry (' + (goal ? goal.value : 'no goal chosen') + ') via ' + first.channel + ': ucraya.uk');
+    // The translation quote form has its own fixed subject (Netlify fills in the submission id); only the lesson enquiry builds one here.
+    if (form.getAttribute('name') === 'enquiry') {
+      var goal = form.querySelector('input[name="goal"]:checked');
+      set(form, 'subject', 'New enquiry (' + (goal ? goal.value : 'no goal chosen') + ') via ' + first.channel + ': ucraya.uk');
+    }
   }
+  var FORMS = 'form[name="enquiry"], form[name="translation-quote"]';
   function fillAll() {
-    var forms = document.querySelectorAll('form[name="enquiry"]');
+    var forms = document.querySelectorAll(FORMS);
     for (var i = 0; i < forms.length; i++) fill(forms[i]);
   }
-  function formOf(e) { return e.target && e.target.closest ? e.target.closest('form[name="enquiry"]') : null; }
+  function formOf(e) { return e.target && e.target.closest ? e.target.closest(FORMS) : null; }
 
   fillAll();
   document.addEventListener('focusin', function (e) { var f = formOf(e); if (f) fill(f); });

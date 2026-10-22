@@ -16,6 +16,7 @@ const { locale, switchLinks, currentRoute, currentPath, inline = false, enquire 
 const m = useMessages(locale);
 const items = [
   { id: 'courses', label: m.nav.courses, href: pathFor('courses', locale), match: (r?: string) => r === 'courses' || (r ?? '').startsWith('course-') },
+  { id: 'translation', label: m.nav.translation, href: pathFor('translation', locale), match: (r?: string) => (r ?? '').startsWith('translation') },
   { id: 'pricing', label: m.nav.pricing, href: pathFor('pricing', locale) },
   { id: 'how', label: m.nav.how, href: pathFor('how', locale) },
   { id: 'tutors', label: m.nav.tutors, href: pathFor('tutors', locale) },
@@ -31,7 +32,7 @@ const isCurrent = (it: (typeof items)[number]) =>
   <div class="wrap">
     <div class="header-bar">
       <a class="logo-link" href={localePath(locale, '/')} aria-label={m.header.homeLabel}>
-        <img src="/raya/raya-compact-light.svg" width="536" height="220" alt="" />
+        <img src="/brand/raya-black-400.png" srcset="/brand/raya-black-300.png 300w, /brand/raya-black-400.png 400w, /brand/raya-black-600.png 600w" sizes="(min-width: 768px) 200px, 150px" width="400" height="150" alt="" decoding="async" fetchpriority="high" />
       </a>
       <div class="nav-panel" id="nav-panel">
         <nav aria-label={m.header.mainNav}>
