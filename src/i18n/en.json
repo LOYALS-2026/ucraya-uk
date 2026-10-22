@@ -365,7 +365,7 @@
     },
     "translationCertified": {
       "title": "Certified document translation",
-      "description": "Certified translation of birth and marriage certificates, diplomas, police certificates and more, with a signed statement of accuracy. Free quote."
+      "description": "Certified translation of birth and marriage certificates, diplomas, transcripts and medical records. Tell us who receives it. Free quote."
     },
     "translationSpecialist": {
       "title": "Specialist and business translation",
@@ -1803,7 +1803,7 @@
         {
           "slug": "certified",
           "title": "Certified document translation",
-          "text": "For documents an authority, university, employer or court asks you to have translated: certificates, diplomas, police certificates, licences, bank and payslip documents, medical records and court or notarial papers. Delivered with the translator's signed statement of accuracy and contact details.",
+          "text": "For documents an authority, university, employer or court asks you to have translated: birth and marriage certificates, diplomas and transcripts, medical records, and court and notarial papers. Tell us which body will receive the translation and we confirm what we can provide before you pay.",
           "link": "See certified translation"
         },
         {
@@ -1842,14 +1842,13 @@
         "Students applying to a university or college",
         "Workers whose employer or professional body asks for a translation",
         "Nurses and other healthcare staff registering in the UK",
-        "Drivers exchanging a licence with the DVLA",
         "Anyone with court, notarial or medical papers",
         "Businesses that need technical, legal, commercial or website text translated"
       ]
     },
     "partner": {
       "title": "Who does the translating",
-      "text": "Translations are done by Lili Translations, a registered and qualified translator who has worked with the school for years. Bulgarian and English is the core pair, and there are more than 20 language combinations with English. Give your languages in the form and the quote confirms them."
+      "text": "Translations are arranged through Lili Translations, a registered and qualified translator who has worked with the school for years. There are more than 20 language combinations. Bulgarian and English is the translator's own pair; other combinations are arranged through her agency. Tell us your pair and we confirm whether we can take it."
     },
     "faq": {
       "title": "Questions about translation",
@@ -1864,7 +1863,7 @@
         },
         {
           "q": "Will my translation be accepted?",
-          "a": "Certified translations are prepared in the format UK bodies normally ask for: a signed statement of accuracy, the date and the translator's details. We cannot speak for the body that receives it, so check its rules first and tell us who the translation is for."
+          "a": "Each body sets its own rules for translated documents. Tell us who will receive it and we confirm what we can provide before you pay."
         },
         {
           "q": "Which files can I upload?",
@@ -1880,7 +1879,7 @@
         },
         {
           "q": "Can you translate from and into Bulgarian?",
-          "a": "Yes. Bulgarian and English is the core pair, and there are more than 20 language combinations with English. Give your languages in the form and the quote confirms them."
+          "a": "Yes. Bulgarian and English is the translator's own pair. We offer more than 20 language combinations; other combinations are arranged through her agency. Tell us your pair and we confirm whether we can take it."
         },
         {
           "q": "Can I have the original by post?",
@@ -1898,7 +1897,7 @@
     "pages": {
       "certified": {
         "h1": "Certified translation for official use",
-        "lead": "A translation of your certificate, diploma or record that comes with the translator's signed statement of accuracy, for UK applications, universities, employers and courts.",
+        "lead": "A translation of your certificate, diploma or record for UK applications, universities, employers and courts. Tell us which body will receive it and we confirm what we can provide before you pay.",
         "who": {
           "title": "What it is used for",
           "items": [
@@ -1907,18 +1906,14 @@
             "Employers",
             "Professional registration",
             "The NHS",
-            "The DVLA",
             "Courts"
           ]
         },
         "covers": {
           "title": "What we translate",
           "items": [
-            "Birth, marriage and death certificates",
+            "Birth and marriage certificates",
             "Diplomas and transcripts",
-            "Criminal record and police certificates",
-            "Driving licences",
-            "Bank and payslip documents",
             "Medical records",
             "Court and notarial papers"
           ]
@@ -1926,24 +1921,23 @@
         "receive": {
           "title": "What you receive",
           "items": [
-            "Your translation with the translator's signed statement of accuracy, the date and the translator's contact details",
-            "Prepared in the format UK bodies normally ask for",
-            "A PDF by email, with originals by post on request",
-            "For Bulgaria, sworn translation and legalisation arranged on request"
+            "Your translation as a PDF by email, with originals by post on request",
+            "Before you pay, our confirmation of what we can provide for the body that will receive it",
+            "The price and the delivery time in a free quote, before you pay"
           ]
         },
         "note": {
           "title": "Check before you order",
-          "text": "Every university, employer, professional body and authority sets its own rules. Before you order, check what the body that receives the translation asks for, and tell us who it is for in the form."
+          "text": "Each body sets its own rules for translated documents. Tell us who will receive it and we confirm what we can provide before you pay."
         },
         "faq": [
           {
             "q": "What is a certified translation?",
-            "a": "A translation that comes with a signed statement from the translator that it is a complete and accurate translation of the original, with the date and the translator's contact details."
+            "a": "A translation of a document that a university, employer or authority asks you to have translated. What exactly is needed is set by that body, so tell us who will receive it and we confirm what we can provide before you pay."
           },
           {
             "q": "Will my university or employer accept it?",
-            "a": "We prepare it in the format UK bodies normally ask for. Each body sets its own rules, so check them and tell us who the translation is for."
+            "a": "Each body sets its own rules for translated documents. Tell us who will receive it and we confirm what we can provide before you pay."
           },
           {
             "q": "Do you need my original document?",
@@ -2114,8 +2108,8 @@
       ],
       "docTypes": [
         {
-          "value": "Birth, marriage or death certificate",
-          "label": "Birth, marriage or death certificate"
+          "value": "Birth or marriage certificate",
+          "label": "Birth or marriage certificate"
         },
         {
           "value": "Diploma or transcript",
@@ -2209,7 +2203,8 @@
           "value": "Not sure",
           "label": "Not sure"
         }
-      ]
+      ],
+      "languageHint": "Tell us your pair and we confirm whether we can take it"
     },
     "thanks": {
       "h1": "Thank you, we have your documents",

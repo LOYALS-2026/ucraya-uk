@@ -497,7 +497,7 @@ for (const [name, opts] of [['desktop', DESK], ['phone', PHONE]]) {
   await form.locator('input[name="email"]').fill('someone@example.com');
   await form.locator('input[name="name"]').fill('Test Person');
   await form.locator('select[name="to_language"]').selectOption('English');
-  await form.locator('select[name="document_type"]').selectOption('Birth, marriage or death certificate');
+  await form.locator('select[name="document_type"]').selectOption('Birth or marriage certificate');
   await form.locator('input[name="consent"]').check();
   const hidden = await page.evaluate(() => Object.fromEntries([...document.querySelectorAll('form[name="translation-quote"] input[type="hidden"]')].map((i) => [i.name, i.value])));
   ok(hidden.source_channel && hidden.device && hidden.landing_page && hidden.visit_started && hidden.enquiry_page === '/translation/certified/' && hidden.subject === 'Translation quote request via ucraya.uk: %{submissionId}' && hidden['form-name'] === 'translation-quote', `${name}: attribution fields are filled and the subject is the fixed one (${hidden.source_channel}, ${hidden.device}, ${hidden.landing_page})`);

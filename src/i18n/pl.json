@@ -358,7 +358,7 @@
     },
     "translationCertified": {
       "title": "Tłumaczenie poświadczone dokumentów",
-      "description": "Tłumaczenie poświadczone aktów urodzenia i małżeństwa, dyplomów, zaświadczeń o niekaralności i innych, z podpisanym oświadczeniem o zgodności. Wycena za darmo."
+      "description": "Tłumaczenie poświadczone aktów urodzenia i małżeństwa, dyplomów, suplementów i dokumentacji medycznej. Napisz, kto je otrzyma. Wycena za darmo."
     },
     "translationSpecialist": {
       "title": "Tłumaczenia specjalistyczne i dla firm",
@@ -1792,7 +1792,7 @@
         {
           "slug": "certified",
           "title": "Tłumaczenie poświadczone dokumentów",
-          "text": "Dla dokumentów, które urząd, uczelnia, pracodawca lub sąd każe przetłumaczyć: zaświadczeń, dyplomów, zaświadczeń policyjnych, praw jazdy, dokumentów bankowych i pasków wypłat, dokumentacji medycznej oraz pism sądowych i notarialnych. Dostarczane z podpisanym oświadczeniem tłumacza o zgodności i jego danymi kontaktowymi.",
+          "text": "Dla dokumentów, które urząd, uczelnia, pracodawca lub sąd każe przetłumaczyć: aktów urodzenia i małżeństwa, dyplomów i suplementów, dokumentacji medycznej oraz pism sądowych i notarialnych. Napisz, kto otrzyma tłumaczenie, a przed zapłatą potwierdzimy, co możemy dostarczyć.",
           "link": "Zobacz tłumaczenie poświadczone"
         },
         {
@@ -1831,14 +1831,13 @@
         "Studenci aplikujący na uczelnię lub do college'u",
         "Pracownicy, od których pracodawca lub organizacja zawodowa wymaga tłumaczenia",
         "Pielęgniarki i inni pracownicy ochrony zdrowia rejestrujący się w Wielkiej Brytanii",
-        "Kierowcy wymieniający prawo jazdy w DVLA",
         "Każdy, kto ma dokumenty sądowe, notarialne lub medyczne",
         "Firmy, które potrzebują tłumaczenia tekstów technicznych, prawnych, handlowych lub na stronę internetową"
       ]
     },
     "partner": {
       "title": "Kto tłumaczy",
-      "text": "Tłumaczeń dokonuje Lili Translations, zarejestrowany i wykwalifikowany tłumacz, który od lat współpracuje ze szkołą. Główna para to bułgarski i angielski, a kombinacji językowych z angielskim jest ponad 20. Podaj języki w formularzu, a wycena je potwierdzi."
+      "text": "Tłumaczenia organizujemy przez Lili Translations, zarejestrowanego i wykwalifikowanego tłumacza, który od lat współpracuje ze szkołą. Kombinacji językowych jest ponad 20. Bułgarski i angielski to własna para tłumacza, a pozostałe kombinacje są organizowane przez jej agencję. Podaj swoją parę, a potwierdzimy, czy możemy ją przyjąć."
     },
     "faq": {
       "title": "Pytania o tłumaczenia",
@@ -1853,7 +1852,7 @@
         },
         {
           "q": "Czy moje tłumaczenie zostanie przyjęte?",
-          "a": "Tłumaczenia poświadczone przygotowujemy w formie, o którą zwykle proszą brytyjskie instytucje: podpisane oświadczenie o zgodności, data i dane tłumacza. Nie możemy wypowiadać się w imieniu instytucji, która je otrzyma, więc sprawdź jej zasady i powiedz nam, dla kogo jest tłumaczenie."
+          "a": "Każda instytucja ma własne zasady dotyczące tłumaczonych dokumentów. Napisz, kto otrzyma tłumaczenie, a przed zapłatą potwierdzimy, co możemy dostarczyć."
         },
         {
           "q": "Jakie pliki mogę przesłać?",
@@ -1869,7 +1868,7 @@
         },
         {
           "q": "Czy tłumaczycie z bułgarskiego i na bułgarski?",
-          "a": "Tak. Główna para to bułgarski i angielski, a kombinacji językowych z angielskim jest ponad 20. Podaj języki w formularzu, a wycena je potwierdzi."
+          "a": "Tak. Bułgarski i angielski to własna para tłumacza. Oferujemy ponad 20 kombinacji językowych, a pozostałe są organizowane przez jej agencję. Podaj swoją parę, a potwierdzimy, czy możemy ją przyjąć."
         },
         {
           "q": "Czy mogę dostać oryginał pocztą?",
@@ -1887,7 +1886,7 @@
     "pages": {
       "certified": {
         "h1": "Tłumaczenie poświadczone do użytku urzędowego",
-        "lead": "Tłumaczenie Twojego zaświadczenia, dyplomu lub dokumentu wraz z podpisanym oświadczeniem tłumacza o zgodności, do wniosków w Wielkiej Brytanii, na uczelnie, dla pracodawców i sądów.",
+        "lead": "Tłumaczenie Twojego zaświadczenia, dyplomu lub dokumentu do wniosków w Wielkiej Brytanii, na uczelnie, dla pracodawców i sądów. Napisz, kto je otrzyma, a przed zapłatą potwierdzimy, co możemy dostarczyć.",
         "who": {
           "title": "Do czego służy",
           "items": [
@@ -1896,18 +1895,14 @@
             "Pracodawcy",
             "Rejestracja zawodowa",
             "NHS",
-            "DVLA",
             "Sądy"
           ]
         },
         "covers": {
           "title": "Co tłumaczymy",
           "items": [
-            "Akty urodzenia, małżeństwa i zgonu",
+            "Akty urodzenia i małżeństwa",
             "Dyplomy i suplementy",
-            "Zaświadczenia o niekaralności i zaświadczenia policyjne",
-            "Prawa jazdy",
-            "Dokumenty bankowe i paski wypłat",
             "Dokumentację medyczną",
             "Pisma sądowe i notarialne"
           ]
@@ -1915,24 +1910,23 @@
         "receive": {
           "title": "Co otrzymujesz",
           "items": [
-            "Tłumaczenie z podpisanym oświadczeniem tłumacza o zgodności, datą i danymi kontaktowymi tłumacza",
-            "Przygotowane w formie, o którą zwykle proszą brytyjskie instytucje",
-            "PDF e-mailem, a oryginały pocztą na życzenie",
-            "Dla Bułgarii tłumaczenie przysięgłe i legalizacja na życzenie"
+            "Tłumaczenie jako PDF e-mailem, a oryginały pocztą na życzenie",
+            "Przed zapłatą potwierdzenie, co możemy dostarczyć dla instytucji, która otrzyma tłumaczenie",
+            "Cenę i termin w darmowej wycenie, przed zapłatą"
           ]
         },
         "note": {
           "title": "Sprawdź przed zamówieniem",
-          "text": "Każda uczelnia, pracodawca, organizacja zawodowa i urząd ma własne zasady. Zanim zamówisz, sprawdź, czego wymaga odbiorca tłumaczenia, i napisz w formularzu, dla kogo ono jest."
+          "text": "Każda instytucja ma własne zasady dotyczące tłumaczonych dokumentów. Napisz w formularzu, kto otrzyma tłumaczenie, a przed zapłatą potwierdzimy, co możemy dostarczyć."
         },
         "faq": [
           {
             "q": "Czym jest tłumaczenie poświadczone?",
-            "a": "Tłumaczeniem z podpisanym oświadczeniem tłumacza, że jest ono pełnym i wiernym tłumaczeniem oryginału, z datą i danymi kontaktowymi tłumacza."
+            "a": "Tłumaczenie dokumentu, który uczelnia, pracodawca lub urząd każe przetłumaczyć. Czego dokładnie wymaga, określa sama instytucja, więc napisz, kto otrzyma tłumaczenie, a przed zapłatą potwierdzimy, co możemy dostarczyć."
           },
           {
             "q": "Czy moja uczelnia lub pracodawca je przyjmie?",
-            "a": "Przygotowujemy je w formie, o którą zwykle proszą brytyjskie instytucje. Każda ma własne zasady, więc sprawdź je i powiedz nam, dla kogo jest tłumaczenie."
+            "a": "Każda instytucja ma własne zasady dotyczące tłumaczonych dokumentów. Napisz, kto otrzyma tłumaczenie, a przed zapłatą potwierdzimy, co możemy dostarczyć."
           },
           {
             "q": "Czy potrzebujecie mojego oryginalnego dokumentu?",
@@ -2088,7 +2082,7 @@
       ],
       "docTypes": [
         {
-          "label": "Akt urodzenia, małżeństwa lub zgonu"
+          "label": "Akt urodzenia lub małżeństwa"
         },
         {
           "label": "Dyplom lub suplement"
@@ -2160,7 +2154,8 @@
         {
           "label": "Nie wiem"
         }
-      ]
+      ],
+      "languageHint": "Podaj swoją parę języków, a potwierdzimy, czy możemy ją przyjąć"
     },
     "thanks": {
       "h1": "Dziękujemy, mamy Twoje dokumenty",

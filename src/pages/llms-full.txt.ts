@@ -37,7 +37,7 @@ Feed: https://ucraya.uk/rss.xml
 Ucraya also takes document translation requests for the school's translation partner. No price is published: every job is quoted free and paid by bank transfer before the work starts.
 
 - Document translation: https://ucraya.uk/translation/
-- Certified document translation, with the translator's signed statement of accuracy, for official use: https://ucraya.uk/translation/certified/
+- Certified document translation for official use (tell us which body will receive it and we confirm what we can provide before you pay): https://ucraya.uk/translation/certified/
 - Specialist and business translation, priced per document or per page: https://ucraya.uk/translation/specialist/
 
 ${sections.join('\n\n')}

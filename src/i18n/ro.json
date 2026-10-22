@@ -358,7 +358,7 @@
     },
     "translationCertified": {
       "title": "Traducere certificată de documente",
-      "description": "Traducere certificată pentru certificate de naștere și căsătorie, diplome, cazier și alte acte, cu declarația semnată de exactitate. Ofertă gratuită."
+      "description": "Traducere certificată pentru certificate de naștere și căsătorie, diplome, foi matricole și acte medicale. Spune-ne cine o primește. Ofertă gratuită."
     },
     "translationSpecialist": {
       "title": "Traduceri specializate și pentru firme",
@@ -1792,7 +1792,7 @@
         {
           "slug": "certified",
           "title": "Traducere certificată de documente",
-          "text": "Pentru documentele pe care o autoritate, o universitate, un angajator sau o instanță le cere traduse: certificate, diplome, cazier, permise, acte bancare și fluturași de salariu, acte medicale, acte judiciare și notariale. Se livrează cu declarația semnată de exactitate a traducătorului și datele de contact ale acestuia.",
+          "text": "Pentru documentele pe care o autoritate, o universitate, un angajator sau o instanță le cere traduse: certificate de naștere și căsătorie, diplome și foi matricole, acte medicale, acte judiciare și notariale. Spune-ne ce instituție va primi traducerea și îți confirmăm ce îți putem oferi, înainte să plătești.",
           "link": "Vezi traducerea certificată"
         },
         {
@@ -1831,14 +1831,13 @@
         "Studenți care se înscriu la o universitate sau la un colegiu",
         "Angajați cărora angajatorul sau un organism profesional le cere o traducere",
         "Asistente medicale și alți lucrători din sănătate care se înregistrează în Marea Britanie",
-        "Șoferi care își schimbă permisul la DVLA",
         "Oricine are acte judiciare, notariale sau medicale",
         "Firme care au nevoie de texte tehnice, juridice, comerciale sau pentru site traduse"
       ]
     },
     "partner": {
       "title": "Cine traduce",
-      "text": "Traducerile sunt făcute de Lili Translations, un traducător înregistrat și calificat care lucrează cu școala de ani de zile. Perechea principală este bulgară și engleză, iar combinațiile de limbi cu engleza sunt peste 20. Spune-ne limbile în formular, iar oferta le confirmă."
+      "text": "Traducerile se organizează prin Lili Translations, un traducător înregistrat și calificat care lucrează cu școala de ani de zile. Există peste 20 de combinații lingvistice. Bulgara și engleza sunt perechea proprie a traducătorului, iar celelalte combinații se organizează prin agenția ei. Spune-ne perechea ta și îți confirmăm dacă o putem prelua."
     },
     "faq": {
       "title": "Întrebări despre traduceri",
@@ -1853,7 +1852,7 @@
         },
         {
           "q": "Va fi acceptată traducerea mea?",
-          "a": "Traducerile certificate sunt pregătite în forma pe care instituțiile britanice o cer de obicei: declarație semnată de exactitate, data și datele traducătorului. Nu putem vorbi în numele instituției care o primește, așa că verifică regulile ei și spune-ne pentru cine este traducerea."
+          "a": "Fiecare instituție are propriile reguli pentru documentele traduse. Spune-ne cine o va primi și îți confirmăm ce îți putem oferi, înainte să plătești."
         },
         {
           "q": "Ce fișiere pot încărca?",
@@ -1869,7 +1868,7 @@
         },
         {
           "q": "Traduceți din și în bulgară?",
-          "a": "Da. Perechea principală este bulgară și engleză, iar combinațiile de limbi cu engleza sunt peste 20. Spune-ne limbile în formular, iar oferta le confirmă."
+          "a": "Da. Bulgara și engleza sunt perechea proprie a traducătorului. Oferim peste 20 de combinații lingvistice, iar celelalte se organizează prin agenția ei. Spune-ne perechea ta și îți confirmăm dacă o putem prelua."
         },
         {
           "q": "Pot primi originalul prin poștă?",
@@ -1887,7 +1886,7 @@
     "pages": {
       "certified": {
         "h1": "Traducere certificată pentru uz oficial",
-        "lead": "O traducere a certificatului, diplomei sau actului tău, însoțită de declarația semnată de exactitate a traducătorului, pentru cereri în Marea Britanie, universități, angajatori și instanțe.",
+        "lead": "Traducerea certificatului, diplomei sau actului tău, pentru cereri în Marea Britanie, universități, angajatori și instanțe. Spune-ne ce instituție o primește și îți confirmăm ce îți putem oferi, înainte să plătești.",
         "who": {
           "title": "Pentru ce se folosește",
           "items": [
@@ -1896,18 +1895,14 @@
             "Angajatori",
             "Înregistrare profesională",
             "NHS",
-            "DVLA",
             "Instanțe"
           ]
         },
         "covers": {
           "title": "Ce traducem",
           "items": [
-            "Certificate de naștere, căsătorie și deces",
+            "Certificate de naștere și căsătorie",
             "Diplome și foi matricole",
-            "Cazier judiciar și certificate de la poliție",
-            "Permise de conducere",
-            "Acte bancare și fluturași de salariu",
             "Acte medicale",
             "Acte judiciare și notariale"
           ]
@@ -1915,24 +1910,23 @@
         "receive": {
           "title": "Ce primești",
           "items": [
-            "Traducerea, cu declarația semnată de exactitate a traducătorului, data și datele de contact ale traducătorului",
-            "Pregătită în forma pe care instituțiile britanice o cer de obicei",
-            "Un PDF prin email, iar originalele prin poștă la cerere",
-            "Pentru Bulgaria, traducere jurată și legalizare, organizate la cerere"
+            "Traducerea ca PDF prin email, iar originalele prin poștă la cerere",
+            "Înainte să plătești, confirmarea a ceea ce îți putem oferi pentru instituția care va primi traducerea",
+            "Prețul și termenul într-o ofertă gratuită, înainte să plătești"
           ]
         },
         "note": {
           "title": "Verifică înainte să comanzi",
-          "text": "Fiecare universitate, angajator, organism profesional și autoritate are regulile sale. Înainte să comanzi, verifică ce cere cel care primește traducerea și spune-ne în formular pentru cine este."
+          "text": "Fiecare instituție are propriile reguli pentru documentele traduse. Spune-ne în formular cine va primi traducerea și îți confirmăm ce îți putem oferi, înainte să plătești."
         },
         "faq": [
           {
             "q": "Ce este o traducere certificată?",
-            "a": "O traducere însoțită de o declarație semnată a traducătorului că este o traducere completă și exactă a originalului, cu data și datele de contact ale traducătorului."
+            "a": "Traducerea unui document pe care o universitate, un angajator sau o autoritate îl cere tradus. Ce anume este nevoie se stabilește de instituția respectivă, așa că spune-ne cine o primește și îți confirmăm ce îți putem oferi, înainte să plătești."
           },
           {
             "q": "O va accepta universitatea sau angajatorul meu?",
-            "a": "O pregătim în forma pe care instituțiile britanice o cer de obicei. Fiecare instituție are regulile ei, așa că verifică-le și spune-ne pentru cine este traducerea."
+            "a": "Fiecare instituție are propriile reguli pentru documentele traduse. Spune-ne cine o va primi și îți confirmăm ce îți putem oferi, înainte să plătești."
           },
           {
             "q": "Aveți nevoie de documentul meu original?",
@@ -2088,7 +2082,7 @@
       ],
       "docTypes": [
         {
-          "label": "Certificat de naștere, căsătorie sau deces"
+          "label": "Certificat de naștere sau căsătorie"
         },
         {
           "label": "Diplomă sau foaie matricolă"
@@ -2160,7 +2154,8 @@
         {
           "label": "Nu sunt sigur"
         }
-      ]
+      ],
+      "languageHint": "Spune-ne perechea ta de limbi și îți confirmăm dacă o putem prelua"
     },
     "thanks": {
       "h1": "Mulțumim, am primit documentele",

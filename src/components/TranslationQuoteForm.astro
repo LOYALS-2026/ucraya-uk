@@ -85,7 +85,7 @@ const docDefault = '';
     </div>
     <div class="field">
       <label for="tq-from">{f.from} <span class="req" aria-hidden="true">*</span></label>
-      <select class="input" id="tq-from" name="from_language" required>
+      <select class="input" id="tq-from" name="from_language" aria-describedby="tq-lang-hint" required>
         <option value="">{f.choose}</option>
         {f.languages.map((o, i) => <option value={en.languages[i].value}>{o.label}</option>)}
       </select>
@@ -93,12 +93,13 @@ const docDefault = '';
     </div>
     <div class="field">
       <label for="tq-to">{f.to} <span class="req" aria-hidden="true">*</span></label>
-      <select class="input" id="tq-to" name="to_language" required>
+      <select class="input" id="tq-to" name="to_language" aria-describedby="tq-lang-hint" required>
         <option value="">{f.choose}</option>
         {f.languages.map((o, i) => <option value={en.languages[i].value}>{o.label}</option>)}
       </select>
       <p class="err" id="tq-err-to" hidden></p>
     </div>
+    <p class="hint f-wide" id="tq-lang-hint">{f.languageHint}</p>
     <div class="field f-wide" data-other hidden>
       <label for="tq-other">{f.otherLanguage}</label>
       <input class="input" id="tq-other" type="text" name="other_language" autocomplete="off" spellcheck="false" enterkeyhint="next" />
