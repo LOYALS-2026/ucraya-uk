@@ -9,3 +9,9 @@ One line per row of the weekly batch (one session a week, Monday): date | day | 
 2026-10-26 | day 7 | missed-your-ielts-offer-score-what-to-do-before-the-cas | FAILED: ielts.org and gov.uk could not be fetched (blocked)
 2026-10-26 | day 8 | practise-a-uk-job-interview-in-english-with-a-tutor | published
 2026-10-26 | day 91 | certified-translation-of-bulgarian-documents-a-uk-guide | FAILED: gov.uk, nmc.org.uk, gmc-uk.org and hcpc-uk.org could not be fetched (blocked)
+2026-11-02 | day 9 | school-feedback-on-your-childs-english-what-it-means | published
+2026-11-02 | day 10 | missed-your-nmc-score-by-a-little-your-three-options | FAILED: nmc.org.uk could not be fetched (host blocked), OET combining and floor score rules not verified
+2026-11-02 | day 11 | bn-o-settlement-english-test-still-b1-not-b2 | FAILED: March 2026 BN(O) statement and gov.uk could not be fetched (hosts blocked)
+2026-11-02 | day 12 | oet-writing-from-c-to-c-a-marked-referral-letter | FAILED: nmc.org.uk and oet.com could not be fetched (hosts blocked)
+2026-11-02 | day 13 | b1-speaking-and-listening-tests-compared-for-2026 | FAILED: gov.uk, ielts.org and trinitycollege.com could not be fetched (hosts blocked)
+2026-11-02 | day 92 | registering-a-uk-born-child-in-bulgaria-the-six-month-rule | FAILED: mfa.bg and gov.uk could not be fetched (hosts blocked)
