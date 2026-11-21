@@ -11,7 +11,7 @@ export async function GET() {
 
 > Online English lessons with real tutors, from Training Centre Raya London, a London English school founded in 2015.
 
-Ucraya is the online lessons service of Training Centre Raya London Ltd. It teaches English online with qualified tutors: one-to-one lessons, small group level courses and exam preparation. Lessons run on live video; group courses run on Zoom. Payment is by bank transfer after the office confirms a place. The site is in English, Bulgarian, Romanian and Polish. For classroom lessons in London, see https://ucraya.co.uk.
+Ucraya is the online service of Training Centre Raya London Ltd: one-to-one lessons, small group level courses and exam preparation with qualified tutors. Lessons run on live video; group courses run on Zoom. Payment is by bank transfer after the office confirms a place. The site is in English, Bulgarian, Romanian and Polish. For classroom lessons in London, see https://ucraya.co.uk.
 
 ## Key pages
 
@@ -25,11 +25,11 @@ Ucraya is the online lessons service of Training Centre Raya London Ltd. It teac
 
 ## Guides (English)
 
-- [All guides](https://ucraya.uk/blog/): plain guides for test and interview preparation
-- [Questions we answer](https://ucraya.uk/blog/questions/): every question a guide answers
+- [All guides](https://ucraya.uk/blog/)
+- [Questions we answer](https://ucraya.uk/blog/questions/)
 ${HUBS}
 - [RSS feed](https://ucraya.uk/rss.xml)
-- [Every guide with its short answer, in one file](https://ucraya.uk/llms-full.txt)
+- [All guides with short answers](https://ucraya.uk/llms-full.txt)
 
 ## Prices (GBP)
 
