@@ -37,3 +37,9 @@ One line per row of the weekly batch (one session a week, Monday): date | day | 
 2026-11-21 | day 92 | registering-a-uk-born-child-in-bulgaria-the-six-month-rule | published
 2026-11-21 | day 93 | registering-a-uk-marriage-in-bulgaria-papers-and-steps | published
 2026-11-21 | day 94 | apostille-translation-or-both-uk-papers-for-bulgaria | published
+2026-11-23 | day 24 | english-as-an-additional-language-what-schools-can-offer | published
+2026-11-23 | day 25 | how-to-choose-and-practise-your-b1-speaking-topic | published
+2026-11-23 | day 26 | oet-speaking-when-the-patient-interrupts-your-role-play | published
+2026-11-23 | day 27 | ielts-retake-or-more-lessons-before-your-cas-deadline | published
+2026-11-23 | day 28 | ielts-life-skills-or-trinity-for-a-partner-visa-test | published
+2026-11-23 | day 95 | home-office-translation-rules-what-the-page-must-show | published
